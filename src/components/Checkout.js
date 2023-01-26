@@ -17,8 +17,9 @@ class Checkout extends Component {
                 <div>
                <Header as="h1" color='teal'><center>
                 Your Order</center></Header><center>
-                <h3>Subtotal: ${this.props.cartTotal}</h3>
-                <h3>Total: ${this.props.cartTotal * 1.1}</h3>
+                <h3>Subtotal: ${this.props.total}</h3>
+                <h3>Plus Tax</h3>
+                <h3>Total: ${Math.round((this.props.total * 1.1)*100)/100}</h3>
                 <h3>User Information</h3>
                 <List.Item>
                     Name: {this.props.currentUser.name}</List.Item>

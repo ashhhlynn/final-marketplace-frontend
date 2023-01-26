@@ -31,7 +31,7 @@ export const fetchProducts= () => {
                console.log(data.message)
            }
            else {
-               dispatch({type: 'ADD_PRODUCTS', data})
+               dispatch({type: 'ADD_PRODUCT', data})
            }           
        })
    }

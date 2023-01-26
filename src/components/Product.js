@@ -29,6 +29,9 @@ const mapDispatchToProps = (dispatch) => {
       addToCart: (product, id, price, o) =>  { dispatch(addToCart(product, id, price, o)) }
   }}
   
-  const mapStateToProps = (state) => {return {currentOrder: state.currentOrder}}
+  const mapStateToProps = (state) => {return {
+    currentOrder: state.currentOrder
+}
+}
 
   export default connect(mapStateToProps, mapDispatchToProps)(Product)

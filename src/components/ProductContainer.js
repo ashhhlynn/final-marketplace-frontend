@@ -6,6 +6,11 @@ import { connect } from "react-redux";
 
 
 class ProductContainer extends Component {
+
+    componentDidMount() {
+
+    }
+
     render() {
         const products = this.props.products.map( i => {
             return (
@@ -15,6 +20,7 @@ class ProductContainer extends Component {
         return (
         <div>
         <Header as='h1' color='teal'><center>All Products:</center></Header>
+        <h3>Create Product</h3>
         <CreateProduct />
         <Card.Group>
         {products}
@@ -31,4 +37,4 @@ class ProductContainer extends Component {
         }
       }
 
-export default connect (MSTP)(ProductContainer)
+export default connect(MSTP)(ProductContainer)
