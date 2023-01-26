@@ -26,7 +26,9 @@ class App extends Component {
     <Container>
     <Navbar/>
     </Container>
+   
     <ShoppingLinks/>
+   
     <Routes>
     <Route path="/" element={<Home/>} />
     <Route path="/products" element={<ProductContainer />} />

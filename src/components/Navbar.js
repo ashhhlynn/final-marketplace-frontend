@@ -7,8 +7,8 @@ export default function NavBar() {
     return (
         <div className="container">                    
         <Menu color='teal' pointing secondary>
-        <Header size='huge' background='teal' style={{marginTop: '2%'}}>
-            MarketPlace
+        <Header size='huge' color='teal' style={{marginTop: '2%'}}>
+          <b><i>Marketplace Crafts</i></b>
           </Header>
   
           <Menu.Menu position="right" >
