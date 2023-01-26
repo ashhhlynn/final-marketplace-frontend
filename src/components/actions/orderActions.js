@@ -28,34 +28,28 @@ export const createOrder = (total, u) => {
 
 }
 
-
-
-
-
 export const sendOrder = (total, id) => {
     return (dispatch) => {
-       const token = localStorage.token;
+        dispatch({type: "SUBMIT_ORDER_REQUEST", loading: true})
+
        return fetch('http://localhost:3000/orders/' + `${id}`, {
            method: 'PATCH',
            headers: {
                'Content-Type': 'application/json',
                Accept: 'application/json',
-               'Authorization': `Bearer ${token}`
-           },
+               'Authorization': localStorage.token
+            },
            body: JSON.stringify({
                total: total,
                complete: 1
-           })
-           })
+           })})
            .then(resp => resp.json())
            .then(data => {
-               if(data.message){
-                   console.log(data.message)
-               }
-               else {
-                   dispatch({type: "SEND_ORDER"})
-                   console.log(data)
-               }            
-           })
-    }}
-          
+               
+                   dispatch({type: "SUBMIT_ORDER", data})
+                })           
+            }
+     }
+        
+    
+    

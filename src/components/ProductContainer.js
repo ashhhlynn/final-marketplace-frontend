@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import CreateProduct from './CreateProduct'
-import { Header, Card } from 'semantic-ui-react'
+import { Header, Card, Segment } from 'semantic-ui-react'
 import Product from './Product'
 import { connect } from "react-redux";
 
@@ -21,10 +21,15 @@ class ProductContainer extends Component {
         <div>
         <Header as='h1' color='teal'><center>All Products:</center></Header>
         <h3>Create Product</h3>
-        <CreateProduct />
+        <Segment>
+        <CreateProduct /></Segment>
+        <Segment>
         <Card.Group>
+
+    
         {products}
         </Card.Group>
+        </Segment>
         </div>
             )
         }

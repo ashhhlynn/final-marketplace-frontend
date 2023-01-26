@@ -32,7 +32,6 @@ class CartItem extends Component {
 
 const mapStateToProps = (state)=>{
     return{
-       cart: state.cart
     }
 }
 

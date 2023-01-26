@@ -7,10 +7,11 @@ import { Segment, Card, List, Header, Button } from 'semantic-ui-react'
 class Checkout extends Component {
   
       handleSendOrder= ()=>{
-    if (this.props.cart.length === 0){
-        alert('Your cart is empty')
-    }
-    else{
+   if (this.props.cart.length === 0){
+alert('Must have items in cart')
+
+   }
+else{
         let o = this.props.currentOrder
         let t = Math.round((this.props.total * 1.1)*100)/100
         this.props.sendOrder(t, o);
@@ -29,12 +30,12 @@ class Checkout extends Component {
                     Name: {this.props.currentUser.name}</List.Item>
                     <List.Item>
                  Address:{this.props.currentUser.address}</List.Item>
-                <Link to="/">
+                 <Link to="/">
                 <Button content="Submit Order"
                     onClick={()=>{this.handleSendOrder()}}></Button></Link>
-                 <Link to="/">
+                
                 <Button content="Cancel Order"
-                    onClick={()=>{this.handleSendOrder()}}></Button></Link>
+                    onClick={()=>{this.handleSendOzrder()}}></Button>
        
             </center>   
         </div>

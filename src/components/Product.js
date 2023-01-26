@@ -22,6 +22,7 @@ render(){
     handleClick(product, id, price){
         let o = this.props.currentOrder
         this.props.addToCart(product, id, price, o)
+        alert("Added To Cart")
     }    
 }
 const mapDispatchToProps = (dispatch) => {

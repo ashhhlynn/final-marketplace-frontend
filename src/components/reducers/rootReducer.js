@@ -18,12 +18,24 @@ const rootReducer = (state = initialState, action) => {
                 currentOrder: action.order.id, loading: false }
                 ;
 
-            case "SEND_ORDER":          
-                return {...state, 
+            case "SUBMIT_ORDER":
+                console.log(action.data)
+            return {...state, 
+                currentOrder: [], 
                 cart: [],
-                currentOrder: [],
-                cartTotal: 0
+                cartTotal: 0,
+                loading: false,}
+                ;
+                
+                case "SUBMIT_ORDER_REQUEST":  
+                    return {
+                      ...state,
+                      cart: [],
+                      cartTotal: 0,
+                      loading: true,
                     };
+            
+           
 
     case "ADD_PRODUCT_REQUEST":
         return {

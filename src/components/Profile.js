@@ -21,8 +21,6 @@ Hi {this.props.user.name}!</Header>
         Email: {this.props.user.email}<br></br>
     Address: {this.props.user.address}
     <Header>User Orders:</Header>
-
-         
         </div>
         )
     }

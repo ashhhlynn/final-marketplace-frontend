@@ -16,14 +16,17 @@ class Login extends Component {
         })
     }
 
- 
+    handleSubmit = (event, userData)  => {
+        event.preventDefault()
+       this.props.getExistingUser(userData)
+       }
 
     render() {
         return (
             <div id="signup-border">
         <Header as='h1' color='teal'><center>Login</center></Header>
                  
-                    <Form onSubmit={ (e) => { this.props.getExistingUser(e, this.state)}}>
+                    <Form onSubmit={ (e) => { this.handleSubmit(e, this.state)}}>
                         <Form.Input
                         id="email"
                         placeholder="Email"
@@ -50,7 +53,7 @@ class Login extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-       getExistingUser: (event, userData) => { dispatch(getExistingUser(event, userData));
+       getExistingUser: (userData) => { dispatch(getExistingUser(userData));
         }
     }
 }

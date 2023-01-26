@@ -22,8 +22,7 @@ export const createUser = (userData) => {
     }
   }
 
-  export const getExistingUser = (event, userData) => {
-    event.preventDefault();
+  export const getExistingUser = (userData) => {
     return (dispatch) => {
         return fetch('http://localhost:3000/login', {
         method: 'POST',
