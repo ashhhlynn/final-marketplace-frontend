@@ -6,6 +6,13 @@ import CartItem from './CartItem'
 
 class ShoppingCartContainer extends Component {
 
+    constructor(props) {
+        super(props)
+        this.state = {
+         total: 0
+        }
+      }
+
     render() {
         const items = this.props.cart.map( item => <CartItem item={item} key={item.id}/>)
         return (

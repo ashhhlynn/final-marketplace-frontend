@@ -26,6 +26,8 @@ export const addToCart = (product, id, price) => {
    }
 }
 
-export const removeFromCart = (product, id, price) => {
-    
-}
+export const removeFromCart = (id) => {
+    return (dispatch) => {
+        dispatch({type: "REMOVE_FROM_CART", id})
+       }           
+            }

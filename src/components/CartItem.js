@@ -5,8 +5,8 @@ import { Item, Button } from 'semantic-ui-react'
 
 class CartItem extends Component {
 
-    buttonClickHandler = (id, product_id) => {
-        this.props.removeProduct(id, product_id);
+    buttonClickHandler = (id) => {
+        this.props.removeFromCart(id);
         alert("Removed from Cart")
     }
 
@@ -38,7 +38,7 @@ const mapStateToProps = (state)=>{
 
 const mapDispatchToProps = (dispatch)=>{
     return{
-        removeFromCart: (product_id)=>{dispatch(removeFromCart(product_id))},
+        removeFromCart: (id)=>{dispatch(removeFromCart(id))},
     }
 }
 

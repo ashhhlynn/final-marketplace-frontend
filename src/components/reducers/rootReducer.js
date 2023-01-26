@@ -1,7 +1,8 @@
 
 const initialState = {
     products: [],
-    cart: []
+    cart: [],
+    cartTotal: 0
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -36,11 +37,24 @@ const rootReducer = (state = initialState, action) => {
         };
     
         case "ADD_TO_CART":
+            let price = action.product.price
+            console.log(price)
             return {
             ...state,
             cart: [...state.cart, action.product],
+            cartTotal: state.cartTotal + price,
             loading: false,
             };
+
+            case "REMOVE_FROM_CART":
+                let new_product = state.cart.filter(item=> item.id === action.id)
+                let new_products = state.cart.filter(item=> action.id !== item.id)
+                return {
+                ...state,
+                cart: new_products, 
+                cartTotal: state.cartTotal - new_product.price,
+                loading: false,
+                };
 
     default:
         return state;
