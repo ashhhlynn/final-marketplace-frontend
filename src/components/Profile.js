@@ -18,19 +18,14 @@ class Profile extends Component {
         .then((response) => response.json())
         .then((orders) => 
         this.setState({
-            orderz: orders,
-            o: orders.filter(order => order.user_id === this.props.user.id),        
+            orderz: orders       
         })
         )
-       
-        
       }
 
     render() {
-        console.log(this.state.o)
         const orders = this.state.orderz.map((order) => (
-       
-            <li key={order.id}>user: {order.user_id}, total: ${order.total}, complete: {order.complete}</li>
+            <li key={order.id}>user: {order.user_id} Total: ${order.total}: {order.order_items.length} Product</li>
         ))
         return (
         <div>
