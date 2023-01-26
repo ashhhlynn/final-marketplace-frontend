@@ -1,24 +1,25 @@
 
 import {React, Component }from "react";
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import ProductContainer from './components/ProductContainer'
 import Home from './components/Home'
+import ShoppingCartContainer from './components/ShoppingCartContainer'
+import Navbar from './components/Navbar'
 
 function App() {
   return (
- 
     <div className="App">
+        <Navbar/>
     <BrowserRouter>
     <Routes>
     <Route path="/" element={<Home/>} />
+    <Route path="/products" element={<ProductContainer />} />
+    <Route path="/cart" element={<ShoppingCartContainer />} />
     </Routes>
-    <div>
-          <p>Hi</p></div>
-          </BrowserRouter>
+    </BrowserRouter>
     </div>
 
   );
 }
-
-
 
 export default App;
