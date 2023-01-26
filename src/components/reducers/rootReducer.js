@@ -4,7 +4,8 @@ const initialState = {
     cart: [],
     cartTotal: 0,
     currentUser: [],
-    currentOrder: []
+    currentOrder: [],
+    orders: []
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -16,6 +17,14 @@ const rootReducer = (state = initialState, action) => {
             return {...state, 
                 currentOrder: action.order.id, loading: false }
                 ;
+
+                case "SEND_ORDER":          
+                    return {...state, 
+                        cart: [],
+                        currentOrder: [],
+                        cartTotal: 0,
+                        orders: [...state.orders, action.data]
+                    };
 
     case "ADD_PRODUCT_REQUEST":
         return {
@@ -49,20 +58,22 @@ const rootReducer = (state = initialState, action) => {
         case "ADD_TO_CART":
             let price = action.product.price
             console.log(price)
+            let newTotal = state.cartTotal + price ;
             return {
             ...state,
             cart: [...state.cart, action.product],
-            cartTotal: state.cartTotal + price,
+            cartTotal: newTotal,
             loading: false,
             };
 
             case "REMOVE_FROM_CART":
-                let new_product = state.cart.filter(item=> item.id === action.id)
+                let new_product = state.cart.find(item=> item.id === action.id)
                 let new_products = state.cart.filter(item=> action.id !== item.id)
+                let newT = state.cartTotal - new_product.price
                 return {
                 ...state,
                 cart: new_products, 
-                cartTotal: state.cartTotal - new_product.price,
+                cartTotal: newT,
                 loading: false,
                 };
 

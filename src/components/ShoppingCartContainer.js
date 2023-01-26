@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from "react-redux";
 import { List, Header } from 'semantic-ui-react'
 import CartItem from './CartItem'
-
+import Checkout from './Checkout'
 
 class ShoppingCartContainer extends Component {
 
@@ -21,6 +21,7 @@ class ShoppingCartContainer extends Component {
             <List>
         {items}
         </List>
+        <Checkout />
         </div>
         )
     }}
