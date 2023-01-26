@@ -1,17 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import { Menu } from 'semantic-ui-react'
+import { Menu, Header} from 'semantic-ui-react'
 
 export default function NavBar() {
  
     return (
         <div className="container">                    
-        <Menu pointing secondary>
-        <Menu.Item><Link to="/">Home</Link></Menu.Item>
-        <Menu.Item><Link to="/products">Products</Link></Menu.Item>
-        <Menu.Item><Link to="/cart">Cart</Link></Menu.Item>
-
+        <Menu color='teal' pointing secondary>
+        <Header size='huge' background='teal' style={{marginTop: '2%'}}>
+            MarketPlace
+          </Header>
+  
           <Menu.Menu position="right" >
+          <Menu.Item size='huge'><Link to="/">Home</Link></Menu.Item>
         <Menu.Item><Link>Log Out</Link></Menu.Item>
     </Menu.Menu> 
         </Menu>

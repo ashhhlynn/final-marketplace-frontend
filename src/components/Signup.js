@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { Form } from 'semantic-ui-react'
+import { Form, Header } from 'semantic-ui-react'
 import { createUser } from './actions/userActions'
 
 class Signup extends Component {
@@ -26,7 +26,7 @@ class Signup extends Component {
     render() {
         return (
                 <div id="signup-container">
-                    <h1 style={{color: 'black'}}>Create Account</h1>
+        <Header as='h1' color='teal'><center>Signup</center></Header>
                     <div>
 
                     <Form onSubmit={ (e) => {this.handleSubmit(e, this.state)} }>            

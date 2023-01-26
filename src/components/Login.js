@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { Form } from "semantic-ui-react";
+import { Form, Header } from "semantic-ui-react";
 import {getExistingUser} from './actions/userActions';
 
 class Login extends Component {
@@ -21,7 +21,7 @@ class Login extends Component {
     render() {
         return (
             <div id="signup-border">
-                    <h1 style={{color: 'black'}}>Login</h1>
+        <Header as='h1' color='teal'><center>Login</center></Header>
                  
                     <Form onSubmit={ (e) => { this.props.getExistingUser(e, this.state)}}>
                         <Form.Input
