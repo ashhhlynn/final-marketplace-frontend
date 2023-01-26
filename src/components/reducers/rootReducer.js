@@ -2,11 +2,15 @@
 const initialState = {
     products: [],
     cart: [],
-    cartTotal: 0
+    cartTotal: 0,
+    currentUser: []
 }
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
+        case 'SET_CURRENT_USER':
+            return {...state, currentUser: action.data, loading: false}
+
     case "ADD_PRODUCT_REQUEST":
         return {
           ...state,
