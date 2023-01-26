@@ -5,7 +5,7 @@ import Signup from './Signup'
 import Login from './Login'
 import {createOrder} from './actions/orderActions'
 import { Link } from 'react-router-dom'
-
+import Profile from './Profile'
 
 class Home extends Component{
 
@@ -29,7 +29,7 @@ render() {
            <p>Hi</p>
            < Signup />
            < Login />
-
+<Profile />
       
 <Link to="/products">
 <button class="outline" onClick={()=>{this.handlecreateOrder()}}>
