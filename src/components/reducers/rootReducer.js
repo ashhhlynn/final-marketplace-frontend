@@ -3,7 +3,8 @@ const initialState = {
     products: [],
     cart: [],
     cartTotal: 0,
-    currentUser: []
+    currentUser: [],
+    currentOrder: []
 }
 
 const rootReducer = (state = initialState, action) => {
