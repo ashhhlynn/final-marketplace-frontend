@@ -25,7 +25,6 @@ handleSubmit = event => {
         },
         body: JSON.stringify({
             title: this.state.title,
-          
             description: this.state.description,
             price: this.state.price,
             image_url: this.state.image_url
