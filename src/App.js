@@ -1,13 +1,24 @@
 
-import React from "react";
-import { Switch, Route } from "react-router-dom";
+import {React, Component }from "react";
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import Home from './components/Home'
 
 function App() {
   return (
+ 
     <div className="App">
-          Edit <code>src/App.js</code> and save to reload.
+    <BrowserRouter>
+    <Routes>
+    <Route path="/" element={<Home/>} />
+    </Routes>
+    <div>
+          <p>Hi</p></div>
+          </BrowserRouter>
     </div>
+
   );
 }
+
+
 
 export default App;
