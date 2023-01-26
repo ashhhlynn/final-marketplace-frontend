@@ -1,13 +1,13 @@
 import React, { Component } from "react";
+import { fetchProducts } from '../actions/productActions'
+import { connect } from "react-redux";
+
 
 class Home extends Component{
 
-        componentDidMount () {
-             return fetch("http://localhost:3000/products")
-                .then((response) => response.json())
-                .then((products) => 
-                console.log(products));
-            };
+componentDidMount () {
+    this.props.fetchProducts()
+};
         
 render(){
 
@@ -19,5 +19,11 @@ render(){
 }
 
 }
-
-export default Home
+const mapDispatchToProps = (dispatch) => {
+    return {
+      fetchProducts: () => { dispatch(fetchProducts());
+    }
+  };}
+  
+  
+  export default connect(mapDispatchToProps)(Home)

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Form, TextArea } from 'semantic-ui-react'
+import { Form } from 'semantic-ui-react'
+import { createProduct } from '../actions/productActions'
+
 
 class CreateProduct extends Component {
   state = {
@@ -16,31 +18,15 @@ class CreateProduct extends Component {
   })
 }
 
-handleSubmit = event => {
-    fetch('http://localhost:3000/products', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': localStorage.token
-        },
-        body: JSON.stringify({
-            title: this.state.title,
-            description: this.state.description,
-            price: this.state.price,
-            image_url: this.state.image_url
-        })
-    })
-    .then(response => response.json())
-    .then(newProduct => {
-        console.log(newProduct)
-    })
-}
-
+handleSubmit = (event)  => {
+   event.preventDefault()
+  this.props.createProduct(this.state)
+  }
 
   render() {
     return (
       <div>
-        <Form onSubmit={ (e) => { this.props.createProduct(e, this.state)}}>
+        <Form onSubmit={ (e) => { this.handleSubmit(e)}}>
           <p>
           <Form.Input
           type="text"
@@ -70,7 +56,7 @@ handleSubmit = event => {
           value={this.state.image_url} 
           onChange={this.handleChange}
           />
-</p>
+        </p>
           <center><Form.Button content='Submit' /></center>
         </Form>
       </div>
@@ -78,6 +64,11 @@ handleSubmit = event => {
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createProduct: (product) => { dispatch(createProduct(product));
+  }
+};}
 
 
-export default CreateProduct
+export default connect(mapDispatchToProps)(CreateProduct)
