@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { fetchProducts } from './actions/productActions'
 import { connect } from "react-redux";
 import Signup from './Signup'
-
+import Login from './Login'
 
 class Home extends Component{
 
@@ -16,6 +16,7 @@ render() {
         <div className="hi">
            <p>Hi</p>
            < Signup />
+           < Login />
         </div>
     )}
     else {
@@ -30,7 +31,7 @@ render() {
 
 const mapStateToProps = (state) => {
     return {
-     currentUser: state.currentUser
+     currentUser: state.currentUser,
   }
 }
 
