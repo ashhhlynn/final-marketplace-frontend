@@ -41,7 +41,7 @@ export const createUser = (userData) => {
                 window.alert(data.message)
             }
             else {
-                dispatch({type: "SET_CURRENT_USER", currentUser: data})
+                dispatch({type: "SET_CURRENT_USER", data})
                 console.log(data)
             }
         })

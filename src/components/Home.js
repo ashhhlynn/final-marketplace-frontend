@@ -10,7 +10,7 @@ class Home extends Component{
         this.props.fetchProducts();
       }        
 render() {
-    if (this.props.currentUser.length === 0){   
+  
     
         return(
         <div className="hi">
@@ -19,15 +19,9 @@ render() {
            < Login />
         </div>
     )}
-    else {
-        return (
-          <div className="header">
-            <p>Hi {this.props.currentUser}</p></div>
-        )
+  
     }
-}
 
-}
 
 const mapStateToProps = (state) => {
     return {
