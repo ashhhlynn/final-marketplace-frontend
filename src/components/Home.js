@@ -1,3 +1,7 @@
+
+
+
+
 import React, { Component } from "react";
 import { fetchProducts } from './actions/productActions'
 import { connect } from "react-redux";
@@ -22,29 +26,28 @@ class Home extends Component{
 
 
 render() {
-  
-    
+    if (this.props.currentUser.length === 0){       
         return(
+    
+   
         <div className="hi">
-           <p>Hi</p>
            < Signup />
            < Login />
-<Profile />
-      
-<Link to="/products">
+           </div>)}
+        else {
+            return (
+                <div className="header">
+            <Profile />
+            <Link to="/products">
 <button class="outline" onClick={()=>{this.handlecreateOrder()}}>
             Start Shopping
 </button></Link>
+</div>)}}}
 
-        </div>
-    )}
-  
-    }
-
-
+            
 const mapStateToProps = (state) => {
     return {
-     currentUser: state.currentUser,
+    currentUser: state.currentUser,
   }
 }
 
