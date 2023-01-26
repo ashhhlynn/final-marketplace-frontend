@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import AccountInfo from './AccountInfo'
 
 import { Segment, Card, List, Header } from 'semantic-ui-react'
 import { getPreviousOrders } from "./actions/orderActions";
@@ -27,6 +28,9 @@ class Profile extends Component {
         const orders = this.state.orderz.map((order) => (
             <li key={order.id}>user: {order.user_id} Total: ${order.total}: {order.order_items.length} Product</li>
         ))
+
+
+
         return (
         <div>
 
@@ -35,6 +39,10 @@ class Profile extends Component {
 
 Hi {this.props.user.name}!</Header>
 <Header>User Info:</Header>
+
+<AccountInfo user={this.props.user} key={this.props.user.id}/> <br></br>
+
+
 Name: {this.props.user.name}<br></br>
 
         Email: {this.props.user.email}<br></br>

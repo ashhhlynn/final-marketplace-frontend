@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {sendOrder} from '../components/actions/orderActions'
 import { Link } from 'react-router-dom'
 import { Segment, Card, List, Header, Button } from 'semantic-ui-react'
+import AccountInfo from './AccountInfo'
 
 class Checkout extends Component {
   
@@ -26,6 +27,10 @@ else{
                 <h3>Plus Tax</h3>
                 <h3>Total: ${Math.round((this.props.total * 1.1)*100)/100}</h3>
                 <h3>User Information</h3>
+
+                <AccountInfo user={this.props.currentUser} key={this.props.currentUser.id}/> <br></br>
+
+
                 <List.Item>
                     Name: {this.props.currentUser.name}</List.Item>
                     <List.Item>
