@@ -9,7 +9,12 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'SET_CURRENT_USER':
-            return {...state, currentUser: action.data, loading: false}
+            return {...state, currentUser: action.data, loading: false};
+            
+            case "CREATE_ORDER":
+            return {...state, 
+                currentOrder: action.order.id, loading: false }
+                ;
 
     case "ADD_PRODUCT_REQUEST":
         return {

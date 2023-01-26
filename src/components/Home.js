@@ -3,12 +3,24 @@ import { fetchProducts } from './actions/productActions'
 import { connect } from "react-redux";
 import Signup from './Signup'
 import Login from './Login'
+import {createOrder} from './actions/orderActions'
+import { Link } from 'react-router-dom'
+
 
 class Home extends Component{
 
     componentDidMount () {
         this.props.fetchProducts();
       }        
+
+      
+  handlecreateOrder(){
+    let t = 0
+    let u = this.props.currentUser.id
+    this.props.createOrder(t, u)
+      }
+
+
 render() {
   
     
@@ -17,6 +29,13 @@ render() {
            <p>Hi</p>
            < Signup />
            < Login />
+
+      
+<Link to="/products">
+<button class="outline" onClick={()=>{this.handlecreateOrder()}}>
+            Start Shopping
+</button></Link>
+
         </div>
     )}
   
@@ -31,7 +50,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-      fetchProducts: () =>  { dispatch(fetchProducts()) }
+      fetchProducts: () =>  { dispatch(fetchProducts()) },
+      createOrder: (t, u) => { dispatch(createOrder(t, u)) },
   }
 }
 
