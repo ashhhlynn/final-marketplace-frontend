@@ -14,18 +14,18 @@ render(){
                     <Card.Header>{i.title}: ${i.price}</Card.Header>
                 <Card.Description>{i.description}</Card.Description>
                 <Button content="Add To Cart"
-            onClick={()=>{this.handleClick(i, i.id, i.title, i.price)}}></Button> 
+            onClick={()=>{this.handleClick(i, i.id, i.price)}}></Button> 
             </Card>
     )
     }
 
-    handleClick(i, id, title, price){
-        this.props.addToCart(i, id, title, price)
+    handleClick(product, id, price){
+        this.props.addToCart(product, id, price)
     }    
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-      addToCart: (id, title, price) =>  { dispatch(addToCart(i, id, title, price)) }
+      addToCart: (product, id, price) =>  { dispatch(addToCart(product, id, price)) }
   }}
   
   

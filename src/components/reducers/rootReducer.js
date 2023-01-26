@@ -38,7 +38,7 @@ const rootReducer = (state = initialState, action) => {
         case "ADD_TO_CART":
             return {
             ...state,
-            cart: action.i,
+            cart: [...state.cart, action.product],
             loading: false,
             };
 

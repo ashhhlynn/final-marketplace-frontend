@@ -1,0 +1,45 @@
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { removeFromCart} from './actions/cartActions'
+import { Item, Button } from 'semantic-ui-react'
+
+class CartItem extends Component {
+
+    buttonClickHandler = (id, product_id) => {
+        this.props.removeProduct(id, product_id);
+        alert("Removed from Cart")
+    }
+
+    render() {
+        const i = this.props.item
+    return (
+<ul>
+            <Item.Group relaxed>
+                    <Item>
+                        <Item.Content>
+                <img src={i.img_id} alt={i.name} className='itemimage'/>
+               <Item.Header>{i.title}: ${i.price}</Item.Header>
+                <p>{i.description}</p>
+                <Button content="Remove" onClick={()=>{this.buttonClickHandler(i.id)}}></Button>
+                </Item.Content>
+                </Item>
+                </Item.Group>
+                </ul>
+        )
+    }
+}
+
+
+const mapStateToProps = (state)=>{
+    return{
+       cart: state.cart
+    }
+}
+
+const mapDispatchToProps = (dispatch)=>{
+    return{
+        removeFromCart: (product_id)=>{dispatch(removeFromCart(product_id))},
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartItem)
