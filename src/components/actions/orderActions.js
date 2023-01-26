@@ -2,8 +2,7 @@ export const createOrder = (total, u) => {
 
     return (dispatch) => {
         const token = localStorage.token;
-console.log(u)
-        return fetch('http://localhost:300/orders', {
+        return fetch('http://localhost:3000/orders', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

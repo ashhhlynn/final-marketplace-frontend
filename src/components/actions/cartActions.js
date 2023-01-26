@@ -1,4 +1,4 @@
-export const addToCart = (product, id, price) => {
+export const addToCart = (product, id, price, o) => {
     return (dispatch) => {
        const token = localStorage.token;
        return fetch('http://localhost:3000/order_items', {
@@ -10,7 +10,8 @@ export const addToCart = (product, id, price) => {
        },
        body: JSON.stringify({
            price: price,
-           product_id: id
+           product_id: id,
+           order_id: o
        })
        })
        .then(resp => resp.json())

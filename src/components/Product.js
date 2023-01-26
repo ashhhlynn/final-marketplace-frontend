@@ -20,13 +20,15 @@ render(){
     }
 
     handleClick(product, id, price){
-        this.props.addToCart(product, id, price)
+        let o = this.props.currentOrder
+        this.props.addToCart(product, id, price, o)
     }    
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-      addToCart: (product, id, price) =>  { dispatch(addToCart(product, id, price)) }
+      addToCart: (product, id, price, o) =>  { dispatch(addToCart(product, id, price, o)) }
   }}
   
-  
-  export default connect(null, mapDispatchToProps)(Product)
+  const mapStateToProps = (state) => {return {currentOrder: state.currentOrder}}
+
+  export default connect(mapStateToProps, mapDispatchToProps)(Product)
