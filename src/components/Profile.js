@@ -6,7 +6,6 @@ import { Segment, Card, List, Header } from 'semantic-ui-react'
 
 class Profile extends Component {
 
-   
 
     render() {
         
@@ -21,7 +20,7 @@ Hi {this.props.user.name}!</Header>
 
         Email: {this.props.user.email}<br></br>
     Address: {this.props.user.address}
-
+    <Header>User Orders:</Header>
 
             </Segment>
         </div>

@@ -56,7 +56,8 @@ const rootReducer = (state = initialState, action) => {
         };
     
         case "ADD_TO_CART":
-            let price = action.product.price
+            let prod = action.product
+            let price = prod.price
             console.log(price)
             let newTotal = state.cartTotal + price ;
             return {

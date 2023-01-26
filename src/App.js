@@ -6,11 +6,18 @@ import Home from './components/Home'
 import ShoppingCartContainer from './components/ShoppingCartContainer'
 import Navbar from './components/Navbar'
 import ShoppingLinks from './components/ShoppingLinks'
+import { Segment, Card, Header, Container } from 'semantic-ui-react'
+
+
 function App() {
   return (
+
     <div className="App">
+          <Container>
     <BrowserRouter>
+    <Container>
     <Navbar/>
+    </Container>
     <ShoppingLinks/>
     <Routes>
     <Route path="/" element={<Home/>} />
@@ -18,6 +25,7 @@ function App() {
     <Route path="/cart" element={<ShoppingCartContainer />} />
     </Routes>
     </BrowserRouter>
+    </Container>
     </div>
 
   );
