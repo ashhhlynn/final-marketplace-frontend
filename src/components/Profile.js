@@ -27,9 +27,10 @@ class Profile extends Component {
       }
 
     render() {
-        const orders = this.state.o.map((order) => (
+        console.log(this.state.o)
+        const orders = this.state.orderz.map((order) => (
        
-            <li key={order.id}>user: {order.user_id}, total: ${order.total}, date: {order.updated_at}</li>
+            <li key={order.id}>user: {order.user_id}, total: ${order.total}, complete: {order.complete}</li>
         ))
         return (
         <div>
