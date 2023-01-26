@@ -30,5 +30,13 @@ export const addToCart = (product, id, price, o) => {
 export const removeFromCart = (id) => {
     return (dispatch) => {
         dispatch({type: "REMOVE_FROM_CART", id})
+        const token = localStorage.token;
+        return fetch('http://localhost:3000/order_items/' + `${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+                'Authorization': `Bearer ${token}`
+            }})   
        }           
             }
