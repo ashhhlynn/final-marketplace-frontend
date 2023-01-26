@@ -1,5 +1,4 @@
 export const createOrder = (total, u) => {
-
     return (dispatch) => {
         const token = localStorage.token;
         return fetch('http://localhost:3000/orders', {
@@ -32,6 +31,7 @@ export const createOrder = (total, u) => {
 
 
 
+
 export const sendOrder = (total, id) => {
     return (dispatch) => {
        const token = localStorage.token;
@@ -54,7 +54,7 @@ export const sendOrder = (total, id) => {
                }
                else {
                    alert("Your order is complete!")
-                   dispatch({type: "SEND_ORDER", order: data})
+                   dispatch({type: "SEND_ORDER", data})
                }            
            })
     }}
