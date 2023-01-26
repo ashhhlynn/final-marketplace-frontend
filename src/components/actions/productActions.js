@@ -2,7 +2,7 @@ export const fetchProducts= () => {
     return (dispatch) => {
       dispatch({ type: "FETCH_PRODUCTS_REQUEST" });
       fetch("http://localhost:3000/products")
-        .then((response) => console.log(response.json()))
+        .then((response) => response.json())
         .then((products) => 
         dispatch({ type: "FETCH_PRODUCTS", products }));
     };

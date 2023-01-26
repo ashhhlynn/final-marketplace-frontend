@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Form } from 'semantic-ui-react'
-import { createProduct } from '../actions/productActions'
+import { createProduct } from './actions/productActions'
 
 
 class CreateProduct extends Component {
@@ -18,16 +18,14 @@ class CreateProduct extends Component {
   })
 }
 
-handleSubmit = (event)  => {
+handleSubmit = (event, product)  => {
    event.preventDefault()
-  this.props.createProduct(this.state)
+  this.props.createProduct(product)
   }
 
   render() {
     return (
-      <div>
-        <Form onSubmit={ (e) => { this.handleSubmit(e)}}>
-          <p>
+        <Form onSubmit={ (e) => { this.handleSubmit(e, this.state)}}>
           <Form.Input
           type="text"
           id="title"
@@ -56,19 +54,22 @@ handleSubmit = (event)  => {
           value={this.state.image_url} 
           onChange={this.handleChange}
           />
-        </p>
+        
           <center><Form.Button content='Submit' /></center>
         </Form>
-      </div>
     );
   }
 }
 
+const MSTP = (state) => {
+  return {
+      products: state.products
+  }
+}
 const mapDispatchToProps = (dispatch) => {
   return {
-    createProduct: (product) => { dispatch(createProduct(product));
-  }
-};}
+    createProduct: (product) =>  { dispatch(createProduct(product)) }
+}}
 
 
-export default connect(mapDispatchToProps)(CreateProduct)
+export default connect(MSTP, mapDispatchToProps)(CreateProduct)
