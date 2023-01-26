@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import { Card, Image } from 'semantic-ui-react'
-
-
+import { Card, Image, Button} from 'semantic-ui-react'
+import { connect } from "react-redux";
+import { addToCart } from './actions/cartActions'
 
 class Product extends Component {
 
@@ -13,16 +13,20 @@ render(){
                     src={i.image_url}/>
                     <Card.Header>{i.title}: ${i.price}</Card.Header>
                 <Card.Description>{i.description}</Card.Description>
-                <button className="addCartBtn"
-            onClick={()=>{this.handleAddCart(i.id, i.title, i.price)}}>Add to Cart</button> 
+                <Button content="Add To Cart"
+            onClick={()=>{this.handleClick(i, i.id, i.title, i.price)}}></Button> 
             </Card>
     )
     }
 
-    handleAddCart(id, title, price){
-
-
+    handleClick(i, id, title, price){
+        this.props.addToCart(i, id, title, price)
     }    
 }
-
-export default Product
+const mapDispatchToProps = (dispatch) => {
+    return {
+      addToCart: (id, title, price) =>  { dispatch(addToCart(i, id, title, price)) }
+  }}
+  
+  
+  export default connect(null, mapDispatchToProps)(Product)
