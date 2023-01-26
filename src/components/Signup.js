@@ -28,8 +28,9 @@ class Signup extends Component {
                 <div id="signup-container">
                     <h1 style={{color: 'black'}}>Create Account</h1>
                     <div>
-                    <form noValidate autoComplete="off" id="signup-form" onSubmit={ (e) => {this.handleSubmit(e, this.state)} }>            
-                        <input
+
+                    <Form onSubmit={ (e) => {this.handleSubmit(e, this.state)} }>            
+                        <Form.Input
                         required
                         type="text"
                         id="name"
@@ -38,7 +39,7 @@ class Signup extends Component {
                         onChange={this.handleChange}
                         
                         />
-                        <input
+                        <Form.Input
                         required
                         type="text"
                         id="email"
@@ -46,7 +47,7 @@ class Signup extends Component {
                         value={this.state.email} 
                         onChange={this.handleChange}
                         />
-                        <input
+                        <Form.Input
                         required
                         type="text"
                         id="address"
@@ -55,24 +56,23 @@ class Signup extends Component {
                         onChange={this.handleChange}
                         />
                        
-                        <input
+                        <Form.Input
                         id="password"
                         placeholder="Password"
                         type="password"
                         value={this.state.password} 
                         onChange={this.handleChange}
                         /> 
-                        <input
+                        <Form.Input
                         id="password_confirmation"
                         placeholder="Confirm Password"
                         type="password"
                         value={this.state.password_confirmation} 
                         onChange={this.handleChange}
                         /> 
-                        <input type="submit"
+                        <Form.Button content="submit"
                         />
-                        <br></br><br></br>
-                    </form>
+                    </Form>
                     </div>
             </div>
         )

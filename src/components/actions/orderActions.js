@@ -53,8 +53,8 @@ export const sendOrder = (total, id) => {
                    console.log(data.message)
                }
                else {
-                   alert("Your order is complete!")
-                   dispatch({type: "SEND_ORDER", data})
+                   dispatch({type: "SEND_ORDER"})
+                   console.log(data)
                }            
            })
     }}

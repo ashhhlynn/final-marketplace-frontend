@@ -1,7 +1,4 @@
 
-
-
-
 import React, { Component } from "react";
 import { fetchProducts } from './actions/productActions'
 import { connect } from "react-redux";
@@ -10,12 +7,10 @@ import Login from './Login'
 import {createOrder} from './actions/orderActions'
 import { Link } from 'react-router-dom'
 import Profile from './Profile'
+import { Button, Segment, Card, List, Header } from 'semantic-ui-react'
+
 
 class Home extends Component{
-
-    componentDidMount () {
-        this.props.fetchProducts();
-      }        
 
       
   handlecreateOrder(){
@@ -30,18 +25,22 @@ render() {
         return(
     
    
-        <div className="hi">
+        <div className="header">
+               <Segment>
            < Signup />
+           </Segment>
+           <Segment>
            < Login />
+           </Segment>
            </div>)}
         else {
             return (
                 <div className="header">
+        <Segment>
             <Profile />
             <Link to="/products">
-<button class="outline" onClick={()=>{this.handlecreateOrder()}}>
-            Start Shopping
-</button></Link>
+<Button content="Start Shopping" onClick={()=>{this.handlecreateOrder()}}>
+</Button></Link></Segment>
 </div>)}}}
 
             
@@ -58,6 +57,5 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-  
   
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

@@ -29,7 +29,9 @@ class ShoppingCartContainer extends Component {
     const MSTP = (state) => {
         return {
             cart: state.cart,
-            total: state.cartTotal
+            total: state.cartTotal,
+            currentOrder: state.currentOrder,
+
         }
     }
 

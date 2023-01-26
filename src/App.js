@@ -7,11 +7,19 @@ import ShoppingCartContainer from './components/ShoppingCartContainer'
 import Navbar from './components/Navbar'
 import ShoppingLinks from './components/ShoppingLinks'
 import { Segment, Card, Header, Container } from 'semantic-ui-react'
+import { fetchProducts } from './components/actions/productActions';
+import { connect } from "react-redux";
 
 
-function App() {
-  return (
+class App extends Component {
 
+  componentDidMount () {
+    this.props.fetchProducts();
+  }
+
+
+  render() {
+    return (
     <div className="App">
           <Container>
     <BrowserRouter>
@@ -29,6 +37,13 @@ function App() {
     </div>
 
   );
+
+    }}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchProducts: () =>  { dispatch(fetchProducts()) },
+}
 }
 
-export default App;
+
+export default connect(null, mapDispatchToProps)(App);

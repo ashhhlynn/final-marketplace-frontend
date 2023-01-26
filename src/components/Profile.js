@@ -12,7 +12,7 @@ class Profile extends Component {
         return (
         <div>
 
-<Segment>
+
 <Header color='teal' size='huge'> 
 
 Hi {this.props.user.name}!</Header>
@@ -22,7 +22,7 @@ Hi {this.props.user.name}!</Header>
     Address: {this.props.user.address}
     <Header>User Orders:</Header>
 
-            </Segment>
+         
         </div>
         )
     }
