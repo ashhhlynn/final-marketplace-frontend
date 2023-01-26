@@ -37,10 +37,11 @@ render() {
             return (
                 <div className="header">
         <Segment>
-            <Profile />
+        <center>
             <Link to="/products">
 <Button content="Start Shopping" onClick={()=>{this.handlecreateOrder()}}>
-</Button></Link></Segment>
+</Button></Link></center><br></br>
+            <Profile /></Segment>
 </div>)}}}
 
             

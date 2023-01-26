@@ -52,4 +52,29 @@ export const sendOrder = (total, id) => {
      }
         
     
+export const getPreviousOrders = (id) => {
+    return (dispatch) => {
+        const token = localStorage.token;
+        return fetch('http://localhost:3000/orders', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+        })
+        .then(resp => resp.json())
+        .then(data => {
+            if(data.message){
+                console.log(data.message)
+            }
+            else {
+                console.log(data)
+                const orderz = data.filter(order => order.user_id === id)
+                const orders = orderz.filter(o => o.complete === true)
+                dispatch({type: "USER_ORDERS", orders})
+            }
+        })
+    }
+}
     

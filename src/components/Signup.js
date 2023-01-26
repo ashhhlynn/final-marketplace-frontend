@@ -69,9 +69,9 @@ class Signup extends Component {
                         type="password"
                         value={this.state.password_confirmation} 
                         onChange={this.handleChange}
-                        /> 
-                        <Form.Button content="submit"
-                        />
+                        /> <center>
+                        <Form.Button content="Submit"
+                        /></center>
                     </Form>
                     </div>
             </div>

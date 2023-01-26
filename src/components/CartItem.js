@@ -13,7 +13,7 @@ class CartItem extends Component {
     render() {
         const i = this.props.item
     return (
-<ul>
+<center>
             <Item.Group relaxed>
                     <Item>
                         <Item.Content>
@@ -24,7 +24,7 @@ class CartItem extends Component {
                 </Item.Content>
                 </Item>
                 </Item.Group>
-                </ul>
+                </center>  
         )
     }
 }

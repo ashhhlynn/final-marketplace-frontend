@@ -19,11 +19,13 @@ class ProductContainer extends Component {
         })
         return (
         <div>
-        <Header as='h1' color='teal'><center>All Products:</center></Header>
-        <h3>Create Product</h3>
-        <Segment>
+               <Segment>
+        <Header as='h1' color='teal'><center>Create Product</center></Header>
+
         <CreateProduct /></Segment>
         <Segment>
+        <Header as='h1' color='teal'><center>Shop Products</center></Header>
+
         <Card.Group>
 
     
