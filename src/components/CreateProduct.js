@@ -63,7 +63,6 @@ handleSubmit = (event, product)  => {
 
 const MSTP = (state) => {
   return {
-      products: state.products
   }
 }
 const mapDispatchToProps = (dispatch) => {

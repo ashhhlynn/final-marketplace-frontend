@@ -8,12 +8,12 @@ class Product extends Component {
 render(){
     const i = this.props.product
     return (
-                <Card centered key={i.id}>
-                     <Image 
-                    src={i.image_url}/>
-                    <Card.Header>{i.title}: ${i.price}</Card.Header>
-                <Card.Description>{i.description}</Card.Description>
-                <Button content="Add To Cart"
+            <Card centered key={i.id}>
+            <Image 
+            src={i.image_url}/>
+            <Card.Header>{i.title}: ${i.price}</Card.Header>
+            <Card.Description>{i.description}</Card.Description>
+            <Button content="Add To Cart"
             onClick={()=>{this.handleClick(i, i.id, i.price)}}></Button> 
             </Card>
     )
@@ -28,11 +28,13 @@ render(){
 const mapDispatchToProps = (dispatch) => {
     return {
       addToCart: (product, id, price, o) =>  { dispatch(addToCart(product, id, price, o)) }
-  }}
-  
-  const mapStateToProps = (state) => {return {
-    currentOrder: state.currentOrder
+  }
 }
+  
+  const mapStateToProps = (state) => {
+    return {
+    currentOrder: state.currentOrder
+    }
 }
 
-  export default connect(mapStateToProps, mapDispatchToProps)(Product)
+export default connect(mapStateToProps, mapDispatchToProps)(Product)

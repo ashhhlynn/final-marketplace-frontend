@@ -13,32 +13,26 @@ class CartItem extends Component {
     render() {
         const i = this.props.item
     return (
-<center>
+        <center>
             <Item.Group relaxed>
-                    <Item>
-                        <Item.Content>
-                <img src={i.img_id} alt={i.name} className='itemimage'/>
-               <Item.Header>{i.title}: ${i.price}</Item.Header>
-                <p>{i.description}</p>
-                <Button content="Remove" onClick={()=>{this.buttonClickHandler(i.id)}}></Button>
-                </Item.Content>
-                </Item>
-                </Item.Group>
-                </center>  
+            <Item>
+            <Item.Content>
+            <img src={i.img_id} alt={i.name} className='itemimage'/>
+            <Item.Header>{i.title}: ${i.price}</Item.Header>
+            <p>{i.description}</p>
+            <Button content="Remove" onClick={()=>{this.buttonClickHandler(i.id)}}></Button>
+            </Item.Content>
+            </Item>
+            </Item.Group>
+            </center>  
         )
-    }
-}
-
-
-const mapStateToProps = (state)=>{
-    return{
     }
 }
 
 const mapDispatchToProps = (dispatch)=>{
     return{
-        removeFromCart: (id)=>{dispatch(removeFromCart(id))},
+        removeFromCart: (id)=>{dispatch(removeFromCart(id))}
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CartItem)
+export default connect(null, mapDispatchToProps)(CartItem)

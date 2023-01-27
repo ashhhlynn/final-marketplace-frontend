@@ -25,6 +25,4 @@ const MSTP = (state) => {
     }
 }
 
-
-
 export default connect(MSTP)(Checkout)

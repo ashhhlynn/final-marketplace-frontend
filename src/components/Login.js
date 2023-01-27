@@ -18,22 +18,22 @@ class Login extends Component {
 
     handleSubmit = (event, userData)  => {
         event.preventDefault()
-       this.props.getExistingUser(userData)
-       }
+        this.props.getExistingUser(userData)
+    }
 
     render() {
         return (
             <div id="signup-border">
-        <Header as='h1' color='teal'><center>Login</center></Header>
-                 
-                    <Form onSubmit={ (e) => { this.handleSubmit(e, this.state)}}>
-                        <Form.Input
-                        id="email"
-                        placeholder="Email"
-                        value={this.state.email} 
-                        onChange={this.handleChange}
-                        />
-                       
+        <Header as='h1' color='teal'>
+            <center>Login</center>
+        </Header>         
+        <Form onSubmit={ (e) => { this.handleSubmit(e, this.state)}}>
+            <Form.Input
+                id="email"
+                placeholder="Email"
+                value={this.state.email} 
+                onChange={this.handleChange}
+                />               
                         <Form.Input
                         id="password"
                         placeholder="Password"
@@ -41,15 +41,14 @@ class Login extends Component {
                         value={this.state.password} 
                         onChange={this.handleChange}
                         /> 
-                    <center><Form.Button content='Submit' /></center>
-                    </Form>
-                                
-                </div>
-          
+                    <center>
+                    <Form.Button content='Submit' />
+                    </center>
+        </Form>
+        </div>
         )
     }
 }
-
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -59,4 +58,3 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(null, mapDispatchToProps)(Login);
-

@@ -15,7 +15,7 @@ class Signup extends Component {
     handleSubmit = (event, userData)  => {
         event.preventDefault()
        this.props.createUser(userData)
-       }
+    }
 
     handleChange = (e) => {
       this.setState({
@@ -25,9 +25,11 @@ class Signup extends Component {
 
     render() {
         return (
-                <div id="signup-container">
-        <Header as='h1' color='teal'><center>Signup</center></Header>
-                    <div>
+        <div id="signup-container">
+        <Header as='h1' color='teal'>
+            <center>Signup</center>
+        </Header>
+        <div>
 
                     <Form onSubmit={ (e) => {this.handleSubmit(e, this.state)} }>            
                         <Form.Input
@@ -71,9 +73,10 @@ class Signup extends Component {
                         onChange={this.handleChange}
                         /> <center>
                         <Form.Button content="Submit"
-                        /></center>
-                    </Form>
-                    </div>
+                        />
+                </center>
+            </Form>
+            </div>
             </div>
         )
     }
@@ -87,4 +90,3 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(null, mapDispatchToProps)(Signup);
-

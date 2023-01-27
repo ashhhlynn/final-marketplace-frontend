@@ -38,6 +38,9 @@ render() {
                 <div className="header">
         <Segment>
         <center>
+        <Header color='teal' size='huge'> 
+
+Hi {this.props.currentUser.name}!</Header>
             <Link to="/products">
 <Button content="Start Shopping" onClick={()=>{this.handlecreateOrder()}}>
 </Button></Link></center><br></br>

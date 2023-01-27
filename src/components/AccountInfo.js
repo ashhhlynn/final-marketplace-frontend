@@ -9,17 +9,15 @@ class AccountInfo extends Component {
         const user = this.props.user
         return (
         <div>
-<center>
-
-Name: {user.name}<br></br>
-Email: {user.email}<br></br>
-Address: {user.address}
-    </center>
+        <center>
+            Name: {user.name}<br></br>
+            Email: {user.email}<br></br>
+            Address: {user.address}
+        </center>
         </div>
         )
     }
 }
-
 
 
 export default AccountInfo

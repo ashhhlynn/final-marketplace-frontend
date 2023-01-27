@@ -7,10 +7,6 @@ import { connect } from "react-redux";
 
 class ProductContainer extends Component {
 
-    componentDidMount() {
-
-    }
-
     render() {
         const products = this.props.products.map( i => {
             return (
@@ -19,24 +15,20 @@ class ProductContainer extends Component {
         })
         return (
         <div>
-               <Segment>
+        <Segment>
         <Header as='h1' color='teal'><center>Create Product</center></Header>
-
-        <CreateProduct /></Segment>
+        <CreateProduct />
+        </Segment>
         <Segment>
         <Header as='h1' color='teal'><center>Shop Products</center></Header>
-
         <Card.Group>
-
-    
         {products}
         </Card.Group>
         </Segment>
         </div>
             )
-        }
     }
-
+}
 
     const MSTP = (state) => {
         return {

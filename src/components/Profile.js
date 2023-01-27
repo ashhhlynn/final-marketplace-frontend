@@ -9,9 +9,7 @@ import { getPreviousOrders } from "./actions/orderActions";
 class Profile extends Component {
 
     state = {
-       orderz: [],
-       or: [],
-       o: [],
+       orderz: []
     }
 
     componentDidMount() {
@@ -26,30 +24,16 @@ class Profile extends Component {
 
     render() {
         const orders = this.state.orderz.map((order) => (
-            <li key={order.id}>user: {order.user_id} Total: ${order.total}: {order.order_items.length} Product</li>
+            <li key={order.id}>(user: {order.user_id}) Total: ${order.total}: {order.order_items.length} Product</li>
         ))
-
-
-
         return (
         <div>
-
-<center>
-<Header color='teal' size='huge'> 
-
-Hi {this.props.user.name}!</Header>
-<Header>User Info:</Header>
-
-<AccountInfo user={this.props.user} key={this.props.user.id}/> <br></br>
-
-
-Name: {this.props.user.name}<br></br>
-
-        Email: {this.props.user.email}<br></br>
-    Address: {this.props.user.address}
-    <Header>User Orders:</Header>
-    {orders}
-    </center>
+        <center>
+        <Header>User Info:</Header>
+        <AccountInfo user={this.props.user} key={this.props.user.id}/> 
+        <Header>User Orders:</Header>
+        {orders}
+        </center>
         </div>
         )
     }
@@ -65,7 +49,6 @@ const MSTP = (state) => {
 const MDTP = (dispatch) => {
     return {
         getPreviousOrders: (id) => { dispatch(getPreviousOrders(id)) },
-
     }
 }
 
