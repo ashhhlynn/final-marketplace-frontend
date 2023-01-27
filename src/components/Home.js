@@ -1,38 +1,47 @@
 
 import React, { Component } from "react";
-import { fetchProducts } from './actions/productActions'
 import { connect } from "react-redux";
 import Signup from './Signup'
 import Login from './Login'
 import {createOrder} from './actions/orderActions'
 import { Link } from 'react-router-dom'
 import Profile from './Profile'
-import { Button, Segment, Card, List, Header } from 'semantic-ui-react'
+import { Button, Segment, Divider, Grid, Header } from 'semantic-ui-react'
 import Greeting from './Greeting'
 import ShoppingLinks from './ShoppingLinks'
-
 
 class Home extends Component{
 
       
 handlecreateOrder(){
     if (this.props.currentOrder.length === 0){
-    let u = this.props.currentUser.id
-    this.props.createOrder(u)
-      }}
+    let userId = this.props.currentUser.id
+    this.props.createOrder(userId)
+    }
+}
+
 
 render() {
     if (this.props.currentUser.length === 0){       
         return(
         <div className="header">
-            < Greeting />
-            < ShoppingLinks />
-               <Segment>
-           < Signup />
-           </Segment>
-           <Segment>
-           < Login />
-           </Segment>
+        < Greeting />
+        < ShoppingLinks />
+
+        <Segment placeholder>
+        <Grid columns={2} stackable textAlign='center'>
+        <Divider vertical>Or</Divider>
+
+        <Grid.Row>
+        <Grid.Column>
+            < Signup />
+        </Grid.Column>
+        <Grid.Column>
+            < Login />
+        </Grid.Column>
+        </Grid.Row>
+        </Grid>
+        </Segment>
            </div>)}
         else {
             return (
@@ -58,10 +67,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-      fetchProducts: () =>  { dispatch(fetchProducts()) },
-      createOrder: (u) => { dispatch(createOrder(u)) },
+      createOrder: (userId) => { dispatch(createOrder(userId)) },
   }
 }
-
   
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

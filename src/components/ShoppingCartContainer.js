@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { connect } from "react-redux";
 import { List, Header, Segment, Button, Divider } from 'semantic-ui-react'
 import CartItem from './CartItem'
-import Checkout from './Checkout'
 import { Link } from 'react-router-dom'
 import AccountInfo from './AccountInfo'
 import {sendOrder} from '../components/actions/orderActions'
@@ -35,36 +34,45 @@ class ShoppingCartContainer extends Component {
                 this.props.sendOrder()
             }
         }
-
-        
+       
     render() {
         const items = this.props.cart.map( 
             item => <CartItem item={item} key={item.id}/>
             )
         let orderTotal = Math.round((this.props.total * 1.1)*100)/100
         return (
-        <div>   
-            
-<ShoppingLinks/>
+        <div>           
+        <ShoppingLinks/>
+                
+        <Segment.Group horizontal>
         <Segment>
         <Header as="h2" color='teal'><center>Your Cart ({items.length})</center></Header>
         <List>
         {items}
         </List>
-        <center>    
-        <Divider></Divider>
+        </Segment>
+
+        <Segment>
+        <Header as="h2" color='teal'>
+        <center>
+        Your Order
+        </center>
+        </Header>
+        <center>
         <h3>Subtotal: ${this.props.total}</h3>
         <h3>Tax: ${Math.round((this.props.total * .1)*100)/100}</h3>
-        <h3>Total: ${orderTotal}</h3>
+        <h3>Total: ${orderTotal}</h3>              
+         <h3>User Information:</h3>
+        <AccountInfo user={this.props.currentUser} key={this.props.currentUser.id}/>
+        </center>
+        <center>
         <Link to="/">
         <Button content="Submit Order"
         onClick={()=>{this.handleSendOrder(orderTotal)}}></Button>
         </Link>
         </center>
         </Segment>
-        <Segment>
-        <Checkout />
-        </Segment>
+        </Segment.Group>
         </div>
         )
     }}
@@ -74,6 +82,7 @@ class ShoppingCartContainer extends Component {
             cart: state.cart,
             total: state.cartTotal,
             currentOrder: state.currentOrder,
+            currentUser: state.currentUser
         }
     }
 

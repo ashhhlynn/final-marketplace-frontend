@@ -1,4 +1,4 @@
-export const createOrder = (u) => {
+export const createOrder = (userId) => {
     return (dispatch) => {
         const token = localStorage.token;
         return fetch('http://localhost:3000/orders', {
@@ -10,7 +10,7 @@ export const createOrder = (u) => {
             },
             body: JSON.stringify({
                 total: 0,
-                user_id: u,
+                user_id: userId,
                 complete: 0
             })
             })

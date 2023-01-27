@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
 import { Segment, Card, List, Header } from 'semantic-ui-react'
 
 

@@ -29,46 +29,42 @@ handleSubmit = (event, product)  => {
           <Form.Input
           type="text"
           id="title"
-          placeholder="title"
+          placeholder="Title"
           value={this.state.title} 
           onChange={this.handleChange}
           />
            <Form.Input
           type="text"
           id="description"
-          placeholder="description"
+          placeholder="Description"
           value={this.state.description} 
           onChange={this.handleChange}
           />
            <Form.Input
           type="text"
           id="price"
-          placeholder="price"
+          placeholder="Price"
           value={this.state.price} 
           onChange={this.handleChange}
           />
         <Form.Input
           type="text"
           id="image_url"
-          placeholder="image_url"
+          placeholder="Image Url"
           value={this.state.image_url} 
           onChange={this.handleChange}
           />
-        
           <center><Form.Button content='Submit' /></center>
         </Form>
     );
   }
 }
 
-const MSTP = (state) => {
-  return {
-  }
-}
+
 const mapDispatchToProps = (dispatch) => {
   return {
     createProduct: (product) =>  { dispatch(createProduct(product)) }
 }}
 
 
-export default connect(MSTP, mapDispatchToProps)(CreateProduct)
+export default connect(null, mapDispatchToProps)(CreateProduct)

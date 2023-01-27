@@ -15,7 +15,7 @@ class Profile extends Component {
         .then((data) => 
         this.setState({userOrders: data.filter((order) => order.user_id !== this.props.user.id)})
         )
-      }
+    }
 
     render() {
         const orders = this.state.userOrders.map((order) => (
@@ -39,7 +39,5 @@ const MSTP = (state) => {
         user: state.currentUser
     }
 }
-
-
 
 export default connect(MSTP)(Profile)
