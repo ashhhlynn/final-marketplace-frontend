@@ -7,33 +7,33 @@ import AccountInfo from './AccountInfo'
 import {sendOrder} from '../components/actions/orderActions'
 import ShoppingLinks from './ShoppingLinks'
 
-
 class ShoppingCartContainer extends Component {
 
-      handleSendOrder = (orderTotal) => {
-        if (this.props.cart.length === 0){
-            alert('Must have items in cart')
-        }
-        else {
-           let orderId = this.props.currentOrder
-            fetch('http://localhost:3000/orders/' + `${orderId}`, {
-                method: 'PATCH',
-                headers: {
+handleSendOrder = (event, orderTotal) => {
+    event.preventDefault()
+    if (this.props.cart.length === 0){
+        alert('Must have items in cart')
+    }
+    else {
+        let orderId = this.props.currentOrder
+        fetch('http://localhost:3000/orders/' + `${orderId}`, {
+            method: 'PATCH',
+            headers: {
                     'Content-Type': 'application/json',
                     Accept: 'application/json',
                     'Authorization': localStorage.token
-                 },
-                body: JSON.stringify({
-                    total: orderTotal,
-                    complete: 1}),
-                })
-                .then(resp => resp.json())
-                .then(data => {
-                    console.log(data);
-                })
-                this.props.sendOrder()
-            }
-        }
+            },
+            body: JSON.stringify({
+                total: orderTotal,
+                complete: 1}),
+            })
+            .then(resp => resp.json())
+            .then(data => {
+                console.log(data);
+            })
+        this.props.sendOrder()
+    }
+}
        
     render() {
         const items = this.props.cart.map( 
@@ -67,8 +67,7 @@ class ShoppingCartContainer extends Component {
         </center>
         <center>
         <Link to="/">
-        <Button content="Submit Order"
-        onClick={()=>{this.handleSendOrder(orderTotal)}}></Button>
+        <Button content="Submit Order" onClick={(event)=>{this.handleSendOrder(event, orderTotal)}}></Button>
         </Link>
         </center>
         </Segment>

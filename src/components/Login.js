@@ -27,7 +27,7 @@ class Login extends Component {
         <Header as='h2' color='teal'>
             <center>Login</center>
         </Header>         
-        <Form onSubmit={ (e) => { this.handleSubmit(e, this.state)}}>
+        <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
             <Form.Input
                 id="email"
                 placeholder="Email"
@@ -52,8 +52,7 @@ class Login extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-       getExistingUser: (userData) => { dispatch(getExistingUser(userData));
-        }
+       getExistingUser: (userData) => { dispatch(getExistingUser(userData)) }
     }
 }
 

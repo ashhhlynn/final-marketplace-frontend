@@ -12,14 +12,15 @@ class Signup extends Component {
         password: '',
         password_confirmation: ''
     }
+    
     handleSubmit = (event, userData)  => {
         event.preventDefault()
        this.props.createUser(userData)
     }
 
-    handleChange = (e) => {
+    handleChange = (event) => {
       this.setState({
-          [e.target.id]: e.target.value
+          [event.target.id]: event.target.value
       })
     }
 
@@ -30,8 +31,7 @@ class Signup extends Component {
             <center>Signup</center>
         </Header>
         <div>
-
-                    <Form onSubmit={ (e) => {this.handleSubmit(e, this.state)} }>            
+                    <Form onSubmit={ (event) => {this.handleSubmit(event, this.state)} }>            
                         <Form.Input
                         required
                         type="text"
@@ -84,8 +84,7 @@ class Signup extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        createUser: (userData) => { dispatch(createUser(userData));
-        }
+        createUser: (userData) => { dispatch(createUser(userData)) }
     }
 }
 

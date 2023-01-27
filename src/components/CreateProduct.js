@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { Form } from 'semantic-ui-react'
 import { createProduct } from './actions/productActions'
 
-
 class CreateProduct extends Component {
   state = {
     title: '',
@@ -12,20 +11,20 @@ class CreateProduct extends Component {
     image_url: ''
   };
 
-  handleChange = (e) => {
+  handleChange = (event) => {
   this.setState({
-      [e.target.id]: e.target.value
+      [event.target.id]: event.target.value
   })
 }
 
 handleSubmit = (event, product)  => {
-   event.preventDefault()
+  event.preventDefault()
   this.props.createProduct(product)
   }
 
   render() {
     return (
-        <Form onSubmit={ (e) => { this.handleSubmit(e, this.state)}}>
+        <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
           <Form.Input
           type="text"
           id="title"
@@ -60,11 +59,8 @@ handleSubmit = (event, product)  => {
   }
 }
 
-
 const mapDispatchToProps = (dispatch) => {
-  return {
-    createProduct: (product) =>  { dispatch(createProduct(product)) }
-}}
-
+  return { createProduct: (product) =>  { dispatch(createProduct(product)) } }
+}
 
 export default connect(null, mapDispatchToProps)(CreateProduct)
