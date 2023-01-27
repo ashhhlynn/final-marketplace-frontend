@@ -6,7 +6,6 @@ const initialState = {
     cartTotal: 0,
     currentUser: [],
     currentOrder: [],
-    orders: []
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -21,23 +20,12 @@ const rootReducer = (state = initialState, action) => {
                 ;
 
             case "SUBMIT_ORDER":
-                console.log(action.data)
             return {...state, 
                 currentOrder: [], 
                 cart: [],
                 cartTotal: 0,
                 loading: false,}
                 ;
-                
-                case "SUBMIT_ORDER_REQUEST":  
-                    return {
-                      ...state,
-                      cart: [],
-                      cartTotal: 0,
-                      loading: true,
-                    };
-            
-           
 
     case "ADD_PRODUCT_REQUEST":
         return {

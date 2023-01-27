@@ -9,27 +9,37 @@ import {sendOrder} from '../components/actions/orderActions'
 
 class ShoppingCartContainer extends Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-         total: 0
-        }
-      }
-
-      handleSendOrder= ()=>{
+      handleSendOrder = (orderTotal) => {
         if (this.props.cart.length === 0){
             alert('Must have items in cart')
         }
         else {
-             let o = this.props.currentOrder
-             let t = Math.round((this.props.total * 1.1)*100)/100
-             this.props.sendOrder(t, o);
+           let orderId = this.props.currentOrder
+            fetch('http://localhost:3000/orders/' + `${orderId}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                    'Authorization': localStorage.token
+                 },
+                body: JSON.stringify({
+                    total: orderTotal,
+                    complete: 1}),
+                })
+                .then(resp => resp.json())
+                .then(data => {
+                    console.log(data);
+                })
+                this.props.sendOrder()
             }
         }
 
+        
     render() {
-        const items = this.props.cart.map( item => <CartItem item={item} key={item.id}/>
-        )
+        const items = this.props.cart.map( 
+            item => <CartItem item={item} key={item.id}/>
+            )
+        let orderTotal = Math.round((this.props.total * 1.1)*100)/100
         return (
         <div>   
         <Segment>
@@ -40,11 +50,11 @@ class ShoppingCartContainer extends Component {
         <center>    
         <Divider></Divider>
         <h3>Subtotal: ${this.props.total}</h3>
-        <h3>Plus Tax</h3>
-        <h3>Total: ${Math.round((this.props.total * 1.1)*100)/100}</h3>
+        <h3>Tax: ${Math.round((this.props.total * .1)*100)/100}</h3>
+        <h3>Total: ${orderTotal}</h3>
         <Link to="/">
         <Button content="Submit Order"
-        onClick={()=>{this.handleSendOrder()}}></Button>
+        onClick={()=>{this.handleSendOrder(orderTotal)}}></Button>
         </Link>
         </center>
         </Segment>
@@ -65,7 +75,7 @@ class ShoppingCartContainer extends Component {
 
     const MDTP = (dispatch) => {
         return {
-            sendOrder: (t, id) => { dispatch(sendOrder(t, id))}
+            sendOrder: (total, orderId) => { dispatch(sendOrder(total, orderId))}
         }
     }
 

@@ -28,11 +28,17 @@ export const createOrder = (total, u) => {
 
 }
 
-export const sendOrder = (total, id) => {
+export const sendOrder = () => {
+    return (dispatch) => {
+        dispatch({type: "SUBMIT_ORDER"})
+    }
+}
+
+export const sendyOrder = (total, orderId) => {
     return (dispatch) => {
         dispatch({type: "SUBMIT_ORDER_REQUEST", loading: true})
 
-       return fetch('http://localhost:3000/orders/' + `${id}`, {
+       return fetch('http://localhost:3000/orders/' + `${orderId}`, {
            method: 'PATCH',
            headers: {
                'Content-Type': 'application/json',

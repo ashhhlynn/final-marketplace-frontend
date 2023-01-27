@@ -9,29 +9,29 @@ import { getPreviousOrders } from "./actions/orderActions";
 class Profile extends Component {
 
     state = {
-       orderz: []
+       userOrders: []
     }
 
     componentDidMount() {
+        console.log(this.props.user.id)
         fetch("http://localhost:3000/orders")
         .then((response) => response.json())
-        .then((orders) => 
-        this.setState({
-            orderz: orders       
-        })
+        .then((data) => 
+        this.setState({userOrders: data.filter((order) => order.user_id !== this.props.user.id)})
         )
       }
 
+
     render() {
-        const orders = this.state.orderz.map((order) => (
+        const orders = this.state.userOrders.map((order) => (
             <li key={order.id}>(user: {order.user_id}) Total: ${order.total}: {order.order_items.length} Product</li>
         ))
         return (
         <div>
         <center>
-        <Header>User Info:</Header>
+        <Header>Information:</Header>
         <AccountInfo user={this.props.user} key={this.props.user.id}/> 
-        <Header>User Orders:</Header>
+        <Header>Orders:</Header>
         {orders}
         </center>
         </div>
