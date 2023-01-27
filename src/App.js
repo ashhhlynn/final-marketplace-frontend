@@ -26,20 +26,20 @@ class App extends Component {
     <Container>
     <Navbar/>
     </Container>
-   
-   
+
+
     <Routes>
-    <Route path="/" element={<Home/>} />
+    <Route path="/" element={<Home />} />
     <Route path="/products" element={<ProductContainer />} />
     <Route path="/cart" element={<ShoppingCartContainer />} />
     </Routes>
     </BrowserRouter>
     </Container>
     </div>
+    );
+  }
+}
 
-  );
-
-    }}
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchProducts: () =>  { dispatch(fetchProducts()) },

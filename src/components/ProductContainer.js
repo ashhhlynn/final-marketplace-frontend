@@ -5,37 +5,36 @@ import Product from './Product'
 import { connect } from "react-redux";
 import ShoppingLinks from './ShoppingLinks'
 
-
 class ProductContainer extends Component {
 
-    render() {
-        const products = this.props.products.map( i => {
-            return (
-                <Product product={i} key={i.id}/> 
-            )
-        })
+render() {
+    const products = this.props.products.map( i => {
         return (
+            <Product product={i} key={i.id}/> 
+        )
+    })
+    return (
         <div>
-               <ShoppingLinks/>
-        <Segment>
-        <Header as='h2' color='teal'><center>Create Product</center></Header>
-        <CreateProduct />
-        </Segment>
-        <Segment>
-        <Header as='h2' color='teal'><center>Shop Products</center></Header>
-        <Card.Group>
-        {products}
-        </Card.Group>
-        </Segment>
+            <ShoppingLinks/>
+            <Segment>
+                <Header as='h2' color='teal'><center>Create Product</center></Header>
+                <CreateProduct />
+            </Segment>
+            <Segment>
+                <Header as='h2' color='teal'><center>Shop Products</center></Header>
+                <Card.Group>
+                {products}
+                </Card.Group>
+            </Segment>
         </div>
-            )
+        )
     }
 }
 
-    const MSTP = (state) => {
-        return {
-            products: state.products
-        }
-      }
+const mapStateToProps = (state) => {
+    return {
+        products: state.products
+    }
+}
 
-export default connect(MSTP)(ProductContainer)
+export default connect(mapStateToProps)(ProductContainer)
