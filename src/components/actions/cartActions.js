@@ -1,4 +1,4 @@
-export const addToCart = (product, id, price, o) => {
+export const addToCart = (product, order) => {
     return (dispatch) => {
        const token = localStorage.token;
        return fetch('http://localhost:3000/order_items', {
@@ -9,9 +9,9 @@ export const addToCart = (product, id, price, o) => {
            'Authorization': `Bearer ${token}`
        },
        body: JSON.stringify({
-           price: price,
-           product_id: id,
-           order_id: o
+           price: product.price,
+           product_id: product.id,
+           order_id: order
        })
        })
        .then(resp => resp.json())
@@ -21,7 +21,7 @@ export const addToCart = (product, id, price, o) => {
                console.log(data.message)
            }
            else {
-               dispatch({type: "ADD_TO_CART", data, product})
+               dispatch({type: "ADD_TO_CART", product})
            }               
        })
    }

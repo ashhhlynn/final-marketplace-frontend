@@ -54,33 +54,27 @@ const rootReducer = (state = initialState, action) => {
         loading: false,
         };
     
-        case "ADD_TO_CART":
-            let prod = action.product
-            let price = prod.price
-            console.log(price)
-            let new_products_list = state.products.filter(item=> prod.id !== item.id)
-
-            let newTotal = state.cartTotal + price ;
-            console.log(newTotal)
+        case "ADD_TO_CART":  
+            let newProducts = state.products.filter(item=> action.product.id !== item.id)
+            let newTotal = state.cartTotal + action.product.price ;
             return {
             ...state,
             cart: [...state.cart, action.product],
             cartTotal: newTotal,
             loading: false,
-            products: new_products_list
+            products: newProducts
             };
 
             case "REMOVE_FROM_CART":
-                let new_product = state.cart.find(item=> item.id === action.id)
-                let new_products = state.cart.filter(item=> action.id !== item.id)
-
-                let newT = state.cartTotal - new_product.price
+                let removeProduct = state.cart.find(item => item.id === action.id)
+                let newCartProducts = state.cart.filter(item => item.id !== action.id)
+                let newerTotal = state.cartTotal - removeProduct.price
                 return {
                 ...state,
-                cart: new_products, 
-                cartTotal: newT,
+                cart: newCartProducts, 
+                cartTotal: newerTotal,
                 loading: false,
-                products: [...state.products, new_product]
+                products: [...state.products, removeProduct]
                 };
 
     default:
