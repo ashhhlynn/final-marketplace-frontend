@@ -27,7 +27,6 @@ class App extends Component {
     <Navbar/>
     </Container>
    
-    <ShoppingLinks/>
    
     <Routes>
     <Route path="/" element={<Home/>} />

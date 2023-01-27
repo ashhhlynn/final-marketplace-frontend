@@ -6,6 +6,8 @@ import Checkout from './Checkout'
 import { Link } from 'react-router-dom'
 import AccountInfo from './AccountInfo'
 import {sendOrder} from '../components/actions/orderActions'
+import ShoppingLinks from './ShoppingLinks'
+
 
 class ShoppingCartContainer extends Component {
 
@@ -42,8 +44,10 @@ class ShoppingCartContainer extends Component {
         let orderTotal = Math.round((this.props.total * 1.1)*100)/100
         return (
         <div>   
+            
+<ShoppingLinks/>
         <Segment>
-        <Header as="h1" color='teal'><center>Your Cart ({items.length})</center></Header>
+        <Header as="h2" color='teal'><center>Your Cart ({items.length})</center></Header>
         <List>
         {items}
         </List>

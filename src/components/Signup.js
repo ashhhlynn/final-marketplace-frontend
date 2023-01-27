@@ -26,7 +26,7 @@ class Signup extends Component {
     render() {
         return (
         <div id="signup-container">
-        <Header as='h1' color='teal'>
+        <Header as='h2' color='teal'>
             <center>Signup</center>
         </Header>
         <div>

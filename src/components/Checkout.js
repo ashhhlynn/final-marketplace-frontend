@@ -8,7 +8,7 @@ class Checkout extends Component {
     render() { 
         return (
                 <div>
-               <Header as="h1" color='teal'><center>
+               <Header as="h2" color='teal'><center>
                 Your Order</center></Header><center>
                 <h3>Total: ${Math.round((this.props.total * 1.1)*100)/100}</h3>
                 <h3>User Information:</h3>

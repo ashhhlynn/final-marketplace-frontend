@@ -24,7 +24,7 @@ class Login extends Component {
     render() {
         return (
             <div id="signup-border">
-        <Header as='h1' color='teal'>
+        <Header as='h2' color='teal'>
             <center>Login</center>
         </Header>         
         <Form onSubmit={ (e) => { this.handleSubmit(e, this.state)}}>

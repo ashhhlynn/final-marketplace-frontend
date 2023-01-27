@@ -8,24 +8,25 @@ import {createOrder} from './actions/orderActions'
 import { Link } from 'react-router-dom'
 import Profile from './Profile'
 import { Button, Segment, Card, List, Header } from 'semantic-ui-react'
+import Greeting from './Greeting'
+import ShoppingLinks from './ShoppingLinks'
 
 
 class Home extends Component{
 
       
-  handlecreateOrder(){
-    let t = 0
+handlecreateOrder(){
+    if (this.props.currentOrder.length === 0){
     let u = this.props.currentUser.id
-    this.props.createOrder(t, u)
-      }
-
+    this.props.createOrder(u)
+      }}
 
 render() {
     if (this.props.currentUser.length === 0){       
         return(
-    
-   
         <div className="header">
+            < Greeting />
+            < ShoppingLinks />
                <Segment>
            < Signup />
            </Segment>
@@ -51,13 +52,14 @@ Hi {this.props.currentUser.name}!</Header>
 const mapStateToProps = (state) => {
     return {
     currentUser: state.currentUser,
+    currentOrder: state.currentOrder
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
       fetchProducts: () =>  { dispatch(fetchProducts()) },
-      createOrder: (t, u) => { dispatch(createOrder(t, u)) },
+      createOrder: (u) => { dispatch(createOrder(u)) },
   }
 }
 

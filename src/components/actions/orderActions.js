@@ -1,4 +1,4 @@
-export const createOrder = (total, u) => {
+export const createOrder = (u) => {
     return (dispatch) => {
         const token = localStorage.token;
         return fetch('http://localhost:3000/orders', {
@@ -9,7 +9,7 @@ export const createOrder = (total, u) => {
                 'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify({
-                total: total,
+                total: 0,
                 user_id: u,
                 complete: 0
             })
@@ -33,32 +33,14 @@ export const sendOrder = () => {
         dispatch({type: "SUBMIT_ORDER"})
     }
 }
-
-export const sendyOrder = (total, orderId) => {
-    return (dispatch) => {
-        dispatch({type: "SUBMIT_ORDER_REQUEST", loading: true})
-
-       return fetch('http://localhost:3000/orders/' + `${orderId}`, {
-           method: 'PATCH',
-           headers: {
-               'Content-Type': 'application/json',
-               Accept: 'application/json',
-               'Authorization': localStorage.token
-            },
-           body: JSON.stringify({
-               total: total,
-               complete: 1
-           })})
-           .then(resp => resp.json())
-           .then(data => {
-               
-                   dispatch({type: "SUBMIT_ORDER", data})
-                })           
-            }
-     }
-        
     
-export const getPreviousOrders = (id) => {
+
+
+
+
+
+
+export const getPreviouusOrders = (id) => {
     return (dispatch) => {
         const token = localStorage.token;
         return fetch('http://localhost:3000/orders', {
@@ -84,3 +66,26 @@ export const getPreviousOrders = (id) => {
     }
 }
     
+export const sendyOrder = (total, orderId) => {
+    return (dispatch) => {
+        dispatch({type: "SUBMIT_ORDER_REQUEST", loading: true})
+
+       return fetch('http://localhost:3000/orders/' + `${orderId}`, {
+           method: 'PATCH',
+           headers: {
+               'Content-Type': 'application/json',
+               Accept: 'application/json',
+               'Authorization': localStorage.token
+            },
+           body: JSON.stringify({
+               total: total,
+               complete: 1
+           })})
+           .then(resp => resp.json())
+           .then(data => {
+               
+                   dispatch({type: "SUBMIT_ORDER", data})
+                })           
+            }
+     }
+        

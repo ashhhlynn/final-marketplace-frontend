@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import AccountInfo from './AccountInfo'
-
 import { Segment, Card, List, Header } from 'semantic-ui-react'
-import { getPreviousOrders } from "./actions/orderActions";
-
 
 class Profile extends Component {
 
@@ -13,7 +10,6 @@ class Profile extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.user.id)
         fetch("http://localhost:3000/orders")
         .then((response) => response.json())
         .then((data) => 
@@ -21,10 +17,9 @@ class Profile extends Component {
         )
       }
 
-
     render() {
         const orders = this.state.userOrders.map((order) => (
-            <li key={order.id}>(user: {order.user_id}) Total: ${order.total}: {order.order_items.length} Product</li>
+            <li key={order.id}>Date: {order.updated_at} | Total: ${order.total} | {order.order_items.length} Item(s)</li>
         ))
         return (
         <div>
@@ -41,15 +36,10 @@ class Profile extends Component {
 
 const MSTP = (state) => {
     return {
-        user: state.currentUser,
-        orders: state.previousOrders,
+        user: state.currentUser
     }
 }
 
-const MDTP = (dispatch) => {
-    return {
-        getPreviousOrders: (id) => { dispatch(getPreviousOrders(id)) },
-    }
-}
 
-export default connect(MSTP, MDTP)(Profile)
+
+export default connect(MSTP)(Profile)
