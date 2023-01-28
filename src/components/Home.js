@@ -8,7 +8,8 @@ import { Link } from 'react-router-dom'
 import Profile from './Profile'
 import { Button, Segment, Divider, Grid, Header } from 'semantic-ui-react'
 import Greeting from './Greeting'
-import ShoppingLinks from './ShoppingLinks'
+import ToggleLogin from './ToggleLogin'
+
 
 class Home extends Component{
 
@@ -24,7 +25,9 @@ render() {
         return (
             <div className="header">
                 < Greeting />
-                < ShoppingLinks />
+                <Segment placeholder>
+            < ToggleLogin /></Segment>
+
                 <Segment placeholder>
                 <Grid columns={2} stackable textAlign='center'>
                 <Divider vertical>Or</Divider>
@@ -44,12 +47,13 @@ render() {
     else {
         return (
             <div className="header">
-                <Segment>
+                <Segment placeholder>
                 <center>
-                    <Header color='teal' size='huge'> Hi {this.props.currentUser.name}! </Header>
+                    <h2><i>Hi {this.props.currentUser.name}!</i> </h2>
                     <Link to="/products">
-                        <Button content="Start Shopping" onClick={()=>{this.handleCreateOrder()}}></Button>
+                        <Button content="Start Shopping" color ="teal" onClick={()=>{this.handleCreateOrder()}}></Button>
                     </Link>
+                    <Divider></Divider>
                 </center>
                 <br></br>
                     <Profile />

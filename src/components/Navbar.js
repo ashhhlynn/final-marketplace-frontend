@@ -9,8 +9,12 @@ const Navbar = () => {
           <b><i>Marketplace Crafts</i></b>
         </Header>
           <Menu.Menu position="right" >
-            <Menu.Item size='huge'><Link to="/">Home</Link></Menu.Item>
-            <Menu.Item><Link>Log Out</Link></Menu.Item>
+            <Menu.Item size='huge' color='teal'><Link to="/">Home</Link></Menu.Item>
+            
+            <Menu.Item><Link to ="/createproduct">
+                Create Product
+                    </Link></Menu.Item>
+                    <Menu.Item><Link color='teal'>Log Out</Link></Menu.Item>
         </Menu.Menu> 
     </Menu>
   )

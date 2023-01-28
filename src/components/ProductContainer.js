@@ -16,16 +16,13 @@ render() {
     return (
         <div>
             <ShoppingLinks/>
+          
             <Segment>
-                <Header as='h2' color='teal'><center>Create Product</center></Header>
-                <CreateProduct />
-            </Segment>
-            <Segment>
-                <Header as='h2' color='teal'><center>Shop Products</center></Header>
                 <Card.Group>
                 {products}
                 </Card.Group>
             </Segment>
+           
         </div>
         )
     }

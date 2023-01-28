@@ -14,11 +14,11 @@ render() {
     const i = this.props.item
     return (        
         <Item>
-            <Item.Content verticalAlign='middle'>
-                <Item.Image size='tiny' floated='right' src={i.image_url} />
+            <Item.Content>
+                <Item.Image size='tiny' floated='middle' src={i.image_url} />
                 <Item.Header>{i.title}: ${i.price}</Item.Header>
                 <Item.Meta>{i.description}</Item.Meta>
-                <Button content="Remove" onClick={()=>{this.handleRemove(i.id)}}></Button>
+                <Button content="Remove" size="tiny" color="teal" onClick={()=>{this.handleRemove(i.id)}}></Button>
             </Item.Content>
         </Item> 
     )

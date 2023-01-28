@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { Form, Header } from "semantic-ui-react";
+import { Form, Header, Divider } from "semantic-ui-react";
 import {getExistingUser} from './actions/userActions';
 
 class Login extends Component {
@@ -24,9 +24,8 @@ handleSubmit = (event, userData)  => {
 render() {
     return (
         <div>
-        <Header as='h2' color='teal'>
-            <center>Login</center>
-        </Header>         
+              <center><i><h2>Login</h2></i></center>
+        <Divider></Divider>
         <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
             <Form.Input
                 required
@@ -44,7 +43,7 @@ render() {
                 onChange={this.handleChange}
             /> 
             <center>
-            <Form.Button content='Submit' color='teal' />
+            <Form.Button content='Log in' color='teal' />
             </center>
         </Form>
         </div>

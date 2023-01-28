@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Form } from 'semantic-ui-react'
 import { createProduct } from './actions/productActions'
+import { Segment, Divider } from 'semantic-ui-react'
+import ShoppingLinks from './ShoppingLinks'
 
 class CreateProduct extends Component {
 
@@ -25,6 +27,12 @@ handleSubmit = (event, product) => {
 
 render() {
   return (
+    <div>
+
+    <Segment placeholder>
+
+    <center><i><h2>Create Product</h2></i></center>
+        <Divider></Divider>
     <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
         <Form.Input
           required
@@ -59,9 +67,11 @@ render() {
           onChange={this.handleChange}
         />
         <center>
-        <Form.Button content='Submit' />
+        <Form.Button color='teal' size='large' content='CREATE' />
         </center>
       </Form>
+      </Segment>
+      </div>
   )
 }
 }

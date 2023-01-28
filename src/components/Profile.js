@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import AccountInfo from './AccountInfo'
-import { Segment, Card, List, Header } from 'semantic-ui-react'
+import { Segment, Container, Statistic, Card, List, Header, Message, Item } from 'semantic-ui-react'
 
 class Profile extends Component {
 
 state = {
     orders: [],
-    userOrders: []
 }
 
 componentDidMount() {
@@ -26,15 +25,28 @@ render() {
         <li key={order.id}>Date: {order.updated_at.slice(6, -14)} | Total: ${order.total} | {order.order_items.length} Item(s)</li>
     ))
     return (
-        <center>
-        <Header>Information:</Header>
+      <div>
+        <Header color='teal'>Account Information:</Header>
         <AccountInfo user={this.props.user} key={this.props.user.id}/> 
-        <Header>Orders:</Header>
-        {orders}
-        </center>
+
+        <Statistic.Group>
+<Statistic><Statistic.Value>{orders.length}</Statistic.Value><Statistic.Label>Orders</Statistic.Label>
+</Statistic>
+<Statistic>
+  <Statistic.Value>31,200</Statistic.Value>
+  <Statistic.Label>Views</Statistic.Label>
+</Statistic>
+</Statistic.Group>
+
+        <Header color='teal'>Order History:</Header>
+       {orders}
+       </div>
     )
 }
 }
+
+
+
 
 const mapStateToProps = (state) => {
     return {

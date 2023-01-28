@@ -5,6 +5,8 @@ import ProductContainer from './components/ProductContainer'
 import Home from './components/Home'
 import ShoppingCartContainer from './components/ShoppingCartContainer'
 import Navbar from './components/Navbar'
+import CreateProduct from './components/CreateProduct'
+import './App.css'
 import { Container } from 'semantic-ui-react'
 import { fetchProducts } from './components/actions/productActions';
 import { connect } from "react-redux";
@@ -27,6 +29,8 @@ render() {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<ProductContainer />} />
         <Route path="/cart" element={<ShoppingCartContainer />} />
+        <Route path="/createproduct" element={<CreateProduct />} />
+
         </Routes>
         </BrowserRouter>
        </Container>

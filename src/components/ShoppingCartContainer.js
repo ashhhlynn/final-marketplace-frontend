@@ -46,15 +46,17 @@ render() {
         <ShoppingLinks/>        
         <Segment.Group horizontal>
             <Segment>
-                <Header as="h2" color='teal'><center>Your Cart ({items.length})</center></Header>
+                <Header as="h2"><center><i>Your Cart ({items.length}) </i></center></Header>
+                <Divider></Divider>
                 <List>
                     {items}
                 </List>
             </Segment>
             <Segment>
-                <Header as="h2" color='teal'>
+                <Header as="h2">
                 <center>
-                Your Order
+                <i>Your Order</i>
+                <Divider></Divider>
                 </center>
                 </Header>
                 <center>
@@ -64,9 +66,9 @@ render() {
                 <h3>User Information:</h3>
                 <AccountInfo user={this.props.user} key={this.props.user.id}/>
                 </center>
-                <center>
+                <center><br></br>
                 <Link to="/">
-                    <Button content="Submit Order" onClick={(event)=>{this.handleSendOrder(event, orderTotal)}}></Button>
+                    <Button content="SUBMIT" color='teal' onClick={(event)=>{this.handleSendOrder(event, orderTotal)}}></Button>
                 </Link>
                 </center>
             </Segment>

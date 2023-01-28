@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { Form, Header } from 'semantic-ui-react'
+import { Form, Header, Segment, Divider } from 'semantic-ui-react'
 import { createUser } from './actions/userActions'
 
 class Signup extends Component {
@@ -27,10 +27,11 @@ handleChange = (event) => {
 render() {
     return (
         <div id="signup-container">
-            <Header as='h2' color='teal'>
-                <center>Signup</center>
-            </Header>
+        <center><i><h2>Register New Account</h2></i></center>
+        <Divider></Divider>
+      
             <Form onSubmit={ (event) => {this.handleSubmit(event, this.state)} }>            
+           
                 <Form.Input
                     required
                     type="text"
@@ -72,9 +73,10 @@ render() {
                     onChange={this.handleChange}
                 />
                 <center>
-                <Form.Button content="Submit" color="teal"
+                <Form.Button content="Create Account" color="teal"
                 />
                 </center>
+               
             </Form>
         </div>
     )
