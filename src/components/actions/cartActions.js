@@ -39,4 +39,4 @@ export const removeFromCart = (id) => {
                 'Authorization': `Bearer ${token}`
             }})   
        }           
-            }
+}

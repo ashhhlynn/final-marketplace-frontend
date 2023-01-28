@@ -8,19 +8,16 @@ import 'semantic-ui-css/semantic.min.css'
 import rootReducer from './components/reducers/rootReducer';
 import thunk from 'redux-thunk';
 import { applyMiddleware } from 'redux';
-import { composeWithDevTools } from "redux-devtools-extension";
 
-
-
-export const store = configureStore({
-  reducer: rootReducer
-})
+export const store = configureStore (
+  { reducer: rootReducer},
+  applyMiddleware(thunk)
+)
   
-  const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-        <App />
-    </Provider>
-  </React.StrictMode>
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(  
+  <Provider store={store}>
+    <App />
+  </Provider>
+)

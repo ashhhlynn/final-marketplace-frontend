@@ -10,41 +10,36 @@ import { Segment, Card, Header, Container } from 'semantic-ui-react'
 import { fetchProducts } from './components/actions/productActions';
 import { connect } from "react-redux";
 
-
 class App extends Component {
 
-  componentDidMount () {
-    this.props.fetchProducts();
-  }
+componentDidMount () {
+  this.props.fetchProducts();
+}
 
-
-  render() {
-    return (
+render() {
+  return (
     <div className="App">
-          <Container>
-    <BrowserRouter>
-    <Container>
-    <Navbar/>
-    </Container>
-
-
-    <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/products" element={<ProductContainer />} />
-    <Route path="/cart" element={<ShoppingCartContainer />} />
-    </Routes>
-    </BrowserRouter>
-    </Container>
+      <Container>
+        <BrowserRouter>
+        <Container>
+        <Navbar/>
+        </Container>
+        <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<ProductContainer />} />
+        <Route path="/cart" element={<ShoppingCartContainer />} />
+        </Routes>
+        </BrowserRouter>
+      </Container>
     </div>
-    );
-  }
+  );
+}
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchProducts: () =>  { dispatch(fetchProducts()) },
+    fetchProducts: () =>  { dispatch(fetchProducts()) }
 }
 }
-
 
 export default connect(null, mapDispatchToProps)(App);

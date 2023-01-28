@@ -1,4 +1,4 @@
-export const fetchProducts= () => {
+export const fetchProducts = () => {
     return (dispatch) => {
       dispatch({ type: "FETCH_PRODUCTS_REQUEST" });
       fetch("http://localhost:3000/products")
@@ -8,9 +8,9 @@ export const fetchProducts= () => {
     };
   }
   
-  export const createProduct= (product) => {
+  export const createProduct = (product) => {
     return (dispatch) => {
-       dispatch({type: 'ADD_PRODUCT_REQUEST', loading: true})
+       dispatch({type: 'ADD_PRODUCT_REQUEST'})
        return fetch('http://localhost:3000/products', {
        method: 'POST',
        headers: {

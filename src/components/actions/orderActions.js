@@ -21,11 +21,10 @@ export const createOrder = (userId) => {
                 }
                 else {
                     console.log(data)
-                    dispatch({type: "CREATE_ORDER", order: data})
+                    dispatch({type: "CREATE_ORDER", data})
                 }
             })
-            }
-
+    }
 }
 
 export const sendOrder = () => {

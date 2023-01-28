@@ -4,59 +4,62 @@ import { Form } from 'semantic-ui-react'
 import { createProduct } from './actions/productActions'
 
 class CreateProduct extends Component {
-  state = {
-    title: '',
-    price: '',
-    description: '',
-    image_url: ''
-  };
 
-  handleChange = (event) => {
-  this.setState({
-      [event.target.id]: event.target.value
+state = {
+  title: '',
+  price: '',
+  description: '',
+  image_url: ''
+}
+
+handleChange = (event) => {
+  this.setState ({
+    [event.target.id]: event.target.value
   })
 }
 
-handleSubmit = (event, product)  => {
+handleSubmit = (event, product) => {
   event.preventDefault()
   this.props.createProduct(product)
-  }
+}
 
-  render() {
-    return (
-        <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
-          <Form.Input
+render() {
+  return (
+    <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
+        <Form.Input
           type="text"
           id="title"
           placeholder="Title"
           value={this.state.title} 
           onChange={this.handleChange}
-          />
-           <Form.Input
+        />
+        <Form.Input
           type="text"
           id="description"
           placeholder="Description"
           value={this.state.description} 
           onChange={this.handleChange}
-          />
-           <Form.Input
+        />
+        <Form.Input
           type="text"
           id="price"
           placeholder="Price"
           value={this.state.price} 
           onChange={this.handleChange}
-          />
+        />
         <Form.Input
           type="text"
           id="image_url"
           placeholder="Image Url"
           value={this.state.image_url} 
           onChange={this.handleChange}
-          />
-          <center><Form.Button content='Submit' /></center>
-        </Form>
-    );
-  }
+        />
+        <center>
+        <Form.Button content='Submit' />
+        </center>
+      </Form>
+  )
+}
 }
 
 const mapDispatchToProps = (dispatch) => {

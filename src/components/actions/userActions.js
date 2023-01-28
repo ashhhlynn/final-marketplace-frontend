@@ -16,13 +16,13 @@ export const createUser = (userData) => {
                 window.alert(data.error)
             }
             else {
-                dispatch({type: "SET_CURRENT_USER", currentUser: data})
+                dispatch({type: "SET_CURRENT_USER", data})
             }
         })
     }
-  }
+}
 
-  export const getExistingUser = (userData) => {
+export const getExistingUser = (userData) => {
     return (dispatch) => {
         return fetch('http://localhost:3000/login', {
         method: 'POST',
@@ -44,9 +44,5 @@ export const createUser = (userData) => {
                 console.log(data)
             }
         })
-       
     }
-
-
-
-  }
+}

@@ -5,25 +5,25 @@ import {getExistingUser} from './actions/userActions';
 
 class Login extends Component {
 
-    state = {
-        email: '',
-        password: '',
-    }
+state = {
+    email: '',
+    password: '',
+}
 
-    handleChange = (event) => {
-        this.setState({
-            [event.target.id]: event.target.value
-        })
-    }
+handleChange = (event) => {
+    this.setState ({
+        [event.target.id]: event.target.value
+    })
+}
 
-    handleSubmit = (event, userData)  => {
-        event.preventDefault()
-        this.props.getExistingUser(userData)
-    }
+handleSubmit = (event, userData)  => {
+    event.preventDefault()
+    this.props.getExistingUser(userData)
+}
 
-    render() {
-        return (
-            <div id="signup-border">
+render() {
+    return (
+        <div>
         <Header as='h2' color='teal'>
             <center>Login</center>
         </Header>         
@@ -33,21 +33,21 @@ class Login extends Component {
                 placeholder="Email"
                 value={this.state.email} 
                 onChange={this.handleChange}
-                />               
-                        <Form.Input
-                        id="password"
-                        placeholder="Password"
-                        type="password"
-                        value={this.state.password} 
-                        onChange={this.handleChange}
-                        /> 
-                    <center>
-                    <Form.Button content='Submit' />
-                    </center>
+            />               
+            <Form.Input
+                id="password"
+                placeholder="Password"
+                type="password"
+                value={this.state.password} 
+                onChange={this.handleChange}
+            /> 
+            <center>
+            <Form.Button content='Submit' />
+            </center>
         </Form>
         </div>
-        )
-    }
+    )
+}
 }
 
 const mapDispatchToProps = dispatch => {
@@ -56,4 +56,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(null, mapDispatchToProps)(Login)
