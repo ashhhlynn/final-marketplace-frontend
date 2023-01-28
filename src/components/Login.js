@@ -29,12 +29,14 @@ render() {
         </Header>         
         <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
             <Form.Input
+                required
                 id="email"
                 placeholder="Email"
                 value={this.state.email} 
                 onChange={this.handleChange}
             />               
             <Form.Input
+                required
                 id="password"
                 placeholder="Password"
                 type="password"
@@ -42,7 +44,7 @@ render() {
                 onChange={this.handleChange}
             /> 
             <center>
-            <Form.Button content='Submit' />
+            <Form.Button content='Submit' color='teal' />
             </center>
         </Form>
         </div>

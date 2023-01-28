@@ -27,6 +27,7 @@ render() {
   return (
     <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
         <Form.Input
+          required
           type="text"
           id="title"
           placeholder="Title"
@@ -34,6 +35,7 @@ render() {
           onChange={this.handleChange}
         />
         <Form.Input
+          required
           type="text"
           id="description"
           placeholder="Description"
@@ -41,6 +43,7 @@ render() {
           onChange={this.handleChange}
         />
         <Form.Input
+          required
           type="text"
           id="price"
           placeholder="Price"
@@ -48,6 +51,7 @@ render() {
           onChange={this.handleChange}
         />
         <Form.Input
+          required
           type="text"
           id="image_url"
           placeholder="Image Url"

@@ -6,6 +6,7 @@ import { Segment, Card, List, Header } from 'semantic-ui-react'
 class Profile extends Component {
 
 state = {
+    orders: [],
     userOrders: []
 }
 
@@ -13,13 +14,15 @@ componentDidMount() {
     fetch("http://localhost:3000/orders")
         .then((response) => response.json())
         .then((data) => {
-            this.setState({userOrders: data.filter((order) => order.user_id !== this.props.user.id)
+            console.log(data)
+            this.setState({
+                orders: data.filter((order) => order.user_id == this.props.user.id)
+            })
         });
-    });
 }
 
 render() {
-    const orders = this.state.userOrders.map((order) => (
+    const orders = this.state.orders.map((order) => (
         <li key={order.id}>Date: {order.updated_at.slice(6, -14)} | Total: ${order.total} | {order.order_items.length} Item(s)</li>
     ))
     return (
@@ -33,10 +36,10 @@ render() {
 }
 }
 
-const MapStateToProps = (state) => {
+const mapStateToProps = (state) => {
     return {
         user: state.currentUser
     }
 }
 
-export default connect(MapStateToProps)(Profile)
+export default connect(mapStateToProps)(Profile)

@@ -56,6 +56,7 @@ render() {
                     onChange={this.handleChange}
                 />       
                 <Form.Input
+                    required
                     id="password"
                     placeholder="Password"
                     type="password"
@@ -63,6 +64,7 @@ render() {
                     onChange={this.handleChange}
                 /> 
                 <Form.Input
+                    required
                     id="password_confirmation"
                     placeholder="Confirm Password"
                     type="password"
@@ -70,7 +72,7 @@ render() {
                     onChange={this.handleChange}
                 />
                 <center>
-                <Form.Button content="Submit"
+                <Form.Button content="Submit" color="teal"
                 />
                 </center>
             </Form>

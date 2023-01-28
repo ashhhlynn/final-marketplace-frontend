@@ -5,8 +5,7 @@ import ProductContainer from './components/ProductContainer'
 import Home from './components/Home'
 import ShoppingCartContainer from './components/ShoppingCartContainer'
 import Navbar from './components/Navbar'
-import ShoppingLinks from './components/ShoppingLinks'
-import { Segment, Card, Header, Container } from 'semantic-ui-react'
+import { Container } from 'semantic-ui-react'
 import { fetchProducts } from './components/actions/productActions';
 import { connect } from "react-redux";
 
@@ -19,7 +18,7 @@ componentDidMount () {
 render() {
   return (
     <div className="App">
-      <Container>
+     <Container>
         <BrowserRouter>
         <Container>
         <Navbar/>
@@ -30,7 +29,7 @@ render() {
         <Route path="/cart" element={<ShoppingCartContainer />} />
         </Routes>
         </BrowserRouter>
-      </Container>
+       </Container>
     </div>
   );
 }
