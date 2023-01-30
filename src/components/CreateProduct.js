@@ -67,7 +67,7 @@ render() {
           onChange={this.handleChange}
         />
         <center>
-        <Form.Button color='teal' size='large' content='CREATE' />
+        <Form.Button color='teal' size='large' content='Submit' />
         </center>
       </Form>
       </Segment>

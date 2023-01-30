@@ -11,22 +11,21 @@ return (
 <div class ="log">
       {showLogin ? (
         <>
-          <Login onLogin={onLogin} />
-          <p>
-            Don't have an account?
-            <button class ="showlog" onClick={() => setShowLogin(false)}>
-              Sign Up
-            </button>
-          </p>
+          <Login onLogin={onLogin} /><br></br>
+          <center><p>
+            Don't have an account?<br></br>
+            <Button content="Signup" onClick={() => setShowLogin(false)}>
+            </Button>
+            </p>  </center>  
         </>
       ) : (
         <>
-           <Signup onLogin={onLogin} />
-          <p>
+           <Signup onLogin={onLogin} /><br></br>
+          <p><center>
             Already have an account? 
-            <button class ="showlog" onClick={() => setShowLogin(true)}>
-              Log In
-            </button>
+            <Button content="Log In" onClick={() => setShowLogin(true)}>
+            </Button>
+            </center>
           </p>
         </>
       )}
