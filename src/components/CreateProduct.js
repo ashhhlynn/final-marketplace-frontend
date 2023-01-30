@@ -4,6 +4,8 @@ import { Form } from 'semantic-ui-react'
 import { createProduct } from './actions/productActions'
 import { Segment, Divider } from 'semantic-ui-react'
 import ShoppingLinks from './ShoppingLinks'
+import { withRouter } from 'react-router-dom';
+
 
 class CreateProduct extends Component {
 
@@ -23,6 +25,7 @@ handleChange = (event) => {
 handleSubmit = (event, product) => {
   event.preventDefault()
   this.props.createProduct(product)
+  this.props.history.push('/profile')
 }
 
 render() {

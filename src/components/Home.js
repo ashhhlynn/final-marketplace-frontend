@@ -11,30 +11,28 @@ import Navbar from './Navbar'
 
 class Home extends Component{
 
-render() {
-    if (this.props.currentUser.length === 0) {       
-        return (
-            <div className="container">
-                <Segment placeholder>
-            < ToggleLogin /></Segment>
-            </div>
-        )
+    render() {
+        if (this.props.currentUser.length === 0) {       
+            return (
+                <div className="container">
+                    <Greeting />
+                    <Segment placeholder>
+                        < ToggleLogin />
+                    </Segment>
+                </div>
+            )
+        }
+        else {
+            return (
+                <div className="container">
+                <Navbar />
+                <Profile />
+                </div>
+            )
+        }
     }
-    else {
-        return (
-            <div className="container">
 
-           <Profile />
-            </div>
-        )
-    }
 }
-
-                  
-           
-        
-    }
-
           
 const mapStateToProps = (state) => {
     return {

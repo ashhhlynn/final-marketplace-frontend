@@ -8,8 +8,6 @@ import { checkUser } from './actions/userActions';
 
 import Navbar from './Navbar'
 
-
-
 class Profile extends Component {
 
 state = {
@@ -39,8 +37,7 @@ render() {
         <li key={order.id}>Date: {order.updated_at.slice(6, -14)} | Total: ${order.total} | {order.order_items.length} Item(s)</li>
     ))
     return (
-      <div>
-        <Navbar />
+     
         <Segment placeholder>
             <Grid columns={2} stackable textAlign='left'>
             <Divider vertical></Divider>
@@ -63,7 +60,7 @@ render() {
             </Grid.Row>
             </Grid>
         </Segment>
-       </div>
+       
     )
 }
 }

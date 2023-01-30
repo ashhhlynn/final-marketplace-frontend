@@ -10,13 +10,14 @@ export const fetchProducts = () => {
   
   export const createProduct = (product) => {
     return (dispatch) => {
+        const token = localStorage.token;
        dispatch({type: 'ADD_PRODUCT_REQUEST'})
        return fetch('http://localhost:3000/products', {
        method: 'POST',
        headers: {
            'Content-Type': 'application/json',
            Accept: 'application/json',
-           'Authorization': localStorage.token
+           'Authorization':  `Bearer ${token}`
         },
        body: JSON.stringify({
            title: product.title,
