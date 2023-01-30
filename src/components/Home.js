@@ -6,6 +6,8 @@ import Profile from './Profile'
 import {  Segment } from 'semantic-ui-react'
 import Greeting from './Greeting'
 import ToggleLogin from './ToggleLogin'
+import Navbar from './Navbar'
+
 
 class Home extends Component{
 
@@ -21,6 +23,7 @@ render() {
     else {
         return (
             <div className="container">
+
            <Profile />
             </div>
         )

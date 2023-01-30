@@ -4,7 +4,9 @@ import AccountInfo from './AccountInfo'
 import { Segment, Button, Divider, Header, Grid } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import {createOrder} from './actions/orderActions'
+import { checkUser } from './actions/userActions';
 
+import Navbar from './Navbar'
 
 
 
@@ -38,6 +40,7 @@ render() {
     ))
     return (
       <div>
+        <Navbar />
         <Segment placeholder>
             <Grid columns={2} stackable textAlign='left'>
             <Divider vertical></Divider>
@@ -73,7 +76,13 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return { createOrder: (userId) => { dispatch(createOrder(userId)) } }
+    return { createOrder: (userId) => { dispatch(createOrder(userId)) } ,
+    
+
+      checkUser: () =>  { dispatch(checkUser()) } }
+  
+  
+  
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile)

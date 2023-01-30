@@ -15,7 +15,7 @@ render() {
     return (        
         <Item>
             <Item.Content>
-                <Item.Image size='tiny' floated='middle' src={i.image_url} />
+                <Item.Image size='tiny' src={i.image_url} />
                 <Item.Header>{i.title}: ${i.price}</Item.Header>
                 <Item.Meta>{i.description}</Item.Meta>
                 <Button content="Remove" size="tiny" color="teal" onClick={()=>{this.handleRemove(i.id)}}></Button>

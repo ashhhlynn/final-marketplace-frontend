@@ -27,7 +27,7 @@ export const createOrder = (userId) => {
     }
 }
 
-export const sendOrder = () => {
+export const sendOrder = (history) => {
     return (dispatch) => {
         dispatch({type: "SUBMIT_ORDER"})
     }

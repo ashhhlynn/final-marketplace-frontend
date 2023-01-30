@@ -4,6 +4,7 @@ import { Header, Card, Segment } from 'semantic-ui-react'
 import Product from './Product'
 import { connect } from "react-redux";
 import ShoppingLinks from './ShoppingLinks'
+import Navbar from './Navbar'
 
 
 class ProductContainer extends Component {
@@ -16,6 +17,7 @@ render() {
     })
     return (
         <div>
+            <Navbar/>
             <ShoppingLinks/>
             <Segment>
                 <Card.Group>

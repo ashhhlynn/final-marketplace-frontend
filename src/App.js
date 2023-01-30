@@ -4,8 +4,8 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import ProductContainer from './components/ProductContainer'
 import Home from './components/Home'
 import ShoppingCartContainer from './components/ShoppingCartContainer'
-import Navbar from './components/Navbar'
 import Profile from './components/Profile'
+import { checkUser } from './components/actions/userActions';
 
 import CreateProduct from './components/CreateProduct'
 import './App.css'
@@ -17,6 +17,7 @@ class App extends Component {
 
 componentDidMount () {
   this.props.fetchProducts();
+  this.props.checkUser()
 }
 
 render() {
@@ -25,7 +26,6 @@ render() {
      <Container>
         <BrowserRouter>
         <Container>
-        <Navbar/>
         </Container>
         <Routes>
         <Route path="/" element={<Home />} />
@@ -44,8 +44,10 @@ render() {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchProducts: () =>  { dispatch(fetchProducts()) }
+    fetchProducts: () =>  { dispatch(fetchProducts()) },
+    checkUser: () =>  { dispatch(checkUser()) } }
+
 }
-}
+
 
 export default connect(null, mapDispatchToProps)(App);

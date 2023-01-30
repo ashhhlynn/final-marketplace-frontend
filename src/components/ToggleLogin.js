@@ -21,12 +21,12 @@ return (
       ) : (
         <>
            <Signup onLogin={onLogin} /><br></br>
-          <p><center>
+          <center><p>
             Already have an account? 
             <Button content="Log In" onClick={() => setShowLogin(true)}>
             </Button>
-            </center>
-          </p>
+            </p>  </center>
+         
         </>
       )}
     </div>

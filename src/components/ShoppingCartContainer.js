@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import AccountInfo from './AccountInfo'
 import {sendOrder} from '../components/actions/orderActions'
 import ShoppingLinks from './ShoppingLinks'
+import Navbar from './Navbar'
 
 
 class ShoppingCartContainer extends Component {
@@ -35,7 +36,8 @@ handleSendOrder = (event, orderTotal) => {
         .then((data) => {
                 console.log(data)
         })
-    this.props.sendOrder()
+    this.props.sendOrder(this.props.history)
+    this.props.history.push('/profile')
     }
 }
        
@@ -45,7 +47,8 @@ render() {
     )
     let orderTotal = Math.round((this.props.total * 1.1)*100)/100
     return (
-        <div>           
+        <div>   
+            <Navbar/>        
         <ShoppingLinks/>        
         <Segment.Group horizontal>
             <Segment>
@@ -92,7 +95,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        sendOrder: (total, orderId) => { dispatch(sendOrder(total, orderId)) }
+        sendOrder: (history) => { dispatch(sendOrder(history)) }
     }
 }
 

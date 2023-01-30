@@ -62,7 +62,14 @@ const rootReducer = (state = initialState, action) => {
         case 'SET_CURRENT_USER':
             return {
                 ...state, 
-                currentUser: action.data.user, 
+                currentUser: action.user, 
+                loading: false
+            };
+
+        case 'LOGOUT':
+            return {
+                ...state, 
+                currentUser: [], 
                 loading: false
             };
          
