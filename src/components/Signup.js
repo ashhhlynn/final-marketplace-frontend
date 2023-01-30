@@ -1,37 +1,35 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { Form, Header, Segment, Divider } from 'semantic-ui-react'
+import { Form, Divider } from 'semantic-ui-react'
 import { createUser } from './actions/userActions'
 
 class Signup extends Component {
 
-state = {
-    name: '',
-    email: '',
-    address: '',
-    password: '',
-    password_confirmation: ''
-}
+    state = {
+        name: '',
+        email: '',
+        address: '',
+        password: '',
+        password_confirmation: ''
+    }
 
-handleSubmit = (event, userData) => {
-    event.preventDefault()
-    this.props.createUser(userData)
-}
+    handleSubmit = (event, userData) => {
+        event.preventDefault()
+        this.props.createUser(userData)
+    }
 
-handleChange = (event) => {
-    this.setState ({
-        [event.target.id]: event.target.value
-    })
-}
+    handleChange = (event) => {
+        this.setState ({
+            [event.target.id]: event.target.value
+        })
+    }
 
-render() {
-    return (
-        <div id="signup-container">
-        <center><i><h2>Register New Account</h2></i></center>
-        <Divider></Divider>
-      
-            <Form onSubmit={ (event) => {this.handleSubmit(event, this.state)} }>            
-           
+    render() {
+        return (
+            <div id="signup-container">
+            <center><i><h2>Register New Account</h2></i></center>
+            <Divider></Divider>
+            <Form onSubmit={ (event) => {this.handleSubmit(event, this.state)} }>              
                 <Form.Input
                     required
                     type="text"
@@ -73,14 +71,12 @@ render() {
                     onChange={this.handleChange}
                 />
                 <center>
-                <Form.Button content="Create Account" color="teal"
-                />
+                    <Form.Button content="Create Account" color="teal"/>
                 </center>
-               
-            </Form>
-        </div>
-    )
-}
+                </Form>
+            </div>
+        )
+    }
 }
 
 const mapDispatchToProps = dispatch => {

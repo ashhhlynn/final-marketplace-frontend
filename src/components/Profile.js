@@ -4,44 +4,40 @@ import AccountInfo from './AccountInfo'
 import { Segment, Button, Divider, Header, Grid } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import {createOrder} from './actions/orderActions'
-import { checkUser } from './actions/userActions';
-
-import Navbar from './Navbar'
 
 class Profile extends Component {
 
-state = {
-    orders: [],
-}
-
-handleCreateOrder() {
-    if (this.props.currentOrder.length === 0) {
-        let userId = this.props.user.id
-        this.props.createOrder(userId)
+    state = {
+        orders: [],
     }
-}
 
-componentDidMount() {
-    fetch("http://localhost:3000/orders")
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data)
-            this.setState({
-                orders: data.filter((order) => order.user_id == this.props.user.id)
-            })
-        });
-}
+    handleCreateOrder() {
+        if (this.props.currentOrder.length === 0) {
+            let userId = this.props.user.id
+            this.props.createOrder(userId)
+        }
+    }
 
-render() {
-    const orders = this.state.orders.map((order) => (
-        <li key={order.id}>Date: {order.updated_at.slice(6, -14)} | Total: ${order.total} | {order.order_items.length} Item(s)</li>
-    ))
-    return (
-     
-        <Segment placeholder>
-            <Grid columns={2} stackable textAlign='left'>
-            <Divider vertical></Divider>
-            <Grid.Row verticalAlign='middle'>
+    componentDidMount() {
+        fetch("http://localhost:3000/orders")
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data)
+                this.setState({
+                    orders: data.filter((order) => order.user_id == this.props.user.id)
+                })
+            });
+    }
+
+    render() {
+        const orders = this.state.orders.map((order) => (
+            <li key={order.id}>Date: {order.updated_at.slice(6, -14)} | Total: ${order.total} | {order.order_items.length} Item(s)</li>
+        ))
+        return (
+            <Segment placeholder>
+                <Grid columns={2} stackable textAlign='left'>
+                <Divider vertical></Divider>
+                <Grid.Row verticalAlign='middle'>
                 <Grid.Column>
                     <center><h1><i>Hi {this.props.user.name}!</i></h1></center>
                     <Divider></Divider><br></br>
@@ -51,7 +47,6 @@ render() {
                     </Link>
                     <Header color='teal'>Account Information:</Header>
                     <AccountInfo user={this.props.user} key={this.props.user.id}/> 
-
                 </Grid.Column>
                 <Grid.Column>
                     <Header color='teal'>Order History:</Header>
@@ -60,9 +55,8 @@ render() {
             </Grid.Row>
             </Grid>
         </Segment>
-       
-    )
-}
+        )
+    }
 }
 
 const mapStateToProps = (state) => {
@@ -73,13 +67,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return { createOrder: (userId) => { dispatch(createOrder(userId)) } ,
-    
-
-      checkUser: () =>  { dispatch(checkUser()) } }
-  
-  
-  
+    return { createOrder: (userId) => { dispatch(createOrder(userId)) } }  
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile)

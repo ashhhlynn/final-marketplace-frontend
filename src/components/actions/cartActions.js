@@ -18,10 +18,11 @@ export const addToCart = (product, order) => {
        .then(data => {
         console.log(data)
            if(data.message){
-               console.log(data.message)
+            alert(data.message)
            }
            else {
                dispatch({type: "ADD_TO_CART", product})
+               alert("Added to your cart")
            }               
        })
    }

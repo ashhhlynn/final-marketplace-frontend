@@ -1,13 +1,11 @@
 
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import {createOrder} from './actions/orderActions'
 import Profile from './Profile'
 import {  Segment } from 'semantic-ui-react'
 import Greeting from './Greeting'
 import ToggleLogin from './ToggleLogin'
 import Navbar from './Navbar'
-
 
 class Home extends Component{
 
@@ -36,13 +34,8 @@ class Home extends Component{
           
 const mapStateToProps = (state) => {
     return {
-        currentUser: state.currentUser,
-        currentOrder: state.currentOrder
+        currentUser: state.currentUser
     }
 }
-
-const mapDispatchToProps = (dispatch) => {
-    return { createOrder: (userId) => { dispatch(createOrder(userId)) } }
-}
   
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(mapStateToProps)(Home)

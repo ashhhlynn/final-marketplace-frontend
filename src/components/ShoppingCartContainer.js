@@ -8,80 +8,79 @@ import {sendOrder} from '../components/actions/orderActions'
 import ShoppingLinks from './ShoppingLinks'
 import Navbar from './Navbar'
 
-
 class ShoppingCartContainer extends Component {
 
-handleSendOrder = (event, orderTotal) => {
-    event.preventDefault()
-
-    if (this.props.cart.length === 0) {
-        alert('Must have items in cart')
-    }
-    else {
-
-        let orderId = this.props.currentOrder
-        fetch(`http://localhost:3000/orders/${orderId}`, {    
-            method: 'PATCH',
-            headers: {
+    handleSendOrder = (event, orderTotal) => {
+        event.preventDefault()
+        if (this.props.cart.length === 0) {
+            alert('Must have items in cart')
+        }
+        else {
+            const token = localStorage.token;
+            let orderId = this.props.currentOrder
+            fetch(`http://localhost:3000/orders/${orderId}`, {    
+                method: 'PATCH',
+                headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json',
-                    'Authorization': localStorage.token
-            },
-            body: JSON.stringify({
-                total: orderTotal,
-                complete: 1
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({
+                    total: orderTotal,
+                    complete: 1
+                })
             })
-        })
-        .then(resp => resp.json())
-        .then((data) => {
+            .then(resp => resp.json())
+            .then((data) => {
                 console.log(data)
-        })
-    this.props.sendOrder(this.props.history)
-    this.props.history.push('/profile')
+                alert(data.message)
+            })
+        this.props.sendOrder(this.props.history)
+        this.props.history.push('/')
+        }
     }
-}
        
-render() {
-    const items = this.props.cart.map ( 
-        item => <CartItem item={item} key={item.id}/>
-    )
-    let orderTotal = Math.round((this.props.total * 1.1)*100)/100
-    return (
-        <div>   
-            <Navbar/>        
-        <ShoppingLinks/>        
-        <Segment.Group horizontal>
-            <Segment>
-                <Header as="h2"><center><i>Your Cart ({items.length}) </i></center></Header>
-                <Divider></Divider>
-                <List>
-                    {items}
-                </List>
-            </Segment>
-            <Segment>
-                <Header as="h2">
-                <center>
-                <i>Your Order</i>
-                <Divider></Divider>
-                </center>
-                </Header>
-                <center>
-                <h3>Subtotal: ${this.props.total}</h3>
-                <h3>Tax: ${Math.round((this.props.total * .1)*100)/100}</h3>
-                <h3>Total: ${orderTotal}</h3>              
-                <h3>User Information:</h3>
-                <AccountInfo user={this.props.user} key={this.props.user.id}/>
-                </center>
-                <center><br></br>
-                <Link to="/">
-                    <Button content="Submit" color='teal' onClick={(event)=>{this.handleSendOrder(event, orderTotal)}}></Button>
-                </Link>
-                </center>
-            </Segment>
-        </Segment.Group>
+    render() {
+        const items = this.props.cart.map ( 
+            item => <CartItem item={item} key={item.id}/>
+        )
+        let orderTotal = Math.round((this.props.total * 1.1)*100)/100
+        return (
+            <div>   
+                <Navbar/>        
+            <ShoppingLinks/>        
+            <Segment.Group horizontal>
+                <Segment>
+                    <Header as="h2"><center><i>Your Cart ({items.length}) </i></center></Header>
+                    <Divider></Divider>
+                    <List>
+                        {items}
+                    </List>
+                </Segment>
+                <Segment>
+                    <Header as="h2">
+                    <center>
+                    <i>Your Order</i>
+                    <Divider></Divider>
+                    </center>
+                    </Header>
+                    <center>
+                    <h3>Subtotal: ${this.props.total}</h3>
+                    <h3>Tax: ${Math.round((this.props.total * .1)*100)/100}</h3>
+                    <h3>Total: ${orderTotal}</h3>              
+                    <h3>User Information:</h3>
+                    <AccountInfo user={this.props.user} key={this.props.user.id}/>
+                    </center>
+                    <center><br></br>
+                    <Link to="/">
+                        <Button content="Submit" color='teal' onClick={(event)=>{this.handleSendOrder(event, orderTotal)}}></Button>
+                    </Link>
+                    </center>
+                </Segment>
+            </Segment.Group>
         </div>
-    )
-}
+        )
+    }
 }
 
 const mapStateToProps = (state) => {

@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import { Form } from 'semantic-ui-react'
 import { createProduct } from './actions/productActions'
 import { Segment, Divider } from 'semantic-ui-react'
-import ShoppingLinks from './ShoppingLinks'
-import { withRouter } from 'react-router-dom';
+
+import Navbar from './Navbar'
 
 
 class CreateProduct extends Component {
@@ -25,13 +25,13 @@ handleChange = (event) => {
 handleSubmit = (event, product) => {
   event.preventDefault()
   this.props.createProduct(product)
-  this.props.history.push('/profile')
+  this.props.history.push('/')
 }
 
 render() {
   return (
     <div>
-
+< Navbar />
     <Segment placeholder>
 
     <center><i><h2>Create Product</h2></i></center>

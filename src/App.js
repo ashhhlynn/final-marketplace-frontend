@@ -4,7 +4,6 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import ProductContainer from './components/ProductContainer'
 import Home from './components/Home'
 import ShoppingCartContainer from './components/ShoppingCartContainer'
-import Profile from './components/Profile'
 import { checkUser } from './components/actions/userActions';
 
 import CreateProduct from './components/CreateProduct'
@@ -29,7 +28,6 @@ render() {
         </Container>
         <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
         <Route path="/products" element={<ProductContainer />} />
         <Route path="/cart" element={<ShoppingCartContainer />} />
         <Route path="/createproduct" element={<CreateProduct />} />

@@ -29,10 +29,11 @@ export const fetchProducts = () => {
        .then(resp => resp.json())
        .then(data => {
            if(data.message){
-               console.log(data.message)
+               alert(data.message)
            }
            else {
                dispatch({type: 'ADD_PRODUCT', data})
+               alert("success")
            }           
        })
    }

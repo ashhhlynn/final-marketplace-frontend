@@ -4,33 +4,29 @@ import { Menu, Header} from 'semantic-ui-react'
 import { logOut } from './actions/userActions'
 import { connect } from "react-redux"
 
-
-
 class Navbar extends Component {
 
+  handleItemClick(e){
+    e.preventDefault()
+    localStorage.clear()
+    this.props.logOut()
+  }
   
-handleItemClick(e){
-  e.preventDefault()
-  localStorage.clear()
-
-}
-  render(){
-  return (
-    <Menu color='teal' pointing secondary>
+  render() {
+    return (
+      <Menu color='teal' pointing secondary>
         <Header size='large' color='teal' style={{marginTop: '2%'}}>
-          <b><i>Marketplace Crafts</i></b>
+          <b><i>Handmade Market</i></b>
         </Header>
-          <Menu.Menu position="right" >
-            <Menu.Item size='huge'><Link to="/profile">Profile</Link></Menu.Item>
-            <Menu.Item><Link to ="/createproduct">
-                Create Product
-                    </Link></Menu.Item>
-                    <Menu.Item onClick={(e) => {this.handleItemClick(e)}}><Link to="/">Log Out</Link></Menu.Item>
+        <Menu.Menu position="right" >
+          <Menu.Item size='huge'><Link to="/">Profile</Link></Menu.Item>
+          <Menu.Item><Link to ="/createproduct">Create Product</Link></Menu.Item>
+          <Menu.Item onClick={(e) => {this.handleItemClick(e)}}><Link to="/">Log Out</Link></Menu.Item>
         </Menu.Menu> 
     </Menu>
-  )
-}}
-
+    )
+  }
+}
 
 const mapDispatchToProps = (dispatch) => {
   return { logOut: () => { dispatch(logOut()) } }

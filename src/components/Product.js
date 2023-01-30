@@ -5,23 +5,23 @@ import { addToCart } from './actions/cartActions'
 
 class Product extends Component {
 
-render() {
-    const i = this.props.product
-    return (
-        <Card centered key={i.id}>
-            <Image src={i.image_url}/>
-            <Card.Content>
-            <Card.Header>{i.title}: ${i.price} </Card.Header>
-            <Card.Description>{i.description}</Card.Description> </Card.Content>
-            <Button content="+" size="tiny" onClick={()=>{this.handleClick(i)}}></Button> 
+    render() {
+        const i = this.props.product
+        return (
+            <Card centered key={i.id}>
+                <Image src={i.image_url}/>
+                <Card.Content>
+                    <Card.Header>{i.title}: ${i.price} </Card.Header>
+                    <Card.Description>{i.description}</Card.Description> 
+                </Card.Content>
+                <Button content="+" size="tiny" onClick={()=>{this.handleClick(i)}}></Button> 
             </Card>
-    )
-}
+        )
+    }
 
-handleClick = (product) => {
-    this.props.addToCart(product, this.props.currentOrder)
-    alert("Added To Cart")
-}    
+    handleClick = (product) => {
+        this.props.addToCart(product, this.props.currentOrder)
+    }    
 
 }
   

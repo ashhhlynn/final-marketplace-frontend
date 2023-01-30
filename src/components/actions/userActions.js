@@ -53,8 +53,10 @@ export const getExistingUser = (userData) => {
 
 export const logOut = () => {
     return (dispatch) => {
-        dispatch({type: "LOGOUT"})}
+        dispatch({type: "LOGOUT"})
+        console.log('logging')
     }
+}
 
 export const checkUser = () => {
     return (dispatch) => {

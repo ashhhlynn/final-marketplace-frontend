@@ -1,31 +1,28 @@
 import React, {Component} from 'react';
-import CreateProduct from './CreateProduct'
-import { Header, Card, Segment } from 'semantic-ui-react'
+import { Card, Segment } from 'semantic-ui-react'
 import Product from './Product'
 import { connect } from "react-redux";
 import ShoppingLinks from './ShoppingLinks'
 import Navbar from './Navbar'
 
-
 class ProductContainer extends Component {
 
-render() {
-    const products = this.props.products.map( i => {
+    render() {
+        const products = this.props.products.map( i => {
+            return (
+                <Product product={i} key={i.id}/> 
+            )
+        })
         return (
-            <Product product={i} key={i.id}/> 
-        )
-    })
-    return (
-        <div>
-            <Navbar/>
-            <ShoppingLinks/>
-            <Segment>
-                <Card.Group>
-                {products}
-                </Card.Group>
-            </Segment>
-           
-        </div>
+            <div>
+                <Navbar/>
+                <ShoppingLinks/>
+                <Segment>
+                    <Card.Group>
+                        {products}
+                    </Card.Group>
+                </Segment>    
+            </div>
         )
     }
 }
