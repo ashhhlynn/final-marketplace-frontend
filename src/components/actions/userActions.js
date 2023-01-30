@@ -14,11 +14,11 @@ export const createUser = (userData) => {
         })
         .then(resp => resp.json())
         .then(data => {
-            if(data.error){
-                window.alert(data.error)
+            if(data.message){
+                window.alert(data.message)
             }
             else {
-                localStorage.setItem("token", data.jwt);
+                localStorage.token = data.jwt;
                 dispatch({type: "SET_CURRENT_USER", user: data.user})
             }
         })
@@ -60,7 +60,7 @@ export const logOut = () => {
 
 export const checkUser = () => {
     return (dispatch) => {
-        const token = localStorage.getItem("token");
+        const token = localStorage.token;
         console.log(token)
         return fetch('http://localhost:3000/profile', {
         method: 'GET',
@@ -77,7 +77,6 @@ export const checkUser = () => {
             }
             else {
                 dispatch({type: "SET_CURRENT_USER", user: data.user})
-
                 console.log(data)
             }
             
