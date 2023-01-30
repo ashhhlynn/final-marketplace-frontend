@@ -7,14 +7,17 @@ import AccountInfo from './AccountInfo'
 import {sendOrder} from '../components/actions/orderActions'
 import ShoppingLinks from './ShoppingLinks'
 
+
 class ShoppingCartContainer extends Component {
 
 handleSendOrder = (event, orderTotal) => {
     event.preventDefault()
+
     if (this.props.cart.length === 0) {
         alert('Must have items in cart')
     }
     else {
+
         let orderId = this.props.currentOrder
         fetch(`http://localhost:3000/orders/${orderId}`, {    
             method: 'PATCH',
@@ -68,7 +71,7 @@ render() {
                 </center>
                 <center><br></br>
                 <Link to="/">
-                    <Button content="SUBMIT" color='teal' onClick={(event)=>{this.handleSendOrder(event, orderTotal)}}></Button>
+                    <Button content="Submit" color='teal' onClick={(event)=>{this.handleSendOrder(event, orderTotal)}}></Button>
                 </Link>
                 </center>
             </Segment>

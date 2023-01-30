@@ -12,8 +12,7 @@ class Home extends Component{
 render() {
     if (this.props.currentUser.length === 0) {       
         return (
-            <div className="header">
-               
+            <div className="container">
                 <Segment placeholder>
             < ToggleLogin /></Segment>
             </div>
@@ -22,13 +21,18 @@ render() {
     else {
         return (
             <div className="container">
-                    <Profile />
+           <Profile />
             </div>
         )
     }
 }
-}
-            
+
+                  
+           
+        
+    }
+
+          
 const mapStateToProps = (state) => {
     return {
         currentUser: state.currentUser,

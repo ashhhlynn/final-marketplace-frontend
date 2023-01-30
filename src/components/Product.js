@@ -11,10 +11,10 @@ render() {
         <Card centered key={i.id}>
             <Image src={i.image_url}/>
             <Card.Content>
-            <Card.Header>{i.title}: ${i.price}</Card.Header>
-            <Card.Description>{i.description}</Card.Description>
-            <Button content="Add" color="teal" size="tiny" onClick={()=>{this.handleClick(i)}}></Button> 
-            </Card.Content></Card>
+            <Card.Header>{i.title}: ${i.price} </Card.Header>
+            <Card.Description>{i.description}</Card.Description> </Card.Content>
+            <Button content="+" size="tiny" onClick={()=>{this.handleClick(i)}}></Button> 
+            </Card>
     )
 }
 

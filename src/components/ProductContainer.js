@@ -5,6 +5,7 @@ import Product from './Product'
 import { connect } from "react-redux";
 import ShoppingLinks from './ShoppingLinks'
 
+
 class ProductContainer extends Component {
 
 render() {
@@ -16,7 +17,6 @@ render() {
     return (
         <div>
             <ShoppingLinks/>
-          
             <Segment>
                 <Card.Group>
                 {products}

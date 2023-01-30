@@ -5,6 +5,8 @@ import ProductContainer from './components/ProductContainer'
 import Home from './components/Home'
 import ShoppingCartContainer from './components/ShoppingCartContainer'
 import Navbar from './components/Navbar'
+import Profile from './components/Profile'
+
 import CreateProduct from './components/CreateProduct'
 import './App.css'
 import { Container } from 'semantic-ui-react'
@@ -27,6 +29,7 @@ render() {
         </Container>
         <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/products" element={<ProductContainer />} />
         <Route path="/cart" element={<ShoppingCartContainer />} />
         <Route path="/createproduct" element={<CreateProduct />} />

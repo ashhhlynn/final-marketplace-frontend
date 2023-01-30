@@ -1,14 +1,14 @@
 import { useState } from "react";
 import Login from "./Login";
 import Signup from "./Signup";
-import { Button, Form } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react'
 
 function ToggleLogin({ onLogin }) {
 
 const [showLogin, setShowLogin] = useState(true);
 
 return (
-<div class ="log">
+<div className ="log">
       {showLogin ? (
         <>
           <Login onLogin={onLogin} /><br></br>

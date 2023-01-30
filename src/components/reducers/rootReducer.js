@@ -62,7 +62,7 @@ const rootReducer = (state = initialState, action) => {
         case 'SET_CURRENT_USER':
             return {
                 ...state, 
-                currentUser: action.data, 
+                currentUser: action.data.user, 
                 loading: false
             };
          

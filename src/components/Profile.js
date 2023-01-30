@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom'
 import {createOrder} from './actions/orderActions'
 
 
+
+
 class Profile extends Component {
 
 state = {
@@ -14,7 +16,7 @@ state = {
 
 handleCreateOrder() {
     if (this.props.currentOrder.length === 0) {
-        let userId = this.props.currentUser.id
+        let userId = this.props.user.id
         this.props.createOrder(userId)
     }
 }
@@ -29,8 +31,6 @@ componentDidMount() {
             })
         });
 }
-
-
 
 render() {
     const orders = this.state.orders.map((order) => (
@@ -51,6 +51,7 @@ render() {
                     </Link>
                     <Header color='teal'>Account Information:</Header>
                     <AccountInfo user={this.props.user} key={this.props.user.id}/> 
+
                 </Grid.Column>
                 <Grid.Column>
                     <Header color='teal'>Order History:</Header>
@@ -67,7 +68,7 @@ render() {
 const mapStateToProps = (state) => {
     return {
         user: state.currentUser,
-        curerntOrder: state.currentOrder
+        currentOrder: state.currentOrder
     }
 }
 

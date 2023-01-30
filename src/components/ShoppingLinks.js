@@ -7,7 +7,7 @@ const ShoppingLinks = () => {
         <center>
             <Menu color="grey" inverted size="tiny">
                 <Menu.Item color="teal"><Link to="/products" color="teal"><h4>
-                SHOP PRODUCTS</h4></Link></Menu.Item>
+                Shop Products</h4></Link></Menu.Item>
 
         <Menu.Item position = 'right'>
         <Link to="/cart">
