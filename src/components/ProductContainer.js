@@ -4,8 +4,13 @@ import Product from './Product'
 import { connect } from "react-redux";
 import ShoppingLinks from './ShoppingLinks'
 import Navbar from './Navbar'
+import { fetchProducts } from './actions/productActions';
 
 class ProductContainer extends Component {
+
+    componentDidMount () {
+        this.props.fetchProducts();
+    }
 
     render() {
         const products = this.props.products.map( i => {
@@ -33,4 +38,10 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(ProductContainer)
+const mapDispatchToProps = (dispatch) => {
+    return {
+      fetchProducts: () =>  { dispatch(fetchProducts()) }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductContainer)

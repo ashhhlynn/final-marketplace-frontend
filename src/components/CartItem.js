@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { removeFromCart} from './actions/cartActions'
+import { removeFromCart } from './actions/cartActions'
 import { Item, Button } from 'semantic-ui-react'
 
 class CartItem extends Component {

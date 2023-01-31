@@ -14,7 +14,7 @@ class Product extends Component {
                     <Card.Header>{i.title}: ${i.price} </Card.Header>
                     <Card.Description>{i.description}</Card.Description> 
                 </Card.Content>
-                <Button content="+" size="tiny" onClick={()=>{this.handleClick(i)}}></Button> 
+                <Button content="+" size="tiny" onClick={() => {this.handleClick(i)}}></Button> 
             </Card>
         )
     }

@@ -16,28 +16,29 @@ export const addToCart = (product, order) => {
        })
        .then(resp => resp.json())
        .then(data => {
-        console.log(data)
-           if(data.message){
-            alert(data.message)
-           }
+            console.log(data)
+            if (data.message) {
+                alert(data.message)
+            }
            else {
                dispatch({type: "ADD_TO_CART", product})
-               alert("Added to your cart")
+               window.alert("Added to your cart")
            }               
        })
-   }
+    }
 }
 
 export const removeFromCart = (id) => {
     return (dispatch) => {
         dispatch({type: "REMOVE_FROM_CART", id})
         const token = localStorage.token;
-        return fetch('http://localhost:3000/order_items/' + `${id}`, {
+        return fetch(`http://localhost:3000/order_items/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
                 Accept: 'application/json',
                 'Authorization': `Bearer ${token}`
-            }})   
-       }           
+            },
+        })   
+    }           
 }

@@ -16,9 +16,9 @@ export const createOrder = (userId) => {
             })
             .then(resp => resp.json())
             .then(data => {
-                if(data.message){
+                if(data.message) {
                     alert(data.message)
-                                }
+                }
                 else {
                     console.log(data)
                     dispatch({type: "CREATE_ORDER", data})
@@ -27,10 +27,9 @@ export const createOrder = (userId) => {
     }
 }
 
-export const sendOrder = (history) => {
+export const sendOrder = () => {
     return (dispatch) => {
-        dispatch({type: "SUBMIT_ORDER"})
-       
+        dispatch({type: "SUBMIT_ORDER"})   
     }
 }    
 

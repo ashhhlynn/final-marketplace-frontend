@@ -1,18 +1,17 @@
 export const fetchProducts = () => {
     return (dispatch) => {
-      dispatch({ type: "FETCH_PRODUCTS_REQUEST" });
+      dispatch({ type: "FETCH_PRODUCTS_REQUEST" })
       fetch("http://localhost:3000/products")
-        .then((response) => response.json())
-        .then((products) => 
-        dispatch({ type: "FETCH_PRODUCTS", products }));
-    };
-  }
-  
-  export const createProduct = (product) => {
+        .then(response => response.json())
+        .then(products => {dispatch({ type: "FETCH_PRODUCTS", products })})
+    }
+}
+
+export const createProduct = (product) => {
     return (dispatch) => {
         const token = localStorage.token;
-       dispatch({type: 'ADD_PRODUCT_REQUEST'})
-       return fetch('http://localhost:3000/products', {
+        dispatch({type: 'ADD_PRODUCT_REQUEST'})
+        return fetch('http://localhost:3000/products', {
        method: 'POST',
        headers: {
            'Content-Type': 'application/json',
@@ -33,7 +32,7 @@ export const fetchProducts = () => {
         }
            else {
                dispatch({type: 'ADD_PRODUCT', data})
-               window.alert("success")
+               window.alert("Product Created")
            }           
        })
    }

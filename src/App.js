@@ -14,8 +14,8 @@ import { connect } from "react-redux";
 class App extends Component {
 
   componentDidMount () {
-    this.props.fetchProducts();
-    this.props.checkUser()
+  if (localStorage.token){
+    this.props.checkUser()}
   }
 
   render() {

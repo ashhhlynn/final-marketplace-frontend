@@ -1,5 +1,3 @@
-
-
 export const createUser = (userData) => {
     return (dispatch) => {
         return fetch('http://localhost:3000/users', {
@@ -39,7 +37,7 @@ export const getExistingUser = (userData) => {
         })
         .then(resp => resp.json())
         .then(data => {
-            if(data.message){
+            if(data.message) {
                 window.alert(data.message)
             }
             else {
@@ -54,7 +52,6 @@ export const getExistingUser = (userData) => {
 export const logOut = () => {
     return (dispatch) => {
         dispatch({type: "LOGOUT"})
-        console.log('logging')
     }
 }
 
@@ -68,7 +65,7 @@ export const checkUser = () => {
             'Content-Type': 'application/json',
             Accept: 'application/json',
             'Authorization': `Bearer ${token}`
-        }
+        },
         })
         .then(resp => resp.json())
         .then(data => {
@@ -78,8 +75,7 @@ export const checkUser = () => {
             else {
                 dispatch({type: "SET_CURRENT_USER", user: data.user})
                 console.log(data)
-            }
-            
+            }            
         })
     }
 }

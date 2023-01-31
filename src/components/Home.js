@@ -12,10 +12,10 @@ class Home extends Component{
     render() {
         if (this.props.currentUser.length === 0) {       
             return (
-                <div className="container">
+                <div>
                     <Greeting />
                     <Segment placeholder>
-                        < ToggleLogin />
+                        <ToggleLogin />
                     </Segment>
                 </div>
             )
