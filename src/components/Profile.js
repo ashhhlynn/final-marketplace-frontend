@@ -46,7 +46,7 @@ class Profile extends Component {
                     </Button>
                     </Link>
                     <Header color='teal'>Account Information:</Header>
-                    <AccountInfo user={this.props.user} key={this.props.user.id}/> 
+                    <AccountInfo user={this.props.user} key={this.props.user.id} /> 
                 </Grid.Column>
                 <Grid.Column>
                     <Header color='teal'>Order History:</Header>

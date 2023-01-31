@@ -8,7 +8,6 @@ import { checkUser } from './components/actions/userActions';
 import CreateProduct from './components/CreateProduct'
 import './App.css'
 import { Container } from 'semantic-ui-react'
-import { fetchProducts } from './components/actions/productActions';
 import { connect } from "react-redux";
 
 class App extends Component {
@@ -38,7 +37,6 @@ class App extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchProducts: () =>  { dispatch(fetchProducts()) },
     checkUser: () =>  { dispatch(checkUser()) } }
 }
 

@@ -10,7 +10,7 @@ import thunk from 'redux-thunk';
 import { applyMiddleware } from 'redux';
 
 export const store = configureStore (
-  { reducer: rootReducer},
+  { reducer: rootReducer },
   applyMiddleware(thunk)
 )
   

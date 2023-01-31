@@ -32,7 +32,6 @@ class ShoppingCartContainer extends Component {
             .then(resp => resp.json())
             .then(data => {
                 console.log(data)
-                alert(data.message)
                 this.props.sendOrder()
             })
         }
