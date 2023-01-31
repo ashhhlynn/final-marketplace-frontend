@@ -1,6 +1,6 @@
 
 import {React, Component }from "react";
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import ProductContainer from './components/ProductContainer'
 import Home from './components/Home'
 import ShoppingCartContainer from './components/ShoppingCartContainer'
@@ -13,31 +13,33 @@ import { connect } from "react-redux";
 class App extends Component {
 
   componentDidMount () {
-  if (localStorage.token){
-    this.props.checkUser()}
+    if (localStorage.token) {
+      this.props.checkUser()
+    }
   }
 
   render() {
     return (
-      <div className="App">
-        <Container>
-          <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/products" element={<ProductContainer />} />
-            <Route path="/cart" element={<ShoppingCartContainer />} />
-            <Route path="/createproduct" element={<CreateProduct />} />
-          </Routes>
-          </BrowserRouter>
-        </Container>
-      </div>
+      <Router>
+        <div className="App">
+          <Container>
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/products" element={<ProductContainer />} />
+              <Route exact path="/cart" element={<ShoppingCartContainer />} />
+              <Route exact path="/createproduct" element={<CreateProduct />} />
+            </Routes>
+          </Container>
+        </div>
+      </Router>
     )
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    checkUser: () =>  { dispatch(checkUser()) } }
+    checkUser: () =>  { dispatch(checkUser()) } 
+  }
 }
 
 export default connect(null, mapDispatchToProps)(App);

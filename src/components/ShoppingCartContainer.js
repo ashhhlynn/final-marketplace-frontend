@@ -13,7 +13,7 @@ class ShoppingCartContainer extends Component {
     handleSendOrder = (event, orderTotal) => {
         event.preventDefault()
         if (this.props.cart.length === 0) {
-            alert('Must have items in cart')
+            window.alert('Must have items in cart')
         }
         else {
             const token = localStorage.token;
@@ -56,28 +56,28 @@ class ShoppingCartContainer extends Component {
                     </Segment>
                     <Segment>
                         <Header as="h2">
-                        <center>
-                        <i>Your Order</i>
-                        <Divider></Divider>
-                        </center>
+                            <center>
+                                <i>Your Order</i>
+                                <Divider></Divider>
+                            </center>
                         </Header>
                         <center>
-                        <h3>Subtotal: ${this.props.total}</h3>
-                        <h3>Tax: ${Math.round((this.props.total * .1)*100)/100}</h3>
-                        <h3>Total: ${orderTotal}</h3>              
-                        <h3>User Information:</h3>
-                        <AccountInfo user={this.props.user} key={this.props.user.id}/>
+                            <h3>Subtotal: ${this.props.total}</h3>
+                            <h3>Tax: ${Math.round((this.props.total * .1)*100)/100}</h3>
+                            <h3>Total: ${orderTotal}</h3>              
+                            <h3>User Information:</h3>
+                                <AccountInfo user={this.props.user} key={this.props.user.id}/>
                         </center>
                         <center><br></br>
-                        <Link to="/">
-                        <Button content="Submit" color='teal' onClick={(event) => 
-                            {this.handleSendOrder(event, orderTotal)}}>
-                        </Button>
-                        </Link>
+                            <Link to="/">
+                                <Button content="Submit" color='teal' onClick={(event) => 
+                                {this.handleSendOrder(event, orderTotal)}}>
+                                </Button>
+                            </Link>
                         </center>
                     </Segment>
-            </Segment.Group>
-        </div>
+                </Segment.Group>
+            </div>
         )
     }
 }
@@ -93,7 +93,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        sendOrder: (history) => { dispatch(sendOrder(history)) }
+        sendOrder: () => { dispatch(sendOrder()) }
     }
 }
 

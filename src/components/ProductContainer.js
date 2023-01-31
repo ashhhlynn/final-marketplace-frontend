@@ -12,7 +12,7 @@ class ProductContainer extends Component {
         this.props.fetchProducts();
     }
 
-    render() {
+    render () {
         const products = this.props.products.map( i => {
             return (
                 <Product product={i} key={i.id}/> 

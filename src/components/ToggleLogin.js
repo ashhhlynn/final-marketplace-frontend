@@ -6,19 +6,19 @@ import { Button } from 'semantic-ui-react'
 function ToggleLogin({ onLogin }) {
     const [showLogin, setShowLogin] = useState(true);
     return (
-        <div className ="log">
+        <div>
             {showLogin ? (
             <>
-            <Login onLogin={onLogin} /><br></br>
+                <Login onLogin={onLogin} /><br></br>
                 <center>
-                    <p>Don't have an account?<br></br></p>
+                    <p>Don't have an account?</p><br></br>
                     <Button content="Signup" onClick={() => setShowLogin(false)}>
                     </Button>
                 </center>  
             </>
             ) : (
             <>
-           <Signup onLogin={onLogin} /><br></br>
+                <Signup onLogin={onLogin} /><br></br>
                 <center>
                     <p>Already have an account?</p>
                     <Button content="Log In" onClick={() => setShowLogin(true)}>

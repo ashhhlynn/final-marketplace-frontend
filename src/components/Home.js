@@ -22,9 +22,9 @@ class Home extends Component{
         }
         else {
             return (
-                <div className="container">
-                <Navbar />
-                <Profile />
+                <div>
+                    <Navbar />
+                    <Profile />
                 </div>
             )
         }

@@ -23,7 +23,7 @@ class Navbar extends Component {
           <Menu.Item><Link to ="/createproduct">Create Product</Link></Menu.Item>
           <Menu.Item onClick={(e) => {this.handleItemClick(e)}}><Link to="/">Log Out</Link></Menu.Item>
         </Menu.Menu> 
-    </Menu>
+      </Menu>
     )
   }
 }
