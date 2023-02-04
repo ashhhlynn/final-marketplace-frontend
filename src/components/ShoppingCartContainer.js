@@ -7,6 +7,7 @@ import AccountInfo from './AccountInfo'
 import {sendOrder} from '../components/actions/orderActions'
 import ShoppingLinks from './ShoppingLinks'
 import Navbar from './Navbar'
+import {checkUser} from './actions/userActions'
 
 class ShoppingCartContainer extends Component {
 
@@ -34,6 +35,7 @@ class ShoppingCartContainer extends Component {
                 console.log(data)
                 this.props.sendOrder()
                 window.alert("Order Submitted")
+                this.props.checkUser()
             })
         }
     }
@@ -94,7 +96,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        sendOrder: () => { dispatch(sendOrder()) }
+        sendOrder: () => { dispatch(sendOrder()) },
+        checkUser: () =>  { dispatch(checkUser()) }
     }
 }
 

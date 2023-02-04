@@ -7,27 +7,11 @@ import {createOrder} from './actions/orderActions'
 
 class Profile extends Component {
 
-    state = {
-        orders: [],
-    }
-
     handleCreateOrder() {
         if (this.props.currentOrder.length === 0) {
             let userId = this.props.user.id
             this.props.createOrder(userId)
         }
-    }
-
-    componentDidMount() {
-        let userId = this.props.user.id
-        fetch(`http://localhost:3000/users/${userId}`)
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data)
-                this.setState({
-                    orders: data.orders
-                })
-            });
     }
 
     render() {
@@ -51,7 +35,7 @@ class Profile extends Component {
                 </Grid.Column>
                 <Grid.Column>
                     <Header color='teal'>Order History:</Header>
-                 {orders}
+                        {orders}
                 </Grid.Column>
             </Grid.Row>
             </Grid>
@@ -68,7 +52,9 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return { createOrder: (userId) => { dispatch(createOrder(userId)) } }  
+    return { 
+        createOrder: (userId) => { dispatch(createOrder(userId)) }, 
+    }  
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile)
