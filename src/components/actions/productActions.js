@@ -32,7 +32,7 @@ export const createProduct = (product) => {
         }
            else {
                dispatch({type: 'ADD_PRODUCT', data})
-               window.alert("Product Created")
+               window.alert('Product created')
            }           
        })
    }

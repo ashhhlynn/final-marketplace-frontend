@@ -33,6 +33,7 @@ class ShoppingCartContainer extends Component {
             .then(data => {
                 console.log(data)
                 this.props.sendOrder()
+                window.alert("Order Submitted")
             })
         }
     }

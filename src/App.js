@@ -9,6 +9,8 @@ import CreateProduct from './components/CreateProduct'
 import './App.css'
 import { Container } from 'semantic-ui-react'
 import { connect } from "react-redux";
+import { fetchProducts } from './components/actions/productActions';
+
 
 class App extends Component {
 
@@ -16,13 +18,16 @@ class App extends Component {
     if (localStorage.token) {
       this.props.checkUser()
     }
+    this.props.fetchProducts();
   }
 
   render() {
     return (
       <Router>
         <div className="App">
+     
           <Container>
+
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route exact path="/products" element={<ProductContainer />} />
@@ -30,7 +35,8 @@ class App extends Component {
               <Route exact path="/createproduct" element={<CreateProduct />} />
             </Routes>
           </Container>
-        </div>
+          </div>
+      
       </Router>
     )
   }
@@ -38,7 +44,9 @@ class App extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    checkUser: () =>  { dispatch(checkUser()) } 
+    checkUser: () =>  { dispatch(checkUser()) },
+    fetchProducts: () =>  { dispatch(fetchProducts()) }
+
   }
 }
 

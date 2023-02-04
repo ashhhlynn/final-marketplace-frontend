@@ -4,8 +4,6 @@ import { Form } from 'semantic-ui-react'
 import { createProduct } from './actions/productActions'
 import { Segment, Divider } from 'semantic-ui-react'
 import Navbar from './Navbar'
-import {Link, Routes, Route, useNavigate} from 'react-router-dom';
-
 
 class CreateProduct extends Component {
 
@@ -20,6 +18,7 @@ class CreateProduct extends Component {
     this.setState ({
       [event.target.id]: event.target.value
     })
+    console.log(this.state.title)
   }
 
   handleSubmit = (event, product) => {
@@ -32,7 +31,9 @@ class CreateProduct extends Component {
       <div>
         < Navbar />
         <Segment placeholder>
-          <center><i><h2>Create Product</h2></i></center>
+          <center>
+            <i><h2>Create Product</h2></i>
+          </center>
           <Divider></Divider>
           <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
             <Form.Input
@@ -68,9 +69,7 @@ class CreateProduct extends Component {
               onChange={this.handleChange}
             />
             <center>
-            <Link to='/products'>
             <Form.Button color='teal' size='large' content='Submit' />
-            </Link>
             </center>
         </Form>
       </Segment>

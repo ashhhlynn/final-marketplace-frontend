@@ -8,10 +8,6 @@ import { fetchProducts } from './actions/productActions';
 
 class ProductContainer extends Component {
 
-    componentDidMount () {
-        this.props.fetchProducts();
-    }
-
     render () {
         const products = this.props.products.map( i => {
             return (

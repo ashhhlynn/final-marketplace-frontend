@@ -17,7 +17,7 @@ export const createOrder = (userId) => {
             .then(resp => resp.json())
             .then(data => {
                 if(data.message) {
-                    alert(data.message)
+                    window.alert(data.message)
                 }
                 else {
                     console.log(data)

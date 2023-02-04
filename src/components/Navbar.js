@@ -15,7 +15,7 @@ class Navbar extends Component {
   render() {
     return (
       <Menu color='teal' pointing secondary>
-        <Header size='large' color='teal' style={{marginTop: '2%'}}>
+        <Header size='large' color='black' style={{marginTop: '2%'}}>
           <b><i>Handmade Market</i></b>
         </Header>
         <Menu.Menu position="right" >

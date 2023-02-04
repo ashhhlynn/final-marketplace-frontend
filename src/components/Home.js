@@ -14,7 +14,11 @@ class Home extends Component{
             return (
                 <div>
                     <Greeting />
+
                     <Segment placeholder>
+                        <center>
+                        <img style={{ width:875, height:495 }} src="https://cdn.shopify.com/s/files/1/0740/1605/files/HLPC-Header-061522.jpg?v=1655299868" />
+                    </center>
                         <ToggleLogin />
                     </Segment>
                 </div>
