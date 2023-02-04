@@ -26,8 +26,8 @@ class Signup extends Component {
 
     render() {
         return (
-            <div id="signup-container">
-            <center><i><h2>Register New Account</h2></i></center>
+            <div>
+            <i><h2>Register New Account</h2></i>
             <Divider></Divider>
             <Form onSubmit={ (event) => {this.handleSubmit(event, this.state)} }>              
                 <Form.Input
@@ -70,9 +70,7 @@ class Signup extends Component {
                     value={this.state.password_confirmation} 
                     onChange={this.handleChange}
                 />
-                <center>
                     <Form.Button content="Create Account" color="teal"/>
-                </center>
                 </Form>
             </div>
         )

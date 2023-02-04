@@ -19,18 +19,19 @@ class Profile extends Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:3000/orders")
+        let userId = this.props.user.id
+        fetch(`http://localhost:3000/users/${userId}`)
             .then((response) => response.json())
             .then((data) => {
                 console.log(data)
                 this.setState({
-                    orders: data.filter((order) => order.user_id == this.props.user.id)
+                    orders: data.orders
                 })
             });
     }
 
     render() {
-        const orders = this.state.orders.map((order) => (
+        const orders = this.props.user.orders.map((order) => (
             <li key={order.id}>Date: {order.updated_at.slice(6, -14)} | Total: ${order.total} | {order.order_items.length} Item(s)</li>
         ))
         return (
@@ -50,7 +51,7 @@ class Profile extends Component {
                 </Grid.Column>
                 <Grid.Column>
                     <Header color='teal'>Order History:</Header>
-                    {orders}
+                 {orders}
                 </Grid.Column>
             </Grid.Row>
             </Grid>

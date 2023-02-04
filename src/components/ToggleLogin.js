@@ -10,20 +10,16 @@ function ToggleLogin({ onLogin }) {
             {showLogin ? (
             <>
                 <Login onLogin={onLogin} /><br></br>
-                <center>
                     <p>Don't have an account?</p><br></br>
                     <Button content="Signup" onClick={() => setShowLogin(false)}>
                     </Button>
-                </center>  
             </>
             ) : (
             <>
                 <Signup onLogin={onLogin} /><br></br>
-                <center>
                     <p>Already have an account?</p>
                     <Button content="Log In" onClick={() => setShowLogin(true)}>
                     </Button>
-                </center>
             </>
             )
         }

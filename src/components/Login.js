@@ -24,7 +24,7 @@ class Login extends Component {
     render() {
         return (
             <div>
-                <center><i><h2>Login</h2></i></center>
+                <i><h2>Login</h2></i>
                 <Divider></Divider>
                 <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
                 <Form.Input
@@ -42,9 +42,9 @@ class Login extends Component {
                     value={this.state.password} 
                     onChange={this.handleChange}
                 /> 
-                <center>
+                
                     <Form.Button content='Log in' color='teal' />
-                </center>
+               
                 </Form>
             </div>
         )
