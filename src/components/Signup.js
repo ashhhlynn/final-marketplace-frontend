@@ -70,7 +70,7 @@ class Signup extends Component {
                     value={this.state.password_confirmation} 
                     onChange={this.handleChange}
                 />
-                    <Form.Button content="Create Account" color="teal"/>
+                    <Form.Button size="big" content="REGISTER"/>
                 </Form>
             </div>
         )

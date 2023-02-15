@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
-import { List, Header, Segment, Button, Divider, Item } from 'semantic-ui-react'
+import { List, Header, Segment, Button, Divider, Item, Grid} from 'semantic-ui-react'
 import CartItem from './CartItem'
 import { Link } from 'react-router-dom'
 import AccountInfo from './AccountInfo'
@@ -9,7 +9,7 @@ import ShoppingLinks from './ShoppingLinks'
 import Navbar from './Navbar'
 import {checkUser} from './actions/userActions'
 
-class ShoppingCartContainer extends Component {
+class Checkout extends Component {
 
     handleSendOrder = (event, orderTotal) => {
         event.preventDefault()
@@ -48,23 +48,41 @@ class ShoppingCartContainer extends Component {
         return (
             <div>   
                 <Navbar/>          
-      
-                    <Segment style={{ width:"640px", position:"center"}}>
-                        <Header as="h2"><center><i>Shopping Cart ({items.length})</i> </center></Header>
-                        <Divider></Divider>
-                        <List>
-                            {items}
-                        </List>
-                        <Divider></Divider>
-                        <h4>Subtotal: ${this.props.total}</h4>
-                      
-                        <Link to="/checkout"><Button size="big" content="CHECKOUT" >
+                    <Segment>
+                    <Grid columns={2}   textAlign='left'>
+                <Grid.Column>
+                        <Header as="h2"><center>
+                        
+                                <i>Order Summary</i> </center>  </Header>    
+                                <Divider></Divider>
+                                <List>
+                                {items}
+                                </List>
+                                <Divider></Divider>
+
+                            <h5>Subtotal: ${this.props.total}</h5>
+                            <h5>Tax: ${Math.round((this.props.total * .1)*100)/100}</h5>
+                            <h5><b>Total: ${orderTotal}</b></h5>
+                         
+                            </Grid.Column>
+                            <Grid.Column>
+                            <center><h2><i>User Information</i></h2></center>
+                            <Divider></Divider>
+<center>  <Button size="medium" position="center" content="EDIT" >
+        </Button>
+                                <AccountInfo user={this.props.user} key={this.props.user.id}/>
+                      <h4>Payment:</h4>
+                       Card Number:<br></br>
+                       Billing Address:<br></br><br></br>
+                            <Link to="/">
+                                <Button content="SUBMIT ORDER" size="big" onClick={(event) => 
+                                {this.handleSendOrder(event, orderTotal)}}>
                                 </Button>
                             </Link>
-                        
-
+                            </center>
+                        </Grid.Column>
+                        </Grid>
                     </Segment>
-              
             </div>
         )
     }
@@ -86,4 +104,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShoppingCartContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(Checkout)

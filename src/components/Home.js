@@ -1,11 +1,13 @@
 
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Profile from './Profile'
-import {  Segment } from 'semantic-ui-react'
+import About from './About'
+import {  Segment, Header, Button } from 'semantic-ui-react'
 import Greeting from './Greeting'
 import ToggleLogin from './ToggleLogin'
 import Navbar from './Navbar'
+import ShoppingLinks from './ShoppingLinks'
+import { Link } from 'react-router-dom'
 
 class Home extends Component{
 
@@ -13,21 +15,25 @@ class Home extends Component{
         if (this.props.currentUser.length === 0) {       
             return (
                 <div>
-                    <Greeting />
-                    <Segment placeholder>
-                        <center>
-                        <img style={{ width:875, height:495 }} src="https://cdn.shopify.com/s/files/1/0740/1605/files/HLPC-Header-061522.jpg?v=1655299868" />
-                        <ToggleLogin />
+                     <Segment>
+                    <center>
+                       
+                        <About />
+             <Link to="/start"><Button content="GET STARTED" size="large"></Button></Link>
+<br></br>
+                        <br></br>
                         </center>
-                    </Segment>
+                        </Segment>
                 </div>
             )
         }
         else {
             return (
                 <div>
-                    <Navbar />
-                    <Profile />
+                    <Segment>
+                        <Navbar />
+                    <About />
+                    </Segment>
                 </div>
             )
         }

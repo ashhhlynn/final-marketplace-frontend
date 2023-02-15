@@ -9,7 +9,7 @@ import rootReducer from './components/reducers/rootReducer';
 import thunk from 'redux-thunk';
 import { applyMiddleware } from 'redux';
 
-export const store = configureStore ({ reducer: rootReducer }, applyMiddleware(thunk))
+export const store = configureStore({ reducer: rootReducer }, applyMiddleware(thunk))
   
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

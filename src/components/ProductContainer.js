@@ -16,7 +16,6 @@ class ProductContainer extends Component {
         return (
             <div>
                 <Navbar/>
-                <ShoppingLinks/>
                 <Segment>
                     <Card.Group>
                         {products}

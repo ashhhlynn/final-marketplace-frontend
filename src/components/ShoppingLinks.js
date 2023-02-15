@@ -1,24 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import { Menu, Button, Icon } from 'semantic-ui-react'
+import { Menu, Button, Icon, Header } from 'semantic-ui-react'
 
 const ShoppingLinks = () => {
     return (
-        <Menu color="grey" inverted size="tiny">
-            <Menu.Item color="teal">
-                <Link to="/products" color="teal"><h4>Shop Products</h4></Link>
-            </Menu.Item>
-            <Menu.Item position = 'right'>
-                <Link to="/cart">
-                <Button animated='vertical' position='right' size='medium' color="teal">
-                <Button.Content hidden>Cart</Button.Content>
-                <Button.Content visible>
-                    <Icon name='shop' />
-                </Button.Content>
-                </Button>
-                </Link>
-            </Menu.Item>
-        </Menu>
+        <div>
+              <center>
+        <br></br><br></br>
+          <img style={{ width:320, height:40 }}src="https://images.squarespace-cdn.com/content/v1/53a20827e4b0c1bc4487322a/7c0b6dee-6810-41d9-ab10-9cf620b6af56/hh-hl-tan-2207.png?format=1500w"></img>
+          </center>
+          </div>
+        
+        
     )
 }
     

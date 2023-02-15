@@ -8,4 +8,21 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.App{
+  font-family: "Courier New";}
 
+
+
+  .ui.menu > .item > .link {
+    color: gray;
+    font-family: "Courier New";
+  }
+
+.button.ui.button {
+  background: #fde9e0;
+  color: black 
+  ;
+  font-family: "Courier New";
+  font-weight:normal
+
+}

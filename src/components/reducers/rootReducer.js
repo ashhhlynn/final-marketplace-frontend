@@ -4,7 +4,7 @@ const initialState = {
     cartTotal: 0,
     currentUser: [],
     currentOrder: [],
-    loading: false
+    loading: false,
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -18,6 +18,7 @@ const rootReducer = (state = initialState, action) => {
 
         case "FETCH_PRODUCTS":
             console.log(action.products)
+            
             return {
                 ...state,
                 products: action.products,
@@ -35,7 +36,7 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 products: [...state.products, action.data],
-                loading: false,
+                loading: false
             };
 
         case "ADD_TO_CART":  

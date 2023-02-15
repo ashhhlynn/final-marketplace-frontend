@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import AccountInfo from './AccountInfo'
+import Navbar from './Navbar'
+
 import { Segment, Button, Divider, Header, Grid } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import {createOrder} from './actions/orderActions'
@@ -19,25 +21,26 @@ class Profile extends Component {
             <li key={order.id}>Date: {order.updated_at.slice(6, -14)} | Total: ${order.total} | {order.order_items.length} Item(s)</li>
         ))
         return (
-            <Segment placeholder>
+            <Segment>
+                                    <Navbar />
+
+                <center><h2><i>Hi {this.props.user.name}!</i></h2></center>
+                <Divider></Divider>
                 <Grid columns={2} stackable textAlign='left'>
-                <Divider vertical></Divider>
-                <Grid.Row verticalAlign='middle'>
                 <Grid.Column>
-                    <center><h1><i>Hi {this.props.user.name}!</i></h1></center>
-                    <Divider></Divider><br></br>
-                    <Link to="/products">
-                    <Button content="Start Shopping" size="huge" color ="teal" onClick={()=>{this.handleCreateOrder()}}>        
-                    </Button>
-                    </Link>
-                    <Header color='teal'>Account Information:</Header>
+                    <Header><center>Account Information:                         
+                    </center> </Header><center>
                     <AccountInfo user={this.props.user} key={this.props.user.id} /> 
+                    <Button size="big" position="center" content="EDIT" >
+        </Button></center>
                 </Grid.Column>
                 <Grid.Column>
-                    <Header color='teal'>Order History:</Header>
+                    <Header>Order History:</Header>
                         {orders}
+                        <Header>Your Products:</Header>
+                        <li>Test Product | $100.00  <Button size="tiny"  content="EDIT"></Button>
+</li>
                 </Grid.Column>
-            </Grid.Row>
             </Grid>
         </Segment>
         )

@@ -1,28 +1,33 @@
 import { useState } from "react";
 import Login from "./Login";
 import Signup from "./Signup";
-import { Button } from 'semantic-ui-react'
+import { Button, Segment } from 'semantic-ui-react'
 
 function ToggleLogin({ onLogin }) {
     const [showLogin, setShowLogin] = useState(true);
     return (
         <div>
+            <center><br></br>
+            <Segment placeholder style={{ width:"600px", positionAlign:"center"}}>
+
             {showLogin ? (
             <>
                 <Login onLogin={onLogin} /><br></br>
-                    <p>Don't have an account?</p><br></br>
-                    <Button content="Signup" onClick={() => setShowLogin(false)}>
+                    <p>Don't have an account?</p>
+                    <Button size="tiny" content="REGISTER" onClick={() => setShowLogin(false)}>
                     </Button>
             </>
             ) : (
             <>
                 <Signup onLogin={onLogin} /><br></br>
                     <p>Already have an account?</p>
-                    <Button content="Log In" onClick={() => setShowLogin(true)}>
+                    <Button content="LOGIN" size="tiny" onClick={() => setShowLogin(true)}>
                     </Button>
             </>
             )
         }
+        </Segment>
+        </center>
     </div>
     )
 }

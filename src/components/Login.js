@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { Form, Divider } from "semantic-ui-react";
+import { Form, Divider, Segment } from "semantic-ui-react";
 import {getExistingUser} from './actions/userActions';
 
 class Login extends Component {
@@ -42,9 +42,7 @@ class Login extends Component {
                     value={this.state.password} 
                     onChange={this.handleChange}
                 /> 
-                
-                    <Form.Button content='Log in' color='teal' />
-               
+                    <Form.Button size="big" content='LOGIN' />
                 </Form>
             </div>
         )
