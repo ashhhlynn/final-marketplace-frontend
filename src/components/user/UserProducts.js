@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import EditProduct from '../products/EditProduct'
 import { Button } from 'semantic-ui-react'
 
-
 class UserProducts extends Component {
 
     state = {
@@ -43,10 +42,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return { 
-    }  
-}
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(UserProducts)
+export default connect(mapStateToProps)(UserProducts)
