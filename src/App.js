@@ -1,16 +1,17 @@
 
 import {React, Component }from "react";
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
-import ProductContainer from './components/ProductContainer'
+import ProductContainer from './components/products/ProductContainer'
 import Home from './components/Home'
-import ShoppingCartContainer from './components/ShoppingCartContainer'
+import ShoppingCartContainer from './components/cart/ShoppingCartContainer'
 import { checkUser } from './components/actions/userActions';
-import CreateProduct from './components/CreateProduct'
-import Checkout from './components/Checkout'
-import About from './components/About'
-import ShoppingLinks from './components/ShoppingLinks'
-import Profile from './components/Profile'
+import CreateProduct from './components/products/CreateProduct'
+import Checkout from './components/cart/Checkout'
+import Head from './components/Head'
+import Profile from './components/user/Profile'
 import ToggleLogin from './components/ToggleLogin'
+import EditUser from './components/user/EditUser'
+import EditProduct from './components/products/EditProduct'
 
 import './App.css'
 import { Container } from 'semantic-ui-react'
@@ -32,7 +33,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Container>
-            <ShoppingLinks />
+            < Head />
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route exact path="/products" element={<ProductContainer />} />
@@ -41,6 +42,8 @@ class App extends Component {
               <Route exact path="/checkout" element={<Checkout />} />
               <Route exact path="/profile" element={<Profile/>} />
               <Route exact path="/start" element={<ToggleLogin/>} />
+              <Route exact path="/edituser" element={<EditUser/>} />
+              <Route exact path="/editproduct" element={<EditProduct/>} />
 
             </Routes>
           </Container>

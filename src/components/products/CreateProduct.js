@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Form } from 'semantic-ui-react'
-import { createProduct } from './actions/productActions'
+import { createProduct } from '../actions/productActions'
 import { Segment, Divider, Header } from 'semantic-ui-react'
-import Navbar from './Navbar'
-import ShoppingLinks from './ShoppingLinks'
+import Navbar from '../Navbar'
 
 
 class CreateProduct extends Component {
@@ -33,7 +32,7 @@ class CreateProduct extends Component {
        
         <Navbar />
       <center>
-        <Segment placeholder position="center" style={{ width:"640px", positionAlign:"center"}}>
+        <Segment position="center" style={{ width:"640px", positionAlign:"center"}}>
      
         <center>
             <Header as="h2"><i>Create Product</i></Header>

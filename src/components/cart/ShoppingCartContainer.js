@@ -3,11 +3,10 @@ import { connect } from "react-redux";
 import { List, Header, Segment, Button, Divider, Item } from 'semantic-ui-react'
 import CartItem from './CartItem'
 import { Link } from 'react-router-dom'
-import AccountInfo from './AccountInfo'
-import {sendOrder} from '../components/actions/orderActions'
-import ShoppingLinks from './ShoppingLinks'
-import Navbar from './Navbar'
-import {checkUser} from './actions/userActions'
+import AccountInfo from '../user/AccountInfo'
+import {sendOrder} from '../actions/orderActions'
+import Navbar from '../Navbar'
+import {checkUser} from '../actions/userActions'
 
 class ShoppingCartContainer extends Component {
 

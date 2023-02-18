@@ -3,11 +3,11 @@ import { connect } from "react-redux";
 import { List, Header, Segment, Button, Divider, Item, Grid} from 'semantic-ui-react'
 import CartItem from './CartItem'
 import { Link } from 'react-router-dom'
-import AccountInfo from './AccountInfo'
-import {sendOrder} from '../components/actions/orderActions'
-import ShoppingLinks from './ShoppingLinks'
-import Navbar from './Navbar'
-import {checkUser} from './actions/userActions'
+import AccountInfo from '../user/AccountInfo'
+import {sendOrder} from '../actions/orderActions'
+import Navbar from '../Navbar'
+import {checkUser} from '../actions/userActions'
+
 
 class Checkout extends Component {
 
@@ -60,16 +60,16 @@ class Checkout extends Component {
                                 </List>
                                 <Divider></Divider>
 
-                            <h5>Subtotal: ${this.props.total}</h5>
-                            <h5>Tax: ${Math.round((this.props.total * .1)*100)/100}</h5>
-                            <h5><b>Total: ${orderTotal}</b></h5>
+                            <p>Subtotal: ${this.props.total}</p>
+                            <p>Tax: ${Math.round((this.props.total * .1)*100)/100}</p>
+                            <p><b>Total: ${orderTotal}</b></p>
                          
                             </Grid.Column>
                             <Grid.Column>
                             <center><h2><i>User Information</i></h2></center>
                             <Divider></Divider>
-<center>  <Button size="medium" position="center" content="EDIT" >
-        </Button>
+<center> <Link to='/edituser'><Button size="medium" position="center" content="EDIT" >
+        </Button></Link>
                                 <AccountInfo user={this.props.user} key={this.props.user.id}/>
                       <h4>Payment:</h4>
                        Card Number:<br></br>

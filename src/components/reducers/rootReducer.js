@@ -39,6 +39,23 @@ const rootReducer = (state = initialState, action) => {
                 loading: false
             };
 
+            case "EDIT_PRODUCT":
+                let p = state.products.filter(item=> item.id !== action.id);
+                let new_p = p.push(action.data)
+            return {
+                ...state,
+                products: new_p,
+                loading: false
+            };
+
+            case "DELETE_PRODUCT":
+                let pr = state.products.filter(item=> item.id !== action.id);
+            return {
+                ...state,
+                products: pr,
+                loading: false
+            };
+
         case "ADD_TO_CART":  
             let newProducts = state.products.filter(item=> item.id !== action.product.id)
             return {
@@ -58,6 +75,12 @@ const rootReducer = (state = initialState, action) => {
                 cartTotal: state.cartTotal - removeProduct.price,
                 loading: false,
                 products: [...state.products, removeProduct]
+            };
+        case 'EDIT_USER_REQUEST':
+            return {
+                ...state, 
+                currentUser: state.currentUser, 
+                loading: true
             };
 
         case 'SET_CURRENT_USER':

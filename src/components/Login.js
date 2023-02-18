@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { Form, Divider, Segment } from "semantic-ui-react";
 import {getExistingUser} from './actions/userActions';
+import { Link } from 'react-router-dom'
+
 
 class Login extends Component {
 
@@ -42,7 +44,7 @@ class Login extends Component {
                     value={this.state.password} 
                     onChange={this.handleChange}
                 /> 
-                    <Form.Button size="big" content='LOGIN' />
+                   <Form.Button size="big" content='LOGIN' />
                 </Form>
             </div>
         )

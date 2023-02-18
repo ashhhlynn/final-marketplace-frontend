@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { Card, Image, Button} from 'semantic-ui-react'
 import { connect } from "react-redux"
-import { addToCart } from './actions/cartActions'
+import { addToCart } from '../actions/cartActions'
 
 class Product extends Component {
 

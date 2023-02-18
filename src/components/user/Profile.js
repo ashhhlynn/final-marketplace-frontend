@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import AccountInfo from './AccountInfo'
-import Navbar from './Navbar'
+import Navbar from '../Navbar'
 
 import { Segment, Button, Divider, Header, Grid } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
-import {createOrder} from './actions/orderActions'
+import {createOrder} from '../actions/orderActions'
+import {deleteProduct} from '../actions/productActions'
 
 class Profile extends Component {
 
@@ -14,6 +15,10 @@ class Profile extends Component {
             let userId = this.props.user.id
             this.props.createOrder(userId)
         }
+    }
+
+    handleDelete(){
+        this.props.deleteProduct()
     }
 
     render() {
@@ -31,14 +36,15 @@ class Profile extends Component {
                     <Header><center>Account Information:                         
                     </center> </Header><center>
                     <AccountInfo user={this.props.user} key={this.props.user.id} /> 
-                    <Button size="big" position="center" content="EDIT" >
-        </Button></center>
+<Link to='/edituser'> <Button size="medium" position="center" content="EDIT" >
+        </Button></Link></center>
                 </Grid.Column>
                 <Grid.Column>
                     <Header>Order History:</Header>
                         {orders}
                         <Header>Your Products:</Header>
-                        <li>Test Product | $100.00  <Button size="tiny"  content="EDIT"></Button>
+                        <li>Test Product | $100.00  <Button size="tiny" content="EDIT" onClick={this.handleDelete}></Button>
+                        <Button size="tiny"  content="DELETE"></Button>
 </li>
                 </Grid.Column>
             </Grid>
@@ -57,6 +63,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return { 
         createOrder: (userId) => { dispatch(createOrder(userId)) }, 
+        deleteProduct: (product) =>  { dispatch(deleteProduct(product)) } 
+
     }  
 }
 

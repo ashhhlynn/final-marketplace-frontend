@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import { Card, Segment } from 'semantic-ui-react'
 import Product from './Product'
 import { connect } from "react-redux";
-import ShoppingLinks from './ShoppingLinks'
-import Navbar from './Navbar'
+import Navbar from '../Navbar'
 
 class ProductContainer extends Component {
 

@@ -1,8 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-import { Menu, Button, Icon, Header } from 'semantic-ui-react'
 
-const ShoppingLinks = () => {
+const Head = () => {
     return (
         <div>
               <center>
@@ -15,4 +13,4 @@ const ShoppingLinks = () => {
     )
 }
     
-export default ShoppingLinks
+export default Head

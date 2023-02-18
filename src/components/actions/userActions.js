@@ -79,3 +79,31 @@ export const checkUser = () => {
         })
     }
 }
+
+export const editUser = (user) => {
+    return (dispatch) => {
+        const token = localStorage.token;
+        console.log(token)
+        let id = user.id
+        dispatch({type: 'EDIT_USER_REQUEST'})
+
+        fetch(`http://localhost:3000/users/${id}`, {  
+              
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                     Accept: 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({
+                   name: user.name,
+                   address: user.address
+                })})
+            .then(resp => resp.json())
+            .then(data => {
+                console.log(data)
+                dispatch({type: "SET_CURRENT_USER", user: data})
+                window.alert("User completed")
+            })
+        }
+    }
