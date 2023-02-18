@@ -25,11 +25,10 @@ class EditUser extends Component {
 
     render() {
         return (
-            <div>
-                <Navbar />
-                <center>
+        <div>
+        <Navbar />
+        <center>
             <Segment position="center" style={{ width:"640px", positionAlign:"center"}}>
-
             <i><h2>Edit Account</h2></i>
             <Divider></Divider>
             <Form onSubmit={ (event) => {this.handleSubmit(event, this.state)} }>              
@@ -54,7 +53,6 @@ class EditUser extends Component {
                 </Segment>
                 </center>
             </div>
-          
         )
     }
 }
@@ -67,7 +65,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
     return {
      editUser: (user) =>  { dispatch(editUser(user)) } 
-
     }
 }
 

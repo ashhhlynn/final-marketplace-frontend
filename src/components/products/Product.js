@@ -15,9 +15,7 @@ class Product extends Component {
                     </Card.Header>
                     <Card.Description>{i.description}</Card.Description>
                     ${i.price}
-
-                </Card.Content>
-              
+                </Card.Content>             
             </Card>
         )
     }
@@ -29,7 +27,9 @@ class Product extends Component {
 }
   
 const mapStateToProps = (state) => {
-    return { currentOrder: state.currentOrder }
+    return { 
+        currentOrder: state.currentOrder 
+    }
 }
 
 const mapDispatchToProps = (dispatch) => {

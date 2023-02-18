@@ -5,7 +5,6 @@ import { createProduct } from '../actions/productActions'
 import { Segment, Divider, Header } from 'semantic-ui-react'
 import Navbar from '../Navbar'
 
-
 class CreateProduct extends Component {
 
   state = {
@@ -29,14 +28,10 @@ class CreateProduct extends Component {
   render() {
     return (
       <div>
-       
         <Navbar />
-      <center>
-        <Segment position="center" style={{ width:"640px", positionAlign:"center"}}>
-     
         <center>
-            <Header as="h2"><i>Create Product</i></Header>
-          </center>
+        <Segment position="center" style={{ width:"640px", positionAlign:"center"}}>
+          <Header as="h2"><i>Create Product</i></Header>
           <Divider></Divider>
           <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
             <Form.Input
@@ -87,7 +82,6 @@ const mapStateToProps = (state) => {
       currentUser: state.currentUser
   }
 }
-
 
 const mapDispatchToProps = (dispatch) => {
   return { createProduct: (product, user) =>  { dispatch(createProduct(product, user)) } }

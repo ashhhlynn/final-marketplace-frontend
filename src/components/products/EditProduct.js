@@ -3,9 +3,7 @@ import { connect } from "react-redux";
 import { Form } from 'semantic-ui-react'
 import { editProduct } from '../actions/productActions'
 import { Segment, Divider, Header, Button } from 'semantic-ui-react'
-import Navbar from '../Navbar'
 import {deleteProduct} from '../actions/productActions'
-
 
 class EditProduct extends Component {
 
@@ -39,13 +37,9 @@ handleDelete = (event, id) => {
   render() {
     return (
       <div>
-       
       <center>
         <Segment position="center" style={{ width:"640px", positionAlign:"center"}}>
-     
-        <center>
-            <Header as="h2"><i>Edit Product</i></Header>
-          </center>
+          <Header as="h2"><i>Edit Product</i></Header>
           <Divider></Divider>
           <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
             <Form.Input
@@ -83,7 +77,6 @@ handleDelete = (event, id) => {
             <center>
             <Form.Button size='big' content='EDIT PRODUCT' />
             <Button size="big" content="REMOVE" onClick= { (event) => { this.handleDelete(event, this.state.id)}}></Button>
-
             </center>
         </Form>
       </Segment>
@@ -94,10 +87,10 @@ handleDelete = (event, id) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return { editProduct: (product) =>  { dispatch(editProduct(product)) } ,
-  deleteProduct: (product) =>  { dispatch(deleteProduct(product)) } 
-
-}
+  return { 
+    editProduct: (product) =>  { dispatch(editProduct(product)) } ,
+    deleteProduct: (product) =>  { dispatch(deleteProduct(product)) } 
+  }
 }
 
 export default connect(null, mapDispatchToProps)(EditProduct)
