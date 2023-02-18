@@ -5,6 +5,7 @@ const initialState = {
     currentUser: [],
     currentOrder: [],
     loading: false,
+    userProducts: []
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -36,6 +37,7 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 products: [...state.products, action.data],
+                userProducts: [...state.userProducts, action.data],
                 loading: false
             };
 

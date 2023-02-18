@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import About from './About'
@@ -14,24 +13,22 @@ class Home extends Component{
             return (
                 <div>
                     <Navbar />
-                     <Segment>
-                    <center>
-                       
+                    <Segment>
+                    <center>   
                         <About />
-             <Link to="/start"><Button content="GET STARTED" size="large"></Button></Link>
-<br></br>
-                        <br></br>
-                        </center>
-                        </Segment>
+                        <Link to="/start"><Button content="GET STARTED" size="large"></Button></Link>
+                        <br></br><br></br>
+                    </center>
+                    </Segment>
                 </div>
             )
         }
         else {
             return (
                 <div>
-                    <Segment>
-                        <Navbar />
-                    <About />
+                    <Navbar />
+                    <Segment>   
+                        <About />
                     </Segment>
                 </div>
             )

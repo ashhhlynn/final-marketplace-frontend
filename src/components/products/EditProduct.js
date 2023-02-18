@@ -2,21 +2,29 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Form } from 'semantic-ui-react'
 import { editProduct } from '../actions/productActions'
-import { Segment, Divider, Header } from 'semantic-ui-react'
+import { Segment, Divider, Header, Button } from 'semantic-ui-react'
 import Navbar from '../Navbar'
+import {deleteProduct} from '../actions/productActions'
+
 
 class EditProduct extends Component {
 
 constructor(props){
 super(props)
   this.state = {
-    title: '',
-    price: '',
-    description: '',
-    image_url: '',
-    id: 32
+    title: this.props.product.title,
+    price: this.props.product.price,
+    description: this.props.product.description,
+    image_url: this.props.product.image_url,
+    id: this.props.product.id
   }
 }
+
+handleDelete = (event, id) => {
+  event.preventDefault()
+  this.props.deleteProduct(id)
+}
+
   handleChange = (event) => {
     this.setState ({
       [event.target.id]: event.target.value
@@ -32,7 +40,6 @@ super(props)
     return (
       <div>
        
-        <Navbar />
       <center>
         <Segment position="center" style={{ width:"640px", positionAlign:"center"}}>
      
@@ -74,7 +81,9 @@ super(props)
               onChange={this.handleChange}
             />
             <center>
-            <Form.Button size='big' content='SUBMIT' />
+            <Form.Button size='big' content='EDIT PRODUCT' />
+            <Button size="big" content="REMOVE" onClick= { (event) => { this.handleDelete(event, this.state.id)}}></Button>
+
             </center>
         </Form>
       </Segment>
@@ -85,7 +94,10 @@ super(props)
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return { editProduct: (product) =>  { dispatch(editProduct(product)) } }
+  return { editProduct: (product) =>  { dispatch(editProduct(product)) } ,
+  deleteProduct: (product) =>  { dispatch(deleteProduct(product)) } 
+
+}
 }
 
 export default connect(null, mapDispatchToProps)(EditProduct)

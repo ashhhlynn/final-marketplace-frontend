@@ -9,7 +9,6 @@ function ToggleLogin({ onLogin }) {
         <div>
             <center><br></br>
             <Segment placeholder style={{ width:"600px", positionAlign:"center"}}>
-
             {showLogin ? (
             <>
                 <Login onLogin={onLogin} /><br></br>
@@ -28,7 +27,7 @@ function ToggleLogin({ onLogin }) {
         }
         </Segment>
         </center>
-    </div>
+        </div>
     )
 }
 

@@ -23,7 +23,7 @@ class CreateProduct extends Component {
 
   handleSubmit = (event, product) => {
     event.preventDefault()
-    this.props.createProduct(product)
+    this.props.createProduct(product, this.props.currentUser)
   }
 
   render() {
@@ -82,8 +82,15 @@ class CreateProduct extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return { createProduct: (product) =>  { dispatch(createProduct(product)) } }
+const mapStateToProps = (state) => {
+  return {
+      currentUser: state.currentUser
+  }
 }
 
-export default connect(null, mapDispatchToProps)(CreateProduct)
+
+const mapDispatchToProps = (dispatch) => {
+  return { createProduct: (product, user) =>  { dispatch(createProduct(product, user)) } }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateProduct)

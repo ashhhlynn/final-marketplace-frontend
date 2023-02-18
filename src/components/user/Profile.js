@@ -2,53 +2,40 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import AccountInfo from './AccountInfo'
 import Navbar from '../Navbar'
-
+import UserProducts from './UserProducts'
 import { Segment, Button, Divider, Header, Grid } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
-import {createOrder} from '../actions/orderActions'
-import {deleteProduct} from '../actions/productActions'
 
 class Profile extends Component {
-
-    handleCreateOrder() {
-        if (this.props.currentOrder.length === 0) {
-            let userId = this.props.user.id
-            this.props.createOrder(userId)
-        }
-    }
-
-    handleDelete(){
-        this.props.deleteProduct()
-    }
 
     render() {
         const orders = this.props.user.orders.map((order) => (
             <li key={order.id}>Date: {order.updated_at.slice(6, -14)} | Total: ${order.total} | {order.order_items.length} Item(s)</li>
-        ))
+        ))        
         return (
+           <div>
+            <Navbar />
             <Segment>
-                                    <Navbar />
-
                 <center><h2><i>Hi {this.props.user.name}!</i></h2></center>
                 <Divider></Divider>
                 <Grid columns={2} stackable textAlign='left'>
                 <Grid.Column>
-                    <Header><center>Account Information:                         
-                    </center> </Header><center>
+                    <Header><center>Account Information: </center></Header>
+                    <center>
                     <AccountInfo user={this.props.user} key={this.props.user.id} /> 
-<Link to='/edituser'> <Button size="medium" position="center" content="EDIT" >
-        </Button></Link></center>
+                    <Link to='/edituser'><Button size="medium" position="center" content="EDIT" >
+                    </Button></Link>
+                    </center>
                 </Grid.Column>
                 <Grid.Column>
                     <Header>Order History:</Header>
                         {orders}
-                        <Header>Your Products:</Header>
-                        <li>Test Product | $100.00  <Button size="tiny" content="EDIT" onClick={this.handleDelete}></Button>
-                        <Button size="tiny"  content="DELETE"></Button>
-</li>
+                    <Header>Your Products:</Header>
+                        <UserProducts />
                 </Grid.Column>
             </Grid>
         </Segment>
+        </div>
         )
     }
 }
@@ -56,16 +43,7 @@ class Profile extends Component {
 const mapStateToProps = (state) => {
     return {
         user: state.currentUser,
-        currentOrder: state.currentOrder
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return { 
-        createOrder: (userId) => { dispatch(createOrder(userId)) }, 
-        deleteProduct: (product) =>  { dispatch(deleteProduct(product)) } 
-
-    }  
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Profile)
+export default connect(mapStateToProps)(Profile)

@@ -7,8 +7,10 @@ export const fetchProducts = () => {
     }
 }
 
-export const createProduct = (product) => {
+export const createProduct = (product, user) => {
     return (dispatch) => {
+        let i = user.id
+        console.log(i)
         const token = localStorage.token;
         dispatch({type: 'ADD_PRODUCT_REQUEST'})
         return fetch('http://localhost:3000/products', {
@@ -22,7 +24,9 @@ export const createProduct = (product) => {
            title: product.title,
            price: product.price,
            description: product.description,
-           image_url: product.image_url
+           image_url: product.image_url,
+           sold: false,
+           buyer: i
        })
        })
        .then(resp => resp.json())
@@ -53,7 +57,7 @@ export const editProduct = (product) => {
                     'Authorization': `Bearer ${token}`
                 },
                 body: JSON.stringify({
-                   title: product.name,
+                   title: product.title,
                    price: product.price,
                    description: product.description,
                    image_url: product.image_url
