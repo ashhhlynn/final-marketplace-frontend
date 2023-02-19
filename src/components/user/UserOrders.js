@@ -27,7 +27,7 @@ class UserOrders extends Component {
     render () {
         const orders = this.props.user.orders.map((order) => (
             <li key={order.id}>
-                <Link onClick={this.handleOpen}>Date: {order.updated_at.slice(6, -14)}</Link> 
+                <Link onClick={this.handleOpen}>#{order.id} </Link> 
 
                   <Modal
                     open={this.state.modalOpen}
@@ -38,6 +38,7 @@ class UserOrders extends Component {
                     <OrderSummary order={order} />
                     </Modal.Content>
                     </Modal>
+                    Date: {order.updated_at.slice(6, -14)}
                     </li>
         ))        
         return (
