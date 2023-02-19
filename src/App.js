@@ -9,9 +9,6 @@ import CreateProduct from './components/products/CreateProduct'
 import Checkout from './components/cart/Checkout'
 import Head from './components/Head'
 import Profile from './components/user/Profile'
-import ToggleLogin from './components/ToggleLogin'
-import EditUser from './components/user/EditUser'
-import EditProduct from './components/products/EditProduct'
 import './App.css'
 import { Container } from 'semantic-ui-react'
 import { connect } from "react-redux";
@@ -40,9 +37,6 @@ class App extends Component {
               <Route exact path="/createproduct" element={<CreateProduct />} />
               <Route exact path="/checkout" element={<Checkout />} />
               <Route exact path="/profile" element={<Profile/>} />
-              <Route exact path="/start" element={<ToggleLogin/>} />
-              <Route exact path="/edituser" element={<EditUser/>} />
-              <Route exact path="/editproduct" element={<EditProduct/>} />
             </Routes>
           </Container>
           </div>

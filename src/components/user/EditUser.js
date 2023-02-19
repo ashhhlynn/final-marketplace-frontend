@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { Form, Divider, Segment } from 'semantic-ui-react'
 import { editUser } from '../actions/userActions'
-import Navbar from '../Navbar'
+import { checkUser } from '../actions/userActions';
+
 
 class EditUser extends Component {
 
@@ -15,6 +16,7 @@ class EditUser extends Component {
     handleSubmit = (event, user) => {
         event.preventDefault()
         this.props.editUser(user)
+        this.props.handleClose();
     }
 
     handleChange = (event) => {
@@ -26,7 +28,6 @@ class EditUser extends Component {
     render() {
         return (
         <div>
-        <Navbar />
         <center>
             <Segment position="center" style={{ width:"640px", positionAlign:"center"}}>
             <i><h2>Edit Account</h2></i>
@@ -64,7 +65,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-     editUser: (user) =>  { dispatch(editUser(user)) } 
+     editUser: (user) =>  { dispatch(editUser(user)) } ,
+     checkUser: () =>  { dispatch(checkUser()) },
+
     }
 }
 

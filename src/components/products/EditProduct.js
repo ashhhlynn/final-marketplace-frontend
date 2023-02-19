@@ -21,6 +21,7 @@ super(props)
 handleDelete = (event, id) => {
   event.preventDefault()
   this.props.deleteProduct(id)
+  this.props.handleClose();
 }
 
   handleChange = (event) => {
@@ -32,6 +33,7 @@ handleDelete = (event, id) => {
   handleSubmit = (event, product) => {
     event.preventDefault()
     this.props.editProduct(product)
+    this.props.handleClose();
   }
 
   render() {

@@ -11,7 +11,7 @@ class Product extends Component {
             <Card centered key={i.id} style={{ width:"350px"}}>
                 <Image src={i.image_url}/>
                 <Card.Content>
-                    <Card.Header>{i.title} <Button content="+" floated="right" size="tiny" onClick={() => {this.handleClick(i)}}></Button> 
+                    <Card.Header>{i.title} <Button content="+" floated="right" size="tiny" onClick={(event) => {this.handleClick(event, i)}}></Button> 
                     </Card.Header>
                     <Card.Description>{i.description}</Card.Description>
                     ${i.price}
@@ -20,15 +20,22 @@ class Product extends Component {
         )
     }
 
-    handleClick = (product) => {
-        this.props.addToCart(product, this.props.currentOrder)
+    handleClick = (event, product) => {
+        event.preventDefault()
+        if (this.props.cart.find((p) => p.id == product.id)){
+            alert("You have already added this item.")
+        }
+        else {
+            this.props.addToCart(product, this.props.currentOrder)
+        }
     }    
 
 }
   
 const mapStateToProps = (state) => {
     return { 
-        currentOrder: state.currentOrder 
+        currentOrder: state.currentOrder,
+        cart: state.cart
     }
 }
 

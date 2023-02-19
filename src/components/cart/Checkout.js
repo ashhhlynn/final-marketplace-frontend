@@ -1,14 +1,30 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
-import { List, Header, Segment, Button, Divider, Item, Grid} from 'semantic-ui-react'
+import { List, Header, Segment, Button, Divider, Modal, Grid} from 'semantic-ui-react'
 import CartItem from './CartItem'
 import { Link } from 'react-router-dom'
 import AccountInfo from '../user/AccountInfo'
 import {sendOrder} from '../actions/orderActions'
 import Navbar from '../Navbar'
 import {checkUser} from '../actions/userActions'
+import EditUser from '../user/EditUser'
+import PaymentForm from './PaymentForm'
+
+
 
 class Checkout extends Component {
+
+    state = {
+        modalOpen: false,
+    }
+  
+    handleOpen = () => {
+        this.setState({ modalOpen: true });
+    }
+
+    handleClose = () => {
+        this.setState({ modalOpen: false })
+    }
 
     handleSendOrder = (event, orderTotal) => {
         event.preventDefault()
@@ -68,12 +84,20 @@ class Checkout extends Component {
                             <center><h2><i>User Information</i></h2></center>
                             <Divider></Divider>
                             <center>
-                            <Link to='/edituser'><Button size="medium" position="center" content="EDIT" >
-                            </Button></Link>
-                                <AccountInfo user={this.props.user} key={this.props.user.id}/>
-                                <h4>Payment:</h4>
-                                Card Number:<br></br>
-                                Billing Address:<br></br><br></br>
+                            <AccountInfo user={this.props.user} key={this.props.user.id}/>
+                            <Button size="tiny" position="center" content="EDIT" onClick={this.handleOpen} >
+                            </Button><br></br><br></br>
+                            <Modal
+                            open={this.state.modalOpen}
+                            onClose={this.handleClose}
+                            closeIcon
+                            >
+                            <Modal.Content>
+                                <EditUser handleClose={this.handleClose} />
+                            </Modal.Content>
+                            </Modal>
+                                <p>Payment:</p>
+                                <PaymentForm /><br></br>
                                 <Link to="/">
                                 <Button content="SUBMIT ORDER" size="big" onClick={(event) => 
                                 {this.handleSendOrder(event, orderTotal)}}>

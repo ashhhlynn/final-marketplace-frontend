@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
-import { List, Header, Segment, Button, Divider } from 'semantic-ui-react'
+import { List, Header, Segment, Button, Divider, Grid} from 'semantic-ui-react'
 import CartItem from './CartItem'
 import { Link } from 'react-router-dom'
 import Navbar from '../Navbar'
-import {checkUser} from '../actions/userActions'
+import { autoBatchEnhancer } from '@reduxjs/toolkit';
 
 class ShoppingCartContainer extends Component {
        
@@ -14,17 +14,20 @@ class ShoppingCartContainer extends Component {
         )
         return (
             <div>   
-                <Navbar/>                
-                    <Segment style={{ width:"640px", position:"center"}}>
+                <Navbar/> 
+                    <Segment style={{ width:"670px", margin: "0 auto"}}>
                         <Header as="h2"><center><i>Shopping Cart ({items.length})</i> </center></Header>
                         <Divider></Divider>
                         <List>
                             {items}
                         </List>
                         <Divider></Divider>
+                        <center>
                         <h4>Subtotal: ${this.props.total}</h4>
                         <Link to="/checkout"><Button size="big" content="CHECKOUT" ></Button></Link>
+                        </center>
                     </Segment>
+                    
             </div>
         )
     }
@@ -39,10 +42,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        checkUser: () =>  { dispatch(checkUser()) }
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ShoppingCartContainer)
+export default connect(mapStateToProps)(ShoppingCartContainer)

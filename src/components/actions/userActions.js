@@ -104,6 +104,7 @@ export const editUser = (user) => {
                 console.log(data)
                 dispatch({type: "SET_CURRENT_USER", user: data})
                 window.alert("User completed")
+                checkUser()
             })
         }
     }

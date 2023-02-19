@@ -1,15 +1,23 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
 import EditProduct from '../products/EditProduct'
-import { Button } from 'semantic-ui-react'
+import { Button, Modal } from 'semantic-ui-react'
 
 class UserProducts extends Component {
 
     state = {
-        up: []
+        up: [],
+        modalOpen: false,
+
+    }
+  
+    handleOpen = () => {
+        this.setState({ modalOpen: true });
     }
 
-    componentDidMount(){
+    handleClose = () => this.setState({ modalOpen: false });
+
+    componentDidMount() {
         let x = this.props.products.filter(p => p.buyer == this.props.user.id)
         this.setState ({
             up: x
@@ -20,10 +28,19 @@ class UserProducts extends Component {
         const products = this.state.up.map( prod => {
             return (
                 <li key={prod.id}>{prod.title}: ${prod.price} <br></br>
-                {prod.description}
-                sold: {prod.sold}
-                <Button size="tiny" content="EDIT"></Button>
-                <EditProduct product={prod}/> 
+                <ul>{prod.description}<br></br>
+                sold: {prod.sold}<br></br>
+                <Button size="tiny" content="EDIT" onClick={this.handleOpen}></Button>
+                <Modal
+                open={this.state.modalOpen}
+                onClose={this.handleClose}
+                closeIcon
+                >
+                <Modal.Content>
+                    <EditProduct product={prod} handleClose={this.handleClose}/>
+                </Modal.Content>
+                </Modal>
+                </ul> 
                 </li>
             )
         })

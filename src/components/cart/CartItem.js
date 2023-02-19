@@ -17,11 +17,12 @@ class CartItem extends Component {
                 <Item.Content>
                     <Item.Image floated="right" size='tiny' src={i.image_url} />
                     <Item.Header>{i.title}: ${i.price}</Item.Header>
-                    <Item.Meta>{i.description}</Item.Meta>
-                    <Button size="tiny" onClick={()=>{this.handleRemove(i.id)}}>
+                    <Button floated="left" size="tiny" onClick={()=>{this.handleRemove(i.id)}}>
                     <Button.Content visible>-
                     </Button.Content>
                     </Button>
+                    <Item.Meta>{i.description}</Item.Meta>
+                   
                 </Item.Content>
             </Item> 
         )

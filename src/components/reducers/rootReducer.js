@@ -18,7 +18,6 @@ const rootReducer = (state = initialState, action) => {
 
         case "FETCH_PRODUCTS":
             console.log(action.products)
-            
             return {
                 ...state,
                 products: action.products,
@@ -39,17 +38,18 @@ const rootReducer = (state = initialState, action) => {
                 loading: false
             };
 
-            case "EDIT_PRODUCT":
-                let p = state.products.filter(item=> item.id !== action.id);
-                let new_p = p.push(action.data)
+        case "EDIT_PRODUCT":
+            let p = state.products.filter(item=> item.id !== action.id)
+            let new_p = p.push(action.data)
             return {
                 ...state,
-                products: new_p,
+                products: [...state.products.filter(item=> item.id !== action.id), action.data],
                 loading: false
             };
 
-            case "DELETE_PRODUCT":
-                let pr = state.products.filter(item=> item.id !== action.id);
+        case "DELETE_PRODUCT":
+            let pr = state.products.filter(item => item.id !== action.id);
+            alert("Deleted Product")
             return {
                 ...state,
                 products: pr,
@@ -57,13 +57,11 @@ const rootReducer = (state = initialState, action) => {
             };
 
         case "ADD_TO_CART":  
-            let newProducts = state.products.filter(item=> item.id !== action.product.id)
             return {
                 ...state,
                 cart: [...state.cart, action.product],
                 cartTotal: state.cartTotal + action.product.price,
                 loading: false,
-                products: newProducts
             };
 
         case "REMOVE_FROM_CART":
@@ -74,8 +72,8 @@ const rootReducer = (state = initialState, action) => {
                 cart: newCartProducts, 
                 cartTotal: state.cartTotal - removeProduct.price,
                 loading: false,
-                products: [...state.products, removeProduct]
             };
+
         case 'EDIT_USER_REQUEST':
             return {
                 ...state, 
