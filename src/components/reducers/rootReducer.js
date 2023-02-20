@@ -39,8 +39,6 @@ const rootReducer = (state = initialState, action) => {
             };
 
         case "EDIT_PRODUCT":
-            let p = state.products.filter(item=> item.id !== action.id)
-            let new_p = p.push(action.data)
             return {
                 ...state,
                 products: [...state.products.filter(item=> item.id !== action.id), action.data],

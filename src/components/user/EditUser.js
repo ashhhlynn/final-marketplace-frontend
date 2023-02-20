@@ -4,7 +4,6 @@ import { Form, Divider, Segment } from 'semantic-ui-react'
 import { editUser } from '../actions/userActions'
 import { checkUser } from '../actions/userActions';
 
-
 class EditUser extends Component {
 
     state = {
@@ -13,9 +12,10 @@ class EditUser extends Component {
         id: this.props.user.id
     }
 
-    handleSubmit = (event, user) => {
+    handleSubmit = (event, users) => {
         event.preventDefault()
-        this.props.editUser(user)
+        this.props.editUser(users)
+        this.props.checkUser()
         this.props.handleClose();
     }
 

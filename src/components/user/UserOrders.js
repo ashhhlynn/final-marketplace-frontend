@@ -28,19 +28,20 @@ class UserOrders extends Component {
         const orders = this.props.user.orders.map((order) => (
             <li key={order.id}>
                 <Link onClick={this.handleOpen}>#{order.id} </Link> 
-
-                  <Modal
+              
+                  <Modal style={{ width:"350px"}}
                     open={this.state.modalOpen}
                     onClose={this.handleClose}
                     closeIcon
                     >
                     <Modal.Content>
+                      
                     <OrderSummary order={order} />
                     </Modal.Content>
                     </Modal>
                     Date: {order.updated_at.slice(6, -14)}
                     </li>
-        ))        
+        ))       
         return (
         <div>
             {orders}

@@ -24,6 +24,8 @@ class Checkout extends Component {
 
     handleClose = () => {
         this.setState({ modalOpen: false })
+        this.props.checkUser()
+
     }
 
     handleSendOrder = (event, orderTotal) => {
@@ -51,6 +53,7 @@ class Checkout extends Component {
                 this.props.sendOrder()
                 window.alert("Order Submitted")
                 this.props.checkUser()
+
             })
         }
     }

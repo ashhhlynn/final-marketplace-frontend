@@ -8,7 +8,7 @@ const AccountInfo = (props) => {
         Name: {user.name}<br></br>
         Email: {user.email}<br></br>
         Address: {user.address}<br></br>
-        Member Since: {user.updated_at.slice(6, -14)}
+        Member Since: {user.created_at.slice(6, -14)}
         </List>
     )
 }

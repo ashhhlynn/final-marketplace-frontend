@@ -4,6 +4,7 @@ import { Form } from 'semantic-ui-react'
 import { createProduct } from '../actions/productActions'
 import { Segment, Divider, Header } from 'semantic-ui-react'
 import Navbar from '../Navbar'
+import {checkUser} from '../actions/userActions'
 
 class CreateProduct extends Component {
 
@@ -23,6 +24,8 @@ class CreateProduct extends Component {
   handleSubmit = (event, product) => {
     event.preventDefault()
     this.props.createProduct(product, this.props.currentUser)
+    this.props.checkUser()
+
   }
 
   render() {
@@ -84,7 +87,10 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return { createProduct: (product, user) =>  { dispatch(createProduct(product, user)) } }
+  return { 
+    createProduct: (product, user) =>  { dispatch(createProduct(product, user)) }, 
+    checkUser: () =>  { dispatch(checkUser()) },
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateProduct)

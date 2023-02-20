@@ -23,12 +23,14 @@ class Profile extends Component {
 
     handleClose = () => {
         this.setState({ modalOpen: false })
+        this.props.checkUser()
+    }
+
+    componentDidMount() {
     }
 
     render() {
-        const orders = this.props.user.orders.map((order) => (
-            <li key={order.id}>Date: {order.updated_at.slice(6, -14)} | Total: ${order.total} </li>
-        ))        
+               
         return (
            <div>
             <Navbar />
@@ -42,7 +44,7 @@ class Profile extends Component {
                     <AccountInfo user={this.props.user} key={this.props.user.id} /> 
                     <Button size="medium" position="center" content="EDIT" onClick={this.handleOpen} >
                     </Button>
-                    <Modal
+                    <Modal style={{ width:"690px"}}
                     open={this.state.modalOpen}
                     onClose={this.handleClose}
                     closeIcon

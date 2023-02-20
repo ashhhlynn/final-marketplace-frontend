@@ -57,8 +57,11 @@ export const logOut = () => {
 
 export const checkUser = () => {
     return (dispatch) => {
+
         const token = localStorage.token;
         console.log(token)
+        dispatch({type: 'EDIT_USER_REQUEST'})
+
         return fetch('http://localhost:3000/profile', {
         method: 'GET',
         headers: {
@@ -80,11 +83,11 @@ export const checkUser = () => {
     }
 }
 
-export const editUser = (user) => {
+export const editUser = (users) => {
     return (dispatch) => {
         const token = localStorage.token;
         console.log(token)
-        let id = user.id
+        let id = users.id
         dispatch({type: 'EDIT_USER_REQUEST'})
 
         fetch(`http://localhost:3000/users/${id}`, {  
@@ -96,15 +99,14 @@ export const editUser = (user) => {
                     'Authorization': `Bearer ${token}`
                 },
                 body: JSON.stringify({
-                   name: user.name,
-                   address: user.address
+                   name: users.name,
+                   address: users.address
                 })})
             .then(resp => resp.json())
             .then(data => {
                 console.log(data)
                 dispatch({type: "SET_CURRENT_USER", user: data})
-                window.alert("User completed")
-                checkUser()
+                window.alert("User Updated")
             })
         }
     }
