@@ -1,39 +1,15 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import AccountInfo from './AccountInfo'
-import Navbar from '../Navbar'
 import UserProducts from './UserProducts'
 import UserOrders from './UserOrders'
-
-import { Segment, Button, Divider, Header, Grid, Modal } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
-import EditUser from './EditUser'
-import { checkUser } from '../actions/userActions';
-
+import { Segment, Divider, Header, Grid } from 'semantic-ui-react'
 
 class Profile extends Component {
 
-    state = {
-        modalOpen: false
-    }
-  
-    handleOpen = () => {
-        this.setState({ modalOpen: true });
-    }
-
-    handleClose = () => {
-        this.setState({ modalOpen: false })
-        this.props.checkUser()
-    }
-
-    componentDidMount() {
-    }
-
-    render() {
-               
+    render() {               
         return (
            <div>
-            <Navbar />
             <Segment>
                 <center><h2><i>Hi {this.props.user.name}!</i></h2></center>
                 <Divider></Divider>
@@ -41,29 +17,18 @@ class Profile extends Component {
                 <Grid.Column>
                     <Header><center>Account Information: </center></Header>
                     <center>
-                    <AccountInfo user={this.props.user} key={this.props.user.id} /> 
-                    <Button size="medium" position="center" content="EDIT" onClick={this.handleOpen} >
-                    </Button>
-                    <Modal style={{ width:"690px"}}
-                    open={this.state.modalOpen}
-                    onClose={this.handleClose}
-                    closeIcon
-                    >
-                    <Modal.Content>
-                        <EditUser handleClose={this.handleClose} />
-                    </Modal.Content>
-                    </Modal>
+                    <AccountInfo  />                 
                     </center>
                 </Grid.Column>
                 <Grid.Column>
                     <Header>Order History:</Header>
-                       <UserOrders />
+                       <UserOrders user={this.props.user} key={this.props.user.id}/>
                     <Header>Your Products:</Header>
-                        <UserProducts />
+                        <UserProducts user={this.props.user} key={this.props.user.id}/>
                 </Grid.Column>
-            </Grid>
-        </Segment>
-        </div>
+                </Grid>
+            </Segment>
+            </div>
         )
     }
 }
@@ -74,11 +39,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-      checkUser: () =>  { dispatch(checkUser()) },
-    }
-  }
-
-export default connect(mapStateToProps, mapDispatchToProps)(Profile)
+export default connect(mapStateToProps)(Profile)

@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import { removeFromCart } from '../actions/cartActions'
 import { Form } from 'semantic-ui-react'
 
 class PaymentForm extends Component {
@@ -65,8 +63,6 @@ class PaymentForm extends Component {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return { removeFromCart: (id) => { dispatch(removeFromCart(id)) } }
-}
 
-export default connect(null, mapDispatchToProps)(PaymentForm)
+
+export default PaymentForm

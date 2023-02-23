@@ -4,7 +4,6 @@ import { Form } from 'semantic-ui-react'
 import { editProduct } from '../actions/productActions'
 import { Segment, Divider, Header, Button } from 'semantic-ui-react'
 import {deleteProduct} from '../actions/productActions'
-import {checkUser} from '../actions/userActions'
 
 class EditProduct extends Component {
 
@@ -22,7 +21,6 @@ super(props)
 handleDelete = (event, id) => {
   event.preventDefault()
   this.props.deleteProduct(id)
-  this.props.checkUser()
   this.props.handleClose();
 }
 
@@ -35,7 +33,6 @@ handleDelete = (event, id) => {
   handleSubmit = (event, product) => {
     event.preventDefault()
     this.props.editProduct(product)
-    this.props.checkUser()
     this.props.handleClose();
   }
 
@@ -95,8 +92,6 @@ const mapDispatchToProps = (dispatch) => {
   return { 
     editProduct: (product) =>  { dispatch(editProduct(product)) } ,
     deleteProduct: (product) =>  { dispatch(deleteProduct(product)) },
-    checkUser: () =>  { dispatch(checkUser()) }
-
   }
 }
 

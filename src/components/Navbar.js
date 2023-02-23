@@ -18,7 +18,7 @@ class Navbar extends Component {
         let userId = this.props.user.id
         this.props.createOrder(userId)
     }
-}
+  }
   
   render() {
     return (

@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { Card, Segment } from 'semantic-ui-react'
 import Product from './Product'
 import { connect } from "react-redux";
-import Navbar from '../Navbar'
 
 class ProductContainer extends Component {
 
@@ -14,7 +13,6 @@ class ProductContainer extends Component {
         })
         return (
             <div>
-                <Navbar/>
                 <Segment>
                     <Card.Group>
                         {products}

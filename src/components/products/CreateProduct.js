@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { Form } from 'semantic-ui-react'
 import { createProduct } from '../actions/productActions'
 import { Segment, Divider, Header } from 'semantic-ui-react'
-import Navbar from '../Navbar'
 import {checkUser} from '../actions/userActions'
 
 class CreateProduct extends Component {
@@ -25,13 +24,11 @@ class CreateProduct extends Component {
     event.preventDefault()
     this.props.createProduct(product, this.props.currentUser)
     this.props.checkUser()
-
   }
 
   render() {
     return (
       <div>
-        <Navbar />
         <center>
         <Segment position="center" style={{ width:"640px", positionAlign:"center"}}>
           <Header as="h2"><i>Create Product</i></Header>

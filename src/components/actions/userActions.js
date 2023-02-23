@@ -60,7 +60,6 @@ export const checkUser = () => {
 
         const token = localStorage.token;
         console.log(token)
-        dispatch({type: 'EDIT_USER_REQUEST'})
 
         return fetch('http://localhost:3000/profile', {
         method: 'GET',
@@ -88,7 +87,6 @@ export const editUser = (users) => {
         const token = localStorage.token;
         console.log(token)
         let id = users.id
-        dispatch({type: 'EDIT_USER_REQUEST'})
 
         fetch(`http://localhost:3000/users/${id}`, {  
               
@@ -105,8 +103,9 @@ export const editUser = (users) => {
             .then(resp => resp.json())
             .then(data => {
                 console.log(data)
-                dispatch({type: "SET_CURRENT_USER", user: data})
                 window.alert("User Updated")
+                dispatch({type: "SET_CURRENT_USER", user: data.user})
+
             })
         }
     }

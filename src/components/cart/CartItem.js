@@ -22,7 +22,6 @@ class CartItem extends Component {
                     </Button.Content>
                     </Button>
                     <Item.Meta>{i.description}</Item.Meta>
-                   
                 </Item.Content>
             </Item> 
         )

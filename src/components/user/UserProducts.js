@@ -3,13 +3,13 @@ import { connect } from "react-redux";
 import EditProduct from '../products/EditProduct'
 import { Button, Modal, Card} from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+import { checkUser } from '../actions/userActions';
 
 class UserProducts extends Component {
 
     state = {
         modalOpen: false,
         modalTwoOpen: false,
-
     }
   
     handleOpen = () => {
@@ -18,8 +18,8 @@ class UserProducts extends Component {
 
     handleClose = () => {
         this.setState({ modalOpen: false });
+        this.props.checkUser()
     }
-
       
     handleOpenTwo = () => {
         this.setState({ modalTwoOpen: true });
@@ -30,9 +30,9 @@ class UserProducts extends Component {
     }
 
     render () {
-        const products = this.props.user.products.map( prod => {
-            return (
-                <li key={prod.id}><Link onClick={this.handleOpenTwo}>{prod.title}:  NOT SOLD ${prod.price}                  </Link>
+    const products = this.props.user.products.map( prod => {
+        return (
+            <li key={prod.id}><Link onClick={this.handleOpenTwo}>{prod.title}:  NOT SOLD ${prod.price}                  </Link>
                 <Modal style={{ width:"440px"}}
                 open={this.state.modalTwoOpen}
                 onClose={this.handleCloseTwo}
@@ -40,20 +40,14 @@ class UserProducts extends Component {
                 >
                 <Modal.Content>
                 <Card centered style={{ width:"440px"}}>
-                <Card.Content>
-                <Card.Header>{prod.title}: ${prod.price}</Card.Header>
-                <Card.Description>{prod.description}<br></br><br></br>
-                </Card.Description>
-                </Card.Content>
-                <img src={prod.image_url}></img><br></br>
-
+                    <Card.Content>
+                        <Card.Header>{prod.title}: ${prod.price}</Card.Header>
+                        <Card.Description>{prod.description}<br></br><br></br></Card.Description>
+                    </Card.Content>
+                    <img src={prod.image_url}></img><br></br>
                 </Card>
-
                 </Modal.Content>
                 </Modal>
-
-
-           
                 <Button size="tiny" content="EDIT" onClick={this.handleOpen}></Button>
                 <Modal style={{ width:"690px"}}
                 open={this.state.modalOpen}
@@ -61,13 +55,12 @@ class UserProducts extends Component {
                 closeIcon
                 >
                 <Modal.Content>
-                    <EditProduct product={prod} handleClose={this.handleClose}/>
+                    <EditProduct product={prod} key={prod.id} handleClose={this.handleClose}/>
                 </Modal.Content>
                 </Modal>
-                
-                </li>
-            )
-        })
+            </li>
+        )
+    })
         return (
             <div>             
                 {products}         
@@ -76,10 +69,10 @@ class UserProducts extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        user: state.currentUser,
+const mapDispatchToProps = (dispatch) => {
+    return { 
+      checkUser: () =>  { dispatch(checkUser()) }
     }
-}
+  }
 
-export default connect(mapStateToProps)(UserProducts)
+export default connect(null, mapDispatchToProps)(UserProducts)

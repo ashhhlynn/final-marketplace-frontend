@@ -15,7 +15,6 @@ class EditUser extends Component {
     handleSubmit = (event, users) => {
         event.preventDefault()
         this.props.editUser(users)
-        this.props.checkUser()
         this.props.handleClose();
     }
 
@@ -66,7 +65,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
     return {
      editUser: (user) =>  { dispatch(editUser(user)) } ,
-     checkUser: () =>  { dispatch(checkUser()) },
 
     }
 }

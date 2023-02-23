@@ -8,6 +8,9 @@ import { checkUser } from './components/actions/userActions';
 import CreateProduct from './components/products/CreateProduct'
 import Checkout from './components/cart/Checkout'
 import Head from './components/Head'
+import Navbar from './components/Navbar'
+import OtherNavbar from './components/OtherNavbar'
+
 import Profile from './components/user/Profile'
 import './App.css'
 import { Container } from 'semantic-ui-react'
@@ -21,7 +24,6 @@ class App extends Component {
       this.props.checkUser()
     }
     this.props.fetchProducts();
-    fetchProducts()
   }
 
   render() {
@@ -30,6 +32,7 @@ class App extends Component {
         <div className="App">
           <Container>
             < Head />
+              {this.props.user.length === 0 ? <OtherNavbar /> : <Navbar />}
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route exact path="/products" element={<ProductContainer />} />
@@ -45,6 +48,12 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+      user: state.currentUser,
+  }
+}
+
 const mapDispatchToProps = (dispatch) => {
   return {
     checkUser: () =>  { dispatch(checkUser()) },
@@ -52,4 +61,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

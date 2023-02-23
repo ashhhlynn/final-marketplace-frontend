@@ -72,13 +72,6 @@ const rootReducer = (state = initialState, action) => {
                 loading: false,
             };
 
-        case 'EDIT_USER_REQUEST':
-            return {
-                ...state, 
-                currentUser: state.currentUser, 
-                loading: true
-            };
-
         case 'SET_CURRENT_USER':
             return {
                 ...state, 

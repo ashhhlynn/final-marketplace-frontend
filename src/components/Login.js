@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { Form, Divider } from "semantic-ui-react";
 import {getExistingUser} from './actions/userActions';
-import { Link } from 'react-router-dom'
 
 class Login extends Component {
 

@@ -46,7 +46,6 @@ export const editProduct = (product) => {
     return (dispatch) => {
         const token = localStorage.token;
         console.log(token)
-        dispatch({type: 'ADD_PRODUCT_REQUEST'})
         let id = product.id
         fetch(`http://localhost:3000/products/${id}`, {  
                 method: 'PATCH',

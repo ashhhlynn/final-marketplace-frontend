@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom'
 import { Menu, Button, Icon, Modal} from 'semantic-ui-react'
-import { connect } from "react-redux"
 import ToggleLogin from './ToggleLogin'
 
 class OtherNavbar extends Component {
@@ -52,16 +51,4 @@ class OtherNavbar extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-      user: state.currentUser,
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return { 
-
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(OtherNavbar)
+export default OtherNavbar
