@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
 import { List, Header, Segment, Button, Divider, Grid} from 'semantic-ui-react'
-import CartItem from './CartItem'
+import CartItem from '../cart/CartItem'
 import AccountInfo from '../user/AccountInfo'
 import {sendOrder} from '../actions/orderActions'
 import {checkUser} from '../actions/userActions'

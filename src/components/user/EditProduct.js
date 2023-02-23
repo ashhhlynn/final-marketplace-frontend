@@ -39,13 +39,13 @@ handleDelete = (event, id) => {
   render() {
     return (
       <div>
-      <center>
-        <Segment position="center" style={{ width:"640px", positionAlign:"center"}}>
-          <Header as="h2"><i>Edit Product</i></Header>
+        <Segment placeholder style={{ width:"600px"}}>
+          <Header as="h2"><center><i>Edit Product</i></center></Header>
           <Divider></Divider>
           <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
             <Form.Input
               required
+              label="Title"
               type="text"
               id="title"
               placeholder="Title"
@@ -56,6 +56,7 @@ handleDelete = (event, id) => {
               required
               type="text"
               id="description"
+              label="Description"
               placeholder="Description"
               value={this.state.description} 
               onChange={this.handleChange}
@@ -63,6 +64,7 @@ handleDelete = (event, id) => {
             <Form.Input
               required
               type="text"
+              label="Price"
               id="price"
               placeholder="Price"
               value={this.state.price} 
@@ -71,6 +73,7 @@ handleDelete = (event, id) => {
             <Form.Input
               required
               type="text"
+              label="Image URL"
               id="image_url"
               placeholder="Image Url"
               value={this.state.image_url} 
@@ -78,11 +81,10 @@ handleDelete = (event, id) => {
             />
             <center>
             <Form.Button size='big' content='EDIT PRODUCT' />
-            <Button size="big" content="REMOVE" onClick= { (event) => { this.handleDelete(event, this.state.id)}}></Button>
+            <Button size="small" content="REMOVE" onClick= { (event) => { this.handleDelete(event, this.state.id)}}></Button>
             </center>
         </Form>
       </Segment>
-      </center>
     </div>
     )
   }

@@ -21,10 +21,11 @@ class Profile extends Component {
                     </center>
                 </Grid.Column>
                 <Grid.Column>
-                    <Header>Order History:</Header>
+                    <Header>Order History</Header>
                        <UserOrders user={this.props.user} key={this.props.user.id}/>
-                    <Header>Your Products:</Header>
-                        <UserProducts user={this.props.user} key={this.props.user.id}/>
+                    <Header>Your Products</Header>
+                    Active:
+                        <UserProducts user={this.props.user} />
                 </Grid.Column>
                 </Grid>
             </Segment>

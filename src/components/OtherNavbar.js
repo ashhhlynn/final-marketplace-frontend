@@ -36,7 +36,7 @@ class OtherNavbar extends Component {
         <Menu.Item position = 'right'>
             <Menu.Item size='huge'><Link to="/" style={{ color: 'grey'}}><h3>About</h3></Link></Menu.Item>
             <Menu.Item size='huge'><Link style={{ color: 'grey'}} onClick={this.handleOpen}><h3>Login</h3></Link></Menu.Item>
-            <Modal style={{ width:"710px", height:"430px"}}
+            <Modal centered style={{ display: "inline-block", width: "auto"}}
             open={this.state.modalOpen}
             onClose={this.handleClose}
             closeIcon

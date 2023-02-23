@@ -28,7 +28,7 @@ class AccountInfo extends Component {
                 </List>
                 <Button size="medium" position="center" content="EDIT" onClick={this.handleOpen}>
                 </Button>
-                <Modal style={{ width:"690px"}}
+                <Modal style={{ display: "inline-block", width: "auto"}}
                 open={this.state.modalOpen}
                 onClose={this.handleClose}
                 closeIcon

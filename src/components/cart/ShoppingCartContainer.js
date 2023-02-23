@@ -12,7 +12,7 @@ class ShoppingCartContainer extends Component {
         )
         return (
             <div>   
-                <Segment style={{ width:"670px", margin: "0 auto"}}>
+                <Segment style={{ width:"600px", margin: "0 auto"}}>
                     <Header as="h2"><center><i>Shopping Cart ({items.length})</i> </center></Header>
                     <Divider></Divider>
                     <List>
@@ -24,7 +24,6 @@ class ShoppingCartContainer extends Component {
                         <Link to="/checkout"><Button size="big" content="CHECKOUT" ></Button></Link>
                     </center>
                 </Segment>
-                    
             </div>
         )
     }

@@ -21,7 +21,7 @@ class UserOrders extends Component {
         const orders = this.props.user.orders.map((order) => (
             <li key={order.id}>
                 <Link onClick={this.handleOpen}>#{order.id} </Link>               
-                <Modal style={{ width:"350px"}}
+                <Modal style={{ display: "inline-block", width: "auto"}}
                     open={this.state.modalOpen}
                     onClose={this.handleClose}
                     closeIcon

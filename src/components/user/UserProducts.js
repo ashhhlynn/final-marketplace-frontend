@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
-import EditProduct from '../products/EditProduct'
-import { Button, Modal, Card} from 'semantic-ui-react'
+import EditProduct from './EditProduct'
+import { Button, Modal, Divider, Segment} from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { checkUser } from '../actions/userActions';
 
@@ -32,24 +32,25 @@ class UserProducts extends Component {
     render () {
     const products = this.props.user.products.map( prod => {
         return (
-            <li key={prod.id}><Link onClick={this.handleOpenTwo}>{prod.title}:  NOT SOLD ${prod.price}                  </Link>
-                <Modal style={{ width:"440px"}}
+            <li key={prod.title}><Link onClick={this.handleOpenTwo}>{prod.title}: ${prod.price}                  </Link>
+                <Modal style={{ display: "inline-block", width: "auto"}}
                 open={this.state.modalTwoOpen}
                 onClose={this.handleCloseTwo}
                 closeIcon
                 >
                 <Modal.Content>
-                <Card centered style={{ width:"440px"}}>
-                    <Card.Content>
-                        <Card.Header>{prod.title}: ${prod.price}</Card.Header>
-                        <Card.Description>{prod.description}<br></br><br></br></Card.Description>
-                    </Card.Content>
-                    <img src={prod.image_url}></img><br></br>
-                </Card>
+                <Segment placeholder centered style={{ width:"600px"}}>   
+                       <h2><i><center>{prod.title}</center></i></h2>
+                       <Divider></Divider>
+                       <p>Price: ${prod.price}</p>
+                       <p>{prod.description}</p>
+                       <p>Sold: No</p>
+                   <center> <img style={{width:"310px", height:"250px"}} src={prod.image_url}></img></center>
+                </Segment>
                 </Modal.Content>
                 </Modal>
                 <Button size="tiny" content="EDIT" onClick={this.handleOpen}></Button>
-                <Modal style={{ width:"690px"}}
+                <Modal style={{ display: "inline-block", width: "auto"}}
                 open={this.state.modalOpen}
                 onClose={this.handleClose}
                 closeIcon

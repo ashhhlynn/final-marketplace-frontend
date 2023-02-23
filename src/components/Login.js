@@ -23,7 +23,8 @@ class Login extends Component {
 
     render() {
         return (
-            <div>
+            <div>          
+
                 <i><h2>Login</h2></i>
                 <Divider></Divider>
                 <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>

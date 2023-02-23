@@ -6,11 +6,10 @@ import Home from './components/Home'
 import ShoppingCartContainer from './components/cart/ShoppingCartContainer'
 import { checkUser } from './components/actions/userActions';
 import CreateProduct from './components/products/CreateProduct'
-import Checkout from './components/cart/Checkout'
+import Checkout from './components/checkout/Checkout'
 import Head from './components/Head'
 import Navbar from './components/Navbar'
 import OtherNavbar from './components/OtherNavbar'
-
 import Profile from './components/user/Profile'
 import './App.css'
 import { Container } from 'semantic-ui-react'

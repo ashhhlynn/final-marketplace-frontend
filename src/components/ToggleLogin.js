@@ -7,8 +7,7 @@ function ToggleLogin({ onLogin }) {
     const [showLogin, setShowLogin] = useState(true);
     return (
         <div>
-            <center><br></br>
-            <Segment placeholder style={{ width:"600px", positionAlign:"center"}}>
+            <Segment placeholder style={{ width:"520px", positionAlign:"center", textAlign:"center"}}>
             {showLogin ? (
             <>
                 <Login onLogin={onLogin} /><br></br>
@@ -24,9 +23,8 @@ function ToggleLogin({ onLogin }) {
                     </Button>
             </>
             )
-        }
-        </Segment>
-        </center>
+            }    
+      </Segment>
         </div>
     )
 }
