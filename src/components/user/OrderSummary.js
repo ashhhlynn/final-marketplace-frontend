@@ -9,14 +9,18 @@ class OrderSummary extends Component {
         ))        
         return (
         <div>
-            <Segment placeholder centered style={{ width:"600px"}}>        
-                    <h2><i><center>Order #{this.props.order.id}</center></i></h2>
+            <Segment centered style={{ width:"600px", fontfamily: "Courier New"}}> 
+            <i><h2><center>Order Summary</center></h2></i>
+       
                     <Divider></Divider>
-                    <p>Order Date: {this.props.order.updated_at.slice(6, -14)}</p>
+                    <p>Order #{this.props.order.id}</p>
+                    <p>Date: {this.props.order.updated_at.slice(6, -14)}</p>
                     <p>Items:</p>
                     {items}
                     <Divider></Divider>
-                    Total: ${this.props.order.total}
+                    Subtotal: ${Math.round((this.props.order.total / 1.1)*100)/100}<br></br>
+                    Tax: ${Math.round((this.props.order.total / 1.1 * .1)*100)/100}<br></br>
+                    <b>Total: ${this.props.order.total}</b>
              </Segment>
         </div>
         )

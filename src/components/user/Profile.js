@@ -11,21 +11,22 @@ class Profile extends Component {
         return (
            <div>
             <Segment>
-                <center><h2><i>Hi {this.props.user.name}!</i></h2></center>
+               <center><h2><i>Hi {this.props.user.name}!</i></h2></center>
                 <Divider></Divider>
-                <Grid columns={2} stackable textAlign='left'>
+                <Grid columns={3} stackable textAlign='left'>
                 <Grid.Column>
-                    <Header><center>Account Information: </center></Header>
-                    <center>
+                    <Header>Account Information: </Header>
                     <AccountInfo  />                 
-                    </center>
                 </Grid.Column>
                 <Grid.Column>
                     <Header>Order History</Header>
-                       <UserOrders user={this.props.user} key={this.props.user.id}/>
+                    <UserOrders user={this.props.user} key={this.props.user.id}/>
+                </Grid.Column>    
+                <Grid.Column>
                     <Header>Your Products</Header>
-                    Active:
+                    <h5>Active:</h5>
                         <UserProducts user={this.props.user} />
+                    <h5>Sold:</h5>
                 </Grid.Column>
                 </Grid>
             </Segment>

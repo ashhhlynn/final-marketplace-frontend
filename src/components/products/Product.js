@@ -14,7 +14,7 @@ class Product extends Component {
                     <Card.Header>{i.title} <Button content="+" floated="right" size="tiny" onClick={(event) => {this.handleClick(event, i)}}></Button> 
                     </Card.Header>
                     <Card.Description>
-                        By user {i.user_id}<br></br>
+                        By user {i.user_id} {i.created_at.slice(6, -14)}<br></br>
                         {i.description}</Card.Description>
                     ${i.price}
                 </Card.Content>             

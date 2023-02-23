@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Menu, Button, Icon, Modal} from 'semantic-ui-react'
 import ToggleLogin from './ToggleLogin'
 
+
 class OtherNavbar extends Component {
 
     state = {
@@ -15,6 +16,10 @@ class OtherNavbar extends Component {
 
   handleClose = () => this.setState({ modalOpen: false });
 
+  handleClick = () => {
+    alert("Please log in")
+  }
+
   render() {
     return (
       <Menu pointing secondary>
@@ -25,7 +30,7 @@ class OtherNavbar extends Component {
             </Button></Link>
           </Menu.Item>
           <Menu.Item>
-            <Link to="/cart"><Button animated='vertical' position='right' size='medium'>
+            <Link><Button animated='vertical' position='right' size='medium' onClick={this.handleClick}>
               <Button.Content hidden>Cart</Button.Content>
               <Button.Content visible>
                 <Icon name='shop' />

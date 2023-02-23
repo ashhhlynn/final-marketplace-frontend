@@ -3,7 +3,6 @@ import {React, Component }from "react";
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import ProductContainer from './components/products/ProductContainer'
 import Home from './components/Home'
-import ShoppingCartContainer from './components/cart/ShoppingCartContainer'
 import { checkUser } from './components/actions/userActions';
 import CreateProduct from './components/products/CreateProduct'
 import Checkout from './components/checkout/Checkout'
@@ -35,7 +34,6 @@ class App extends Component {
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route exact path="/products" element={<ProductContainer />} />
-              <Route exact path="/cart" element={<ShoppingCartContainer />} />
               <Route exact path="/createproduct" element={<CreateProduct />} />
               <Route exact path="/checkout" element={<Checkout />} />
               <Route exact path="/profile" element={<Profile/>} />

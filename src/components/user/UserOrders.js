@@ -20,7 +20,7 @@ class UserOrders extends Component {
     render () {
         const orders = this.props.user.orders.map((order) => (
             <li key={order.id}>
-                <Link onClick={this.handleOpen}>#{order.id} </Link>               
+                Order <Link onClick={this.handleOpen}>#{order.id} </Link>               
                 <Modal style={{ display: "inline-block", width: "auto"}}
                     open={this.state.modalOpen}
                     onClose={this.handleClose}
@@ -30,7 +30,7 @@ class UserOrders extends Component {
                         <OrderSummary order={order} key={order.id}/>
                     </Modal.Content>
                 </Modal>
-                Date: {order.updated_at.slice(6, -14)}
+              {order.updated_at.slice(6, -14)}
             </li>
         ))       
         return (
@@ -40,7 +40,5 @@ class UserOrders extends Component {
         )
     }
 }
-
-
 
 export default UserOrders

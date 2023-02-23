@@ -31,7 +31,7 @@ class CreateProduct extends Component {
       <div>
         <center>
         <Segment placeholder position="center" style={{ width:"640px", positionAlign:"center"}}>
-          <Header as="h2"><i>Create Product</i></Header>
+          <center><h2><i>Create Product</i></h2></center>
           <Divider></Divider>
           <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
             <Form.Input

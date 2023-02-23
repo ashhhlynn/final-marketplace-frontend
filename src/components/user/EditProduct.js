@@ -40,7 +40,7 @@ handleDelete = (event, id) => {
     return (
       <div>
         <Segment placeholder style={{ width:"600px"}}>
-          <Header as="h2"><center><i>Edit Product</i></center></Header>
+        <i><h2><center>Edit Product</center></h2></i>
           <Divider></Divider>
           <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
             <Form.Input
