@@ -55,9 +55,7 @@ class PaymentForm extends Component {
               value={this.state.billingAddress} 
               onChange={this.handleChange}
             />
-            <center>
-            <Form.Button size='tiny' content='SET' />
-            </center>
+          
         </Form>
         )
     }

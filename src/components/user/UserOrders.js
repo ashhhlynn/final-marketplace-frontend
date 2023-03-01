@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import { Modal } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
+import { Modal, Header, Grid, Divider, Segment} from 'semantic-ui-react'
 import OrderSummary from './OrderSummary'
+import {connect} from 'react-redux';
+import AccountNav from './AccountNav'
 
 class UserOrders extends Component {
 
@@ -19,26 +20,31 @@ class UserOrders extends Component {
 
     render () {
         const orders = this.props.user.orders.map((order) => (
-            <li key={order.id}>
-                Order <Link onClick={this.handleOpen}>#{order.id} </Link>               
-                <Modal style={{ display: "inline-block", width: "auto"}}
-                    open={this.state.modalOpen}
-                    onClose={this.handleClose}
-                    closeIcon
-                >
-                    <Modal.Content>                     
-                        <OrderSummary order={order} key={order.id}/>
-                    </Modal.Content>
-                </Modal>
-              {order.updated_at.slice(6, -14)}
-            </li>
+              <OrderSummary order={order}/>
         ))       
         return (
             <div>
-                {orders}
+                <Grid columns={2} stackable textAlign='left'>
+                    <Grid.Column style= {{width: "370px"}}>
+                        <AccountNav/>
+                    </Grid.Column>
+                    <Grid.Column style={{marginLeft:"8%", marginTop:"2%"}}>
+                    <center> 
+                    <Header as="h2">Your Orders</Header> 
+                        <Divider></Divider> 
+                    </center>
+                    {orders}     
+                    </Grid.Column>
+                </Grid>
             </div>
         )
     }
 }
 
-export default UserOrders
+const mapStateToProps = (state) => {
+    return {
+        user: state.currentUser,
+    }
+}
+
+export default connect(mapStateToProps)(UserOrders)

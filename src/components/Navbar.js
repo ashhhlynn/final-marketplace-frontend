@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom'
-import { Menu, Button, Icon, Modal} from 'semantic-ui-react'
+import { Menu, Button, Icon, Modal, Dropdown, Divider} from 'semantic-ui-react'
 import { logOut } from './actions/userActions'
 import { connect } from "react-redux"
 import {createOrder} from './actions/orderActions'
@@ -35,21 +35,18 @@ class Navbar extends Component {
   
   render() {
     return (
-      <Menu pointing secondary>
-        <Menu.Menu position="left" >
-          <Menu.Item>
-            <Link to="/products"><Button size='tiny' onClick={()=>{this.handleCreateOrder()}}>
-              <h4>Shop</h4>
-            </Button></Link>
-          </Menu.Item>
-          <Menu.Item>
-            <Link><Button onClick={this.handleOpen} animated='vertical' position='right' size='medium'>
-              <Button.Content hidden>Cart</Button.Content>
-              <Button.Content visible>
-                <Icon name='shop' />
-              </Button.Content>
-            </Button></Link>
-            <Modal style={{ display: "inline-block", width: "auto"}}
+      <div  >
+        <center>
+        <img style={{ width:270, height:30, marginTop:"3%" }} src="https://cdn.shopify.com/s/files/1/1124/9666/files/leaf-and-clay-logo-new_196f33de-4679-4dc0-9e64-e6e9d9145052_200x@2x.png?v=1668367213"></img>
+        </center>
+        <Menu pointing secondary size="large" style={{ marginTop: "-2%"}}>
+        <Menu.Menu position="left">
+          <Menu.Item ><Link to='/' style={{  color: '#26453e'}}><b>About</b></Link></Menu.Item>
+          <Menu.Item><Link to ="/createproduct" style={{  color: '#26453e'}}><b>Sell</b></Link></Menu.Item>
+          <Menu.Item><Link to ="/products"  onClick={()=>{this.handleCreateOrder()}} style={{ color: '#26453e'}}><b>Shop</b></Link></Menu.Item>
+        </Menu.Menu>
+        <Menu.Menu position = 'right'>
+        <Modal style={{ display: "inline-block", width: "360px", height:"580px", marginLeft: "67%"}}
                 open={this.state.modalOpen}
                 onClose={this.handleClose}
                 closeIcon
@@ -57,18 +54,24 @@ class Navbar extends Component {
                 <Modal.Content>
                   <ShoppingCartContainer handleClose={this.handleClose} />
                 </Modal.Content>
-            </Modal>
+        </Modal>
+          <Menu.Item><Link onClick={this.handleOpen}> <Icon name='cart' style={{marginLeft:"0%", color:"#26453e"}} size="large"/></Link>
           </Menu.Item>
-        </Menu.Menu> 
-        <Menu.Item position = 'right' style={{marginTop: "1%"}}>
-          <Menu.Item size='huge'><Link to="/" style={{ color: 'grey'}}><h4>About</h4></Link></Menu.Item>
-          <Menu.Item size='huge'><Link to="/profile" style={{ color: 'grey'}}><h4>Account</h4></Link></Menu.Item>
-          <Menu.Item><Link to ="/createproduct" style={{ color: 'grey'}}><h4>Sell Product</h4></Link></Menu.Item>
-          <Menu.Item onClick={(e) => {this.handleLogout(e)}}>
-            <Link to="/" style={{ color: 'grey'}}><h4>Log Out</h4></Link>
+          <Menu.Item><Icon name='user' style={{marginLeft:"-15%", color:"#26453e"}}  size="large"/>
+          <Dropdown size="tiny" style={{marginLeft:"-25%", color:"#26453e"}}>   
+            <Dropdown.Menu>
+              <Dropdown.Item>            
+                <Link to="/profile" style={{ color: 'grey'}}>Account</Link>
+              </Dropdown.Item>
+              <Dropdown.Item >
+                <Link to="/" style={{ color: 'grey'}} onClick={(e) => {this.handleLogout(e)}}>Log Out</Link>
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
           </Menu.Item>
-        </Menu.Item>
+        </Menu.Menu>
       </Menu>
+    </div>
     )
   }
 }

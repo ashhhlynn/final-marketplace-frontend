@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { Form, Divider, Segment } from 'semantic-ui-react'
+import { Form, Divider, Segment, Header } from 'semantic-ui-react'
 import { editUser } from '../actions/userActions'
 
 class EditUser extends Component {
@@ -26,8 +26,8 @@ class EditUser extends Component {
     render() {
         return (
         <div>
-            <Segment placeholder style={{ width:"600px"}}>
-            <i><h2><center>Edit Account</center></h2></i>
+         
+            <i><Header as="h2"><center>Edit Account</center></Header></i>
             <Divider></Divider>
             <Form onSubmit={ (event) => {this.handleSubmit(event, this.state)} }>              
                 <Form.Input
@@ -48,12 +48,12 @@ class EditUser extends Component {
                     value={this.state.address} 
                     onChange={this.handleChange}
                 />       
-                    <center><Form.Button position="center" size="big" content="SUBMIT"/></center>
+                    <center><Form.Button position="center" circular size="medium" content="Submit"/></center>
                 </Form>
-                </Segment>
+             
             </div>
         )
-    }
+    }  
 }
 
 const mapStateToProps = (state) => {

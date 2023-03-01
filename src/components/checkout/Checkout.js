@@ -44,11 +44,10 @@ class Checkout extends Component {
         )
         let orderTotal = Math.round((this.props.total * 1.1)*100)/100
         return (
-            <div>   
-                <Segment>
-                    <Grid columns={2}   textAlign='left'>
-                    <Grid.Column>
-                        <Header as="h2"><center><i>Order Summary</i></center> </Header>    
+            <div> 
+                <Grid columns={2}  >
+                    <Grid.Column centered textAlign='left' style={{marginLeft: "5%", marginTop:"2%"}}>
+                        <Header as="h2"><center><i>Order Summary</i></center></Header>    
                         <Divider></Divider>
                         <List>
                             {items}
@@ -57,21 +56,19 @@ class Checkout extends Component {
                         <p>Subtotal: ${this.props.total}</p>
                         <p>Tax: ${Math.round((this.props.total * .1)*100)/100}</p>
                         <p><b>Total: ${Math.round((this.props.total * 1.1)*100)/100}</b></p>
-                        </Grid.Column>
-                        <Grid.Column>
-                            <center><h2><i>User Information</i></h2></center>
-                            <Divider></Divider>
-                                <center>
-                                <AccountInfo user={this.props.user} key={this.props.user.id}/><br></br>
-                                <p>Payment:</p>
-                                <PaymentForm /><br></br>
-                                <Button content="SUBMIT ORDER" size="big" onClick={(event) => 
-                                {this.handleSendOrder(event, orderTotal)}}>
-                                </Button>                             
-                                </center>
-                        </Grid.Column>
-                    </Grid>
-                </Segment>
+                    </Grid.Column>
+                    <Grid.Column floated="right" style= {{width : "370px", marginRight: "10%"}}>
+                        <Segment style= {{width : "410px", marginTop: "2.5%"}}>
+                            <center>
+                            <AccountInfo user={this.props.user} key={this.props.user.id}/><br></br>
+                            <PaymentForm /><br></br>
+                            <Button size="large" style= {{width : "380px"}} content="PLACE ORDER" 
+                            onClick={(event) => {this.handleSendOrder(event, orderTotal)}}>
+                            </Button>                             
+                            </center>
+                        </Segment>   
+                    </Grid.Column>
+                </Grid>
             </div>
         )
     }

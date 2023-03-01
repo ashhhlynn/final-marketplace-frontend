@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Card, Image, Button} from 'semantic-ui-react'
+import { Card, Image, Button, Icon} from 'semantic-ui-react'
 import { connect } from "react-redux"
 import { addToCart } from '../actions/cartActions'
 
@@ -8,16 +8,19 @@ class Product extends Component {
     render() {
         const i = this.props.product
         return (
-            <Card key={i.id} style={{ width:"350px"}}>
-                <Image src={i.image_url}/>
+            <Card key={i.id} style={{ width:"330px", background:"#fdfcf9"}}>
                 <Card.Content>
-                    <Card.Header>{i.title} <Button content="+" floated="right" size="tiny" onClick={(event) => {this.handleClick(event, i)}}></Button> 
+                    <Image size="medium" position="center" src={i.image_url}/>
+                    <Button floated="right" inverted style={{background:"#fdfcf9", color: "grey", marginRight:"-6.5%", marginTop: ".7%"}} circular size="small" onClick={(event) => {this.handleClick(event, i)}}>  
+                    <Icon name="add" floated="center"></Icon>
+                    </Button>  
+                    <Card.Header style={{marginTop: ".4%", fontWeight:"normal"}}>{i.title} 
                     </Card.Header>
+                    <b>${i.price}</b> posted {i.created_at.slice(6, -14)}-2023 by user {i.user_id}
                     <Card.Description>
-                        By user {i.user_id} {i.created_at.slice(6, -14)}<br></br>
-                        {i.description}</Card.Description>
-                    ${i.price}
-                </Card.Content>             
+                        <i>{i.description}</i>
+                    </Card.Description> 
+                </Card.Content> 
             </Card>
         )
     }

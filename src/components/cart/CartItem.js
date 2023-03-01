@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { removeFromCart } from '../actions/cartActions'
-import { Item, Button } from 'semantic-ui-react'
+import { Item, Button, Icon } from 'semantic-ui-react'
 
 class CartItem extends Component {
 
@@ -14,14 +14,13 @@ class CartItem extends Component {
         const i = this.props.item
         return (        
             <Item>
-                <Item.Content>
-                    <Item.Image floated="right" size='tiny' src={i.image_url} />
-                    <Item.Header>{i.title}: ${i.price}</Item.Header>
-                    <Button floated="left" size="tiny" onClick={()=>{this.handleRemove(i.id)}}>
-                    <Button.Content visible>-
-                    </Button.Content>
-                    </Button>
-                    <Item.Meta>{i.description}</Item.Meta>
+                <Button size="small" style={{marginTop:"-2%"}} inverted floated="right" onClick={()=>{this.handleRemove(i.id)}}>
+                    <Button.Content visible><Icon color="grey" name="close"></Icon></Button.Content>
+                </Button> 
+                <Item.Content> 
+                    <Item.Image floated="left" size='tiny' src={i.image_url} /> 
+                    {i.title}
+                    <Item style={{textAlign: "left"}}> <b>${i.price}.00</b></Item>
                 </Item.Content>
             </Item> 
         )

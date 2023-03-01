@@ -1,27 +1,24 @@
 import React, {Component} from 'react';
-import { Divider, Segment} from 'semantic-ui-react'
+import { Divider, Segment, Header} from 'semantic-ui-react'
 
 class OrderSummary extends Component {
 
     render () {
         const items = this.props.order.order_items.map((item => 
-           <li> Item {item.id} | Price: {item.price} | Title: {item.product_id} </li>
+           <li> Item {item.id} | ${item.price} </li>
         ))        
         return (
         <div>
-            <Segment centered style={{ width:"600px", fontfamily: "Courier New"}}> 
-            <i><h2><center>Order Summary</center></h2></i>
-       
-                    <Divider></Divider>
-                    <p>Order #{this.props.order.id}</p>
-                    <p>Date: {this.props.order.updated_at.slice(6, -14)}</p>
-                    <p>Items:</p>
+            <Segment style={{  width:"610px"}}> 
+                <h4 style={{textAlign:"right"}}>{this.props.order.updated_at.slice(6, -14)}-2023</h4>
+                <h4 style={{marginTop:"-5.5%"}}>Order #{this.props.order.id}</h4>    
                     {items}
-                    <Divider></Divider>
-                    Subtotal: ${Math.round((this.props.order.total / 1.1)*100)/100}<br></br>
-                    Tax: ${Math.round((this.props.order.total / 1.1 * .1)*100)/100}<br></br>
-                    <b>Total: ${this.props.order.total}</b>
-             </Segment>
+                <Divider></Divider> 
+                Subtotal  ${Math.round((this.props.order.total / 1.1)*100)/100}<br></br>
+                Tax ${Math.round((this.props.order.total / 1.1 * .1)*100)/100}<br></br>
+                Total  ${this.props.order.total}
+            </Segment>
+            <br></br>
         </div>
         )
     }

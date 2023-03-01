@@ -12,24 +12,22 @@ class ShoppingCartContainer extends Component {
         )
         return (
             <div>   
-                <Segment style={{ width:"550px", margin: "0 auto"}}>
-                <center><h2><i>Cart ({items.length})</i></h2></center>
-                    <Divider></Divider>
+                <Header as="h2">Your Cart ({items.length})</Header>
+                <Divider></Divider>
                     {this.props.cart.length === 0 ? 
-                        <center>Your cart is empty!</center>
+                       <p>Your cart is empty.</p> 
                     :
-                        <div>
+                    <div>
                         <List>
                             {items}
                         </List>                
                         <Divider></Divider>
-                        
-                        <h4>Subtotal: ${this.props.total}</h4>
-                        <Link to="/checkout"><Button size="big" content="CHECKOUT" onClick={this.props.handleClose}></Button></Link>
-                        
-                        </div>
+                        <h4>Subtotal: ${this.props.total}.00</h4><br></br>
+                        <Link to="/checkout">
+                        <Button style={{width: "317px"}}  size="large" onClick={this.props.handleClose}>CHECKOUT</Button>
+                        </Link>
+                    </div>
                     }
-                </Segment>
             </div>
         )
     }

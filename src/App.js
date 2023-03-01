@@ -10,6 +10,10 @@ import Head from './components/Head'
 import Navbar from './components/Navbar'
 import OtherNavbar from './components/OtherNavbar'
 import Profile from './components/user/Profile'
+import UserProducts from './components/user/UserProducts'
+import UserOrders from './components/user/UserOrders'
+import Footer from './components/Footer'
+
 import './App.css'
 import { Container } from 'semantic-ui-react'
 import { connect } from "react-redux";
@@ -28,8 +32,8 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Container>
-            < Head />
+        
+          
               {this.props.user.length === 0 ? <OtherNavbar /> : <Navbar />}
             <Routes>
               <Route exact path="/" element={<Home />} />
@@ -37,8 +41,11 @@ class App extends Component {
               <Route exact path="/createproduct" element={<CreateProduct />} />
               <Route exact path="/checkout" element={<Checkout />} />
               <Route exact path="/profile" element={<Profile/>} />
+              <Route exact path="/userproducts" element={<UserProducts/>} />
+              <Route exact path="/userorders" element={<UserOrders/>} />
+
             </Routes>
-          </Container>
+            <Footer />
           </div>
       </Router>
     )

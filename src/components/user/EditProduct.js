@@ -39,9 +39,10 @@ handleDelete = (event, id) => {
   render() {
     return (
       <div>
-        <Segment placeholder style={{ width:"600px"}}>
-        <i><h2><center>Edit Product</center></h2></i>
-          <Divider></Divider>
+     
+        <Header as="h2"><center><i>Edit Product</i></center></Header>
+        <Divider></Divider>
+        
           <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
             <Form.Input
               required
@@ -80,11 +81,10 @@ handleDelete = (event, id) => {
               onChange={this.handleChange}
             />
             <center>
-            <Form.Button size='big' content='EDIT PRODUCT' />
-            <Button size="small" content="REMOVE" onClick= { (event) => { this.handleDelete(event, this.state.id)}}></Button>
+            <Form.Button size='medium' circular content='Submit' />
             </center>
         </Form>
-      </Segment>
+  
     </div>
     )
   }

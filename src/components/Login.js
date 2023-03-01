@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { Form, Divider } from "semantic-ui-react";
+import { Form, Divider, Header} from "semantic-ui-react";
 import {getExistingUser} from './actions/userActions';
 
 class Login extends Component {
@@ -25,7 +25,7 @@ class Login extends Component {
         return (
             <div>          
 
-                <i><h2>Login</h2></i>
+                <Header as="h2"><i>Login</i></Header>
                 <Divider></Divider>
                 <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
                 <Form.Input
@@ -43,8 +43,9 @@ class Login extends Component {
                     value={this.state.password} 
                     onChange={this.handleChange}
                 /> 
-                   <Form.Button size="big" content='LOGIN' />
+                   <Form.Button size="medium" circular content='Submit' />
                 </Form>
+              
             </div>
         )
     }

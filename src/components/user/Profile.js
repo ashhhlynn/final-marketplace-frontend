@@ -3,33 +3,27 @@ import {connect} from 'react-redux';
 import AccountInfo from './AccountInfo'
 import UserProducts from './UserProducts'
 import UserOrders from './UserOrders'
-import { Segment, Divider, Header, Grid } from 'semantic-ui-react'
+import AccountNav from './AccountNav'
+import { Statistic, Item, Card, Divider, Icon, Header, Grid, Menu } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 class Profile extends Component {
 
     render() {               
         return (
-           <div>
-            <Segment>
-               <center><h2><i>Hi {this.props.user.name}!</i></h2></center>
-                <Divider></Divider>
-                <Grid columns={3} stackable textAlign='left'>
-                <Grid.Column>
-                    <Header>Account Information: </Header>
-                    <AccountInfo  />                 
-                </Grid.Column>
-                <Grid.Column>
-                    <Header>Order History</Header>
-                    <UserOrders user={this.props.user} key={this.props.user.id}/>
-                </Grid.Column>    
-                <Grid.Column>
-                    <Header>Your Products</Header>
-                    <h5>Active:</h5>
-                        <UserProducts user={this.props.user} />
-                    <h5>Sold:</h5>
-                </Grid.Column>
+           <div>    
+                <Grid columns={2} stackable textAlign='left'>
+                    <Grid.Column style= {{width : "370px" }} >
+                        <AccountNav/>
+                    </Grid.Column>
+                    <Grid.Column style={{marginLeft:"8%", marginTop:"2%"}}> 
+                    <center>
+                    <Header as="h2">Your Account<Divider></Divider></Header>
+                    <AccountInfo  />
+                    <Header as="h3"><i>{this.props.user.orders.length} Orders and {this.props.user.products.length} Products</i></Header>
+                    </center>
+                    </Grid.Column>
                 </Grid>
-            </Segment>
             </div>
         )
     }

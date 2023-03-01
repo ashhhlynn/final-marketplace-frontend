@@ -1,5 +1,5 @@
 import React, { Component }from 'react';
-import { List, Modal, Button} from 'semantic-ui-react'
+import { List, Modal, Button, Header} from 'semantic-ui-react'
 import EditUser from './EditUser'
 import {connect} from 'react-redux';
 
@@ -20,15 +20,19 @@ class AccountInfo extends Component {
     render() {
         return(
             <div>
-                <List>
-                Name: {this.props.user.name}<br></br>
+                <Header as="h3"><i>Account Information</i></Header>
+                <List style={{textAlign:"center"}}>
+                Name: {this.props.user.name} <br></br>
                 Email: {this.props.user.email}<br></br>
-                Address: {this.props.user.address}<br></br>
+                Street: {this.props.user.address}<br></br>
+                City: Chicago, IL<br></br>
+                Zip: 66606<br></br>
                 Member Since: {this.props.user.created_at.slice(6, -14)}
                 </List>
-                <Button size="medium" position="center" content="EDIT" onClick={this.handleOpen}>
+                <Button size="mini" circular style={{width:"210px", marginTop:"-1.5%"}} onClick={this.handleOpen}>
+                    Edit 
                 </Button>
-                <Modal style={{ display: "inline-block", width: "auto"}}
+                <Modal style={{ display: "inline-block", width: "600px"}}
                 open={this.state.modalOpen}
                 onClose={this.handleClose}
                 closeIcon
@@ -38,7 +42,7 @@ class AccountInfo extends Component {
                     </Modal.Content>
                </Modal>
             </div>
-        )
+        )   
     }
 }
 

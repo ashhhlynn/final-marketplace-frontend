@@ -7,11 +7,22 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-family: "TimesNow"
 }
 .App{
-  font-family: "Courier New";}
+  font-family: "Lato";
+  background:  #fdfcf9  ;
+}
 
+.App-h2{
+  font-family: "TimesNow-ExtraLight"
 
+}
+.header.ui.header {
+
+  font-family: "TimesNow-ExtraLight";
+font-weight: normal
+}
 
 
   .ui.menu > .item > .link {
@@ -20,10 +31,19 @@
   }
 
 .button.ui.button {
-  background: #fde9e0;
-  color: black 
+  background: #DBE6E0;
+ color: #404040
+
   ;
-  font-family: "Courier New";
-  font-weight:normal
+
+ 
+}
+
+body .ui.cards>.card{
+  box-shadow: none;
+}
+
+.card.ui{
+  font-family: "Lato";
 
 }

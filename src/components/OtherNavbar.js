@@ -22,25 +22,18 @@ class OtherNavbar extends Component {
 
   render() {
     return (
-      <Menu pointing secondary>
+      <div>
+      <center>
+      <img style={{ width:270, height:30, marginTop:"3%" }} src="https://cdn.shopify.com/s/files/1/1124/9666/files/leaf-and-clay-logo-new_196f33de-4679-4dc0-9e64-e6e9d9145052_200x@2x.png?v=1668367213"></img>
+    </center>
+      <Menu pointing secondary size="large"  style={{  marginTop: "-2%"}}>
         <Menu.Menu position="left" >
-          <Menu.Item>
-            <Link to="/products"><Button size='tiny' onClick={()=>{this.handleCreateOrder()}}>
-              <h4>Shop</h4>
-            </Button></Link>
-          </Menu.Item>
-          <Menu.Item>
-            <Link><Button animated='vertical' position='right' size='medium' onClick={this.handleClick}>
-              <Button.Content hidden>Cart</Button.Content>
-              <Button.Content visible>
-                <Icon name='shop' />
-              </Button.Content>
-            </Button></Link>
-          </Menu.Item>
+        <Menu.Item ><Link to='/' style={{  color: '#26453e'}}><b>About</b></Link></Menu.Item>
+        <Menu.Item><Link to ="/products"  onClick={()=>{this.handleCreateOrder()}} style={{ color: '#26453e'}}><b>Shop</b></Link></Menu.Item>         
         </Menu.Menu> 
-        <Menu.Item position = 'right'>
-            <Menu.Item size='huge'><Link to="/" style={{ color: 'grey'}}><h3>About</h3></Link></Menu.Item>
-            <Menu.Item size='huge'><Link style={{ color: 'grey'}} onClick={this.handleOpen}><h3>Login</h3></Link></Menu.Item>
+      <Menu.Menu position = 'right'>
+            <Menu.Item><Link style={{ color: 'grey'}} onClick={this.handleOpen}>
+            <Icon name='user' style={{color:"#26453e"}} size="large"/></Link>Login</Menu.Item>
             <Modal centered style={{ display: "inline-block", width: "auto"}}
             open={this.state.modalOpen}
             onClose={this.handleClose}
@@ -50,8 +43,10 @@ class OtherNavbar extends Component {
               <ToggleLogin handleClose={this.handleClose} />
             </Modal.Content>
             </Modal>
-        </Menu.Item>
-      </Menu>
+
+
+            </Menu.Menu>
+      </Menu></div>
     )
   }
 }
