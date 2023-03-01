@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {  Segment, Header, Divider, Item, Card, Button} from 'semantic-ui-react'
 import {connect} from 'react-redux';
 import Product from './products/Product'
+import Head from './Head'
 
 class Home extends Component{
 
@@ -15,7 +16,7 @@ class Home extends Component{
             return (
                 <div>
                  <center>
-                 <img style={{objectFit: "cover", objectPosition: "0% 50%"}}src="//cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=2400" alt="House Plants" srcset="//cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=352 352w, //cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=832 832w, //cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=1200 1200w, //cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=1920 1920w" width="1260" height="300" loading="eager"/>
+                 <Head />
                  
                  <br></br><br></br>
                 <Header  style={{fontSize:"38px"}}><i>Life is Sweeter with Plants</i></Header>

@@ -2,10 +2,11 @@ import React, {Component} from 'react';
 import { connect } from "react-redux";
 import { List, Header, Segment, Button, Divider, Grid} from 'semantic-ui-react'
 import CartItem from '../cart/CartItem'
-import AccountInfo from '../user/AccountInfo'
+import AccountInfo from '../reducers/AccountInfo'
 import {sendOrder} from '../actions/orderActions'
 import {checkUser} from '../actions/userActions'
 import PaymentForm from './PaymentForm'
+import EditUser from '../user/EditUser'
 
 class Checkout extends Component {
 
@@ -47,7 +48,7 @@ class Checkout extends Component {
             <div> 
                 <Grid columns={2}  >
                     <Grid.Column centered textAlign='left' style={{marginLeft: "5%", marginTop:"2%"}}>
-                        <Header as="h2"><center><i>Order Summary</i></center></Header>    
+                        <Header as="h2"><i>Order Summary</i></Header>    
                         <Divider></Divider>
                         <List>
                             {items}
@@ -59,13 +60,16 @@ class Checkout extends Component {
                     </Grid.Column>
                     <Grid.Column floated="right" style= {{width : "370px", marginRight: "10%"}}>
                         <Segment style= {{width : "410px", marginTop: "2.5%"}}>
-                            <center>
-                            <AccountInfo user={this.props.user} key={this.props.user.id}/><br></br>
+                            
+                           <h4> <center>Shipping Information</center></h4>
+                           
+                            <EditUser />
+                            <h4><center> Payment Information</center></h4>
                             <PaymentForm /><br></br>
                             <Button size="large" style= {{width : "380px"}} content="PLACE ORDER" 
                             onClick={(event) => {this.handleSendOrder(event, orderTotal)}}>
                             </Button>                             
-                            </center>
+                         
                         </Segment>   
                     </Grid.Column>
                 </Grid>

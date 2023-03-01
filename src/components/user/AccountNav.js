@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import AccountInfo from './AccountInfo'
+import AccountInfo from '../reducers/AccountInfo'
 import UserProducts from './UserProducts'
 import UserOrders from './UserOrders'
 import { Segment, Button, Divider, Header, Menu } from 'semantic-ui-react'
@@ -20,7 +20,7 @@ class AccountNav extends Component {
         return (
            <div>
                <Menu style={{fontFamily:"TimesNow-ExtraLight", textAlign:"right", color:"#f3f3f2", height:"510px", background: "#f3f3f2"}} placeholder vertical size="big"><br></br>
-                    <center><Header as="h1"><i>Hello, {this.props.user.name}</i></Header></center><br></br>
+                   <Header as="h1"><i>Hello, {this.props.user.name}</i></Header><br></br>
                    <Menu.Item 
                         name='Your Account'
                         active={activeItem === 'youraccount'}

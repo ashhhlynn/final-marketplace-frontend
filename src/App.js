@@ -8,7 +8,6 @@ import CreateProduct from './components/products/CreateProduct'
 import Checkout from './components/checkout/Checkout'
 import Head from './components/Head'
 import Navbar from './components/Navbar'
-import OtherNavbar from './components/OtherNavbar'
 import Profile from './components/user/Profile'
 import UserProducts from './components/user/UserProducts'
 import UserOrders from './components/user/UserOrders'
@@ -34,7 +33,7 @@ class App extends Component {
         <div className="App">
         
           
-              {this.props.user.length === 0 ? <OtherNavbar /> : <Navbar />}
+            <Navbar />
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route exact path="/products" element={<ProductContainer />} />

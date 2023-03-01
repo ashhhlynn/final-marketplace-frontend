@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Form } from 'semantic-ui-react'
 import { editProduct } from '../actions/productActions'
-import { Segment, Divider, Header, Button } from 'semantic-ui-react'
+import { Divider, Header, Button } from 'semantic-ui-react'
 import {deleteProduct} from '../actions/productActions'
 
 class EditProduct extends Component {
@@ -40,7 +40,7 @@ handleDelete = (event, id) => {
     return (
       <div>
      
-        <Header as="h2"><center><i>Edit Product</i></center></Header>
+        <Header as="h2"><i>Edit Product</i></Header>
         <Divider></Divider>
         
           <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
-import { List, Header, Segment, Button, Divider } from 'semantic-ui-react'
+import { List, Header, Item, Button, Divider } from 'semantic-ui-react'
 import CartItem from './CartItem'
 import { Link } from 'react-router-dom'
 
@@ -22,7 +22,8 @@ class ShoppingCartContainer extends Component {
                             {items}
                         </List>                
                         <Divider></Divider>
-                        <h4>Subtotal: ${this.props.total}.00</h4><br></br>
+                        <h4>Subtotal: 
+                            ${this.props.total}.00</h4><br></br>
                         <Link to="/checkout">
                         <Button style={{width: "317px"}}  size="large" onClick={this.props.handleClose}>CHECKOUT</Button>
                         </Link>

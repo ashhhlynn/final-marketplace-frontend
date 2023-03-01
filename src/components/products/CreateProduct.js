@@ -4,7 +4,7 @@ import { Form } from 'semantic-ui-react'
 import { createProduct } from '../actions/productActions'
 import { Segment, Divider, Header } from 'semantic-ui-react'
 import {checkUser} from '../actions/userActions'
-import Home from '../Home'
+import Head from '../Head'
 
 
 class CreateProduct extends Component {
@@ -32,8 +32,7 @@ class CreateProduct extends Component {
     return (
       <div>
         <center>
-        <img style={{objectFit: "cover", objectPosition: "0% 50%"}}src="//cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=2400" alt="House Plants" srcset="//cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=352 352w, //cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=832 832w, //cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=1200 1200w, //cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=1920 1920w" width="1260" height="300" loading="eager"/>
-<br></br>
+<Head />
         <Segment position="center" style={{ width:"940px", marginTop:"3%", positionAlign:"center"}}>
           <center><Header as="h2"><i>Sell Plant</i></Header></center>
           <Divider></Divider>
@@ -71,7 +70,7 @@ class CreateProduct extends Component {
               onChange={this.handleChange}
             />
             <center>
-            <Form.Button size='large' circular content='Submit' />
+            <Form.Button size="large" circular content='Submit' />
             </center>
         </Form>
       </Segment><br></br><br></br>

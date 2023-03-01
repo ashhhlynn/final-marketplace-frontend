@@ -27,9 +27,17 @@ class EditUser extends Component {
         return (
         <div>
          
-            <i><Header as="h2"><center>Edit Account</center></Header></i>
-            <Divider></Divider>
-            <Form onSubmit={ (event) => {this.handleSubmit(event, this.state)} }>              
+          
+            <Form onSubmit={ (event) => {this.handleSubmit(event, this.state)} }> 
+            <Form.Input disabled
+                 
+                    type="text"
+                    id="email"
+                    label="Email*"
+                    placeholder="Email"
+                    value={this.props.user.email} 
+                        
+                />             
                 <Form.Input
                     required
                     type="text"

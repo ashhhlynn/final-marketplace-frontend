@@ -35,20 +35,20 @@ handleDelete = (event, id) => {
     render () {
         const products = this.props.user.products.map( prod => {
             return (
-                <div key={prod.title}>
+                <div>
                 <Item style={{width:"630px", display: "inline-block"}}>
                     <Item.Image floated="left" rounded src={prod.image_url} size= "medium" />
                     <Item.Extra>
                         <Button size="small" style={{marginTop:"-.55%"}} inverted circular floated="right" onClick= { (event) => { this.handleDelete(event, prod.id)}}>
                          <Icon color="grey" name="close" />
                         </Button>
-                        <Button size="mini" circular floated="right" onClick={this.handleOpen}>Edit</Button>
+                        <Button size="mini" circular floated="right" onClick={this.handleOpen}>EDIT</Button>
                     </Item.Extra>
                     <Item.Content>
                         <Item.Header as="h4" style={{fontWeight:"normal", marginTop:"1%"}}>{prod.title}</Item.Header>
                         Posted: {prod.created_at.slice(6, -14)}<br></br>
                         Price: ${prod.price}<br></br> {prod.description} <br></br>
-                    </Item.Content>  
+                    </Item.Content>      <br></br><br></br>
                 </Item>
                 <Modal style={{ display: "inline-block", width: "600px"}}
                 open={this.state.modalOpen}
@@ -59,8 +59,8 @@ handleDelete = (event, id) => {
                     <EditProduct product={prod} key={prod.id} handleClose={this.handleClose}/>
                 </Modal.Content>
                 </Modal>
-               <br></br><br></br>
-            </div>
+             </div>
+          
         )
     })
         return (
@@ -70,17 +70,16 @@ handleDelete = (event, id) => {
                         <AccountNav/>
                     </Grid.Column>
                     <Grid.Column style={{marginLeft:"8%", marginTop:"2%"}}><div>
-                        <center> 
+                       
                         <Header as="h2">Active Items</Header> 
                         <Divider></Divider>
-                        </center>
+                    
                         <Item.Group >
                             {products}   
                         </Item.Group> <br></br>
-                       <center>
+                     
                         <Header centered as="h2">Sold Items</Header> 
                         <Divider></Divider>
-                        </center>
                         </div>
                     </Grid.Column> 
                 </Grid>

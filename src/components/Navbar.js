@@ -5,11 +5,13 @@ import { logOut } from './actions/userActions'
 import { connect } from "react-redux"
 import {createOrder} from './actions/orderActions'
 import ShoppingCartContainer from './cart/ShoppingCartContainer'
+import ToggleLogin from './ToggleLogin'
 
 class Navbar extends Component {
 
   state = {
-    modalOpen: false
+    modalOpen: false,
+    modalOpenTwo: false
   }
 
   handleOpen = () => {
@@ -19,6 +21,17 @@ class Navbar extends Component {
   handleClose = () => {
     this.setState({ modalOpen: false })
   }
+
+  handleOpenTwo = () => {
+    this.setState({ modalOpenTwo: true });
+  }
+
+  handleCloseTwo = () => this.setState({ modalOpenTwo: false });
+
+  handleClick = () => {
+    alert("Please log in")
+  }
+
 
     handleLogout(e){
       e.preventDefault()
@@ -58,6 +71,25 @@ class Navbar extends Component {
         </Modal>
           <Menu.Item><Link onClick={this.handleOpen}> <Icon name='cart' style={{marginLeft:"0%", color:"#26453e"}} size="large"/></Link>
           </Menu.Item>
+
+          {this.props.user.length === 0 ? 
+<div>
+<Menu.Item><Link style={{ color: 'grey'}} onClick={this.handleOpenTwo}>
+<Icon name='user' style={{color:"#26453e"}} size="large"/></Link>Login</Menu.Item>
+<Modal centered style={{ display: "inline-block", width: "auto"}}
+open={this.state.modalOpenTwo}
+onClose={this.handleCloseTwo}
+closeIcon
+>
+<Modal.Content>
+  <ToggleLogin handleClose={this.handleCloseTwo} />
+</Modal.Content>
+</Modal>
+</div>
+          
+          : 
+
+
           <Menu.Item><Icon name='user' style={{marginLeft:"-15%", color:"#26453e"}}  size="large"/>
           <Dropdown size="tiny" style={{marginLeft:"-25%", color:"#26453e"}}>   
             <Dropdown.Menu>
@@ -70,6 +102,7 @@ class Navbar extends Component {
             </Dropdown.Menu>
           </Dropdown>
           </Menu.Item>
+          }
         </Menu.Menu>
       </Menu>
     </div>
