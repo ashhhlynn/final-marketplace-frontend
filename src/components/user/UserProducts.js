@@ -77,6 +77,10 @@ handleDelete = (event, id) => {
                         <Item.Group >
                             {products}   
                         </Item.Group> <br></br>
+                       <center>
+                        <Header centered as="h2">Sold Items</Header> 
+                        <Divider></Divider>
+                        </center>
                         </div>
                     </Grid.Column> 
                 </Grid>

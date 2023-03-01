@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom'
-import { Menu, Button, Icon, Modal} from 'semantic-ui-react'
+import { Menu, Header, Icon, Modal} from 'semantic-ui-react'
 import ToggleLogin from './ToggleLogin'
 
 
@@ -28,8 +28,13 @@ class OtherNavbar extends Component {
     </center>
       <Menu pointing secondary size="large"  style={{  marginTop: "-2%"}}>
         <Menu.Menu position="left" >
-        <Menu.Item ><Link to='/' style={{  color: '#26453e'}}><b>About</b></Link></Menu.Item>
-        <Menu.Item><Link to ="/products"  onClick={()=>{this.handleCreateOrder()}} style={{ color: '#26453e'}}><b>Shop</b></Link></Menu.Item>         
+        <Menu.Item ><Link to='/' style={{  color: '#26453e'}}>
+        <Header as="h3">HOME</Header>
+        </Link></Menu.Item>
+        <Menu.Item><Link to ="/products"  onClick={()=>{this.handleCreateOrder()}} style={{ color: '#26453e'}}>
+    
+        <Header as="h3">SHOP</Header>
+          </Link></Menu.Item>         
         </Menu.Menu> 
       <Menu.Menu position = 'right'>
             <Menu.Item><Link style={{ color: 'grey'}} onClick={this.handleOpen}>

@@ -21,7 +21,7 @@ class AccountInfo extends Component {
         return(
             <div>
                 <Header as="h3"><i>Account Information</i></Header>
-                <List style={{textAlign:"center"}}>
+                <List style={{textAlign:"center", fontFamily:"TimesNow-ExtraLight", fontSize:"16px"}}>
                 Name: {this.props.user.name} <br></br>
                 Email: {this.props.user.email}<br></br>
                 Street: {this.props.user.address}<br></br>

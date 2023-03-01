@@ -28,7 +28,7 @@ class UserOrders extends Component {
                     <Grid.Column style= {{width: "370px"}}>
                         <AccountNav/>
                     </Grid.Column>
-                    <Grid.Column style={{marginLeft:"8%", marginTop:"2%"}}>
+                    <Grid.Column style={{marginLeft:"8%", marginTop:"2%", background:""}}>
                     <center> 
                     <Header as="h2">Your Orders</Header> 
                         <Divider></Divider> 

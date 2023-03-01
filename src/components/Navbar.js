@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom'
-import { Menu, Button, Icon, Modal, Dropdown, Divider} from 'semantic-ui-react'
+import { Menu, Button, Header, Icon, Modal, Dropdown, Divider} from 'semantic-ui-react'
 import { logOut } from './actions/userActions'
 import { connect } from "react-redux"
 import {createOrder} from './actions/orderActions'
@@ -41,9 +41,10 @@ class Navbar extends Component {
         </center>
         <Menu pointing secondary size="large" style={{ marginTop: "-2%"}}>
         <Menu.Menu position="left">
-          <Menu.Item ><Link to='/' style={{  color: '#26453e'}}><b>About</b></Link></Menu.Item>
-          <Menu.Item><Link to ="/createproduct" style={{  color: '#26453e'}}><b>Sell</b></Link></Menu.Item>
-          <Menu.Item><Link to ="/products"  onClick={()=>{this.handleCreateOrder()}} style={{ color: '#26453e'}}><b>Shop</b></Link></Menu.Item>
+          <Menu.Item ><Link to='/' style={{  color: '#26453e'}}>
+            <Header as="h3">HOME</Header></Link></Menu.Item>
+          <Menu.Item><Link to ="/createproduct" style={{  color: '#26453e'}}><Header as="h3">SELL</Header></Link></Menu.Item>
+          <Menu.Item><Link to ="/products"  onClick={()=>{this.handleCreateOrder()}} style={{ color: '#26453e'}}><Header as="h3">SHOP</Header></Link></Menu.Item>
         </Menu.Menu>
         <Menu.Menu position = 'right'>
         <Modal style={{ display: "inline-block", width: "360px", height:"580px", marginLeft: "67%"}}
