@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { Form, Divider, Segment, Header } from 'semantic-ui-react'
+import { Form } from 'semantic-ui-react'
 import { editUser } from '../actions/userActions'
 
 class EditUser extends Component {
@@ -26,14 +26,13 @@ class EditUser extends Component {
     render() {
         return (
         <div>
-         
-          
             <Form onSubmit={ (event) => {this.handleSubmit(event, this.state)} }> 
-            <Form.Input disabled
-                 
+            <Form.Input 
+                    readOnly
+                    required
                     type="text"
                     id="email"
-                    label="Email*"
+                    label="Email"
                     placeholder="Email"
                     value={this.props.user.email} 
                         
@@ -56,9 +55,8 @@ class EditUser extends Component {
                     value={this.state.address} 
                     onChange={this.handleChange}
                 />       
-                    <center><Form.Button position="center" circular size="medium" content="Submit"/></center>
+                    <center><Form.Button position="center" size="medium" content="Update"/></center>
                 </Form>
-             
             </div>
         )
     }  

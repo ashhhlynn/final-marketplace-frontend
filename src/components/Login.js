@@ -24,7 +24,6 @@ class Login extends Component {
     render() {
         return (
             <div>          
-
                 <Header as="h2"><i>Login</i></Header>
                 <Divider></Divider>
                 <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
@@ -45,7 +44,6 @@ class Login extends Component {
                 /> 
                    <Form.Button size="medium" circular content='Submit' />
                 </Form>
-              
             </div>
         )
     }

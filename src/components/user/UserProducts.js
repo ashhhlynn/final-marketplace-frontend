@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
-import EditProduct from './EditProduct'
-import { Button, Header, Item, Modal, Divider, Icon, Grid, Menu} from 'semantic-ui-react'
+import EditProduct from '../products/EditProduct'
+import { Button, Header, Item, Modal, Divider, Icon} from 'semantic-ui-react'
 import { checkUser } from '../actions/userActions';
-import AccountNav from './AccountNav'
 import {deleteProduct} from '../actions/productActions'
-
 
 class UserProducts extends Component {
 
@@ -30,14 +28,13 @@ handleDelete = (event, id) => {
     this.props.checkUser()
 
   }
- 
 
     render () {
         const products = this.props.user.products.map( prod => {
             return (
                 <div>
-                <Item style={{width:"630px", display: "inline-block"}}>
-                    <Item.Image floated="left" rounded src={prod.image_url} size= "medium" />
+                <Item style={{width:"540px", marginLeft:"8%", display: "inline-block"}}>
+                    <Item.Image floated="left" rounded src={prod.image_url} size= "small" />
                     <Item.Extra>
                         <Button size="small" style={{marginTop:"-.55%"}} inverted circular floated="right" onClick= { (event) => { this.handleDelete(event, prod.id)}}>
                          <Icon color="grey" name="close" />
@@ -65,24 +62,13 @@ handleDelete = (event, id) => {
     })
         return (
             <div>   
-                <Grid columns={2} stackable textAlign='left'>
-                    <Grid.Column style= {{width : "370px"}}>
-                        <AccountNav/>
-                    </Grid.Column>
-                    <Grid.Column style={{marginLeft:"8%", marginTop:"2%"}}><div>
-                       
                         <Header as="h2">Active Items</Header> 
                         <Divider></Divider>
-                    
                         <Item.Group >
                             {products}   
                         </Item.Group> <br></br>
-                     
                         <Header centered as="h2">Sold Items</Header> 
                         <Divider></Divider>
-                        </div>
-                    </Grid.Column> 
-                </Grid>
             </div>
         )
     }

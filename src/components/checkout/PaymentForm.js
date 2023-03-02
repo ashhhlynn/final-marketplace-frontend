@@ -22,7 +22,7 @@ class PaymentForm extends Component {
 
     render() {
         return (        
-            <Form size="tiny" onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
+            <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
             <Form.Input
               required
               type="text"
@@ -55,7 +55,6 @@ class PaymentForm extends Component {
               value={this.state.billingAddress} 
               onChange={this.handleChange}
             />
-          
         </Form>
         )
     }

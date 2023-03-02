@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Login from "./Login";
 import Signup from "./Signup";
-import { Button, Item, Segment } from 'semantic-ui-react'
+import { Item } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 function ToggleLogin({ onLogin }) {
@@ -13,15 +13,15 @@ function ToggleLogin({ onLogin }) {
             <>
                 <Login onLogin={onLogin} /><br></br>
                     <p>Don't have an account?
-                    <Link onClick={() => setShowLogin(false)}>   Register
-                    </Link></p>
+                    <Link onClick={() => setShowLogin(false)}>Register</Link>
+                    </p>
             </>
             ) : (
             <>
                 <Signup onLogin={onLogin} /><br></br>
                     <p>Already have an account?
-                    <Link onClick={() => setShowLogin(true)}>   Login
-                    </Link></p>
+                    <Link onClick={() => setShowLogin(true)}>Login</Link>
+                    </p>
             </>
             )
             }    

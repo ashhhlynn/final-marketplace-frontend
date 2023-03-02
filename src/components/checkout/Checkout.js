@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { connect } from "react-redux";
 import { List, Header, Segment, Button, Divider, Grid} from 'semantic-ui-react'
 import CartItem from '../cart/CartItem'
-import AccountInfo from '../reducers/AccountInfo'
 import {sendOrder} from '../actions/orderActions'
 import {checkUser} from '../actions/userActions'
 import PaymentForm from './PaymentForm'
@@ -62,14 +61,12 @@ class Checkout extends Component {
                         <Segment style= {{width : "410px", marginTop: "2.5%"}}>
                             
                            <h4> <center>Shipping Information</center></h4>
-                           
                             <EditUser />
                             <h4><center> Payment Information</center></h4>
                             <PaymentForm /><br></br>
                             <Button size="large" style= {{width : "380px"}} content="PLACE ORDER" 
                             onClick={(event) => {this.handleSendOrder(event, orderTotal)}}>
                             </Button>                             
-                         
                         </Segment>   
                     </Grid.Column>
                 </Grid>

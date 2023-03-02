@@ -32,7 +32,7 @@ class CreateProduct extends Component {
     return (
       <div>
         <center>
-<Head />
+        <Head />
         <Segment position="center" style={{ width:"940px", marginTop:"3%", positionAlign:"center"}}>
           <center><Header as="h2"><i>Sell Plant</i></Header></center>
           <Divider></Divider>
@@ -70,7 +70,7 @@ class CreateProduct extends Component {
               onChange={this.handleChange}
             />
             <center>
-            <Form.Button size="large" circular content='Submit' />
+            <Form.Button size="large" content='Submit' />
             </center>
         </Form>
       </Segment><br></br><br></br>

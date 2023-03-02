@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Divider, Segment, Header, Item} from 'semantic-ui-react'
+import { Divider, Segment, Item} from 'semantic-ui-react'
 
 class OrderSummary extends Component {
 
