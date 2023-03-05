@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { Card, Image, Button, Icon} from 'semantic-ui-react'
 import { connect } from "react-redux"
 import { addToCart } from '../actions/cartActions'
+import { sellProduct } from '../actions/cartActions'
 
 class Product extends Component {
 
@@ -32,6 +33,7 @@ class Product extends Component {
         }
         else {
             this.props.addToCart(product, this.props.currentOrder)
+
         }
     }    
 
@@ -40,12 +42,18 @@ class Product extends Component {
 const mapStateToProps = (state) => {
     return { 
         currentOrder: state.currentOrder,
-        cart: state.cart
+        cart: state.cart,
+        user: state.currentUser
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return { addToCart: (product, order) => { dispatch(addToCart(product, order)) } }
-}
+    return {
+        addToCart: (product, order) => { dispatch(addToCart(product, order)) },
+   sellProduct: (product, user) => { dispatch(sellProduct(product, user)) }}
+    
+    
+    }
+
  
 export default connect(mapStateToProps, mapDispatchToProps)(Product)

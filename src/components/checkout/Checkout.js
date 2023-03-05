@@ -6,11 +6,14 @@ import {sendOrder} from '../actions/orderActions'
 import {checkUser} from '../actions/userActions'
 import PaymentForm from './PaymentForm'
 import EditUser from '../user/EditUser'
+import { sellProduct } from '../actions/cartActions'
+
 
 class Checkout extends Component {
 
     handleSendOrder = (event, orderTotal) => {
         event.preventDefault()
+        this.handleCheck()
         if (this.props.cart.length === 0) {
             window.alert('Must have items in cart')
         }
@@ -37,6 +40,12 @@ class Checkout extends Component {
             })
         }
     }
+
+    handleCheck = () => {
+        this.props.cart.map((product) => {
+    this.props.sellProduct(product, this.props.user)})
+    }
+  
        
     render() {
         const items = this.props.cart.map ( 
@@ -108,7 +117,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         sendOrder: () => { dispatch(sendOrder()) },
-        checkUser: () =>  { dispatch(checkUser()) }
+        checkUser: () =>  { dispatch(checkUser()) },
+        sellProduct: (product, user) => { dispatch(sellProduct(product, user)) }
+
     }
 }
 

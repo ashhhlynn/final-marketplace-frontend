@@ -9,6 +9,9 @@ class Signup extends Component {
         name: '',
         email: '',
         address: '',
+        city: '',
+        state: '',
+        zip: '',
         password: '',
         password_confirmation: ''
     }
@@ -54,6 +57,30 @@ class Signup extends Component {
                     value={this.state.address} 
                     onChange={this.handleChange}
                 />       
+                <Form.Input
+                    required
+                    type="text"
+                    id="city"
+                    placeholder="City"
+                    value={this.state.city} 
+                    onChange={this.handleChange}
+                />   
+                  <Form.Input
+                    required
+                    type="text"
+                    id="state"
+                    placeholder="State"
+                    value={this.state.state} 
+                    onChange={this.handleChange}
+                />  
+                 <Form.Input
+                    required
+                    type="text"
+                    id="zip"
+                    placeholder="Zip"
+                    value={this.state.zip} 
+                    onChange={this.handleChange}
+                />  
                 <Form.Input
                     required
                     id="password"

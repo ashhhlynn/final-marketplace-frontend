@@ -69,6 +69,34 @@ export const editProduct = (product) => {
         }
     }
 
+    export const sellProduct = (product) => {
+        return (dispatch) => {
+            const token = localStorage.token;
+            console.log(token)
+            let id = product.id
+            fetch(`http://localhost:3000/products/${id}`, {  
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json',
+                         Accept: 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({
+                       title: product.title,
+                       price: product.price,
+                       description: product.description,
+                       image_url: product.image_url
+                    })})
+                .then(resp => resp.json())
+                .then(data => {
+                    console.log(data)
+                    dispatch({type: "EDIT_PRODUCT", data, id})
+                    window.alert("Your product was successfully updated")
+                })
+            }
+        }
+
+
     export const deleteProduct = (id) => {
         return (dispatch) => {
             dispatch({type: "DELETE_PRODUCT", id})

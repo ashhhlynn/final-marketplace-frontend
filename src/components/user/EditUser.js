@@ -8,7 +8,10 @@ class EditUser extends Component {
     state = {
         name: this.props.user.name,
         address: this.props.user.address,
-        id: this.props.user.id
+        id: this.props.user.id,
+        city: this.props.user.city,
+        state: this.props.user.state,
+        zip: this.props.user.zip
     }
 
     handleSubmit = (event, users) => {
@@ -55,6 +58,34 @@ class EditUser extends Component {
                     value={this.state.address} 
                     onChange={this.handleChange}
                 />       
+
+<Form.Input
+                    required
+                    type="text"
+                    id="city"
+                    label="City"
+                    placeholder="City"
+                    value={this.state.city} 
+                    onChange={this.handleChange}
+                />   
+                  <Form.Input
+                    required
+                    type="text"
+                    id="state"
+                    label="State"
+                    placeholder="State"
+                    value={this.state.state} 
+                    onChange={this.handleChange}
+                />  
+                 <Form.Input
+                    required
+                    type="text"
+                    id="zip"
+                    label="Zip"
+                    placeholder="Zip"
+                    value={this.state.zip} 
+                    onChange={this.handleChange}
+                />  
                     <center><Form.Button position="center" size="medium" content="Update"/></center>
                 </Form>
             </div>

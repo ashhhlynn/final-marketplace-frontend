@@ -9,7 +9,7 @@ class OrderSummary extends Component {
                <Table compact basic='very' singleline style={{borderTop: "0px", marginTop:"2%", width:"527px"}}>
                <Table.Body>
            <Table.Row style={{borderTop:"0px", height:"10px"}} >
-        <Table.Cell  style={{borderTop:"0", height:"10px"}}>{item.title} <i>by user9</i></Table.Cell>
+        <Table.Cell  style={{borderTop:"0", height:"10px"}}>{item.title} <i>by user{item.seller}</i></Table.Cell>
         <Table.Cell style={{borderTop:"0", height:"10px"}} textAlign="right"></Table.Cell>
         <Table.Cell style={{border:"0"}} textAlign="right">${item.price}</Table.Cell>
       </Table.Row>

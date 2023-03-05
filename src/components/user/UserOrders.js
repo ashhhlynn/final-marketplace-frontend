@@ -13,9 +13,13 @@ class UserOrders extends Component {
             <div>
                     <Header as="h2">Your Orders</Header> 
                         <Divider></Divider> <br></br>
+                        {this.props.user.orders.length !== 0 ?
                     <Card.Group centered>
-                        {orders}     
+                      
+                        {orders} 
                         </Card.Group>
+                        : 
+                        <center>You haven't placed any orders yet.</center>}
             </div>
         )
     }

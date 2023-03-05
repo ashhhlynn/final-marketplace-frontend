@@ -34,21 +34,20 @@ function Profile(props) {
                    <Header as="h1"><i>Hi {props.user.name}</i></Header><br></br>
                    <Menu.Item size="huge"
                         onClick={showA}> 
-                        <Link style={{ color: "#26453e"}}>Account Information</Link>
+                        <Link style={{ color: "#26453e"}}>Your Account</Link>
                     </Menu.Item>
                    <Menu.Item
                         onClick={showB}>
-                        <Link style={{  color: "#26453e"}}>Order History</Link>  
+                        <Link style={{  color: "#26453e"}}>Your Order History</Link>  
                     </Menu.Item>
                     <Menu.Item
                         onClick={showC}>
-                    <Link style={{  color: "#26453e"}}>Your Active Products </Link>
+                    <Link style={{  color: "#26453e"}}>Your Products </Link>
                     </Menu.Item>
-                    <Menu.Item> 
-                    <Link to="/userproducts" style={{  color: "#26453e"}}>Your Sold Products </Link>
+                   
                    
 
-                    </Menu.Item>
+                    
                     <Menu.Item> <br></br><br></br>
                     <center><Icon name="leaf" style={{color:"#26453e"}} size="huge"></Icon></center>
                     </Menu.Item>

@@ -41,10 +41,18 @@ handleDelete = (event, id) => {
                         <Button size="mini" circular floated="right" onClick={this.handleOpen}>EDIT</Button>
                     </Item.Extra>
                     <Item.Content>
-                        <Item.Header as="h4" style={{fontWeight:"normal", marginTop:"1%"}}>{prod.title}</Item.Header>
+                        <Item.Header as="h4" style={{fontWeight:"normal", marginTop:"1%"}}>{prod.title} | ${prod.price}</Item.Header>
                         Posted: {prod.created_at.slice(6, -14)}<br></br>
-                        Price: ${prod.price}<br></br> {prod.description} <br></br>
-                    </Item.Content>      <br></br><br></br>
+                       {prod.description} <br></br>
+                        {prod.buyer ?
+                        <p>Sold to <i>user {prod.buyer}</i> on {prod.updated_at.slice(6, -14)}</p>
+                        : 
+                        <p>Active</p>
+                    }
+                     
+                    </Item.Content> 
+                    
+                         <br></br><br></br>
                 </Item>
                 <Modal style={{ display: "inline-block", width: "600px"}}
                 open={this.state.modalOpen}

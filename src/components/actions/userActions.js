@@ -98,7 +98,11 @@ export const editUser = (users) => {
                 },
                 body: JSON.stringify({
                    name: users.name,
-                   address: users.address
+                   address: users.address,
+                   city: users.city,
+                   state: users.state,
+                   zip: users.zip
+
                 })})
             .then(resp => resp.json())
             .then(data => {

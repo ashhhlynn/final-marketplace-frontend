@@ -14,12 +14,14 @@ class UserProducts extends Component {
     })
         return (
                     <div>   
-                        <Header as="h2">Active Items</Header> 
+                        <Header as="h2">Your Products</Header> 
                         <Divider></Divider>
+                        {this.props.user.products.length !== 0 ?
+                        <>
                         <Item.Group >
                             {products}   
-                        </Item.Group> <br></br>
-                       
+                        </Item.Group> <br></br></>
+                       : <center>You currently do not have any active products.</center>}
                     </div>
         )
     }

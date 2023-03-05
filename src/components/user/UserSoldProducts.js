@@ -13,7 +13,7 @@ class UserSoldProducts extends Component {
        
         <Item.Content>
             <Item.Header as="h4" style={{fontWeight:"normal", marginTop:"1%"}}>{prod.title}: Sold {prod.updated_at.slice(6, -14)}-2023
-            | <i>user {prod.user_id}</i> </Item.Header>
+            | <i>user {prod.buyer}</i> </Item.Header>
             <br></br>
             
             Posted: {prod.created_at.slice(6, -14)}<br></br>
