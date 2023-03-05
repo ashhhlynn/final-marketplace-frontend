@@ -103,7 +103,7 @@ export const editUser = (users) => {
             .then(resp => resp.json())
             .then(data => {
                 console.log(data)
-                window.alert("User Updated")
+                window.alert("Your account was successfully updated!")
                 dispatch({type: "SET_CURRENT_USER", user: data.user})
 
             })

@@ -12,10 +12,11 @@ class ShoppingCartContainer extends Component {
         )
         return (
             <div>   
+             
                 <Header as="h2">Your Cart ({items.length})</Header>
                 <Divider></Divider>
                     {this.props.cart.length === 0 ? 
-                       <p>Your cart is empty.</p> 
+                       <Header as="h4">Your cart is empty.</Header> 
                     :
                     <div>
                         <List>
@@ -25,7 +26,7 @@ class ShoppingCartContainer extends Component {
                         <center><h4>Subtotal: 
                             ${this.props.total}.00</h4></center>
                         <Link to="/checkout">
-                        <Button style={{width: "317px", marginTop:"4%"}}   size="large" onClick={this.props.handleClose}>CHECKOUT</Button>
+                        <Button style={{backgroundColor: "#26453e", color:"#FFFFF0", width: "317px", marginTop:"4%"}}   size="large" onClick={this.props.handleClose}>CHECKOUT</Button>
                         </Link>
                     </div>
                     }

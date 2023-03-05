@@ -11,7 +11,8 @@ export const addToCart = (product, order) => {
        body: JSON.stringify({
            price: product.price,
            product_id: product.id,
-           order_id: order
+           order_id: order, 
+           title: product.title
        })
        })
        .then(resp => resp.json())
@@ -22,7 +23,7 @@ export const addToCart = (product, order) => {
             }
            else {
                dispatch({type: "ADD_TO_CART", product})
-               window.alert("Added to your cart")
+               window.alert("This item was added to your cart!")
            }               
        })
     }

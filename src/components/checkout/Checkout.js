@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
-import { List, Header, Segment, Button, Divider, Grid} from 'semantic-ui-react'
+import { List, Header, Segment, Button, Table, Divider, Item, Grid} from 'semantic-ui-react'
 import CartItem from '../cart/CartItem'
 import {sendOrder} from '../actions/orderActions'
 import {checkUser} from '../actions/userActions'
@@ -32,7 +32,7 @@ class Checkout extends Component {
             .then(data => {
                 console.log(data)
                 this.props.sendOrder()
-                window.alert("Order Submitted")
+                window.alert("Your order was successfully submitted!")
                 this.props.checkUser()
             })
         }
@@ -42,31 +42,52 @@ class Checkout extends Component {
         const items = this.props.cart.map ( 
             item => <CartItem item={item} key={item.id}/>
         )
-        let orderTotal = Math.round((this.props.total * 1.1)*100)/100
+        let orderTotal = Math.round((this.props.total * 1.1 + 10)*100)/100
         return (
             <div> 
                 <Grid columns={2}  >
-                    <Grid.Column centered textAlign='left' style={{marginLeft: "5%", marginTop:"2%"}}>
+                    <Grid.Column centered textAlign='left' style={{width: "500px", marginLeft: "5%", marginTop:"2%"}}>
                         <Header as="h2"><i>Order Summary</i></Header>    
                         <Divider></Divider>
                         <List>
                             {items}
                         </List>
                         <Divider></Divider>
-                        <p>Subtotal: ${this.props.total}</p>
-                        <p>Tax: ${Math.round((this.props.total * .1)*100)/100}</p>
-                        <p><b>Total: ${Math.round((this.props.total * 1.1)*100)/100}</b></p>
+
+                        <Table compact basic='very' singleline style={{borderTop: "0px", marginTop:"2%", width:"450px"}}>
+               <Table.Body>
+           <Table.Row style={{borderTop:"0px", height:"10px"}} >
+        <Table.Cell  style={{borderTop:"0", height:"10px"}}>Subtotal</Table.Cell>
+        <Table.Cell style={{border:"0"}} textAlign="right">${this.props.total}</Table.Cell>
+      </Table.Row>
+      <Table.Row style={{borderTop:"0px", height:"10px"}} >
+        <Table.Cell  style={{borderTop:"0", height:"10px"}}>Tax</Table.Cell>
+        <Table.Cell style={{border:"0"}} textAlign="right">${Math.round((this.props.total * .1)*100)/100}</Table.Cell>
+      </Table.Row>
+      <Table.Row style={{borderTop:"0px", height:"10px"}} >
+        <Table.Cell  style={{borderTop:"0", height:"10px"}}>Shipping</Table.Cell>
+        <Table.Cell style={{border:"0"}} textAlign="right">$10</Table.Cell>
+      </Table.Row>
+      <Table.Row style={{borderTop:"0px", height:"10px"}} >
+        <Table.Cell  style={{borderTop:"0", height:"10px"}}><b>Total</b></Table.Cell>
+        <Table.Cell style={{border:"0"}} textAlign="right"><b>${Math.round((this.props.total * 1.1 + 10)*100)/100}</b></Table.Cell>
+      </Table.Row>
+
+
+      </Table.Body>
+           </Table>
+
                     </Grid.Column>
-                    <Grid.Column floated="right" style= {{width : "370px", marginRight: "10%"}}>
-                        <Segment style= {{width : "410px", marginTop: "2.5%"}}>
+                    <Grid.Column floated="right" style= {{marginRight: "0%"}}>
+                        <Segment style= {{width: "550px", marinRight:"4%", marginTop: "2.5%"}}>
                             
                            <h4> <center>Shipping Information</center></h4>
                             <EditUser />
                             <h4><center> Payment Information</center></h4>
                             <PaymentForm /><br></br>
-                            <Button size="large" style= {{width : "380px"}} content="PLACE ORDER" 
+                            <center><Button size="large" style= {{width: "300px", backgroundColor:"#26453e", color:"#FFFFF0"}} content="PLACE ORDER" 
                             onClick={(event) => {this.handleSendOrder(event, orderTotal)}}>
-                            </Button>                             
+                            </Button></center>                             
                         </Segment>   
                     </Grid.Column>
                 </Grid>

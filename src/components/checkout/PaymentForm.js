@@ -23,6 +23,14 @@ class PaymentForm extends Component {
     render() {
         return (        
             <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
+              <Form.Input
+              required
+              type="text"
+              id="cardNumber"
+              placeholder="Card Type"
+              value={this.state.cardNumber} 
+              onChange={this.handleChange}
+            />
             <Form.Input
               required
               type="text"

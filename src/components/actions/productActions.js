@@ -36,7 +36,7 @@ export const createProduct = (product, users) => {
         }
            else {
                dispatch({type: 'ADD_PRODUCT', data})
-               window.alert('Product created')
+               window.alert('Your product was successfully created!')
            }           
        })
    }
@@ -64,7 +64,7 @@ export const editProduct = (product) => {
             .then(data => {
                 console.log(data)
                 dispatch({type: "EDIT_PRODUCT", data, id})
-                window.alert("Product updated")
+                window.alert("Your product was successfully updated")
             })
         }
     }
@@ -81,6 +81,9 @@ export const editProduct = (product) => {
                     'Authorization': `Bearer ${token}`
                 },
             })   
+            .then(
+                window.alert("Your product was successfully deleted!")
+            )
         }           
     }
     

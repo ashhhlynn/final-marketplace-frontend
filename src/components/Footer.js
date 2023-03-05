@@ -7,7 +7,7 @@ class Footer extends Component{
             return (
                     <Segment size="tiny" style={{background:"#e9f0ec", height:"80px"}}>
                         
-                    <Header as="h5" style={{marginTop:"2%"}}>2023 Leaf & Clay | Powered by Heroku</Header> 
+                    <Header as="h5" style={{marginTop:"2%"}}> © 2023 Planterina | Powered by Heroku</Header> 
                   
             </Segment>
             )

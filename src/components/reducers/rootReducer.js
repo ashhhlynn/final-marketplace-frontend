@@ -42,12 +42,11 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 products: [...state.products.filter(item=> item.id !== action.id), action.data],
-                loading: false
+                loading: false,
             };
 
         case "DELETE_PRODUCT":
             let pr = state.products.filter(item => item.id !== action.id);
-            alert("Deleted Product")
             return {
                 ...state,
                 products: pr,
@@ -83,7 +82,10 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state, 
                 currentUser: [], 
-                loading: false
+                loading: false,
+                currentOrder: [], 
+                cart: [],
+                cartTotal: 0,
             };
          
         case "CREATE_ORDER":

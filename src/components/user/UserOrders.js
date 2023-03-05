@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Header, Divider} from 'semantic-ui-react'
+import { Header, Divider, Card} from 'semantic-ui-react'
 import OrderSummary from './OrderSummary'
 import {connect} from 'react-redux';
 
@@ -12,8 +12,10 @@ class UserOrders extends Component {
         return (
             <div>
                     <Header as="h2">Your Orders</Header> 
-                        <Divider></Divider> 
-                    {orders}     
+                        <Divider></Divider> <br></br>
+                    <Card.Group centered>
+                        {orders}     
+                        </Card.Group>
             </div>
         )
     }

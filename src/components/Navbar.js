@@ -28,14 +28,21 @@ class Navbar extends Component {
 
   handleCloseTwo = () => this.setState({ modalOpenTwo: false });
 
-    handleLogout(e){
-      e.preventDefault()
+    handleLogout(){
       localStorage.clear()
       this.props.logOut()
+      this.setState({ modalOpenTwo: false })
+    }
+
+    handleClicky = (event) => {
+     event.preventDefault()
+      alert("Please log in first.")
+
     }
 
   handleCreateOrder() {
-    if (this.props.currentOrder.length === 0) {
+
+    if (this.props.user.length !== 0 && this.props.currentOrder.length === 0) {
         let userId = this.props.user.id
         this.props.createOrder(userId)
     }
@@ -45,14 +52,22 @@ class Navbar extends Component {
     return (
       <div  >
         <center>
-        <img style={{ width:270, height:30, marginTop:"3%" }} src="https://cdn.shopify.com/s/files/1/1124/9666/files/leaf-and-clay-logo-new_196f33de-4679-4dc0-9e64-e6e9d9145052_200x@2x.png?v=1668367213"></img>
+        <img style={{ width:200, height:45, marginTop:"3%" }} src="https://cdn.shopify.com/s/files/1/0253/6701/9565/files/planterina-logo_432e9c62-d54e-4302-8761-6e169c222543_600x300.png?v=1628654999"></img>
         </center>
         <Menu pointing secondary size="large" style={{ marginTop: "-2%"}}>
         <Menu.Menu position="left">
           <Menu.Item ><Link to='/' style={{  color: '#26453e'}}>
             <Header as="h3">HOME</Header></Link></Menu.Item>
-          <Menu.Item><Link to ="/createproduct" style={{  color: '#26453e'}}><Header as="h3">SELL</Header></Link></Menu.Item>
-          <Menu.Item><Link to ="/products"  onClick={()=>{this.handleCreateOrder()}} style={{ color: '#26453e'}}><Header as="h3">SHOP</Header></Link></Menu.Item>
+          <Menu.Item>
+         
+          {this.props.user.length !== 0 ? 
+            <Link to ="/createproduct" style={{  color: '#26453e'}}> <Header as="h3">SELL</Header>
+            </Link> :
+             <Link onClick={(event)=>this.handleClicky(event)} style={{  color: '#26453e'}}> <Header as="h3">SELL</Header>
+             </Link>}
+            </Menu.Item>
+          <Menu.Item>
+            <Link to ="/products"  onClick={()=>{this.handleCreateOrder()}} style={{ color: '#26453e'}}><Header as="h3">SHOP</Header></Link></Menu.Item>
         </Menu.Menu>
         <Menu.Menu position = 'right'>
         <Modal style={{ display: "inline-block", width: "360px", height:"580px", marginLeft: "67%"}}
@@ -71,7 +86,7 @@ class Navbar extends Component {
             <div>
               <Menu.Item><Link style={{ color: 'grey'}} onClick={this.handleOpenTwo}>
               <Icon name='user circle' style={{color:"#26453e"}} size="large"/></Link>
-              Login</Menu.Item>
+              </Menu.Item>
               <Modal centered style={{ display: "inline-block", width: "auto"}}
               open={this.state.modalOpenTwo}
               onClose={this.handleCloseTwo}
