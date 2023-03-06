@@ -34,14 +34,7 @@ class Navbar extends Component {
       this.setState({ modalOpenTwo: false })
     }
 
-    handleClicky = (event) => {
-     event.preventDefault()
-      alert("Please log in first.")
-
-    }
-
   handleCreateOrder() {
-
     if (this.props.user.length !== 0 && this.props.currentOrder.length === 0) {
         let userId = this.props.user.id
         this.props.createOrder(userId)
@@ -57,17 +50,13 @@ class Navbar extends Component {
         <Menu pointing secondary size="large" style={{ marginTop: "-2%"}}>
         <Menu.Menu position="left">
           <Menu.Item ><Link to='/' style={{  color: '#26453e'}}>
-            <Header as="h3">HOME</Header></Link></Menu.Item>
-          <Menu.Item>
-         
-          {this.props.user.length !== 0 ? 
-            <Link to ="/createproduct" style={{  color: '#26453e'}}> <Header as="h3">SELL</Header>
-            </Link> :
-             <Link onClick={(event)=>this.handleClicky(event)} style={{  color: '#26453e'}}> <Header as="h3">SELL</Header>
-             </Link>}
+            <h4>Home</h4></Link></Menu.Item>
+          <Menu.Item>         
+             <Link  to ="/createproduct" style={{ fontWeight:"normal", color: '#26453e'}}> <h4>Sell</h4>
+             </Link>
             </Menu.Item>
           <Menu.Item>
-            <Link to ="/products"  onClick={()=>{this.handleCreateOrder()}} style={{ color: '#26453e'}}><Header as="h3">SHOP</Header></Link></Menu.Item>
+            <Link to ="/products" onClick={()=>{this.handleCreateOrder()}} style={{ color: '#26453e'}}><h4>Shop</h4></Link></Menu.Item>
         </Menu.Menu>
         <Menu.Menu position = 'right'>
         <Modal style={{ display: "inline-block", width: "360px", height:"580px", marginLeft: "67%"}}
@@ -79,9 +68,8 @@ class Navbar extends Component {
                   <ShoppingCartContainer handleClose={this.handleClose} />
                 </Modal.Content>
         </Modal>
-          <Menu.Item><Link onClick={this.handleOpen}> <Icon name='cart' style={{marginLeft:"0%", color:"#26453e"}} size="large"/></Link>
+          <Menu.Item><Link onClick={this.handleOpen}> <Icon name='shopping basket' style={{marginLeft:"0%", color:"#26453e"}} size="large"/></Link>
           </Menu.Item>
-
           {this.props.user.length === 0 ? 
             <div>
               <Menu.Item><Link style={{ color: 'grey'}} onClick={this.handleOpenTwo}>
@@ -97,7 +85,7 @@ class Navbar extends Component {
               </Modal.Content>
               </Modal>
               </div>
-          : 
+            : 
                <Menu.Item><Icon name='user circle' style={{marginLeft:"-15%", color:"#26453e"}}  size="large"/>
               <Dropdown size="tiny" style={{marginLeft:"-25%", color:"#26453e"}}>   
               <Dropdown.Menu>

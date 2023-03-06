@@ -6,7 +6,6 @@ import Home from './components/Home'
 import { checkUser } from './components/actions/userActions';
 import CreateProduct from './components/products/CreateProduct'
 import UserSoldProducts from './components/user/UserSoldProducts'
-
 import Checkout from './components/checkout/Checkout'
 import Navbar from './components/Navbar'
 import Profile from './components/user/Profile'
@@ -36,7 +35,6 @@ class App extends Component {
               <Route exact path="/checkout" element={<Checkout />} />
               <Route exact path="/profile" element={<Profile user={this.props.user}/>} />
               <Route exact path="/userproducts" element={<UserSoldProducts/>} />
-
             </Routes>
             <Footer />
           </div>

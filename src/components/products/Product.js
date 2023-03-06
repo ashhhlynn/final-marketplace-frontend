@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Card, Image, Button, Icon} from 'semantic-ui-react'
+import { Card, Image, Button, Divider, Reveal} from 'semantic-ui-react'
 import { connect } from "react-redux"
 import { addToCart } from '../actions/cartActions'
 import { sellProduct } from '../actions/cartActions'
@@ -10,20 +10,30 @@ class Product extends Component {
         const i = this.props.product
         return (
             <Card key={i.id} style={{ width:"330px", background:"#fdfcf9"}}>
+               <Card.Content>
+                <Reveal animated='move'>
+                <Reveal.Content visible>  
                 <Card.Content>
-                    <Image size="medium" position="center" src={i.image_url}/>
-                    <Button floated="right" inverted style={{background:"#fdfcf9", color: "grey", marginRight:"-6.5%", marginTop: ".7%"}} circular size="small" onClick={(event) => {this.handleClick(event, i)}}>  
-                    <Icon name="add" floated="center"></Icon>
-                    </Button>  
-                    <Card.Header style={{marginTop: ".4%", fontWeight:"normal"}}>{i.title} 
-                    </Card.Header>
-                    <b>${i.price}</b> posted {i.created_at.slice(6, -14)}-2023 by user {i.user_id}
-                    <Card.Description>
-                        <i>{i.description}</i>
-                    </Card.Description> 
-                </Card.Content> 
+                    <Image position="center" src={i.image_url}/>
+                    <Card.Header as="h3" style={{marginTop:"2%", fontWeight:"normal"}}>{i.title}</Card.Header>  
+                    <Card.Header as="h4" style={{marginTop:"-11%", fontWeight:"normal", marginLeft:"86%"}}>${i.price} </Card.Header>
+                    <Card.Meta style={{marginTop:"-4%"}}><i>by user {i.user_id}</i></Card.Meta> 
+                </Card.Content>
+                </Reveal.Content>
+                <Reveal.Content hidden>
+                <Card.Content>
+                    <Card.Description>{i.description}</Card.Description><br></br>
+                    <center>
+                    <Button color="grey" floated="bottom" onClick={(event) => {this.handleClick(event, i)}}>  
+                    Add to Cart
+                    </Button> 
+                    </center>    
+                </Card.Content>
+                </Reveal.Content>
+                </Reveal>
+                </Card.Content>
             </Card>
-        )
+        )      
     }
 
     handleClick = (event, product) => {
@@ -33,7 +43,6 @@ class Product extends Component {
         }
         else {
             this.props.addToCart(product, this.props.currentOrder)
-
         }
     }    
 
@@ -50,10 +59,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         addToCart: (product, order) => { dispatch(addToCart(product, order)) },
-   sellProduct: (product, user) => { dispatch(sellProduct(product, user)) }}
-    
-    
+        sellProduct: (product, user) => { dispatch(sellProduct(product, user)) }
     }
+}
 
  
 export default connect(mapStateToProps, mapDispatchToProps)(Product)

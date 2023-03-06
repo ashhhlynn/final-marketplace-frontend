@@ -77,7 +77,7 @@ super(props)
               onChange={this.handleChange}
             />
             <center>
-            <Form.Button size='medium' content='Submit' />
+            <Form.Button content='Submit' />
             </center>
         </Form>
   

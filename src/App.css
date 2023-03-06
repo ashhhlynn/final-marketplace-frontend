@@ -1,35 +1,55 @@
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  font-family: "TimesNow"
-}
+
 .App{
-  font-family: "Lato";
   background:  #fdfcf9  ;
+  font-family: "futura-pt", sans-serif;
+    font-weight: 400;
+  line-height: 1.5em;
+  color: #111111;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
-.App-h2{
-  font-family: "TimesNow-ExtraLight"
+.header {
+
+  
+  font-weight: "normal";
+}
+
+h1 {
+
+  font-weight: "normal";
+}
+
+.app.header.header{
+
+
+    font-weight: "normal";
+  
+}
+
+.body .h1{
+
+
+    font-weight: "normal";
 
 }
+
+
+.header {
+  font-weight: "normal";
+}
+
+.app .header {
+  font-weight: "normal";
+}
+
 .header.ui.header {
 
 font-family: "TimesNow-ExtraLight";
 text-align: center;
 font-weight: normal
 }
-
-.ui.h2 {
-
-  font-family: "TimesNow-ExtraLight";
-  font-weight: italic
-  }
 
 
   .ui.menu > .item > .link {
@@ -40,16 +60,22 @@ font-weight: normal
 .button.ui.button {
   background: #DBE6E0;
  color: #404040;
-font-weight: normal;
-
+font-weight: 400;
+font-family: "futura-pt", sans-serif;
+line-height: 1.5em;
+z-index: 1;
+size: "medium"
  
 }
 
 body .ui.cards>.card{
   box-shadow: none;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 400;
+  line-height: 1.5em;
 }
 
-.card.ui{
-  font-family: "Lato";
-
+body .ui.cards>.card >.header{
+font-weight: "normal"
 }
+

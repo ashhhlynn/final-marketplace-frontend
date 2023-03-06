@@ -19,8 +19,8 @@ function ToggleLogin({ onLogin }) {
             ) : (
             <>
                 <Signup onLogin={onLogin} /><br></br>
-                    <p>Already have an account?
-                    <Link onClick={() => setShowLogin(true)}>Login</Link>
+                    <p>Already have an account? 
+                    <Link onClick={() => setShowLogin(true)}> Login</Link>
                     </p>
             </>
             )

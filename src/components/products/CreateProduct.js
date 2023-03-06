@@ -31,15 +31,14 @@ class CreateProduct extends Component {
   render() {
     return (
       <div>
-                     <img style={{objectFit: "cover", objectPosition: "50% 12%"}}src="//cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=2400" alt="House Plants" srcset="//cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=352 352w, //cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=832 832w, //cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=1200 1200w, //cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=1920 1920w" width="1263" height="270" loading="eager"/>          
+          <img style={{objectFit: "cover", objectPosition: "50% 12%"}}src="//cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=2400" alt="House Plants" srcset="//cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=352 352w, //cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=832 832w, //cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=1200 1200w, //cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=1920 1920w" width="1263" height="270" loading="eager"/>          
+          <h1 style={{marginLeft:"29%",  fontWeight:"normal"}}>sell plant</h1>
+          <img style={{marginTop: "-2%", marginLeft:"65%", objectFit: "cover", objectPosition: "0% 0%"}}width="370" height="370" src="https://hips.hearstapps.com/hmg-prod/images/pretty-pink-plants-1554757430.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*"/>
+      
 
-             <img style={{marginTop: "3%", marginLeft:"65%", objectFit: "cover", objectPosition: "0% 0%"}}width="370" height="370" src="https://hips.hearstapps.com/hmg-prod/images/pretty-pink-plants-1554757430.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*"/>
-
-       
-        <Segment position="center" style={{ width:"700px", marginLeft: "5.5%", marginTop:"-29%"}}>
-          <center><Header as="h2"><i>Sell Plant</i></Header></center>
-          <Divider></Divider>
-          <Form success size="large" onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
+        <Segment position="center" style={{ width:"700px", marginLeft: "5.5%", marginTop:"-25%"}}>
+          <br></br>
+          <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
         
             <Form.Input
               required
@@ -74,12 +73,12 @@ class CreateProduct extends Component {
               onChange={this.handleChange}
             />
             <center>
-            <Form.Button size="big" content='Submit' 
+            <Form.Button content='Submit' 
             />
             </center>
         </Form>
       </Segment>
-    <br></br>
+    <br></br><br></br>
     </div>
     )
   }

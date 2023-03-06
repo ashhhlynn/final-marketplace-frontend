@@ -14,8 +14,9 @@ class ProductContainer extends Component {
         return (
             <div>
                <img width="1263" height="270"style={{ objectFit: "cover", objectPosition: "0% 50%"}}src="https://cdn.shopify.com/s/files/1/1124/9666/collections/succulents-homepage-image_67aed5c3-86b9-4af3-955f-2c02dd129166.jpg?v=1655490570&width=1920"/>
-                <Header style={{marginLeft:"-65%", marginTop: "2%"}}as="h1"><i>Shop All Plants</i></Header>
-                    <Card.Group centered>
+                <h1 style={{marginLeft:"11%", marginTop: "2%", fontWeight:"normal"}}>shop all</h1>
+                <h3 style={{marginLeft:"83%", fontWeight:"normal", marginTop:"-3%"}}>filter by</h3>
+                    <br></br><Card.Group centered>
                         {products}
                     </Card.Group>
             </div>

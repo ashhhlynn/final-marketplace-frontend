@@ -30,7 +30,7 @@ class Signup extends Component {
     render() {
         return (
             <div>
-            <Header as="h2"><i>Register</i></Header>
+            <Header as="h2">Register</Header>
             <Divider></Divider>
             <Form onSubmit={ (event) => {this.handleSubmit(event, this.state)} }>              
                 <Form.Input
@@ -97,7 +97,7 @@ class Signup extends Component {
                     value={this.state.password_confirmation} 
                     onChange={this.handleChange}
                 />
-                    <Form.Button size="medium" circular content="Submit"/>
+                    <Form.Button content="Submit"/>
                 </Form>
             </div>
         )

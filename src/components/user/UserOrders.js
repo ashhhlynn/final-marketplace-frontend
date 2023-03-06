@@ -11,8 +11,8 @@ class UserOrders extends Component {
         ))       
         return (
             <div>
-                    <Header as="h2">Your Orders</Header> 
-                        <Divider></Divider> <br></br>
+                     <h2 style={{fontWeight:"normal"}}><center>order history</center><Divider></Divider></h2>
+                     <br></br>
                         {this.props.user.orders.length !== 0 ?
                     <Card.Group centered>
                       

@@ -86,7 +86,7 @@ class EditUser extends Component {
                     value={this.state.zip} 
                     onChange={this.handleChange}
                 />  
-                    <center><Form.Button position="center" size="medium" content="Update"/></center>
+                    <center><Form.Button position="center" content="Update"/></center>
                 </Form>
             </div>
         )

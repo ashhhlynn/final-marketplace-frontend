@@ -13,20 +13,19 @@ class ShoppingCartContainer extends Component {
         return (
             <div>   
              
-                <Header as="h2">Your Cart ({items.length})</Header>
+                <h2 style={{fontWeight:"normal"}}>your cart ({items.length})</h2>
                 <Divider></Divider>
                     {this.props.cart.length === 0 ? 
-                       <Header as="h4">Your cart is empty.</Header> 
+                      <>Your cart is empty.</>
                     :
                     <div>
                         <List>
                             {items}
                         </List>                
                         <Divider></Divider>
-                        <center><h4>Subtotal: 
-                            ${this.props.total}.00</h4></center>
+                        <h4 style={{fontWeight:"normal"}}>Subtotal: ${this.props.total}.00</h4>
                         <Link to="/checkout">
-                        <Button style={{backgroundColor: "#26453e", color:"#FFFFF0", width: "317px", marginTop:"4%"}}   size="large" onClick={this.props.handleClose}>CHECKOUT</Button>
+                        <Button style={{backgroundColor: "#26453e", color:"#FFFFF0", width: "300px", marginTop:"4%"}} onClick={this.props.handleClose}>Checkout</Button>
                         </Link>
                     </div>
                     }

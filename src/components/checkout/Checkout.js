@@ -8,8 +8,11 @@ import PaymentForm from './PaymentForm'
 import EditUser from '../user/EditUser'
 import { sellProduct } from '../actions/cartActions'
 
+import { useNavigate } from "react-router-dom";
 
 class Checkout extends Component {
+
+  
 
     handleSendOrder = (event, orderTotal) => {
         event.preventDefault()
@@ -37,6 +40,7 @@ class Checkout extends Component {
                 this.props.sendOrder()
                 window.alert("Your order was successfully submitted!")
                 this.props.checkUser()
+               
             })
         }
     }
@@ -55,15 +59,15 @@ class Checkout extends Component {
         return (
             <div> 
                 <Grid columns={2}  >
-                    <Grid.Column centered textAlign='left' style={{width: "500px", marginLeft: "5%", marginTop:"2%"}}>
-                        <Header as="h2"><i>Order Summary</i></Header>    
+                    <Grid.Column centered textAlign='left' style={{width: "440px", marginLeft: "5%", marginTop:"2%"}}>
+                    <h2 style={{fontWeight:"normal"}}>order summary</h2>   
                         <Divider></Divider>
                         <List>
                             {items}
                         </List>
                         <Divider></Divider>
 
-                        <Table compact basic='very' singleline style={{borderTop: "0px", marginTop:"2%", width:"450px"}}>
+                        <Table compact basic='very' singleline style={{fontSize:"16px", borderTop: "0px", marginTop:"-2%", width:"390px"}}>
                <Table.Body>
            <Table.Row style={{borderTop:"0px", height:"10px"}} >
         <Table.Cell  style={{borderTop:"0", height:"10px"}}>Subtotal</Table.Cell>
@@ -78,31 +82,32 @@ class Checkout extends Component {
         <Table.Cell style={{border:"0"}} textAlign="right">$10</Table.Cell>
       </Table.Row>
       <Table.Row style={{borderTop:"0px", height:"10px"}} >
-        <Table.Cell  style={{borderTop:"0", height:"10px"}}><b>Total</b></Table.Cell>
-        <Table.Cell style={{border:"0"}} textAlign="right"><b>${Math.round((this.props.total * 1.1 + 10)*100)/100}</b></Table.Cell>
+        <Table.Cell  style={{ height:"10px"}}><b>Total</b></Table.Cell>
+        <Table.Cell  textAlign="right"><b>${Math.round((this.props.total * 1.1 + 10)*100)/100}</b></Table.Cell>
       </Table.Row>
-
-
       </Table.Body>
            </Table>
+           <Button size="medium" style= {{width: "400px", backgroundColor:"#26453e", color:"#FFFFF0"}} content="Place Order" 
+                            onClick={(event) => {this.handleSendOrder(event, orderTotal)}}>
+                            </Button>
 
                     </Grid.Column>
-                    <Grid.Column floated="right" style= {{marginRight: "0%"}}>
-                        <Segment style= {{width: "550px", marinRight:"4%", marginTop: "2.5%"}}>
+                    <Grid.Column floated="right" style= {{width:"640px", backgroundColor: "#FFFFFF", marginTop: "1.1%", marginRight: "0%"}}>
+                     
                             
-                           <h4> <center>Shipping Information</center></h4>
-                            <EditUser />
-                            <h4><center> Payment Information</center></h4>
+                           <h3 style={{marginTop:"3%", fontWeight:"normal"}}> <center>shipping address</center></h3>
+                           
+                           <Item style={{width:"560px"}}>
+                            <EditUser /></Item>
+                            <h3 style={{marginTop:"4%", fontWeight:"normal"}}><center>payment info</center></h3>
+                            <Item style={{width:"560px"}}>
                             <PaymentForm /><br></br>
-                            <center><Button size="large" style= {{width: "300px", backgroundColor:"#26453e", color:"#FFFFF0"}} content="PLACE ORDER" 
-                            onClick={(event) => {this.handleSendOrder(event, orderTotal)}}>
-                            </Button></center>                             
-                        </Segment>   
+                            </Item>           
                     </Grid.Column>
                 </Grid>
             </div>
         )
-    }
+    }   
 }
 
 const mapStateToProps = (state) => {

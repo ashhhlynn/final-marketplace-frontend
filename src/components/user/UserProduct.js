@@ -32,23 +32,28 @@ handleDelete = (event, id) => {
         return (
         
         <div>
-<Item style={{width:"540px", marginLeft:"8%", display: "inline-block"}}>
-                    <Item.Image floated="left" rounded src={prod.image_url} size= "small" />
+<Item style={{width:"630px", verticalAlign:"middle", marginLeft:"0%", display: "inline-block"}}>
+                    <Item.Image floated="left" rounded src={prod.image_url} size= "medium" />
                     <Item.Extra>
-                        <Button size="small" style={{marginTop:"-.55%"}} inverted circular floated="right" onClick= { (event) => { this.handleDelete(event, prod.id)}}>
+                        <Button size="small" style={{marginTop:"0%"}} inverted circular floated="right" onClick= { (event) => { this.handleDelete(event, prod.id)}}>
                          <Icon color="grey" name="close" />
                         </Button>
-                        <Button size="mini" circular floated="right" onClick={this.handleOpen}>EDIT</Button>
+                        <Button size="small"  floated="right" onClick={this.handleOpen}>Edit</Button>
                     </Item.Extra>
                     <Item.Content>
-                        <Item.Header as="h4" style={{fontWeight:"normal", marginTop:"1%"}}>{prod.title} | ${prod.price}</Item.Header>
+                        <Item.Header as="h3" style={{fontWeight:"normal", marginTop:"1%"}}>{prod.title}</Item.Header>
+                        <Item.Description>
+                        Price:  ${prod.price}<br></br>
                         Posted: {prod.created_at.slice(6, -14)}<br></br>
-                       {prod.description} <br></br>
                         {prod.buyer ?
-                        <p>Sold to <i>user {prod.buyer}</i> on {prod.updated_at.slice(6, -14)}</p>
+                        <p>Buyer: user {prod.buyer}<br></br>Sell date: {prod.updated_at.slice(6, -14)}</p>
                         : 
                         <p>Active</p>
-                    }
+                       
+                    } 
+                       Description: {prod.description} <br></br>
+
+                     </Item.Description>
                      
                     </Item.Content> 
                     

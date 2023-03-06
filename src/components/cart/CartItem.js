@@ -14,13 +14,14 @@ class CartItem extends Component {
         const i = this.props.item
         return (        
             <Item>
-                <Button size="small" style={{marginTop:"-2%"}} inverted floated="right" onClick={()=>{this.handleRemove(i.id)}}>
+               
+                <Item.Content> 
+                <Button size="small" style={{marginTop:"-2.5%"}} inverted floated="right" onClick={()=>{this.handleRemove(i.id)}}>
                     <Button.Content visible><Icon color="grey" name="close"></Icon></Button.Content>
                 </Button> 
-                <Item.Content> 
                     <Item.Image floated="left" size='tiny' src={i.image_url} /> 
-                    {i.title}
-                    <Item style={{textAlign: "left"}}> <b>${i.price}.00</b></Item>
+                    <h4 style={{fontWeight:"normal"}}>{i.title}</h4>
+                    <Item style={{textAlign: "left"}}> ${i.price}</Item>
                 </Item.Content>
             </Item> 
         )
