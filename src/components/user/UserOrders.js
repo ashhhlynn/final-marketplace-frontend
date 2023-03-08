@@ -11,15 +11,14 @@ class UserOrders extends Component {
         ))       
         return (
             <div>
-                     <h2 style={{fontWeight:"normal"}}><center>order history</center><Divider></Divider></h2>
-                     <br></br>
-                        {this.props.user.orders.length !== 0 ?
+                <h2 style={{fontWeight:"normal"}}><center>order history</center><Divider></Divider></h2><br></br>
+                {this.props.user.orders.length !== 0 ?
                     <Card.Group centered>
-                      
                         {orders} 
-                        </Card.Group>
-                        : 
-                        <center>You haven't placed any orders yet.</center>}
+                    </Card.Group>
+                : 
+                    <center>You haven't placed any orders yet.</center>
+                }
             </div>
         )
     }

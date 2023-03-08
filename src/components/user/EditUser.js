@@ -36,57 +36,53 @@ class EditUser extends Component {
                     type="text"
                     id="email"
                     label="Email"
-                    placeholder="Email"
-                    value={this.props.user.email} 
-                        
+                    value={this.props.user.email}       
                 />             
                 <Form.Input
                     required
                     type="text"
                     id="name"
                     label="Name"
-                    placeholder="Name"
                     value={this.state.name} 
                     onChange={this.handleChange}            
                 />
-                <Form.Input
+                <Form.Input 
                     required
                     type="text"
                     id="address"
-                    label="Address"
-                    placeholder="Address"
+                    label="Street"
                     value={this.state.address} 
                     onChange={this.handleChange}
                 />       
-
-<Form.Input
+                <Form.Group>
+                <Form.Input  width={8}
                     required
                     type="text"
                     id="city"
                     label="City"
-                    placeholder="City"
                     value={this.state.city} 
                     onChange={this.handleChange}
                 />   
-                  <Form.Input
-                    required
+                  <Form.Input width={5}
+                    required 
                     type="text"
                     id="state"
                     label="State"
-                    placeholder="State"
                     value={this.state.state} 
                     onChange={this.handleChange}
-                />  
-                 <Form.Input
+                /> 
+                 <Form.Input width={3} 
                     required
                     type="text"
                     id="zip"
                     label="Zip"
-                    placeholder="Zip"
                     value={this.state.zip} 
                     onChange={this.handleChange}
                 />  
-                    <center><Form.Button position="center" content="Update"/></center>
+                </Form.Group>
+                <center>
+                <Form.Button position="center" color="grey" style={{width:"300px", marginTop:"2%"}}content="Update"/>
+                </center>
                 </Form>
             </div>
         )

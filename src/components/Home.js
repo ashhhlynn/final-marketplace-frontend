@@ -73,14 +73,14 @@ handleStart = () => {
                     <img style={{marginTop: "3%", marginLeft:"7%", objectFit: "cover", objectPosition: "0% 0%"}}floated="left" width="550px" height="350px" src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F34%2F2020%2F08%2F04%2Fhouseplants-getty-0820.jpg&w=400&h=268&c=sc&poi=%5B709%2C373%5D&q=60"/>
 
                 <Item style={{marginLeft:"55%", marginTop:"-27%", width:"450px", textAlign:"right", fontWeight:"normal"}}>
-                <Header style={{textAlign: "right", fontSize:"38px"}}><i>About Us</i></Header><Divider></Divider>
+                <h1 style={{fontWeight: "normal", textAlign: "right", fontSize:"32px"}}>about us</h1><Divider></Divider>
 
                  <h3 style={{fontWeight:"normal", lineHeight:"1.8"}}>Planterina is a buy and sell plant market with a mission to inspire green places by connecting people with plants. We believe a strong relationship with plants will lead to greener and more sustainable lifestyles. Enjoy healthy, happy plants for you and your loved ones delivered straight to your door.
                  </h3>  <br></br><br></br><br></br><br></br>
 
  </Item>
  <Divider></Divider>
- <Header as="h1" style={{marginLeft:"11%", fontSize:"38px", textAlign:"left", marginTop:"3%"}}>New Arrivals</Header> 
+ <h1 style={{fontWeight:"normal", marginLeft:"11%", fontSize:"32px", textAlign:"left", marginTop:"3%"}}>new arrivals</h1> 
                  <Card.Group centered> {products} </Card.Group>
                  
            
@@ -94,25 +94,25 @@ handleStart = () => {
 <center>
 <Icon centered name="recycle" style={{color:"#fcc9b9"}} size="huge"></Icon>
 
-<Header as="h2">Responsibly Sourced</Header>
+<h2 style={{fontWeight:"normal"}}>Responsibly Sourced</h2>
 
-<h4>Sustainably grown by people who care.</h4><br></br><br></br>
+<h4 style={{fontWeight:"normal"}}>Sustainably grown by people who care.</h4><br></br><br></br>
 </center>
 </Card>
 
 <Card circular style={{fontWeight:"normal", backgroundColor:"#f9f9f9", color:"#26453e", width:"290px"}}><br></br><br></br>
 <center>
 <Icon centered name="bicycle" style={{color:"#fcc9b9"}} size="huge"></Icon>
-<Header as="h2">Flat Delivery Fee</Header>
-<h4>Enjoy flat rate delivery free of $7.00.</h4><br></br>
+<h2 style={{fontWeight:"normal"}}>Flat Delivery Fee</h2>
+<h4 style={{fontWeight:"normal"}}>Enjoy flat rate delivery free of $7.00.</h4><br></br>
 </center>
 </Card>
 
 <Card style={{width:"290px",  color:"#26453e", backgroundColor:"#f9f9f9" }}><br></br><br></br>
 <center>
 <Icon centered name="heart outline" style={{color:"#fcc9b9 ", }} size="huge"></Icon>
-<Header as="h2">Rooted in Kindness</Header>
-<h4>Kindness towards the people and planet.</h4><br></br>
+<h2 style={{fontWeight:"normal"}}>Rooted in Kindness</h2>
+<h4 style={{fontWeight:"normal"}}>Kindness towards the people and planet.</h4><br></br>
 </center>
 </Card>             
 </Card.Group>  

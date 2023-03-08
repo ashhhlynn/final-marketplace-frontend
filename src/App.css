@@ -75,6 +75,15 @@ body .ui.cards>.card{
   line-height: 1.5em;
 }
 
+body .ui.menu>.menuitem{
+  box-shadow: none;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 400;
+  line-height: 1.5em;
+  font-weight: "normal"
+}
+
+
 body .ui.cards>.card >.header{
 font-weight: "normal"
 }

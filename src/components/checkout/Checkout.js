@@ -5,24 +5,23 @@ import CartItem from '../cart/CartItem'
 import {sendOrder} from '../actions/orderActions'
 import {checkUser} from '../actions/userActions'
 import PaymentForm from './PaymentForm'
+import Totals from './Totals'
 import EditUser from '../user/EditUser'
-import { sellProduct } from '../actions/cartActions'
-
-import { useNavigate } from "react-router-dom";
 
 class Checkout extends Component {
 
-  
-
     handleSendOrder = (event, orderTotal) => {
         event.preventDefault()
-        this.handleCheck()
         if (this.props.cart.length === 0) {
             window.alert('Must have items in cart')
         }
         else {
             const token = localStorage.token;
             let orderId = this.props.currentOrder
+            let cart = this.props.cart
+            let user = this.props.user
+            let t = orderTotal
+
             fetch(`http://localhost:3000/orders/${orderId}`, {    
                 method: 'PATCH',
                 headers: {
@@ -31,7 +30,7 @@ class Checkout extends Component {
                     'Authorization': `Bearer ${token}`
                 },
                 body: JSON.stringify({
-                    total: orderTotal,
+                    total: t,
                     complete: 1
                 })})
             .then(resp => resp.json())
@@ -42,14 +41,29 @@ class Checkout extends Component {
                 this.props.checkUser()
                
             })
+
+            for (let i = 0;
+                i < (cart.length + 1); i++) {
+
+            fetch(`http://localhost:3000/products/${cart[i].id}`, {  
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                     Accept: 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({
+                   sold: 1,
+                   buyer: user.id,
+                })})
+            .then(resp => resp.json())
+            .then(data => {
+                console.log(data)
+                window.alert("Your product was successfully patched")
+            })
+        }
         }
     }
-
-    handleCheck = () => {
-        this.props.cart.map((product) => {
-    this.props.sellProduct(product, this.props.user)})
-    }
-  
        
     render() {
         const items = this.props.cart.map ( 
@@ -59,51 +73,26 @@ class Checkout extends Component {
         return (
             <div> 
                 <Grid columns={2}  >
-                    <Grid.Column centered textAlign='left' style={{width: "440px", marginLeft: "5%", marginTop:"2%"}}>
-                    <h2 style={{fontWeight:"normal"}}>order summary</h2>   
+                    <Grid.Column centered textAlign='left' style={{width: "520px", marginLeft: "5%", marginTop:"2%"}}>
+                    <h3 style={{fontSize:"20px", fontWeight:"normal"}}>order summary</h3>   
                         <Divider></Divider>
-                        <List>
+                        <List style={{width:"410px"}}>
                             {items}
                         </List>
-                        <Divider></Divider>
-
-                        <Table compact basic='very' singleline style={{fontSize:"16px", borderTop: "0px", marginTop:"-2%", width:"390px"}}>
-               <Table.Body>
-           <Table.Row style={{borderTop:"0px", height:"10px"}} >
-        <Table.Cell  style={{borderTop:"0", height:"10px"}}>Subtotal</Table.Cell>
-        <Table.Cell style={{border:"0"}} textAlign="right">${this.props.total}</Table.Cell>
-      </Table.Row>
-      <Table.Row style={{borderTop:"0px", height:"10px"}} >
-        <Table.Cell  style={{borderTop:"0", height:"10px"}}>Tax</Table.Cell>
-        <Table.Cell style={{border:"0"}} textAlign="right">${Math.round((this.props.total * .1)*100)/100}</Table.Cell>
-      </Table.Row>
-      <Table.Row style={{borderTop:"0px", height:"10px"}} >
-        <Table.Cell  style={{borderTop:"0", height:"10px"}}>Shipping</Table.Cell>
-        <Table.Cell style={{border:"0"}} textAlign="right">$10</Table.Cell>
-      </Table.Row>
-      <Table.Row style={{borderTop:"0px", height:"10px"}} >
-        <Table.Cell  style={{ height:"10px"}}><b>Total</b></Table.Cell>
-        <Table.Cell  textAlign="right"><b>${Math.round((this.props.total * 1.1 + 10)*100)/100}</b></Table.Cell>
-      </Table.Row>
-      </Table.Body>
-           </Table>
-           <Button size="medium" style= {{width: "400px", backgroundColor:"#26453e", color:"#FFFFF0"}} content="Place Order" 
+                        <Totals total={this.props.total}/>
+                        <Button size="medium" style= {{marginTop:"2%", marginBottom:"2%", width: "400px", backgroundColor:"#26453e", color:"#FFFFF0"}} content="Place Order" 
                             onClick={(event) => {this.handleSendOrder(event, orderTotal)}}>
-                            </Button>
-
+                        </Button>  
                     </Grid.Column>
-                    <Grid.Column floated="right" style= {{width:"640px", backgroundColor: "#FFFFFF", marginTop: "1.1%", marginRight: "0%"}}>
-                     
-                            
-                           <h3 style={{marginTop:"3%", fontWeight:"normal"}}> <center>shipping address</center></h3>
-                           
-                           <Item style={{width:"560px"}}>
-                            <EditUser /></Item>
-                            <h3 style={{marginTop:"4%", fontWeight:"normal"}}><center>payment info</center></h3>
-                            <Item style={{width:"560px"}}>
-                            <PaymentForm /><br></br>
-                            </Item>           
+                    <Segment floated="right" style= {{width:"680px", backgroundColor: "#F0F0f0", marginTop: "1.1%", marginRight: "0%"}}>
+                    <Grid.Column >
+                        <Item centered style={{marginLeft:"7.25%", width:"560px"}}>
+                           <h2 style={{marginTop:"1.5%", fontWeight:"normal"}}><center>shipping & payment</center></h2>
+                           <Divider></Divider>
+                            <EditUser />
+                        </Item>     
                     </Grid.Column>
+                    </Segment>  
                 </Grid>
             </div>
         )
@@ -123,8 +112,6 @@ const mapDispatchToProps = (dispatch) => {
     return {
         sendOrder: () => { dispatch(sendOrder()) },
         checkUser: () =>  { dispatch(checkUser()) },
-        sellProduct: (product, user) => { dispatch(sellProduct(product, user)) }
-
     }
 }
 

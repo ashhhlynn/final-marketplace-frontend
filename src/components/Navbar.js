@@ -45,21 +45,21 @@ class Navbar extends Component {
     return (
       <div  >
         <center>
-        <img style={{ width:200, height:45, marginTop:"3%" }} src="https://cdn.shopify.com/s/files/1/0253/6701/9565/files/planterina-logo_432e9c62-d54e-4302-8761-6e169c222543_600x300.png?v=1628654999"></img>
+        <img style={{ width:200, height:45, marginTop:"2%" }} src="https://cdn.shopify.com/s/files/1/0253/6701/9565/files/planterina-logo_432e9c62-d54e-4302-8761-6e169c222543_600x300.png?v=1628654999"></img>
         </center>
-        <Menu pointing secondary size="large" style={{ marginTop: "-2%"}}>
+        <Menu pointing secondary size="large" style={{marginTop: "-3%"}}>
         <Menu.Menu position="left">
           <Menu.Item ><Link to='/' style={{  color: '#26453e'}}>
-            <h4>Home</h4></Link></Menu.Item>
+          <h3 style={{ fontWeight:"normal", color: '#26453e'}}>home</h3></Link></Menu.Item>
           <Menu.Item>         
-             <Link  to ="/createproduct" style={{ fontWeight:"normal", color: '#26453e'}}> <h4>Sell</h4>
+             <Link  to ="/createproduct" style={{ fontWeight:"normal", color: '#26453e'}}> <h3 style={{ fontWeight:"normal", color: '#26453e'}}>sell</h3>
              </Link>
             </Menu.Item>
           <Menu.Item>
-            <Link to ="/products" onClick={()=>{this.handleCreateOrder()}} style={{ color: '#26453e'}}><h4>Shop</h4></Link></Menu.Item>
+            <Link to ="/products" onClick={()=>{this.handleCreateOrder()}} style={{ color: '#26453e'}}><h3 style={{ fontWeight:"normal", color: '#26453e'}}>shop</h3></Link></Menu.Item>
         </Menu.Menu>
         <Menu.Menu position = 'right'>
-        <Modal style={{ display: "inline-block", width: "360px", height:"580px", marginLeft: "67%"}}
+        <Modal style={{ display: "inline-block", width: "380px", height:"580px", marginLeft: "67%"}}
                 open={this.state.modalOpen}
                 onClose={this.handleClose}
                 closeIcon

@@ -2,7 +2,7 @@ import { useState } from "react";
 import UserProducts from './UserProducts'
 import UserOrders from './UserOrders'
 import Account from './Account'
-import { Header, Grid, Menu, Icon} from 'semantic-ui-react'
+import { Header, Grid, Menu} from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 function Profile(props) {
@@ -44,13 +44,7 @@ function Profile(props) {
                         onClick={showC}>
                     <Link style={{  color: "#26453e"}}><h3 style={{ fontWeight:"normal"}}>your plants</h3> </Link>
                     </Menu.Item>
-                   
-                   
-
-                    
-                    <Menu.Item> <br></br><br></br>
-                    <center><Icon name="leaf" style={{color:"#26453e"}} size="huge"></Icon></center>
-                    </Menu.Item>
+                   <Menu.Item></Menu.Item>
                 </Menu>         
             </Grid.Column>
             <Grid.Column style={{marginLeft:"8%", marginTop:"2%"}}> 

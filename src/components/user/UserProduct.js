@@ -29,37 +29,27 @@ handleDelete = (event, id) => {
   render () {
 
     let prod= this.props.prod
-        return (
-        
+        return (      
         <div>
-<Item style={{width:"630px", verticalAlign:"middle", marginLeft:"0%", display: "inline-block"}}>
-                    <Item.Image floated="left" rounded src={prod.image_url} size= "medium" />
-                    <Item.Extra>
-                        <Button size="small" style={{marginTop:"0%"}} inverted circular floated="right" onClick= { (event) => { this.handleDelete(event, prod.id)}}>
-                         <Icon color="grey" name="close" />
-                        </Button>
-                        <Button size="small"  floated="right" onClick={this.handleOpen}>Edit</Button>
-                    </Item.Extra>
-                    <Item.Content>
-                        <Item.Header as="h3" style={{fontWeight:"normal", marginTop:"1%"}}>{prod.title}</Item.Header>
-                        <Item.Description>
-                        Price:  ${prod.price}<br></br>
-                        Posted: {prod.created_at.slice(6, -14)}<br></br>
-                        {prod.buyer ?
-                        <p>Buyer: user {prod.buyer}<br></br>Sell date: {prod.updated_at.slice(6, -14)}</p>
-                        : 
-                        <p>Active</p>
-                       
-                    } 
-                       Description: {prod.description} <br></br>
-
-                     </Item.Description>
-                     
-                    </Item.Content> 
-                    
-                         <br></br><br></br>
-                </Item>
-                <Modal style={{ display: "inline-block", width: "600px"}}
+            <Item style={{width:"570px", verticalAlign:"middle", marginLeft:"3%", display: "inline-block"}}>
+            <Item.Header as="h3" style={{fontWeight:"normal", marginTop:"1%"}}>{prod.title}
+            <Button size="tiny" floated="right" onClick= { (event) => { this.handleDelete(event, prod.id)}}>
+                Delete 
+            </Button>
+            <Button size="tiny" floated="right" onClick={this.handleOpen}>Update</Button>
+            </Item.Header>
+            {prod.buyer ?
+                <p style={{marginTop:"-1.2%"}}>Sold to user {prod.buyer} on {prod.updated_at.slice(6, -14)}</p>
+            : 
+                <p style={{marginTop:"-1.2%"}}>Active</p>
+            }     
+            <Item.Image floated="left" rounded src={prod.image_url} size= "small" />
+            Price:  ${prod.price.toFixed(2)}<br></br>
+            Posted: {prod.created_at.slice(6, -14)}<br></br>
+            Description: {prod.description} <br></br>
+            </Item>
+            <Divider></Divider>
+            <Modal style={{ display: "inline-block", width: "600px"}}
                 open={this.state.modalOpen}
                 onClose={this.handleClose}
                 closeIcon
@@ -67,9 +57,10 @@ handleDelete = (event, id) => {
                 <Modal.Content>
                     <EditProduct product={prod} key={prod.id} handleClose={this.handleClose}/>
                 </Modal.Content>
-                </Modal>
-             </div>)}
-
+            </Modal>
+             </div>
+        )
+    }
 }
 
 const mapStateToProps = (state) => {
@@ -82,8 +73,7 @@ const mapDispatchToProps = (dispatch) => {
     return { 
       checkUser: () =>  { dispatch(checkUser()) },
       deleteProduct: (product) =>  { dispatch(deleteProduct(product)) },
-
     }
-  }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserProduct)

@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { connect } from "react-redux";
 import { Button, Header, Item, Modal, Divider, Icon} from 'semantic-ui-react'
 import { checkUser } from '../actions/userActions';
-import {deleteProduct} from '../actions/productActions'
 import UserProduct from './UserProduct'
 
 class UserProducts extends Component {
@@ -11,19 +10,20 @@ class UserProducts extends Component {
         const products = this.props.user.products.map( prod => {
             return ( < UserProduct prod={prod} key={prod.id} />
         )
-    })
+        })
         return (
-                    <div>   
-                        <h2 style={{fontWeight:"normal"}}><center>your plants</center><Divider></Divider></h2>
-
-                        
-                        {this.props.user.products.length !== 0 ?
-                        <>
-                        <Item.Group >
-                            {products}   
-                        </Item.Group> <br></br></>
-                       : <center>You currently do not have any active products.</center>}
-                    </div>
+            <div>   
+                <h2 style={{fontWeight:"normal"}}><center>your plants</center><Divider></Divider></h2>
+                {this.props.user.products.length !== 0 ?
+                <>
+                    <Item.Group >
+                        {products}   
+                    </Item.Group> 
+                </>
+                :
+                    <center>You currently do not have any active products.</center>
+                }
+            </div>
         )
     }
 }
@@ -38,6 +38,6 @@ const mapDispatchToProps = (dispatch) => {
     return { 
       checkUser: () =>  { dispatch(checkUser()) },
     }
-  }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserProducts)
