@@ -24,7 +24,7 @@ class Login extends Component {
     render() {
         return (
             <div>          
-                <h2 style={{fontWeight:"normal"}}>Login</h2>
+                <h2>Login</h2>
                 <Divider></Divider>
                 <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
                 <Form.Input

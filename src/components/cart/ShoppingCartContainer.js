@@ -12,14 +12,14 @@ class ShoppingCartContainer extends Component {
         )
         return (
             <div>   
-                <h2 style={{fontWeight:"normal", marginBottom:"7%"}}>your cart ({items.length})</h2>
+                <h2 style={{ marginBottom:"7%"}}>your cart ({items.length})</h2>
                 <Divider></Divider>
                     {this.props.cart.length === 0 ? 
-                      <><h3 style={{fontWeight:"normal"}}>Your cart is empty.</h3></>
+                      <><h3>Your cart is empty.</h3></>
                     :
                     <div>
                       <List>{items}</List>
-                        <h4 style={{fontWeight:"normal"}}>Subtotal: ${this.props.total.toFixed(2)}</h4>
+                        <h4 >Subtotal: ${this.props.total.toFixed(2)}</h4>
                         <Link to="/checkout">
                         <Button style={{backgroundColor: "#26453e", color:"#FFFFF0", width: "337px", marginTop:"4%"}} onClick={this.props.handleClose}>Checkout</Button>
                         </Link>

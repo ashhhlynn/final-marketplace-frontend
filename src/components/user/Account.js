@@ -8,7 +8,7 @@ class Account extends Component {
     render() {               
         return (
            <div>    
-                <h2 style={{fontWeight:"normal"}}><center>account info</center><Divider></Divider></h2>
+                <h2 ><center>account info</center><Divider></Divider></h2>
                 <EditUser />
             </div>
         )

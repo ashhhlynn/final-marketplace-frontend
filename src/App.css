@@ -8,36 +8,27 @@
   margin: 0;
   padding: 0;
   width: 100%;
-}
 
-.header {
-
-  
-  font-weight: "normal";
-}
-
-h1 {
-
-  font-weight: "normal";
-}
-
-.app.header.header{
-
-
-    font-weight: "normal";
-  
-}
-
-.body .h1{
-
-
-    font-weight: "normal";
 
 }
 
+h1, h2, h3, h2, h4, h5 {
+  font-weight: normal !important;
+}
 
-.header {
-  font-weight: "normal";
+.App-header {
+  font-weight: 400;}
+
+.body{
+  font-weight: 400;
+}
+
+.body-h1 {
+  font-weight: 400;
+}
+
+header {
+  font-weight: 400;
 }
 
 .app .header {

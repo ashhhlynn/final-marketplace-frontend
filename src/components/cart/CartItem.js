@@ -20,7 +20,7 @@ class CartItem extends Component {
                 </Button>
                 <Image size='tiny' src={i.image_url} /> 
                 <Item.Content style={{ marginLeft:"2%"}}>
-                <h3 style={{fontWeight:"normal"}}>{i.title}</h3>
+                <h3 >{i.title}</h3>
                    ${i.price.toFixed(2)}
                 </Item.Content>
             </Item> 

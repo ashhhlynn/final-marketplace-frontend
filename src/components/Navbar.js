@@ -49,12 +49,12 @@ class Navbar extends Component {
         </center>
         <Menu pointing secondary size="large" style={{marginTop: "-3%"}}>
         <Menu.Menu position="left">
-          <Menu.Item ><Link to='/' style={{  color: '#26453e'}}><h3 style={{ fontWeight:"normal", color: '#26453e'}}>home</h3></Link>
+          <Menu.Item ><Link to='/' style={{  color: '#26453e'}}><h3 style={{ color: '#26453e'}}>home</h3></Link>
           </Menu.Item>
-          <Menu.Item><Link to ="/createproduct" style={{ fontWeight:"normal", color: '#26453e'}}> <h3 style={{ fontWeight:"normal", color: '#26453e'}}>sell</h3></Link>
+          <Menu.Item><Link to ="/createproduct" style={{  color: '#26453e'}}> <h3 style={{  color: '#26453e'}}>sell</h3></Link>
           </Menu.Item>
           <Menu.Item>
-            <Link to ="/products" onClick={()=>{this.handleCreateOrder()}} style={{ color: '#26453e'}}><h3 style={{ fontWeight:"normal", color: '#26453e'}}>shop</h3></Link>
+            <Link to ="/products" onClick={()=>{this.handleCreateOrder()}} style={{ color: '#26453e'}}><h3 style={{  color: '#26453e'}}>shop</h3></Link>
           </Menu.Item>
         </Menu.Menu>
         <Menu.Menu position = 'right'>

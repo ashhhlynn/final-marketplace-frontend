@@ -13,7 +13,7 @@ class UserProducts extends Component {
         })
         return (
             <div>   
-                <h2 style={{fontWeight:"normal"}}><center>your plants</center><Divider></Divider></h2>
+                <h2><center>your plants</center><Divider></Divider></h2>
                 {this.props.user.products.length !== 0 ?
                 <>
                     <Item.Group >

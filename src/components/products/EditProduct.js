@@ -33,7 +33,7 @@ super(props)
 
   render() {
     return (
-      <div><h2  style={{fontWeight:"normal"}}><center>Edit Product</center></h2><Divider></Divider>
+      <div><h2  ><center>Edit Product</center></h2><Divider></Divider>
    
         <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
             <Form.Input

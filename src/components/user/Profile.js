@@ -31,18 +31,18 @@ function Profile(props) {
         <Grid columns={2} stackable textAlign='left'>
             <Grid.Column style= {{width : "370px" }} >
             <Menu style={{textAlign:"center", color:"#f3f3f2", height:"590px", background: "#f3f3f2"}} placeholder vertical size="big"><br></br>
-                   <h1 style={{fontWeight:"normal", color:"black"}}>Hi, {props.user.name}</h1><br></br>
+                   <h1 style={{ color:"black"}}>Hi, {props.user.name}</h1><br></br>
                    <Menu.Item size="huge"
                         onClick={showA}> 
-                        <Link style={{ fontWeight:"normal", color: "#26453e"}}><h3 style={{ fontWeight:"normal"}}>Account Info</h3></Link>
+                        <Link style={{  color: "#26453e"}}><h3 >Account Info</h3></Link>
                     </Menu.Item>
                    <Menu.Item
                         onClick={showB}>
-                        <Link style={{  color: "#26453e"}}><h3 style={{ fontWeight:"normal"}}>Order History</h3></Link>  
+                        <Link style={{  color: "#26453e"}}><h3>Order History</h3></Link>  
                     </Menu.Item>
                     <Menu.Item
                         onClick={showC}>
-                    <Link style={{  color: "#26453e"}}><h3 style={{ fontWeight:"normal"}}>Your Plants</h3> </Link>
+                    <Link style={{  color: "#26453e"}}><h3 >Your Plants</h3> </Link>
                     </Menu.Item>
                    <Menu.Item></Menu.Item>
                 </Menu>         
