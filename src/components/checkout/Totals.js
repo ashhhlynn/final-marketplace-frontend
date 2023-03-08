@@ -32,10 +32,4 @@ class Totals extends Component {
     }   
 }
 
-const mapStateToProps = (state) => {
-    return {
-        totalz: state.cartTotal,
-    }
-}
-
-export default connect(mapStateToProps)(Totals)
+export default Totals

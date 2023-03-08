@@ -34,15 +34,15 @@ function Profile(props) {
                    <h1 style={{fontWeight:"normal", color:"black"}}>Hi, {props.user.name}</h1><br></br>
                    <Menu.Item size="huge"
                         onClick={showA}> 
-                        <Link style={{ fontWeight:"normal", color: "#26453e"}}><h3 style={{ fontWeight:"normal"}}>account info</h3></Link>
+                        <Link style={{ fontWeight:"normal", color: "#26453e"}}><h3 style={{ fontWeight:"normal"}}>Account Info</h3></Link>
                     </Menu.Item>
                    <Menu.Item
                         onClick={showB}>
-                        <Link style={{  color: "#26453e"}}><h3 style={{ fontWeight:"normal"}}>order history</h3></Link>  
+                        <Link style={{  color: "#26453e"}}><h3 style={{ fontWeight:"normal"}}>Order History</h3></Link>  
                     </Menu.Item>
                     <Menu.Item
                         onClick={showC}>
-                    <Link style={{  color: "#26453e"}}><h3 style={{ fontWeight:"normal"}}>your plants</h3> </Link>
+                    <Link style={{  color: "#26453e"}}><h3 style={{ fontWeight:"normal"}}>Your Plants</h3> </Link>
                     </Menu.Item>
                    <Menu.Item></Menu.Item>
                 </Menu>         

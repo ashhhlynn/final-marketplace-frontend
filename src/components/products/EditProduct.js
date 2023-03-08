@@ -5,7 +5,6 @@ import { editProduct } from '../actions/productActions'
 import { Divider, Header} from 'semantic-ui-react'
 import { checkUser } from '../actions/userActions';
 
-
 class EditProduct extends Component {
 
 constructor(props){
@@ -34,18 +33,14 @@ super(props)
 
   render() {
     return (
-      <div>
-     
-     <Header as="h2"><i>Edit Product</i></Header>
-        <Divider></Divider>
-        
-          <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
+      <div><h2  style={{fontWeight:"normal"}}><center>Edit Product</center></h2><Divider></Divider>
+   
+        <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
             <Form.Input
               required
               label="Title"
               type="text"
               id="title"
-              placeholder="Title"
               value={this.state.title} 
               onChange={this.handleChange}
             />
@@ -54,7 +49,6 @@ super(props)
               type="text"
               id="description"
               label="Description"
-              placeholder="Description"
               value={this.state.description} 
               onChange={this.handleChange}
             />
@@ -63,7 +57,6 @@ super(props)
               type="text"
               label="Price"
               id="price"
-              placeholder="Price"
               value={this.state.price} 
               onChange={this.handleChange}
             />
@@ -72,7 +65,6 @@ super(props)
               type="text"
               label="Image URL"
               id="image_url"
-              placeholder="Image Url"
               value={this.state.image_url} 
               onChange={this.handleChange}
             />
@@ -80,7 +72,7 @@ super(props)
             <Form.Button content='Submit' />
             </center>
         </Form>
-  
+      
     </div>
     )
   }

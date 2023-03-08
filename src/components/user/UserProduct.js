@@ -33,10 +33,10 @@ handleDelete = (event, id) => {
         <div>
             <Item style={{width:"570px", verticalAlign:"middle", marginLeft:"3%", display: "inline-block"}}>
             <Item.Header as="h3" style={{fontWeight:"normal", marginTop:"1%"}}>{prod.title}
-            <Button size="tiny" floated="right" onClick= { (event) => { this.handleDelete(event, prod.id)}}>
+            <Button size="tiny"  circular floated="right" onClick= { (event) => { this.handleDelete(event, prod.id)}}>
                 Delete 
             </Button>
-            <Button size="tiny" floated="right" onClick={this.handleOpen}>Update</Button>
+            <Button size="tiny" floated="right" circular onClick={this.handleOpen}>Update</Button>
             </Item.Header>
             {prod.buyer ?
                 <p style={{marginTop:"-1.2%"}}>Sold to user {prod.buyer} on {prod.updated_at.slice(6, -14)}</p>
@@ -54,7 +54,7 @@ handleDelete = (event, id) => {
                 onClose={this.handleClose}
                 closeIcon
                 >
-                <Modal.Content>
+                <Modal.Content style={{ backgroundColor: "#fdfcf9 "}}>
                     <EditProduct product={prod} key={prod.id} handleClose={this.handleClose}/>
                 </Modal.Content>
             </Modal>

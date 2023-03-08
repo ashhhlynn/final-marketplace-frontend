@@ -21,11 +21,11 @@ class OrderSummary extends Component {
             <h2 style={{fontSize:"20px", textAlign:"right", fontWeight:"normal", marginRight:"1%", marginTop:"1.5%"}}> Order #{this.props.order.id}</h2>
             </Card.Header>
             <Card.Content description>
-                <p style={{fontSize:"17px"}}> Completed {this.props.order.updated_at.slice(6, -14)} <Icon name="checkmark"></Icon></p> 
+                <p style={{fontSize:"17px"}}> Completed {this.props.order.created_at.substring(0, 10)} <Icon name="checkmark"></Icon></p> 
                 <p style={{fontSize:"16px", fontWeight:"normal"}}>Items</p>
-                <Divider style={{marginTop:"1%", marginBottom:"-1%"}}></Divider>
+                <Divider ></Divider>
                 {items}
-                <Divider style={{marginTop:"1%", marginBottom:"2%"}}></Divider>
+                <Divider ></Divider>
                 <Totals total={ot} />
             </Card.Content>
             </Card> <br></br>
