@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import EditUser from './EditUser'
-import { Divider, Header } from 'semantic-ui-react'
+import { Divider } from 'semantic-ui-react'
 
 class Account extends Component {
 
@@ -15,10 +15,5 @@ class Account extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        user: state.currentUser,
-    }
-}
 
-export default connect(mapStateToProps)(Account)
+export default Account

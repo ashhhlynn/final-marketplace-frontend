@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { removeFromCart } from '../actions/cartActions'
-import { Item, Button, Header, Divider, Icon, List, Image } from 'semantic-ui-react'
+import { Item, Button, Divider, Icon,  Image } from 'semantic-ui-react'
 
 class CartItem extends Component {
 
@@ -20,8 +20,8 @@ class CartItem extends Component {
                 </Button>
                 <Image size='tiny' src={i.image_url} /> 
                 <Item.Content style={{ marginLeft:"2%"}}>
-                <h3 >{i.title}</h3>
-                   ${i.price.toFixed(2)}
+                    <h3>{i.title}</h3>
+                    ${i.price.toFixed(2)}
                 </Item.Content>
             </Item> 
             <Divider></Divider>

@@ -8,31 +8,10 @@
   margin: 0;
   padding: 0;
   width: 100%;
-
-
 }
 
 h1, h2, h3, h2, h4, h5 {
   font-weight: normal !important;
-}
-
-.App-header {
-  font-weight: 400;}
-
-.body{
-  font-weight: 400;
-}
-
-.body-h1 {
-  font-weight: 400;
-}
-
-header {
-  font-weight: 400;
-}
-
-.app .header {
-  font-weight: "normal";
 }
 
 .header.ui.header {
@@ -43,17 +22,38 @@ font-weight: normal
 }
 
 
-  .ui.menu > .item > .link {
-    color: gray;
-    font-family: "Courier New";
-  }
+.ui.modal {
+  box-shadow: none;
+  font-family: "futura-pt", sans-serif;
+  background-color: #fdfcf9;
+  width: 450px !important;
 
-.modal.ui.content{
+}
+
+.ui.menu.item > header {
+  box-shadow: none;
+  font-family: "futura-pt", sans-serif;
+  color: pink !important;
+}
+
+.ui.modal > .content{
     box-shadow: none;
     font-family: "futura-pt", sans-serif;
-    background-color: "green"
+    background-color: #fdfcf9 !important;
   }
+
+  .ui.modal > .content.form >.button{
+    box-shadow: none;
+    font-family: "futura-pt", sans-serif;
+    background-color: black !important;   }
   
+  .ui.form.button {
+    box-shadow: none;
+    font-family: "futura-pt", sans-serif;
+    text-align: center !important;  
+    background-color: black !important; 
+  }
+
 
 .button.ui.button {
   background: #DBE6E0;

@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
-import { List, Header, Segment, Button, Table, Divider, Item, Grid} from 'semantic-ui-react'
+import { List, Segment, Button, Divider, Item, Grid} from 'semantic-ui-react'
 import CartItem from '../cart/CartItem'
 import {sendOrder} from '../actions/orderActions'
 import {checkUser} from '../actions/userActions'
-import PaymentForm from './PaymentForm'
+import CheckOut from './CheckOut'
 import Totals from './Totals'
 import EditUser from '../user/EditUser'
 
-class Checkout extends Component {
+class CheckoutContainer extends Component {
 
     handleSendOrder = (event, orderTotal) => {
         event.preventDefault()
@@ -69,7 +69,7 @@ class Checkout extends Component {
         const items = this.props.cart.map ( 
             item => <CartItem item={item} key={item.id}/>
         )
-        let orderTotal = Math.round((this.props.total * 1.1 + 10)*100)/100
+        let orderTotal = this.props.total.toFixed(2)
         return (
             <div> 
                 <Grid columns={2}  >
@@ -87,7 +87,7 @@ class Checkout extends Component {
                     <Segment floated="right" style= {{width:"680px", backgroundColor: "#F0F0f0", marginTop: "1.1%", marginRight: "0%"}}>
                     <Grid.Column >
                         <Item centered style={{marginLeft:"7.25%", width:"560px"}}>
-                           <h2 style={{marginTop:"1.5%"}}><center>shipping & payment</center></h2>
+                           <h2 style={{marginTop:"1.5%"}}><center>shipping information</center></h2>
                            <Divider></Divider>
                             <EditUser />
                         </Item>     
@@ -115,4 +115,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Checkout)
+export default connect(mapStateToProps, mapDispatchToProps)(CheckoutContainer)

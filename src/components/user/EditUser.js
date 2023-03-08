@@ -81,7 +81,7 @@ class EditUser extends Component {
                 />  
                 </Form.Group>
                 <center>
-                <Form.Button position="center" color="grey" style={{width:"300px", marginTop:"2%"}}content="Update"/>
+                <Form.Button position="center" inverted style={{color:"#ffffff", backgroundColor:"#000000", width:"300px", marginTop:"2%"}}content="Update"/>
                 </center>
                 </Form>
             </div>

@@ -72,7 +72,6 @@ super(props)
             <Form.Button content='Submit' />
             </center>
         </Form>
-      
     </div>
     )
   }

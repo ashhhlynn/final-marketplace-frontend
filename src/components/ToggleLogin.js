@@ -1,14 +1,12 @@
 import { useState } from "react";
 import Login from "./Login";
 import Signup from "./Signup";
-import { Item } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 function ToggleLogin({ onLogin }) {
     const [showLogin, setShowLogin] = useState(true);
     return (
         <div>            
-            <Item style={{ width:"520px", positionAlign:"center", textAlign:"center"}}>
             {showLogin ? (
             <>
                 <Login onLogin={onLogin} /><br></br>
@@ -25,7 +23,6 @@ function ToggleLogin({ onLogin }) {
             </>
             )
             }    
-            </Item>
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Header, Divider, Card} from 'semantic-ui-react'
+import { Divider, Card} from 'semantic-ui-react'
 import OrderSummary from './OrderSummary'
 import {connect} from 'react-redux';
 
