@@ -17,11 +17,15 @@ class OrderSummary extends Component {
         return (
         <div>
             <Card style={{width:"440px"}}>
-            <Card.Header style={{background:"#e9f0ec", height:"40px"}}>
-            <h2 style={{fontSize:"20px", textAlign:"right",  marginRight:"1%", marginTop:"1.5%"}}> Order #{this.props.order.id}</h2>
-            </Card.Header>
+            <Card.Header style={{ height:"40px"}}>
+
+            <h2 style={{fontSize:"20px", textAlign:"left",  marginLeft:"3%", marginTop:"1%"}}> Order #{this.props.order.id}</h2>
+
+            </Card.Header> 
+
             <Card.Content description>
-                <p style={{fontSize:"17px"}}>{this.props.order.created_at.substring(0, 10)} <Icon name="checkmark"></Icon></p> 
+            <p style={{fontSize:"17px", textAlign:"right"}}>{this.props.order.created_at.substring(0, 10)} <Icon name="checkmark"></Icon></p> 
+
                 <p style={{fontSize:"16px", }}>Items</p>
                 <Divider ></Divider>
                 {items}
