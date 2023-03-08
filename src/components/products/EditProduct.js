@@ -33,7 +33,7 @@ super(props)
 
   render() {
     return (
-      <div><h2  ><center>Edit Product</center></h2><Divider></Divider>
+      <div className="editProduct"><h2>Edit Product</h2><Divider></Divider>
    
         <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
             <Form.Input
@@ -68,9 +68,7 @@ super(props)
               value={this.state.image_url} 
               onChange={this.handleChange}
             />
-            <center>
-            <Form.Button content='Submit' />
-            </center>
+            <center><Form.Button content='Submit' /></center>
         </Form>
     </div>
     )

@@ -10,14 +10,14 @@ class UserOrders extends Component {
               <OrderSummary order={order}/>
         ))       
         return (
-            <div>
-                <h2 ><center>order history</center><Divider></Divider></h2><br></br>
+            <div className="profile">
+                <h2 >order history<Divider></Divider></h2><br></br>
                 {this.props.user.orders.length !== 0 ?
                     <Card.Group centered>
                         {orders} 
                     </Card.Group>
                 : 
-                    <center>You haven't placed any orders yet.</center>
+                    <h5>You haven't placed any orders yet.</h5>
                 }
             </div>
         )

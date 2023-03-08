@@ -8,13 +8,15 @@ class Product extends Component {
     render() {
         const i = this.props.product
         return (
+          
             <Card key={i.id} style={{  background:"#fdfcf9"}}>
                <Card.Content><Reveal animated='move'>
                 <Reveal.Content visible>  
                     <Image position="center" src={i.image_url}/>
                     <Header floated="right" style={{marginTop:"2.5%"}}><h4>${i.price.toFixed(2)}</h4></Header>
-                    <Card.Header as="h3" style={{marginTop:"2%"}}>{i.title}</Card.Header>  
-                    <Card.Meta style={{marginTop:"-4%"}}><i>by user {i.user_id}</i></Card.Meta> 
+                    <div className="product">
+                    <Card.Header as="h3" style={{marginTop:"2%"}}>{i.title}</Card.Header></div>
+                    <Card.Meta style={{marginTop:"-2%"}}><i>by user {i.user_id}</i></Card.Meta> 
                 </Reveal.Content>
                 <Reveal.Content style={{backgroundColor:"#F0f0f0", height:"200px"}} hidden>
                     <center><br></br><i>{i.description}</i> <br></br> <br></br> 

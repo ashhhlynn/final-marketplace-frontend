@@ -74,7 +74,7 @@ class CheckoutContainer extends Component {
             <div> 
                 <Grid columns={2}  >
                     <Grid.Column centered textAlign='left' style={{width: "520px", marginLeft: "5%", marginTop:"2%"}}>
-                    <h3 style={{fontSize:"20px"}}>order summary</h3>   
+                    <div className="checkoutContainer"><h3 style={{fontSize:"20px"}}>order summary</h3>  </div> 
                         <Divider></Divider>
                         <List style={{width:"410px"}}>
                             {items}
@@ -86,11 +86,12 @@ class CheckoutContainer extends Component {
                     </Grid.Column>
                     <Segment floated="right" style= {{width:"680px", backgroundColor: "#F0F0f0", marginTop: "1.1%", marginRight: "0%"}}>
                     <Grid.Column >
+                        <div className="shipping">
                         <Item centered style={{marginLeft:"7.25%", width:"560px"}}>
-                           <h2 style={{marginTop:"1.5%"}}><center>shipping information</center></h2>
+                           <h2 style={{}}>shipping information</h2>
                            <Divider></Divider>
                             <EditUser />
-                        </Item>     
+                        </Item> </div>    
                     </Grid.Column>
                     </Segment>  
                 </Grid>

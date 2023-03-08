@@ -30,14 +30,14 @@ handleDelete = (event, id) => {
 
     let prod= this.props.prod
         return (      
-        <div>
+        <div className="profileProducts">
             <Item style={{width:"570px", verticalAlign:"middle", marginLeft:"3%", display: "inline-block"}}>
-            <Item.Header as="h3" style={{ marginTop:"1%"}}>{prod.title}
+            <Header as="h3" style={{ marginTop:"1%"}}>{prod.title}
             <Button size="tiny" style={{color:"#000000", backgroundColor:"#f0f0f0"}} inverted circular floated="right" onClick= { (event) => { this.handleDelete(event, prod.id)}}>
                 Delete 
             </Button>
             <Button size="tiny" floated="right" style={{color:"#000000", backgroundColor:"#f0f0f0"}} inverted circular onClick={this.handleOpen}>Update</Button>
-            </Item.Header>
+            </Header>
             {prod.buyer ?
                 <p style={{marginTop:"-1.5%"}}>Sold to user {prod.buyer} on {prod.updated_at.substring(0, 10)}</p>
             : 

@@ -11,20 +11,20 @@ class ShoppingCartContainer extends Component {
             item => <CartItem item={item} key={item.id}/>
         )
         return (
-            <div>   
-                <center><h2>your cart ({items.length})</h2></center>
+            <div className="cartContainer">   
+                <h2>your cart ({items.length})</h2>
                 <Divider></Divider>
                     {this.props.cart.length === 0 ? 
                       <><h3>Your cart is empty.</h3></>
                     :
                     <div>
                       <List>{items}</List>
-                      <center><h4 >Subtotal: ${this.props.total.toFixed(2)}</h4>
+                      <h4>Subtotal: ${this.props.total.toFixed(2)}</h4>
                         <Link to="/checkout">
-                     
+                        <center>
                         <Button style={{backgroundColor: "#26453e", color:"#FFFFF0", width: "350px", marginTop:"4%"}} onClick={this.props.handleClose}>Checkout</Button>
-                       
-                        </Link> </center>
+                        </center>
+                        </Link> 
                     </div>
                     }
             </div>

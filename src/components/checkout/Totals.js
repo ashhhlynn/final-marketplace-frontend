@@ -5,7 +5,7 @@ class Totals extends Component {
 
     render() {
         return (
-            <div> 
+            <div>
             <Table compact basic='very' singleline style={{fontSize:"16px", marginTop:"-2%", width:"390px"}}>
                 <Table.Row>
                     <Table.Cell>Subtotal</Table.Cell>
@@ -20,8 +20,8 @@ class Totals extends Component {
                     <Table.Cell style={{border:"0"}} textAlign="right">$10.00</Table.Cell>
                 </Table.Row>
                 <Table.Row>
-                    <Table.Cell  style={{ fontSize:"18px"}}><h3>Total</h3></Table.Cell>
-                    <Table.Cell style={{ fontSize:"18px"}} textAlign="right"><h3>${((this.props.total * 1.1 + 10)).toFixed(2)}</h3></Table.Cell>
+                    <Table.Cell  style={{ fontSize:"18px"}}>Total</Table.Cell>
+                    <Table.Cell style={{ fontSize:"18px"}} textAlign="right">${((this.props.total * 1.1 + 10)).toFixed(2)}</Table.Cell>
                 </Table.Row>
            </Table>             
             </div>

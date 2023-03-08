@@ -10,15 +10,69 @@
   width: 100%;
 }
 
+.ui.menu > .item:not(.active) {
+  color: pink;
+}
+
+.link-styles h3, .ui.icon{
+  color:  #26453e;
+}
+
+.link-styles .ui.menu > .item.icon{
+  color:  #26453e;
+}
+
+.toggleLogin  {
+  text-align: center !important;
+}
+
+.editProduct h2, .ui.form > .button {
+  text-align: center !important;
+  font-weight: normal !important;
+}
+
+.ui.form > .input > label{
+  font-weight: normal !important;
+}
+
+.cartContainer h2, h3, h4{
+  text-align: center !important;
+}
+
+.profile h2 {
+  text-align: center;
+}
+
+.profileProducts h3 {
+  text-align: left  !important;;
+}
+
+.product h3 {
+  text-align: left  !important;;
+}
+
+.checkoutContainer h3{
+  text-align: left !important;
+}
+
+.shipping h2{
+  text-align: center;
+  margin-top:1.5%;
+}
+.productContainer h1{
+  margin-left: 4%;
+  margin-top: 2%;
+}
+
+
 h1, h2, h3, h2, h4, h5 {
   font-weight: normal !important;
 }
 
 .header.ui.header {
 
-font-family: "TimesNow-ExtraLight";
-text-align: center;
-font-weight: normal
+font-weight: normal;
+text-align: left
 }
 
 
@@ -70,7 +124,9 @@ body .ui.cards>.card{
   box-shadow: none;
   font-family: "futura-pt", sans-serif;
   font-weight: 400;
-  line-height: 1.5em;
+}
+.ui.cards >.card > .header{
+  text-align: left
 }
 
 

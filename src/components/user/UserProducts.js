@@ -12,18 +12,19 @@ class UserProducts extends Component {
         )
         })
         return (
-            <div>   
-                <h2><center>your plants</center><Divider></Divider></h2>
+          <div>
+            <div className="profile">   
+                <h2>your plants <Divider></Divider></h2></div>
                 {this.props.user.products.length !== 0 ?
-                <>
+                <div>
                     <Item.Group >
                         {products}   
                     </Item.Group> 
-                </>
+                </div>
                 :
-                    <center>You currently do not have any active products.</center>
+                    <h5>You currently do not have any active products.</h5>
                 }
-            </div>
+          </div>
         )
     }
 }

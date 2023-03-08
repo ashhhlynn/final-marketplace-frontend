@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 function ToggleLogin({ onLogin }) {
     const [showLogin, setShowLogin] = useState(true);
     return (
-        <div>            
+        <div className="toggleLogin">             
             {showLogin ? (
             <>
                 <Login onLogin={onLogin} /><br></br>
