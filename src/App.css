@@ -10,8 +10,12 @@
   width: 100%;
 }
 
+.about h3 { 
+  text-align: right !important;;
+}
+
 .ui.menu > .item:not(.active) {
-  color: white;
+
   font-family: "futura-pt", sans-serif;
 
 }
@@ -25,13 +29,9 @@
   color:  #26453e;
 }
 
-.profileNav .ui.menu > .item h3 {
-color:  #ffffff;
-
-}
 
 .toggleLogin  {
-  text-align: center !important;
+  text-align: center;
 }
 
 .editProduct h2, .ui.form > .button {

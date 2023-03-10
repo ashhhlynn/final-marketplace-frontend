@@ -73,10 +73,10 @@ class CheckoutContainer extends Component {
         let orderTotal = this.props.total.toFixed(2)
         return (
             <div>    
-                <Grid style={{ marginTop:"0%"}} columns={2} stackable divided >
+                <Grid style={{ marginTop:"0%", marginBottom:"2%"}} columns={2} stackable divided >
                     <Grid.Column style={{ backgroundColor:"#ffffff"}} >
                         <List style={{ marginTop: "2%", marginLeft:"15%", width:"410px"}}>
-                            <h2>order summary</h2>
+                            <h2>order summary</h2><br></br>
                             {items}
                             <Totals total={this.props.total}/>
                             <Button size="medium" inverted style= {{marginTop:"2%", marginBottom:"2%", width: "200px", backgroundColor:"#26453e", color:"#FFFFF0"}} circular content="Place Order" 
@@ -90,7 +90,7 @@ class CheckoutContainer extends Component {
                     <Grid.Column >
                         <div className="shipping">
                            <h1>shipping information</h1>
-                           <Divider></Divider>
+                           <Divider></Divider><br></br>
                             <EditUser />
                        </div>    
                     </Grid.Column>
