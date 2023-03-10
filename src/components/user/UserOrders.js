@@ -2,8 +2,13 @@ import React, {Component} from 'react';
 import { Divider, Card} from 'semantic-ui-react'
 import OrderSummary from './OrderSummary'
 import {connect} from 'react-redux';
+import {checkUser} from '../actions/userActions'
 
 class UserOrders extends Component {
+
+    componentDidMount () {
+        this.props.checkUser()
+    }
 
     render () {
         const orders = this.props.user.orders.map((order) => (
@@ -17,7 +22,7 @@ class UserOrders extends Component {
                         {orders} 
                     </Card.Group>
                 : 
-                    <h5>You haven't placed any orders yet.</h5>
+                    <h5><center>You haven't placed any orders yet.</center></h5>
                 }
             </div>
         )
@@ -30,4 +35,10 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(UserOrders)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        checkUser: () =>  { dispatch(checkUser()) },
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserOrders)
