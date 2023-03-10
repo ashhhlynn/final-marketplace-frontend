@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
-import { List, Segment, Button, Divider, Item, Grid} from 'semantic-ui-react'
+import { List, Segment, Button, Divider, Item, Container, Grid} from 'semantic-ui-react'
 import CartItem from '../cart/CartItem'
 import {sendOrder} from '../actions/orderActions'
 import {checkUser} from '../actions/userActions'
-import CheckOut from './CheckOut'
 import Totals from './Totals'
 import EditUser from '../user/EditUser'
+import { Link } from 'react-router-dom'
+
 
 class CheckoutContainer extends Component {
 
@@ -71,29 +72,28 @@ class CheckoutContainer extends Component {
         )
         let orderTotal = this.props.total.toFixed(2)
         return (
-            <div> 
-                <Grid columns={2}  >
-                    <Grid.Column centered textAlign='left' style={{width: "520px", marginLeft: "5%", marginTop:"2%"}}>
-                    <div className="checkoutContainer"><h3 style={{fontSize:"20px"}}>order summary</h3>  </div> 
-                        <Divider></Divider>
-                        <List style={{width:"410px"}}>
+            <div>    
+                <Grid style={{ marginTop:"0%"}} columns={2} stackable divided >
+                    <Grid.Column style={{ backgroundColor:"#ffffff"}} >
+                        <List style={{ marginTop: "2%", marginLeft:"15%", width:"410px"}}>
+                            <h2>order summary</h2>
                             {items}
-                        </List>
-                        <Totals total={this.props.total}/>
-                        <Button size="medium" style= {{marginTop:"2%", marginBottom:"2%", width: "400px", backgroundColor:"#26453e", color:"#FFFFF0"}} content="Place Order" 
+                            <Totals total={this.props.total}/>
+                            <Button size="medium" inverted style= {{marginTop:"2%", marginBottom:"2%", width: "200px", backgroundColor:"#26453e", color:"#FFFFF0"}} circular content="Place Order" 
                             onClick={(event) => {this.handleSendOrder(event, orderTotal)}}>
-                        </Button>  
+                            </Button> 
+                            <Link to='/products'>
+                            <Button size="medium" style= {{marginTop:"2%", marginBottom:"2%", width: "200px", backgroundColor:"#26453e", color:"#FFFFF0"}} inverted circular content="Back to  Shop">
+                            </Button> </Link>
+                            </List>
                     </Grid.Column>
-                    <Segment floated="right" style= {{width:"680px", backgroundColor: "#F0F0f0", marginTop: "1.1%", marginRight: "0%"}}>
                     <Grid.Column >
                         <div className="shipping">
-                        <Item centered style={{marginLeft:"7.25%", width:"560px"}}>
-                           <h2 style={{}}>shipping information</h2>
+                           <h1>shipping information</h1>
                            <Divider></Divider>
                             <EditUser />
-                        </Item> </div>    
+                       </div>    
                     </Grid.Column>
-                    </Segment>  
                 </Grid>
             </div>
         )

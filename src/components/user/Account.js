@@ -8,7 +8,7 @@ class Account extends Component {
     render() {               
         return (
            <div className="profile">   
-                <h2 >account info<Divider></Divider></h2>
+                <h2 >user information<Divider></Divider></h2>
                 <EditUser />
             </div>
         )

@@ -36,7 +36,7 @@ class CreateProduct extends Component {
         <img style={{marginTop: "-3%", marginLeft:"65%", objectFit: "cover", objectPosition: "0% 0%"}}width="370" height="370" src="https://hips.hearstapps.com/hmg-prod/images/pretty-pink-plants-1554757430.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*"/>
         
         <Segment position="center" style={{ marginBottom:"5%", width:"700px", marginLeft: "5.5%", marginTop:"-25.5%"}}>
-          <br></br><center>
+          <center>
           <Form onSubmit= { (event) => {this.handleSubmit(event, this.state)}}>
             <Form.Input
               required

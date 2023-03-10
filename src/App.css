@@ -11,15 +11,23 @@
 }
 
 .ui.menu > .item:not(.active) {
-  color: pink;
+  color: white;
+  font-family: "futura-pt", sans-serif;
+
 }
 
 .link-styles h3, .ui.icon{
   color:  #26453e;
+
 }
 
 .link-styles .ui.menu > .item.icon{
   color:  #26453e;
+}
+
+.profileNav .ui.menu > .item h3 {
+color:  #ffffff;
+
 }
 
 .toggleLogin  {
@@ -55,9 +63,10 @@
   text-align: left !important;
 }
 
-.shipping h2{
+.shipping h1{
   text-align: center;
-  margin-top:1.5%;
+  margin-top:3%;
+  margin-bottom:2%
 }
 .productContainer h1{
   margin-left: 4%;
@@ -79,7 +88,7 @@ text-align: left
 .ui.modal {
   box-shadow: none;
   font-family: "futura-pt", sans-serif;
-  background-color: #fdfcf9;
+  background-color: #fdfcf9 !important;
   width: 450px !important;
 
 }
