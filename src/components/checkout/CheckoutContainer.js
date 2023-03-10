@@ -17,52 +17,12 @@ class CheckoutContainer extends Component {
             window.alert('Must have items in cart')
         }
         else {
-            const token = localStorage.token;
             let orderId = this.props.currentOrder
             let cart = this.props.cart
             let user = this.props.user
             let t = orderTotal
-
-            fetch(`http://localhost:3000/orders/${orderId}`, {    
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json',
-                     Accept: 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify({
-                    total: t,
-                    complete: 1
-                })})
-            .then(resp => resp.json())
-            .then(data => {
-                console.log(data)
-                this.props.sendOrder()
-                window.alert("Your order was successfully submitted!")
-                this.props.checkUser()
-               
-            })
-
-            for (let i = 0;
-                i < (cart.length + 1); i++) {
-
-            fetch(`http://localhost:3000/products/${cart[i].id}`, {  
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json',
-                     Accept: 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify({
-                   sold: 1,
-                   buyer: user.id,
-                })})
-            .then(resp => resp.json())
-            .then(data => {
-                console.log(data)
-                window.alert("Your product was successfully patched")
-            })
-        }
+            this.props.sendOrder(orderId, cart, user, t)
+            this.props.checkUser()
         }
     }
        
@@ -111,7 +71,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        sendOrder: () => { dispatch(sendOrder()) },
+        sendOrder: (orderId, cart, user, t) => { dispatch(sendOrder(orderId, cart, user, t)) },
         checkUser: () =>  { dispatch(checkUser()) },
     }
 }

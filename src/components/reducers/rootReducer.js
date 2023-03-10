@@ -101,7 +101,7 @@ const rootReducer = (state = initialState, action) => {
                 currentOrder: [], 
                 cart: [],
                 cartTotal: 0,
-                loading: false
+                loading: false,
             };
 
         default:
