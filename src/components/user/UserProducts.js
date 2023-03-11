@@ -22,7 +22,7 @@ class UserProducts extends Component {
                 </>
                 :
                 <>
-                    <h5>You currently do not have any active products.</h5>
+                    <h5>You currently do not have any products.</h5>
                 </>
                 }
             </div>

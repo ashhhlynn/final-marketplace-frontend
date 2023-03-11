@@ -38,9 +38,27 @@
   text-align: center;
 }
 
-.editProduct h2, .ui.form > .button {
+.checkoutButtons .button.ui.button{
+margin-top: 2%;
+margin-bottom: 2%;
+width: 200px;
+background-color: #26453e  !important;
+color:#FFFFF0 !important;
+line-height: 1.5em;
+z-index: 1;
+}
+
+.formButtons .button.ui.button{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.editProduct h2, .button.ui.button  {
   text-align: center !important;
   font-weight: normal !important;
+  margin: auto;
 }
 
 .ui.form > .input > label{
@@ -130,11 +148,10 @@ text-align: left
     font-family: "futura-pt", sans-serif;
     background-color: black !important;   }
   
-  .ui.form.button {
+  .ui.form > .button {
     box-shadow: none;
     font-family: "futura-pt", sans-serif;
     text-align: center !important;  
-    background-color: black !important; 
   }
 
 
@@ -145,8 +162,9 @@ font-weight: 400;
 font-family: "futura-pt", sans-serif;
 line-height: 1.5em;
 z-index: 1;
-size: "medium"
- 
+size: "medium";
+ margin: auto;
+ text-align: center
 }
 
 body .ui.cards>.card{

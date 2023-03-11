@@ -34,11 +34,13 @@ class CheckoutContainer extends Component {
                             <h2>order summary</h2><br></br>
                             {items}
                             <Totals total={this.props.total}/>
-                            <Button size="medium" style= {{marginTop:"2%", marginBottom:"2%", width: "200px", backgroundColor:"#26453e", color:"#FFFFF0"}} circular content="Place Order" 
+                            <div className="checkoutButtons">
+                            <Button circular content="Place Order" 
                             onClick={(event) => {this.handleSendOrder(event, orderTotal)}}>
                             </Button> 
-                            <Button as={Link} to ="/products" size="medium" style= {{marginTop:"2%", marginBottom:"2%", width: "200px", backgroundColor:"#26453e", color:"#FFFFF0"}} circular content="Back to  Shop">
+                            <Button as={Link} to ="/products" circular content="Back to  Shop">
                             </Button> 
+                            </div>
                         </List>
                     </Grid.Column>
                     <Grid.Column >
