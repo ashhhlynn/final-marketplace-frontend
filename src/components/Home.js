@@ -33,14 +33,10 @@ class Home extends Component{
             <Background />
             <center><Item style={{marginTop:"-25%", width:"600px"}}> 
                 <h1 style={{color:"WHITE", fontSize:"44px"}}>Create Your Oasis</h1>
-                <Link to ="/products"><Button style={{ width:"260px", marginRight:"0%"}} onClick={this.handleCreateOrder} size="huge">GET STARTED</Button>
-                </Link>
+                <Button as={Link} to ="/products" style={{ width:"260px", marginRight:"0%"}} onClick={this.handleCreateOrder} size="huge">GET STARTED</Button>
             </Item></center>
            <About />
            <AboutCard/>
-           
-           
-       
         </div>
         )
     }

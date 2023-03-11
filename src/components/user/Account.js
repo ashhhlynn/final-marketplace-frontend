@@ -1,5 +1,4 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, {Component} from 'react'
 import EditUser from './EditUser'
 import { Divider } from 'semantic-ui-react'
 

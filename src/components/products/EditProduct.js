@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Form } from 'semantic-ui-react'
 import { editProduct } from '../actions/productActions'
-import { Divider, Header} from 'semantic-ui-react'
+import { Divider} from 'semantic-ui-react'
 import { checkUser } from '../actions/userActions';
 
 class EditProduct extends Component {
@@ -34,7 +34,6 @@ super(props)
   render() {
     return (
       <div className="editProduct"><h2>Edit Product</h2><Divider></Divider>
-   
         <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
             <Form.Input
               required
@@ -68,7 +67,7 @@ super(props)
               value={this.state.image_url} 
               onChange={this.handleChange}
             />
-            <center><Form.Button content='Submit' /></center>
+            <center><Form.Button content='Submit'/></center>
         </Form>
     </div>
     )

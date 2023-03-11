@@ -87,9 +87,7 @@ export const editUser = (users) => {
         const token = localStorage.token;
         console.log(token)
         let id = users.id
-
         fetch(`http://localhost:3000/users/${id}`, {  
-              
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -111,5 +109,5 @@ export const editUser = (users) => {
                 dispatch({type: "SET_CURRENT_USER", user: data.user})
 
             })
-        }
     }
+}

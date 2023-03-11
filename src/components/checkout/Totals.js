@@ -6,7 +6,8 @@ class Totals extends Component {
     render() {
         return (
             <div>
-            <Table compact basic='very' singleline style={{fontSize:"16px", marginTop:"-2%", width:"390px"}}>
+            <Table compact basic='very' style={{fontSize:"16px", marginTop:"-2%", width:"390px"}}>
+                <Table.Body>    
                 <Table.Row>
                     <Table.Cell>Subtotal</Table.Cell>
                     <Table.Cell textAlign="right">${this.props.total.toFixed(2)}</Table.Cell>
@@ -23,6 +24,7 @@ class Totals extends Component {
                     <Table.Cell  style={{ fontSize:"18px"}}>Total</Table.Cell>
                     <Table.Cell style={{ fontSize:"18px"}} textAlign="right">${((this.props.total * 1.1 + 10)).toFixed(2)}</Table.Cell>
                 </Table.Row>
+                </Table.Body>   
            </Table>             
             </div>
         )

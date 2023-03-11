@@ -3,15 +3,15 @@ import {React, Component }from "react";
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import ProductContainer from './components/products/ProductContainer'
 import Home from './components/Home'
-import { checkUser } from './components/actions/userActions';
+import { checkUser } from './components/actions/userActions'
 import CreateProduct from './components/products/CreateProduct'
 import CheckoutContainer from './components/checkout/CheckoutContainer'
 import Navbar from './components/Navbar'
 import Profile from './components/user/Profile'
 import Footer from './components/Footer'
 import './App.css'
-import { connect } from "react-redux";
-import { fetchProducts } from './components/actions/productActions';
+import { connect } from "react-redux"
+import { fetchProducts } from './components/actions/productActions'
 
 class App extends Component {
 
@@ -19,7 +19,7 @@ class App extends Component {
     if (localStorage.token) {
       this.props.checkUser()
     }
-    this.props.fetchProducts();
+    this.props.fetchProducts()
   }
 
   render() {
@@ -54,4 +54,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App)

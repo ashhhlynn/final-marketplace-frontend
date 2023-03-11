@@ -63,28 +63,25 @@ export const editProduct = (product) => {
                 console.log(data)
                 dispatch({type: "EDIT_PRODUCT", data, id})
                 window.alert("Your product was successfully updated")
-            })
-        }
+        })
     }
+}
 
-  
-
-
-    export const deleteProduct = (id) => {
-        return (dispatch) => {
-            dispatch({type: "DELETE_PRODUCT", id})
-            const token = localStorage.token;
-            return fetch(`http://localhost:3000/products/${id}`, {
+export const deleteProduct = (id) => {
+    return (dispatch) => {
+        dispatch({type: "DELETE_PRODUCT", id})
+        const token = localStorage.token;
+        return fetch(`http://localhost:3000/products/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
                     Accept: 'application/json',
                     'Authorization': `Bearer ${token}`
                 },
-            })   
-            .then(
+        })   
+        .then(
                 window.alert("Your product was successfully deleted!")
-            )
-        }           
-    }
+        )
+    }           
+}
     

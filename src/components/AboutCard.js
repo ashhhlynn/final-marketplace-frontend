@@ -10,14 +10,14 @@ const AboutCard = () => {
                 <h4 >Sustainably grown by people who care.</h4><br></br><br></br>
                 </center>
             </Card>
-            <Card circular style={{backgroundColor:"#f9f9f9", width:"290px"}}><br></br><br></br>
-                <center><Icon centered name="bicycle" size="huge"></Icon>
+            <Card style={{backgroundColor:"#f9f9f9", width:"290px"}}><br></br><br></br>
+                <center><Icon name="bicycle" size="huge"></Icon>
                 <h2 >Flat Delivery Fee</h2>
                 <h4 >Enjoy flat rate delivery fee of $10.00.</h4><br></br>
                 </center>
             </Card>
             <Card style={{width:"290px", backgroundColor:"#f9f9f9" }}><br></br><br></br>
-                <center><Icon centered name="globe" size="huge"></Icon>
+                <center><Icon name="globe" size="huge"></Icon>
                 <h2 >Rooted in Kindness</h2>
                 <h4>Kindness towards the people and planet.</h4><br></br>
                 </center>

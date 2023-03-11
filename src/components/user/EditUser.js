@@ -28,9 +28,8 @@ class EditUser extends Component {
 
     render() {
         return (
-        <div>
             <Form onSubmit={ (event) => {this.handleSubmit(event, this.state)} }> 
-            <Form.Input 
+                <Form.Input 
                     readOnly
                     required
                     type="text"
@@ -54,7 +53,7 @@ class EditUser extends Component {
                     value={this.state.address} 
                     onChange={this.handleChange}
                 />       
-                <Form.Group>
+            <Form.Group>
                 <Form.Input  width={8}
                     required
                     type="text"
@@ -79,12 +78,11 @@ class EditUser extends Component {
                     value={this.state.zip} 
                     onChange={this.handleChange}
                 />  
-                </Form.Group>
+            </Form.Group>
                 <center>
                 <Form.Button position="center" inverted style={{color:"#ffffff", backgroundColor:"#000000", width:"300px", marginTop:"2%"}}content="Update"/>
                 </center>
-                </Form>
-            </div>
+            </Form>
         )
     }  
 }

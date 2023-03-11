@@ -15,8 +15,12 @@
 }
 
 .ui.menu > .item:not(.active) {
-
   font-family: "futura-pt", sans-serif;
+  font-weight: bold;
+}
+
+.ui.form > button {
+  text-align: center !important;
 
 }
 
@@ -45,6 +49,21 @@
 
 .cartContainer h2, h3, h4{
   text-align: center !important;
+}
+
+.profileNav h4{
+  text-align: left !important;
+  margin-left: 15%;
+  margin-top:20% !important;
+  margin-bottom: 20%;
+  color: #26453e
+}
+
+
+.profileNav h1{
+  text-align: center !important;
+  margin-top:15% !important;
+
 }
 
 .profile h2 {
@@ -89,7 +108,7 @@ text-align: left
   box-shadow: none;
   font-family: "futura-pt", sans-serif;
   background-color: #fdfcf9 !important;
-  width: 450px !important;
+  width: 460px !important;
 
 }
 

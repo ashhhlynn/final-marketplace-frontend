@@ -12,7 +12,7 @@ class UserOrders extends Component {
 
     render () {
         const orders = this.props.user.orders.map((order) => (
-              <OrderSummary order={order}/>
+              <OrderSummary order={order} key={order.id}/>
         ))       
         return (
             <div className="profile">
@@ -29,16 +29,10 @@ class UserOrders extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        user: state.currentUser,
-    }
-}
-
 const mapDispatchToProps = (dispatch) => {
     return {
         checkUser: () =>  { dispatch(checkUser()) },
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserOrders)
+export default connect(null, mapDispatchToProps)(UserOrders)
