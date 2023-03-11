@@ -80,7 +80,7 @@ export const deleteProduct = (id) => {
                 },
         })   
         .then(
-                window.alert("Your product was successfully deleted!")
+            window.alert("Your product was successfully deleted!")
         )
     }           
 }

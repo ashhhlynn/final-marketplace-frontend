@@ -22,7 +22,7 @@ class UserOrders extends Component {
                         {orders} 
                     </Card.Group>
                 : 
-                    <h5><center>You haven't placed any orders yet.</center></h5>
+                    <h5>You haven't placed any orders yet.</h5>
                 }
             </div>
         )

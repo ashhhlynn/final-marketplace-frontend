@@ -10,8 +10,8 @@ class OrderSummary extends Component {
            <div> 
                 <Table compact basic='very' style={{marginTop:"2%", width:"390px"}}>
                     <Table.Body><Table.Row>
-                    <Table.Cell>{item.title} <i>by user{item.seller}</i></Table.Cell>
-                    <Table.Cell textAlign="right">${item.price.toFixed(2)}</Table.Cell>
+                        <Table.Cell>{item.title} <i>by user{item.seller}</i></Table.Cell>
+                        <Table.Cell textAlign="right">${item.price.toFixed(2)}</Table.Cell>
                     </Table.Row></Table.Body>
                 </Table>
            </div>
@@ -20,8 +20,9 @@ class OrderSummary extends Component {
             <div>
                 <Card style={{width:"500px"}}>
                     <Card.Header style={{ height:"40px"}}>
-                        <h2 style={{fontSize:"20px", textAlign:"left", marginLeft:"2%", marginTop:"2%"}}> Order #{this.props.order.id}
-                        <p floated="right" style={{fontSize:"17px", marginTop:"-5%", textAlign:"right"}}>{this.props.order.created_at.substring(0, 10)} <Icon name="checkmark"></Icon></p> 
+                        <h2 style={{fontSize:"20px", textAlign:"left", marginLeft:"2%", marginTop:"2%"}}> 
+                            Order #{this.props.order.id}
+                            <p floated="right" style={{fontSize:"17px", marginTop:"-5%", textAlign:"right"}}>{this.props.order.created_at.substring(0, 10)}<Icon name="checkmark"></Icon></p> 
                         </h2>
                     </Card.Header> 
                     <Card.Content style={{marginLeft:"7%"}}>
@@ -29,7 +30,8 @@ class OrderSummary extends Component {
                         <Divider></Divider>
                         <Totals total={ot} />
                     </Card.Content>
-                </Card> <br></br>
+                </Card>
+                <br></br>
             </div>
         )
     }

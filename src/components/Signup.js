@@ -29,7 +29,7 @@ class Signup extends Component {
 
     render() {
         return (
-            <div>
+        <div>
             <h2 >Register</h2>
             <Divider></Divider>
             <Form onSubmit={ (event) => {this.handleSubmit(event, this.state)} }>              
@@ -57,8 +57,7 @@ class Signup extends Component {
                     value={this.state.address} 
                     onChange={this.handleChange}
                 />       
-                     <Form.Group>
-           
+                <Form.Group>
                 <Form.Input
                     width={8}
                     required
@@ -85,7 +84,8 @@ class Signup extends Component {
                     placeholder="Zip"
                     value={this.state.zip} 
                     onChange={this.handleChange}
-                />  </Form.Group>
+                />  
+                </Form.Group>
                 <Form.Input
                     required
                     id="password"
@@ -104,7 +104,7 @@ class Signup extends Component {
                 />
                 <Form.Button content="Submit"/>
             </Form>
-            </div>
+        </div>
         )
     }
 }

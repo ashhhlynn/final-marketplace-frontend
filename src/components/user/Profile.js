@@ -2,7 +2,7 @@ import { useState } from "react";
 import UserProducts from './UserProducts'
 import UserOrders from './UserOrders'
 import Account from './Account'
-import { Grid, Menu, Button} from 'semantic-ui-react'
+import { Grid, Menu } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 function Profile(props) {
@@ -32,7 +32,7 @@ function Profile(props) {
     <div className="profileNav">    
       <Grid columns={2} stackable textAlign='left'>
         <Grid.Column style= {{width: "370px" }} >
-          <Menu className="link-styles" style={{textAlign:"left", height:"590px", background: "#f0f0f0"}} vertical size="large"> 
+          <Menu className="link-styles" style={{textAlign:"left", height:"590px", background: "#ffffff"}} vertical size="large"> 
               <h1 >Hi, {props.user.name}!</h1>
               <Link onClick={showA}><h4>User Information</h4></Link>
               <Link onClick={showB}><h4>Order History</h4></Link>

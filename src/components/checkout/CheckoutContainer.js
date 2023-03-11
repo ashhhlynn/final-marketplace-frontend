@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
-import { List, Segment, Button, Divider, Item, Container, Grid} from 'semantic-ui-react'
+import { List, Segment, Button, Divider, Grid} from 'semantic-ui-react'
 import CartItem from '../cart/CartItem'
 import {sendOrder} from '../actions/orderActions'
 import {checkUser} from '../actions/userActions'
 import Totals from './Totals'
 import EditUser from '../user/EditUser'
 import { Link } from 'react-router-dom'
-
 
 class CheckoutContainer extends Component {
 
@@ -29,7 +28,7 @@ class CheckoutContainer extends Component {
         let orderTotal = (this.props.total)
         return (
             <div>    
-                <Grid style={{ marginTop:"0%", marginBottom:"2%"}} columns={2} stackable divided >
+                <Grid style={{ marginTop:"0%", marginBottom:"2%"}} columns={2} stackable divided>
                     <Grid.Column style={{ backgroundColor:"#ffffff"}} >
                         <List style={{ marginTop: "2%", marginLeft:"15%", width:"410px"}}>
                             <h2>order summary</h2><br></br>
@@ -40,14 +39,14 @@ class CheckoutContainer extends Component {
                             </Button> 
                             <Button as={Link} to ="/products" size="medium" style= {{marginTop:"2%", marginBottom:"2%", width: "200px", backgroundColor:"#26453e", color:"#FFFFF0"}} circular content="Back to  Shop">
                             </Button> 
-                            </List>
+                        </List>
                     </Grid.Column>
                     <Grid.Column >
                         <div className="shipping">
-                           <h1>shipping information</h1>
-                           <Divider></Divider><br></br>
+                            <h1>shipping information</h1>
+                            <Divider></Divider><br></br>
                             <EditUser />
-                       </div>    
+                        </div>    
                     </Grid.Column>
                 </Grid>
             </div>
@@ -67,7 +66,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         sendOrder: (orderId, cart, user, t) => { dispatch(sendOrder(orderId, cart, user, t)) },
-        checkUser: () =>  { dispatch(checkUser()) },
+        checkUser: () =>  { dispatch(checkUser()) }
     }
 }
 

@@ -46,10 +46,10 @@ const rootReducer = (state = initialState, action) => {
             };
 
         case "DELETE_PRODUCT":
-            let pr = state.products.filter(item => item.id !== action.id);
+            let productsNew = state.products.filter(item => item.id !== action.id);
             return {
                 ...state,
-                products: pr,
+                products: productsNew,
                 loading: false
             };
 

@@ -53,7 +53,7 @@ class EditUser extends Component {
                     value={this.state.address} 
                     onChange={this.handleChange}
                 />       
-            <Form.Group>
+                <Form.Group>
                 <Form.Input  width={8}
                     required
                     type="text"
@@ -78,9 +78,9 @@ class EditUser extends Component {
                     value={this.state.zip} 
                     onChange={this.handleChange}
                 />  
-            </Form.Group>
+                </Form.Group>
                 <center>
-                <Form.Button position="center" inverted style={{color:"#ffffff", backgroundColor:"#000000", width:"300px", marginTop:"2%"}}content="Update"/>
+                    <Form.Button position="center" inverted style={{color:"#ffffff", backgroundColor:"#000000", width:"300px", marginTop:"2%"}}content="Update"/>
                 </center>
             </Form>
         )
@@ -89,8 +89,9 @@ class EditUser extends Component {
 
 const mapStateToProps = (state) => {
     return {
-    user: state.currentUser
-}}
+        user: state.currentUser
+    }
+}
 
 const mapDispatchToProps = dispatch => {
     return {

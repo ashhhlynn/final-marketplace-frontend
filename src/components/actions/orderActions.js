@@ -13,17 +13,17 @@ export const createOrder = (userId) => {
                 user_id: userId,
                 complete: 0
             })
-            })
-            .then(resp => resp.json())
-            .then(data => {
-                if(data.message) {
-                    window.alert(data.message)
-                }
-                else {
-                    console.log(data)
-                    dispatch({type: "CREATE_ORDER", data})
-                }
-            })
+        })
+        .then(resp => resp.json())
+        .then(data => {
+            if (data.message) {
+                window.alert(data.message)
+            }
+            else {
+                console.log(data)
+                dispatch({type: "CREATE_ORDER", data})
+            }
+        })
     }
 }
 
@@ -46,7 +46,6 @@ export const sendOrder = (orderId, cart, user, t) => {
             console.log(data)
             window.alert("Your order was successfully submitted!")           
         })
-
         for (let i = 0; i < (cart.length + 1); i++) {
             fetch(`http://localhost:3000/products/${cart[i].id}`, {  
             method: 'PATCH',
@@ -64,7 +63,7 @@ export const sendOrder = (orderId, cart, user, t) => {
             console.log(data)
             window.alert("Your product was successfully patched")
             dispatch({type: "SUBMIT_ORDER"}) 
-            })
+        })
         }
     }
 }    

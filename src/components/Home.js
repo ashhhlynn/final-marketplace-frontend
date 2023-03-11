@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import {   Segment, Icon, Header, Divider, Item, Card, Button} from 'semantic-ui-react'
 import {connect} from 'react-redux';
-import Product from './products/Product'
 import Background from './Background'
 import About from './About'
 import AboutCard from './AboutCard'
-
 import { Link } from 'react-router-dom'
 import {createOrder} from './actions/orderActions'
 
@@ -19,25 +17,21 @@ class Home extends Component{
         else if (this.props.user.length === 0){
             alert("Login or register to start ordering!")
         }
-      }
+    }
 
     render() {   
-        let p = this.props.products.slice(0,4)
-        const products = p.map( i => {
-            return (
-                <Product product={i} key={i.id}/> 
-            )
-        })
         return (
            <div>
-            <Background />
-            <center><Item style={{marginTop:"-25%", width:"600px"}}> 
-                <h1 style={{color:"WHITE", fontSize:"44px"}}>Create Your Oasis</h1>
-                <Button as={Link} to ="/products" style={{ width:"260px", marginRight:"0%"}} onClick={this.handleCreateOrder} size="huge">GET STARTED</Button>
-            </Item></center>
-           <About />
-           <AboutCard/>
-        </div>
+                <Background />
+                <center>
+                    <Item style={{marginTop:"-25%", width:"600px"}}> 
+                        <h1 style={{color:"WHITE", fontSize:"44px"}}>Find Your Perfect Plant</h1>
+                        <Button as={Link} to ="/products" style={{ width:"260px", marginRight:"0%"}} onClick={this.handleCreateOrder} size="huge">GET STARTED</Button>
+                    </Item>
+                </center>
+                <About />
+                <AboutCard/>
+            </div>
         )
     }
 }

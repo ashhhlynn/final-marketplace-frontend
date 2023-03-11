@@ -8,31 +8,34 @@ class Product extends Component {
     render() {
         const i = this.props.product
         return (
-          
             <Card key={i.id} style={{  background:"#fdfcf9"}}>
-               <Card.Content><Reveal animated='move'>
-                <Reveal.Content visible>  
-                    <Image position="center" src={i.image_url}/>
-                    <Header floated="right" style={{marginTop:"2.5%"}}><h4>${i.price.toFixed(2)}</h4></Header>
-                    <div className="product">
-                    <Card.Header as="h3" style={{marginTop:"2%"}}>{i.title}</Card.Header></div>
-                    <Card.Meta style={{marginTop:"-2%"}}><i>by user {i.user_id}</i></Card.Meta> 
-                </Reveal.Content>
-                <Reveal.Content style={{backgroundColor:"#F0f0f0", height:"200px"}} hidden>
-                    <center><br></br><i>{i.description}</i> <br></br> <br></br> 
-                    <Button style={{color:"#FFFFFF", backgroundColor:"#26453e", width:"150px"}} onClick={(event) => {this.handleClick(event, i)}}>  
-                        Add to Cart
-                    </Button>
-                    <br></br></center>
-                </Reveal.Content>
-                </Reveal></Card.Content>
+                <Card.Content>
+                    <Reveal animated='move'>
+                        <Reveal.Content visible>  
+                            <Image position="center" src={i.image_url}/>
+                            <Header floated="right" style={{marginTop:"2.5%"}}><h4>${i.price.toFixed(2)}</h4></Header>
+                            <div className="product">
+                                <Card.Header as="h3" style={{marginTop:"2%"}}>{i.title}</Card.Header>
+                            </div>
+                            <Card.Meta style={{marginTop:"-2%"}}><i>by user {i.user_id}</i></Card.Meta> 
+                        </Reveal.Content>
+                        <Reveal.Content style={{backgroundColor:"#F0f0f0", height:"200px"}} hidden>
+                            <center><br></br>
+                                <i>{i.description}</i> <br></br> <br></br> 
+                                <Button circular inverted style={{backgroundColor:"#FFFFFF", color:"#000000", width:"150px"}} onClick={(event) => {this.handleClick(event, i)}}>  
+                                    Add to Cart
+                                </Button>
+                                <br></br></center>
+                        </Reveal.Content>
+                    </Reveal>
+                </Card.Content>
             </Card>
         )      
     }
 
     handleClick = (event, product) => {
         event.preventDefault()
-        if (this.props.cart.find((p) => p.id == product.id)){
+        if (this.props.cart.find((p) => p.id == product.id)) {
             alert("You have already added this item.")
         }
         else {
@@ -51,7 +54,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addToCart: (product, order) => { dispatch(addToCart(product, order)) },
+        addToCart: (product, order) => { dispatch(addToCart(product, order)) }
     }
 }
 

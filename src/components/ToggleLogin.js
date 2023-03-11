@@ -8,20 +8,20 @@ function ToggleLogin({ onLogin }) {
     return (
         <div className="toggleLogin">             
             {showLogin ? (
-            <>
+                <>
                 <Login onLogin={onLogin} /><br></br>
                     <p>Don't have an account? 
-                    <Link onClick={() => setShowLogin(false)}> Register</Link>
+                        <Link onClick={() => setShowLogin(false)}> Register</Link>
                     </p>
-            </>
-            ) : (
-            <>
+                </>
+                ) : (
+                <>
                 <Signup onLogin={onLogin} /><br></br>
                     <p>Already have an account? 
-                    <Link onClick={() => setShowLogin(true)}> Login</Link>
+                        <Link onClick={() => setShowLogin(true)}> Login</Link>
                     </p>
-            </>
-            )
+                </>
+                )
             }    
         </div>
     )

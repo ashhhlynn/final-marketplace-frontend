@@ -57,10 +57,8 @@ export const logOut = () => {
 
 export const checkUser = () => {
     return (dispatch) => {
-
         const token = localStorage.token;
         console.log(token)
-
         return fetch('http://localhost:3000/profile', {
         method: 'GET',
         headers: {
@@ -101,13 +99,14 @@ export const editUser = (users) => {
                    state: users.state,
                    zip: users.zip
 
-                })})
-            .then(resp => resp.json())
-            .then(data => {
+                })
+            })
+        .then(resp => resp.json())
+        .then(data => {
                 console.log(data)
                 window.alert("Your account was successfully updated!")
                 dispatch({type: "SET_CURRENT_USER", user: data.user})
 
-            })
+        })
     }
 }

@@ -59,15 +59,16 @@
   color: #26453e
 }
 
-
 .profileNav h1{
   text-align: center !important;
   margin-top:15% !important;
-
+  color: #26453e
 }
 
-.profile h2 {
+.profile h2, h5 {
   text-align: center;
+  text-align: center;
+
 }
 
 .profileProducts h3 {

@@ -27,22 +27,22 @@ class Login extends Component {
                 <h2>Login</h2>
                 <Divider></Divider>
                 <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
-                <Form.Input
+                    <Form.Input
                     required
                     id="email"
                     placeholder="Email"
                     value={this.state.email} 
                     onChange={this.handleChange}
-                />               
-                <Form.Input
+                    />               
+                    <Form.Input
                     required
                     id="password"
                     placeholder="Password"
                     type="password"
                     value={this.state.password} 
                     onChange={this.handleChange}
-                /> 
-                 <Form.Button content='Submit' />
+                    /> 
+                    <Form.Button content='Submit' />
                 </Form>
             </div>
         )
