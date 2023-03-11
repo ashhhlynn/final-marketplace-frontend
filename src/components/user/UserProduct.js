@@ -31,17 +31,18 @@ class UserProduct extends Component {
         return (      
             <div className="profileProducts">
                 <Item style={{width:"570px", verticalAlign:"middle", marginLeft:"3%", display: "inline-block"}}>
-                    <Header as="h3" style={{ marginTop:"1%"}}>{prod.title}
-                    <Button size="tiny" basic color="black"  circular floated="right" onClick= { (event) => { this.handleDelete(event, prod.id)}}>
-                        Delete 
-                    </Button>
-                    <Button size="tiny" floated="right"  basic color="black"  circular onClick={this.handleOpen}>Update</Button>
-                    </Header>
+                    <Header as="h3" style={{ marginTop:"1%"}}>{prod.title}</Header>
                     {prod.buyer ?
                         <p style={{marginTop:"-1.5%"}}>Sold to user {prod.buyer} on {prod.updated_at.substring(0, 10)}</p>
                     : 
-                        <p style={{marginTop:"-1.2%"}}>Active</p>
-                    }     
+                        <p style={{marginTop:"-1.2%"}}>  
+                        <Button size="tiny" basic color="black"  circular floated="right" onClick= { (event) => { this.handleDelete(event, prod.id)}}>
+                        Delete 
+                        </Button>
+                        <Button size="tiny" floated="right"  basic color="black"  circular onClick={this.handleOpen}>Update</Button>
+                        Active
+                        </p> 
+                    }               
                     <Item.Image floated="left" rounded src={prod.image_url} size= "small" />
                     Price:  ${prod.price.toFixed(2)}<br></br>
                     Posted: {prod.created_at.substring(0, 10)}<br></br>
