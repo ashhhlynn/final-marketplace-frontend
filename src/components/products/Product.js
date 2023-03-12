@@ -8,24 +8,28 @@ class Product extends Component {
     render() {
         const i = this.props.product
         return (
-            <Card key={i.id} style={{  background:"#fdfcf9"}}>
+            <Card key={i.id}>
                 <Card.Content>
-                    <Reveal animated='move'>
-                        <Reveal.Content visible>  
-                            <Image position="center" src={i.image_url}/>
-                            <Header floated="right" style={{marginTop:"2.5%"}}><h4>${i.price.toFixed(2)}</h4></Header>
-                            <div className="product">
-                                <Card.Header as="h3" style={{marginTop:"2%"}}>{i.title}</Card.Header>
+                    <Reveal animated='move'>  
+                        <Reveal.Content visible>
+                            <div className="productCard">     
+                                <Image position="center" src={i.image_url}/>
+                                <Header floated="right" style={{marginTop:"2.5%"}}>
+                                    <h4>${i.price.toFixed(2)}</h4>
+                                </Header>
+                                <Card.Header as="h3">{i.title}</Card.Header>
+                                <Card.Meta style={{marginTop:"-2%"}}><i>by user {i.user_id}</i></Card.Meta> 
                             </div>
-                            <Card.Meta style={{marginTop:"-2%"}}><i>by user {i.user_id}</i></Card.Meta> 
                         </Reveal.Content>
-                        <Reveal.Content style={{backgroundColor:"#F0f0f0", height:"200px"}} hidden>
-                            <center><br></br>
-                                <i>{i.description}</i> <br></br> <br></br> 
-                                <Button circular inverted style={{backgroundColor:"#FFFFFF", color:"#000000", width:"150px"}} onClick={(event) => {this.handleClick(event, i)}}>  
+                        <Reveal.Content style={{textAlign: "center", backgroundColor:"#F0f0f0", height:"200px"}} hidden>
+                            <div className="productCardTwo">  
+                                <br></br>
+                                <i>{i.description}</i>
+                                <br></br> <br></br> 
+                                <Button circular inverted onClick={(event) => {this.handleClick(event, i)}}>  
                                     Add to Cart
                                 </Button>
-                                <br></br></center>
+                            </div>
                         </Reveal.Content>
                     </Reveal>
                 </Card.Content>

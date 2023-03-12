@@ -16,7 +16,7 @@ class CartItem extends Component {
             <>
             <Item>
                 <Button size="tiny" style={{ marginTop:"-2%"}}inverted floated="right" onClick={()=>{this.handleRemove(i.id)}}>
-                    <Button.Content visible><Icon color="grey" name="close"></Icon></Button.Content>
+                    <Icon color="grey" name="close"></Icon>
                 </Button>
                 <Image size='tiny' src={i.image_url} /> 
                 <Item.Content style={{ marginLeft:"2%"}}>

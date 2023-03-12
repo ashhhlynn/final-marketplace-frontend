@@ -1,6 +1,6 @@
-import { useState } from "react";
-import Login from "./Login";
-import Signup from "./Signup";
+import { useState } from "react"
+import Login from "./Login"
+import Signup from "./Signup"
 import { Link } from 'react-router-dom'
 
 function ToggleLogin({ onLogin }) {
@@ -9,16 +9,16 @@ function ToggleLogin({ onLogin }) {
         <div className="toggleLogin">             
             {showLogin ? (
                 <>
-                <Login onLogin={onLogin} /><br></br>
+                <Login onLogin={onLogin}/><br></br>
                     <p>Don't have an account? 
-                        <Link onClick={() => setShowLogin(false)}> Register</Link>
+                        <Link onClick={() => setShowLogin(false)}>Register</Link>
                     </p>
                 </>
                 ) : (
                 <>
-                <Signup onLogin={onLogin} /><br></br>
+                <Signup onLogin={onLogin}/><br></br>
                     <p>Already have an account? 
-                        <Link onClick={() => setShowLogin(true)}> Login</Link>
+                        <Link onClick={() => setShowLogin(true)}>Login</Link>
                     </p>
                 </>
                 )

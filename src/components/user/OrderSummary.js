@@ -19,10 +19,10 @@ class OrderSummary extends Component {
         return (
             <div>
                 <Card style={{width:"500px"}}>
-                    <Card.Header style={{ height:"40px"}}>
-                        <h2 style={{fontSize:"20px", textAlign:"left", marginLeft:"2%", marginTop:"2%"}}> 
+                    <Card.Header style={{ height:"47px"}}>
+                        <h2 style={{textAlign:"left", marginLeft:"2%", marginTop:"2%"}}> 
                             Order #{this.props.order.id}
-                            <p floated="right" style={{fontSize:"17px", marginTop:"-5%", textAlign:"right"}}>{this.props.order.created_at.substring(0, 10)}<Icon name="checkmark"></Icon></p> 
+                            <p floated="right" style={{ marginTop:"-7%", textAlign:"right"}}>{this.props.order.created_at.substring(0, 10)}<Icon name="checkmark"></Icon></p> 
                         </h2>
                     </Card.Header> 
                     <Card.Content style={{marginLeft:"7%"}}>

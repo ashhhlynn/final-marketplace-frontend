@@ -1,8 +1,7 @@
-
 .App{
   background:  #fdfcf9  ;
   font-family: "futura-pt", sans-serif;
-    font-weight: 400;
+  font-weight: 400;
   line-height: 1.5em;
   color: #111111;
   margin: 0;
@@ -10,32 +9,93 @@
   width: 100%;
 }
 
-.about h3 { 
-  text-align: right !important;;
-}
-
-.ui.menu > .item:not(.active) {
-  font-family: "futura-pt", sans-serif;
-  font-weight: bold;
-}
-
-.ui.form > button {
-  text-align: center !important;
-
-}
-
 .link-styles h3, .ui.icon{
   color:  #26453e;
-
 }
-
-.link-styles .ui.menu > .item.icon{
-  color:  #26453e;
-}
-
 
 .toggleLogin  {
   text-align: center;
+}
+
+h1, h2, h3, h2, h4, h5 {
+  font-weight: normal !important;
+}
+
+.ui.modal {
+  box-shadow: none;
+  width: 460px !important;
+  background-color: #fdfcf9 !important;
+}
+
+.ui.modal > .content{
+    box-shadow: none;
+    font-family: "futura-pt", sans-serif;
+    background-color: #fdfcf9 !important;
+}
+
+.button.ui.button {
+  background: #DBE6E0;
+  color: #404040;
+  font-weight: 400;
+  font-family: "futura-pt", sans-serif;
+  line-height: 1.5em;
+  z-index: 1;
+  size: "medium";
+  margin: auto;
+  text-align: center
+}
+
+body .ui.cards>.card{
+  box-shadow: none;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 400;
+}
+
+.about h3 { 
+  text-align: right !important;
+}
+
+.productContainer h1{
+  margin-left: 4%;
+  margin-top: 2%;
+}
+
+.productContainer img {
+  object-fit: cover;
+  object-position: 0% 50%;
+  width: 1263px;
+  height: 270px;
+}
+
+.productContainer .ui.cards {
+  background-color: #fdfcf9
+}
+
+.productCardTwo .button.ui.button{
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  width: 150px !important;
+}
+
+.productCard h3 {
+  text-align: left  !important;
+  box-shadow: none !important;
+ margin-top:2%;
+}
+
+.cart .button.ui.button{
+  background-color: #26453e;
+  color:#FFFFF0;
+  width: 350px;
+  margin-top: 4%;
+  text-align: center !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+
+}
+
+.cartContainer h2, h3, h4{
+  text-align: center !important;
 }
 
 .checkoutButtons .button.ui.button{
@@ -48,25 +108,15 @@ line-height: 1.5em;
 z-index: 1;
 }
 
-.formButtons .button.ui.button{
+.shipping h1{
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top:3%;
+  margin-bottom:2%
 }
 
-
-.editProduct h2, .button.ui.button  {
-  text-align: center !important;
-  font-weight: normal !important;
-  margin: auto;
-}
-
-.ui.form > .input > label{
-  font-weight: normal !important;
-}
-
-.cartContainer h2, h3, h4{
-  text-align: center !important;
+.profile h2, h5 {
+  text-align: center;
+  text-align: center;
 }
 
 .profileNav h4{
@@ -83,65 +133,43 @@ z-index: 1;
   color: #26453e
 }
 
-.profile h2, h5 {
+.formButtons .button.ui.button{
   text-align: center;
-  text-align: center;
-
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .profileProducts h3 {
   text-align: left  !important;;
 }
 
-.product h3 {
-  text-align: left  !important;;
-}
-
-.checkoutContainer h3{
-  text-align: left !important;
-}
-
-.shipping h1{
-  text-align: center;
-  margin-top:3%;
-  margin-bottom:2%
-}
-.productContainer h1{
-  margin-left: 4%;
-  margin-top: 2%;
-}
 
 
-h1, h2, h3, h2, h4, h5 {
+
+
+.editProduct h2, .button.ui.button  {
+  text-align: center !important;
+  font-weight: normal !important;
+  margin: auto;
+}
+
+.ui.form > .input > label{
   font-weight: normal !important;
 }
 
-.header.ui.header {
 
-font-weight: normal;
-text-align: left
-}
-
-
-.ui.modal {
-  box-shadow: none;
-  font-family: "futura-pt", sans-serif;
-  background-color: #fdfcf9 !important;
-  width: 460px !important;
+.ui.form > button {
+  margin: auto !important;
 
 }
 
-.ui.menu.item > header {
-  box-shadow: none;
-  font-family: "futura-pt", sans-serif;
-  color: pink !important;
-}
 
-.ui.modal > .content{
-    box-shadow: none;
-    font-family: "futura-pt", sans-serif;
-    background-color: #fdfcf9 !important;
-  }
+
+
+
+
+
+
 
   .ui.modal > .content.form >.button{
     box-shadow: none;
@@ -155,38 +183,7 @@ text-align: left
   }
 
 
-.button.ui.button {
-  background: #DBE6E0;
- color: #404040;
-font-weight: 400;
-font-family: "futura-pt", sans-serif;
-line-height: 1.5em;
-z-index: 1;
-size: "medium";
- margin: auto;
- text-align: center
-}
-
-body .ui.cards>.card{
-  box-shadow: none;
-  font-family: "futura-pt", sans-serif;
-  font-weight: 400;
-}
-.ui.cards >.card > .header{
-  text-align: left
-}
 
 
-body .ui.menu>.menuitem{
-  box-shadow: none;
-  font-family: "futura-pt", sans-serif;
-  font-weight: 400;
-  line-height: 1.5em;
-  font-weight: "normal"
-}
 
-
-body .ui.cards>.card >.header{
-font-weight: "normal"
-}
 

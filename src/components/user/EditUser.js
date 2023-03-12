@@ -54,34 +54,32 @@ class EditUser extends Component {
                     onChange={this.handleChange}
                 />       
                 <Form.Group>
-                <Form.Input  width={8}
-                    required
-                    type="text"
-                    id="city"
-                    label="City"
-                    value={this.state.city} 
-                    onChange={this.handleChange}
-                />   
-                  <Form.Input width={5}
-                    required 
-                    type="text"
-                    id="state"
-                    label="State"
-                    value={this.state.state} 
-                    onChange={this.handleChange}
-                /> 
-                 <Form.Input width={3} 
-                    required
-                    type="text"
-                    id="zip"
-                    label="Zip"
-                    value={this.state.zip} 
-                    onChange={this.handleChange}
-                />  
-                </Form.Group>
-                <center>
-                    <Form.Button position="center" inverted style={{color:"#ffffff", backgroundColor:"#000000", width:"300px", marginTop:"2%"}}content="Update"/>
-                </center>
+                    <Form.Input  width={8}
+                        required
+                        type="text"
+                        id="city"
+                        label="City"
+                        value={this.state.city} 
+                        onChange={this.handleChange}
+                    />   
+                    <Form.Input width={5}
+                        required 
+                        type="text"
+                        id="state"
+                        label="State"
+                        value={this.state.state} 
+                        onChange={this.handleChange}
+                    /> 
+                    <Form.Input width={3} 
+                        required
+                        type="text"
+                        id="zip"
+                        label="Zip"
+                        value={this.state.zip} 
+                        onChange={this.handleChange}
+                    />  
+                    </Form.Group>
+                    <Form.Button inverted style={{color:"#ffffff", backgroundColor:"#000000", width:"300px", marginTop:"2%"}} content="Update"/>
             </Form>
         )
     }  

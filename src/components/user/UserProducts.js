@@ -8,7 +8,7 @@ class UserProducts extends Component {
 
     render () {
         const products = this.props.user.products.map( prod => {
-            return ( < UserProduct prod={prod} key={prod.id} />
+            return ( <UserProduct prod={prod} key={prod.id} />
             )
         })
         return (

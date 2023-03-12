@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import {   Segment, Icon, Header, Divider, Item, Card, Button} from 'semantic-ui-react'
-import {connect} from 'react-redux';
+import React, { Component } from "react"
+import { Item, Button} from 'semantic-ui-react'
+import {connect} from 'react-redux'
 import Background from './Background'
 import About from './About'
 import AboutCard from './AboutCard'
@@ -46,7 +46,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return { 
-      createOrder: (userId) => { dispatch(createOrder(userId)) }, 
+      createOrder: (userId) => { dispatch(createOrder(userId)) }
     }
 }
 

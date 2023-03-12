@@ -1,14 +1,14 @@
 import EditProduct from '../products/EditProduct'
-import React, {Component} from 'react';
-import { connect } from "react-redux";
+import React, {Component} from 'react'
+import { connect } from "react-redux"
 import { Button, Header, Item, Modal, Divider } from 'semantic-ui-react'
-import { checkUser } from '../actions/userActions';
+import { checkUser } from '../actions/userActions'
 import {deleteProduct} from '../actions/productActions'
 
 class UserProduct extends Component {
 
     state = {
-        modalOpen: false,
+        modalOpen: false
     }
 
     handleOpen = () => {
@@ -36,11 +36,9 @@ class UserProduct extends Component {
                         <p style={{marginTop:"-1.5%"}}>Sold to user {prod.buyer} on {prod.updated_at.substring(0, 10)}</p>
                     : 
                         <p style={{marginTop:"-1.2%"}}>  
-                        <Button size="tiny" basic color="black"  circular floated="right" onClick= { (event) => { this.handleDelete(event, prod.id)}}>
-                        Delete 
-                        </Button>
-                        <Button size="tiny" floated="right"  basic color="black"  circular onClick={this.handleOpen}>Update</Button>
-                        Active
+                            <Button size="tiny" basic color="black" circular floated="right" onClick= { (event) => { this.handleDelete(event, prod.id)}}>Delete</Button>
+                            <Button size="tiny" floated="right"  basic color="black" circular onClick={this.handleOpen}>Update</Button>
+                            Active
                         </p> 
                     }               
                     <Item.Image floated="left" rounded src={prod.image_url} size= "small" />
@@ -50,13 +48,13 @@ class UserProduct extends Component {
                 </Item>
                 <Divider></Divider>
                 <Modal 
-                open={this.state.modalOpen}
-                onClose={this.handleClose}
-                closeIcon
+                    open={this.state.modalOpen}
+                    onClose={this.handleClose}
+                    closeIcon
                 >
-                <Modal.Content >
-                    <EditProduct product={prod} key={prod.id} handleClose={this.handleClose}/>
-                </Modal.Content>
+                    <Modal.Content >
+                        <EditProduct product={prod} key={prod.id} handleClose={this.handleClose}/>
+                    </Modal.Content>
                 </Modal>
             </div>
         )

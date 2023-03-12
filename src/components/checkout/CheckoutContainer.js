@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import { connect } from "react-redux";
-import { List, Segment, Button, Divider, Grid} from 'semantic-ui-react'
+import React, {Component} from 'react'
+import { connect } from "react-redux"
+import { List, Button, Divider, Grid} from 'semantic-ui-react'
 import CartItem from '../cart/CartItem'
 import {sendOrder} from '../actions/orderActions'
 import {checkUser} from '../actions/userActions'
@@ -35,11 +35,10 @@ class CheckoutContainer extends Component {
                             {items}
                             <Totals total={this.props.total}/>
                             <div className="checkoutButtons">
-                            <Button circular content="Place Order" 
-                            onClick={(event) => {this.handleSendOrder(event, orderTotal)}}>
-                            </Button> 
-                            <Button as={Link} to ="/products" circular content="Back to  Shop">
-                            </Button> 
+                                <Button circular content="Place Order" onClick={(event) => {this.handleSendOrder(event, orderTotal)}}>
+                                </Button> 
+                                <Button as={Link} to ="/products" circular content="Back to  Shop">
+                                </Button> 
                             </div>
                         </List>
                     </Grid.Column>

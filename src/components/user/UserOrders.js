@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import { Divider, Card} from 'semantic-ui-react'
 import OrderSummary from './OrderSummary'
-import {connect} from 'react-redux';
+import {connect} from 'react-redux'
 import {checkUser} from '../actions/userActions'
 
 class UserOrders extends Component {
@@ -31,7 +31,7 @@ class UserOrders extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        checkUser: () =>  { dispatch(checkUser()) },
+        checkUser: () =>  { dispatch(checkUser()) }
     }
 }
 

@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { connect } from 'react-redux';
-import { Form, Divider } from "semantic-ui-react";
-import {getExistingUser} from './actions/userActions';
+import React, { Component } from "react"
+import { connect } from 'react-redux'
+import { Form, Divider } from "semantic-ui-react"
+import {getExistingUser} from './actions/userActions'
 
 class Login extends Component {
 
@@ -23,7 +23,7 @@ class Login extends Component {
 
     render() {
         return (
-            <div>          
+            <>          
                 <h2>Login</h2>
                 <Divider></Divider>
                 <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
@@ -44,7 +44,7 @@ class Login extends Component {
                     /> 
                     <Form.Button content='Submit' />
                 </Form>
-            </div>
+            </>
         )
     }
 }

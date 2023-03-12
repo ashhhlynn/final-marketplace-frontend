@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { connect } from 'react-redux';
+import React, { Component } from "react"
+import { connect } from 'react-redux'
 import { Form, Divider } from 'semantic-ui-react'
 import { createUser } from './actions/userActions'
 
@@ -29,7 +29,7 @@ class Signup extends Component {
 
     render() {
         return (
-        <div>
+            <>
             <h2 >Register</h2>
             <Divider></Divider>
             <Form onSubmit={ (event) => {this.handleSubmit(event, this.state)} }>              
@@ -58,33 +58,33 @@ class Signup extends Component {
                     onChange={this.handleChange}
                 />       
                 <Form.Group>
-                <Form.Input
-                    width={8}
-                    required
-                    type="text"
-                    id="city"
-                    placeholder="City"
-                    value={this.state.city} 
-                    onChange={this.handleChange}
-                />   
-                  <Form.Input
-                     width={6}
-                    required
-                    type="text"
-                    id="state"
-                    placeholder="State"
-                    value={this.state.state} 
-                    onChange={this.handleChange}
-                />  
-                 <Form.Input
-                    width={3}
-                    required
-                    type="text"
-                    id="zip"
-                    placeholder="Zip"
-                    value={this.state.zip} 
-                    onChange={this.handleChange}
-                />  
+                    <Form.Input
+                        width={8}
+                        required
+                        type="text"
+                        id="city"
+                        placeholder="City"
+                        value={this.state.city} 
+                        onChange={this.handleChange}
+                    />   
+                    <Form.Input
+                        width={6}
+                        required
+                        type="text"
+                        id="state"
+                        placeholder="State"
+                        value={this.state.state} 
+                        onChange={this.handleChange}
+                    />  
+                    <Form.Input
+                        width={3}
+                        required
+                        type="text"
+                        id="zip"
+                        placeholder="Zip"
+                        value={this.state.zip} 
+                        onChange={this.handleChange}
+                    />  
                 </Form.Group>
                 <Form.Input
                     required
@@ -104,7 +104,7 @@ class Signup extends Component {
                 />
                 <Form.Button content="Submit"/>
             </Form>
-        </div>
+            </>
         )
     }
 }
