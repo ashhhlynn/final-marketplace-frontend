@@ -45,11 +45,11 @@ class Navbar extends Component {
   
   render() {
     return (
-      <div>
-        <center>
-          <img style={{ width:200, height:45, marginTop:"2%", marginBottom:"1.5%"}} src="https://cdn.shopify.com/s/files/1/0253/6701/9565/files/planterina-logo_432e9c62-d54e-4302-8761-6e169c222543_600x300.png?v=1628654999"></img>
-        </center>
-        <Menu className="link-styles" pointing secondary size="large" style={{marginTop: "-4%"}}>
+      <div className="nav">
+        
+          <img src="https://cdn.shopify.com/s/files/1/0253/6701/9565/files/planterina-logo_432e9c62-d54e-4302-8761-6e169c222543_600x300.png?v=1628654999"></img>
+        
+        <Menu className="link-styles" pointing secondary size="large">
           <Menu.Item as={Link} to='/'><h3> home </h3></Menu.Item>
           <Menu.Item as={Link} to ="/createproduct" ><h3> sell </h3></Menu.Item>
           <Menu.Item as={Link} to ="/products" onClick={()=>{this.handleCreateOrder()}}><h3>shop</h3></Menu.Item>

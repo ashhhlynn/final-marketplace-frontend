@@ -27,10 +27,10 @@ class CheckoutContainer extends Component {
         )
         let orderTotal = (this.props.total)
         return (
-            <div>    
-                <Grid style={{ marginTop:"0%", marginBottom:"2%"}} columns={2} stackable divided>
+            <div className="checkoutContainer">
+                <Grid columns={2} stackable divided>
                     <Grid.Column style={{ backgroundColor:"#ffffff"}} >
-                        <List style={{ marginTop: "2%", marginLeft:"15%", width:"410px"}}>
+                        <List>
                             <h2>order summary</h2><br></br>
                             {items}
                             <Totals total={this.props.total}/>

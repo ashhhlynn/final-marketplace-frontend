@@ -14,11 +14,11 @@ class Product extends Component {
                         <Reveal.Content visible>
                             <div className="productCard">     
                                 <Image position="center" src={i.image_url}/>
-                                <Header floated="right" style={{marginTop:"2.5%"}}>
+                                <Header floated="right" >
                                     <h4>${i.price.toFixed(2)}</h4>
                                 </Header>
                                 <Card.Header as="h3">{i.title}</Card.Header>
-                                <Card.Meta style={{marginTop:"-2%"}}><i>by user {i.user_id}</i></Card.Meta> 
+                                <Card.Meta style={{marginTop:"-3%"}}><i>by user {i.user_id}</i></Card.Meta> 
                             </div>
                         </Reveal.Content>
                         <Reveal.Content style={{textAlign: "center", backgroundColor:"#F0f0f0", height:"200px"}} hidden>

@@ -21,12 +21,12 @@ class Home extends Component{
 
     render() {   
         return (
-           <div>
+           <div className="home">
                 <Background />
                 <center>
-                    <Item style={{marginTop:"-25%", width:"600px"}}> 
-                        <h1 style={{color:"WHITE", fontSize:"44px"}}>Find Your Perfect Plant</h1>
-                        <Button as={Link} to ="/products" style={{ width:"260px", marginRight:"0%"}} onClick={this.handleCreateOrder} size="huge">GET STARTED</Button>
+                    <Item > 
+                        <h1 color="white">Find Your Perfect Plant</h1>
+                        <Button as={Link} to ="/products"  style={{ width:"260px"}} onClick={this.handleCreateOrder} size="huge">GET STARTED</Button>
                     </Item>
                 </center>
                 <About />

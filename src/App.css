@@ -9,6 +9,24 @@
   width: 100%;
 }
 
+.nav .link-styles{
+  margin-top: -4% !important;
+}
+
+.nav img{
+  width:200px;
+  height:45px;
+  margin-top:2%;
+  margin-bottom:1.5%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.nav{
+  text-align: center;
+}
+
 .link-styles h3, .ui.icon{
   color:  #26453e;
 }
@@ -56,16 +74,32 @@ body .ui.cards>.card{
   box-shadow: none;
   font-family: "futura-pt", sans-serif;
   font-weight: 400;
+  background-color: #fdfcf9
+
+}
+
+.home .ui.item{
+  margin-top:-25% !important;
+  width:600px  !important;
+}
+
+.home h1{
+
+   font-size: 44px
 }
 
 .about h3 { 
   text-align: right !important;
+  line-height:1.8
 }
 
----- Products ----
+.about h1{
+text-align: right;
+ font-size: 32px
+}
 
 .productContainer h1{
-  margin-left: 4%;
+  margin-left: 4% !important;
   margin-top: 2%;
 }
 
@@ -74,10 +108,6 @@ body .ui.cards>.card{
   object-position: 0% 50%;
   width: 1263px;
   height: 270px;
-}
-
-.productContainer .ui.cards {
-  background-color: #fdfcf9
 }
 
 .productCardTwo .button.ui.button{
@@ -93,13 +123,27 @@ body .ui.cards>.card{
   margin-top:2%;
 }
 
----- Cart ----
+.productCard .ui.header {
+  margin-top: 3%  !important;
+}
+
+
 
 .cartContainer h2, h3, h4{
   text-align: center !important;
 }
 
----- Checkout ----
+
+.checkoutContainer .ui.list {
+  margin-top: 2%;
+  margin-left: 15% !important;
+  width: 410px
+}
+
+.checkoutContainer .ui.grid {
+  margin-top: 0%;
+  margin-bottom: 2% 
+}
 
 .checkoutButtons .button.ui.button{
   margin-top: 2%;
@@ -117,16 +161,18 @@ body .ui.cards>.card{
   width: 390px ;
 }
 
-.shipping h1{
+.shipping h1 {
   text-align: center;
   margin-top:3%;
   margin-bottom:2%
 }
 
----- Profile ----
+.shipping {
+  margin-right:2%
+}
+
 
 .profile h2, h5 {
-  text-align: center;
   text-align: center;
 }
 
@@ -182,7 +228,7 @@ body .ui.cards>.card{
   background: #ffffff;
 }
 
----- Product Forms ----
+
 
 .editProduct h2  {
   text-align: center !important;
