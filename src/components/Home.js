@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Item, Button} from 'semantic-ui-react'
+import { Item, Segment, Divider, Button} from 'semantic-ui-react'
 import {connect} from 'react-redux'
 import Background from './Background'
 import About from './About'
@@ -24,13 +24,25 @@ class Home extends Component{
            <div className="home">
                 <Background />
                 <center>
-                    <Item > 
-                        <h1 color="white">Find Your Perfect Plant</h1>
+                    <Item style={{marginTop:"-25%"}}> 
+                        <h1 style={{color:"#FFFFFF"}}>Find Your Perfect Plant</h1>
                         <Button as={Link} to ="/products"  style={{ width:"260px"}} onClick={this.handleCreateOrder} size="huge">GET STARTED</Button>
                     </Item>
-                </center>
-                <About />
-                <AboutCard/>
+                </center><br></br>
+                <About /><br></br><br></br>
+                
+             <div className="aboutTwo"><br></br><br></br>
+            <Item style={{height:"370px", marginLeft:"7%", marginTop:"0%", width:"450px"}}>
+            <br></br><h1>in full bloom</h1>
+            <Divider></Divider>
+            <h3>It's officially spring and peonies season! Shop everyone’s favorite fluffy flower.</h3>
+            <Button as={Link} to ="/products"  style={{ width:"180px"}} onClick={this.handleCreateOrder} size="huge">Shop Now</Button>
+
+            <img style={{marginTop: "-60%", marginLeft:"130%", objectFit: "cover", 
+            objectPosition: "0% 0%"}}floated="left" width="480px" height="350px" 
+            src="https://media.urbanstems.com/image/upload/f_auto/w_850,q_80/Catalogs/urbanstems-master/Spring23/Peony%20Palette/Peony_Palette_Middle.jpg"/>
+            </Item><br></br></div>
+            <AboutCard/>   
             </div>
         )
     }

@@ -84,8 +84,7 @@ body .ui.cards>.card{
 }
 
 .home h1{
-
-   font-size: 44px
+  font-size: 44px
 }
 
 .about h3 { 
@@ -95,6 +94,16 @@ body .ui.cards>.card{
 
 .about h1{
 text-align: right;
+ font-size: 32px
+}
+
+.aboutTwo h3 { 
+  text-align: left !important;
+  line-height:1.8
+}
+
+.aboutTwo h1{
+text-align: left;
  font-size: 32px
 }
 
