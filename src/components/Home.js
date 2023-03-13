@@ -42,7 +42,7 @@ class Home extends Component{
                         <h3>It's officially spring and Peony season! Shop everyone’s favorite fluffy flower.</h3>
                         <Button as={Link} to ="/products" style={{ width:"180px"}} onClick={this.handleCreateOrder} size="huge">Shop Now</Button>
                         <img style={{marginTop: "-55%", marginLeft:"130%", objectFit: "cover", objectPosition: "0% 0%"}}floated="left" width="480px" height="350px" 
-                        src="https://media.urbanstems.com/image/upload/f_auto/w_850,q_80/Catalogs/urbanstems-master/Spring23/Peony%20Palette/Peony_Palette_Middle.jpg"/>
+                        src="https://media.urbanstems.com/image/upload/f_auto/w_850,q_80/Catalogs/urbanstems-master/Spring23/Peony%20Palette/Peony_Palette_Middle.jpg" alt="abttwo"/>
                     </Item>
                 </div>
                 <AboutCard/>   
