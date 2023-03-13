@@ -1,6 +1,6 @@
 
-import {React, Component }from "react"
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import { React, Component }from "react"
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import ProductContainer from './components/products/ProductContainer'
 import Home from './components/Home'
 import { checkUser } from './components/actions/userActions'

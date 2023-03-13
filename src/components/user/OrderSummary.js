@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import { Divider, Card, Icon, Table} from 'semantic-ui-react'
+import React, { Component } from 'react'
+import { Divider, Card, Icon, Table } from 'semantic-ui-react'
 import Totals from '../checkout/Totals'
 
 class OrderSummary extends Component {
@@ -33,7 +33,7 @@ class OrderSummary extends Component {
                         <Totals total={ot} />
                     </Card.Content>
                 </Card>
-                <br></br>
+                <br />
             </div>
         )
     }

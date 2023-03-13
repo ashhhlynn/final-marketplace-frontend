@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
-import { Divider, Card} from 'semantic-ui-react'
+import React, { Component } from 'react'
+import { Divider, Card } from 'semantic-ui-react'
 import OrderSummary from './OrderSummary'
-import {connect} from 'react-redux'
-import {checkUser} from '../actions/userActions'
+import { connect } from 'react-redux'
+import { checkUser } from '../actions/userActions'
 
 class UserOrders extends Component {
 
@@ -16,7 +16,7 @@ class UserOrders extends Component {
         ))       
         return (
             <div className="profile">
-                <h2 >order history<Divider></Divider></h2><br></br>
+                <h2 >order history<Divider></Divider></h2><br/>
                 {this.props.user.orders.length !== 0 ?
                     <Card.Group centered>
                         {orders} 

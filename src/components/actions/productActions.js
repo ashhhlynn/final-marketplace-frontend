@@ -29,11 +29,11 @@ export const createProduct = (product) => {
        })
        .then(resp => resp.json())
        .then(data => {
-           if(data.message){
+           if (data.message) {
             window.alert(data.message)
         }
            else {
-               dispatch({type: 'ADD_PRODUCT', data})
+               dispatch({ type: 'ADD_PRODUCT', data })
                window.alert('Your product was successfully created!')
            }           
        })
@@ -65,7 +65,7 @@ export const editProduct = (product) => {
                 }
                 else {
                 console.log(data)
-                dispatch({type: "EDIT_PRODUCT", data, id})
+                dispatch({ type: "EDIT_PRODUCT", data, id })
                 window.alert("Your product was successfully updated")
                 }
         })

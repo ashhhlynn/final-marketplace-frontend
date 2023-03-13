@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { connect } from 'react-redux';
+import React, { Component } from "react"
+import { connect } from 'react-redux'
 import { Form } from 'semantic-ui-react'
 import { editUser } from '../actions/userActions'
 
@@ -78,8 +78,8 @@ class EditUser extends Component {
                         value={this.state.zip} 
                         onChange={this.handleChange}
                     />  
-                    </Form.Group>
-                    <Form.Button className="formButton" color="black" content="Update"/>
+                </Form.Group>
+                <Form.Button className="formButton" color="black" content="Update"/>
             </Form>
         )
     }  
@@ -93,7 +93,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-     editUser: (user) =>  { dispatch(editUser(user)) } ,
+     editUser: (user) =>  { dispatch(editUser(user)) } 
     }
 }
 

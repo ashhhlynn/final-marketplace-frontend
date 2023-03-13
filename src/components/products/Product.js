@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import { Card, Image, Button, Header, Reveal} from 'semantic-ui-react'
+import React, { Component } from 'react'
+import { Card, Image, Button, Header, Reveal } from 'semantic-ui-react'
 import { connect } from "react-redux"
 import { addToCart } from '../actions/cartActions'
 
@@ -23,11 +23,9 @@ class Product extends Component {
                         </Reveal.Content>
                         <Reveal.Content style={{textAlign: "center", backgroundColor:"#F0f0f0", height:"200px"}} hidden>
                             <div className="productCardTwo">  
-                                <br></br>
-                                <i>{i.description}</i><br></br>
-                                <Button circular inverted onClick={(event) => {this.handleClick(event, i)}}>  
-                                    Add to Cart
-                                </Button>
+                                <br/>
+                                <i>{i.description}</i><br/>
+                                <Button circular inverted onClick={(event) => {this.handleClick(event, i)}}>Add to Cart</Button>
                             </div>
                         </Reveal.Content>
                     </Reveal>
@@ -38,7 +36,7 @@ class Product extends Component {
 
     handleClick = (event, product) => {
         event.preventDefault()
-        if (this.props.cart.find((p) => p.id == product.id)) {
+        if (this.props.cart.find((p) => p.id === product.id)) {
             alert("You have already added this item.")
         }
         else {
@@ -61,5 +59,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
- 
 export default connect(mapStateToProps, mapDispatchToProps)(Product)

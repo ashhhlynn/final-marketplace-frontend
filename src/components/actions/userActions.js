@@ -12,12 +12,12 @@ export const createUser = (userData) => {
         })
         .then(resp => resp.json())
         .then(data => {
-            if(data.message){
+            if (data.message) {
                 window.alert(data.message)
             }
             else {
                 localStorage.token = data.jwt;
-                dispatch({type: "SET_CURRENT_USER", user: data.user})
+                dispatch({ type: "SET_CURRENT_USER", user: data.user })
             }
         })
     }
@@ -37,12 +37,12 @@ export const getExistingUser = (userData) => {
         })
         .then(resp => resp.json())
         .then(data => {
-            if(data.message) {
+            if (data.message) {
                 window.alert(data.message)
             }
             else {
                 localStorage.token = data.jwt;
-                dispatch({type: "SET_CURRENT_USER", user: data.user})
+                dispatch({ type: "SET_CURRENT_USER", user: data.user })
                 console.log(data)
             }
         })
@@ -69,7 +69,7 @@ export const checkUser = () => {
         })
         .then(resp => resp.json())
         .then(data => {
-            if(data.message){
+            if (data.message) {
                 localStorage.removeItem("token")
             }
             else {
@@ -98,15 +98,13 @@ export const editUser = (users) => {
                    city: users.city,
                    state: users.state,
                    zip: users.zip
-
                 })
             })
         .then(resp => resp.json())
         .then(data => {
-                console.log(data)
-                window.alert("Your account was successfully updated!")
-                dispatch({type: "SET_CURRENT_USER", user: data.user})
-
+            console.log(data)
+            window.alert("Your account was successfully updated!")
+            dispatch({ type: "SET_CURRENT_USER", user: data.user })
         })
     }
 }

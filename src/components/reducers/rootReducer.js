@@ -99,7 +99,8 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: true
-            }
+            };
+
         case "SUBMIT_ORDER":
             return {
                 ...state, 

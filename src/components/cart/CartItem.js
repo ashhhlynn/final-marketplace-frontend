@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { removeFromCart } from '../actions/cartActions'
 import { Item, Button, Divider, Icon,  Image } from 'semantic-ui-react'
@@ -31,7 +31,9 @@ class CartItem extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return { removeFromCart: (id) => { dispatch(removeFromCart(id)) } }
+    return { 
+        removeFromCart: (id) => { dispatch(removeFromCart(id)) } 
+    }
 }
 
 export default connect(null, mapDispatchToProps)(CartItem)

@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React, { Component } from "react"
+import { connect } from "react-redux"
 import { Form } from 'semantic-ui-react'
 import { editProduct } from '../actions/productActions'
 import { Divider } from 'semantic-ui-react'
-import { checkUser } from '../actions/userActions';
+import { checkUser } from '../actions/userActions'
 
 class EditProduct extends Component {
 
@@ -69,7 +69,7 @@ super(props)
             />
           <Form.Button className="formButton" content='Submit'/>
         </Form>
-    </div>
+      </div>
     )
   }
 }
@@ -77,7 +77,7 @@ super(props)
 const mapDispatchToProps = (dispatch) => {
   return { 
     editProduct: (product) =>  { dispatch(editProduct(product)) } ,
-    checkUser: () =>  { dispatch(checkUser()) },
+    checkUser: () =>  { dispatch(checkUser()) }
   }
 }
 

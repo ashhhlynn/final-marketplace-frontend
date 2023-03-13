@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 import { Link } from 'react-router-dom'
 import { Menu, Icon, Modal, Dropdown } from 'semantic-ui-react'
 import { logOut } from './actions/userActions'
 import { connect } from "react-redux"
-import {createOrder} from './actions/orderActions'
+import { createOrder } from './actions/orderActions'
 import ShoppingCartContainer from './cart/ShoppingCartContainer'
 import ToggleLogin from './ToggleLogin'
 
@@ -46,9 +46,7 @@ class Navbar extends Component {
   render() {
     return (
       <div className="nav">
-        
-          <img src="https://cdn.shopify.com/s/files/1/0253/6701/9565/files/planterina-logo_432e9c62-d54e-4302-8761-6e169c222543_600x300.png?v=1628654999"></img>
-        
+        <img src="https://cdn.shopify.com/s/files/1/0253/6701/9565/files/planterina-logo_432e9c62-d54e-4302-8761-6e169c222543_600x300.png?v=1628654999"></img>
         <Menu className="link-styles" pointing secondary size="large">
           <Menu.Item as={Link} to='/'><h3> home </h3></Menu.Item>
           <Menu.Item as={Link} to ="/createproduct" ><h3> sell </h3></Menu.Item>

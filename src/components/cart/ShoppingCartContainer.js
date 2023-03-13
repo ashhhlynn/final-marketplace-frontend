@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import { connect } from "react-redux";
+import React, { Component } from 'react'
+import { connect } from "react-redux"
 import { List, Button, Divider } from 'semantic-ui-react'
 import CartItem from './CartItem'
 import { Link } from 'react-router-dom'
@@ -16,17 +16,17 @@ class ShoppingCartContainer extends Component {
                 <Divider></Divider>
                 {this.props.cart.length === 0 ? 
                     <>
-                        <h3>Your cart is empty.</h3>
+                    <h3>Your cart is empty.</h3>
                     </>
                 :
                     <>
-                        <List>{items}</List>
-                        <h4>Subtotal: ${this.props.total.toFixed(2)}</h4>
-                        <center>
-                            <Button color="black" className="formButton" as={Link} to="/checkout" onClick={this.props.handleClose}>Checkout</Button>
-                        </center>
+                    <List>{items}</List>
+                    <h4>Subtotal: ${this.props.total.toFixed(2)}</h4>
+                    <center>
+                        <Button color="black" className="formButton" as={Link} to="/checkout" onClick={this.props.handleClose}>Checkout</Button>
+                    </center>
                     </>
-                    }
+                }
             </div>
         )
     }
@@ -35,7 +35,7 @@ class ShoppingCartContainer extends Component {
 const mapStateToProps = (state) => {
     return {
         cart: state.cart,
-        total: state.cartTotal,
+        total: state.cartTotal
     }
 }
 

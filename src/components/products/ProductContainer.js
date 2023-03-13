@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { Card } from 'semantic-ui-react'
 import Product from './Product'
 import { connect } from "react-redux"

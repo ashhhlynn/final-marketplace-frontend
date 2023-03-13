@@ -1,9 +1,9 @@
 import EditProduct from '../products/EditProduct'
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { connect } from "react-redux"
 import { Button, Header, Item, Modal, Divider } from 'semantic-ui-react'
 import { checkUser } from '../actions/userActions'
-import {deleteProduct} from '../actions/productActions'
+import { deleteProduct } from '../actions/productActions'
 
 class UserProduct extends Component {
 
@@ -42,9 +42,9 @@ class UserProduct extends Component {
                         </p> 
                     }               
                     <Item.Image floated="left" rounded src={prod.image_url} size= "small" />
-                    Price:  ${prod.price.toFixed(2)}<br></br>
-                    Posted: {prod.created_at.substring(0, 10)}<br></br>
-                    Description: {prod.description} <br></br>
+                    Price:  ${prod.price.toFixed(2)}<br />
+                    Posted: {prod.created_at.substring(0, 10)}<br />
+                    Description: {prod.description} <br />
                 </Item>
                 <Divider></Divider>
                 <Modal 
@@ -63,8 +63,8 @@ class UserProduct extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return { 
-      checkUser: () =>  { dispatch(checkUser()) },
-      deleteProduct: (product) =>  { dispatch(deleteProduct(product)) }
+        checkUser: () =>  { dispatch(checkUser()) },
+        deleteProduct: (product) =>  { dispatch(deleteProduct(product)) }
     }
 }
 

@@ -1,4 +1,3 @@
-
 export const createOrder = (userId) => {
     return (dispatch) => {
         const token = localStorage.token;
@@ -22,16 +21,15 @@ export const createOrder = (userId) => {
             }
             else {
                 console.log(data)
-                dispatch({type: "CREATE_ORDER", data})
+                dispatch({ type: "CREATE_ORDER", data })
             }
         })
     }
 }
 
-export const sendOrder = (orderId, cart, user, t) => {
+export const sendOrder = (orderId, cart, user, total) => {
     return (dispatch) => {
         dispatch({type: "SUBMIT_ORDER_REQUEST"})
-
         const token = localStorage.token;
         fetch(`http://localhost:3000/orders/${orderId}`, {    
             method: 'PATCH',
@@ -41,7 +39,7 @@ export const sendOrder = (orderId, cart, user, t) => {
                 'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify({
-                total: t,
+                total: total,
                 complete: 1
             })})
         .then(resp => resp.json())
@@ -73,9 +71,9 @@ export const sendOrder = (orderId, cart, user, t) => {
                 }
                 else {
             window.alert("Your product was successfully patched")
-            dispatch({type: "SUBMIT_ORDER"}) 
+            dispatch({ type: "SUBMIT_ORDER" }) 
                 }
-        })
+            })
         }
     }
 }    

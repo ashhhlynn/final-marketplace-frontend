@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import { connect } from "react-redux";
+import React, { Component } from 'react'
+import { connect } from "react-redux"
 import { Item, Divider } from 'semantic-ui-react'
-import { checkUser } from '../actions/userActions';
+import { checkUser } from '../actions/userActions'
 import UserProduct from './UserProduct'
 
 class UserProducts extends Component {
@@ -15,15 +15,15 @@ class UserProducts extends Component {
             <div className="profile">   
                 <h2>plant history<Divider></Divider></h2>
                 {this.props.user.products.length !== 0 ?
-                <>
-                    <Item.Group >
+                    <>
+                    <Item.Group>
                         {products}   
                     </Item.Group> 
-                </>
+                    </>
                 :
-                <>
+                    <>
                     <h5>You currently do not have any products.</h5>
-                </>
+                    </>
                 }
             </div>
         )
@@ -32,7 +32,7 @@ class UserProducts extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return { 
-      checkUser: () =>  { dispatch(checkUser()) },
+      checkUser: () =>  { dispatch(checkUser()) }
     }
 }
 
