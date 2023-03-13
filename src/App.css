@@ -28,9 +28,9 @@ h1, h2, h3, h2, h4, h5 {
 }
 
 .ui.modal > .content{
-    box-shadow: none;
-    font-family: "futura-pt", sans-serif;
-    background-color: #fdfcf9 !important;
+  box-shadow: none;
+  font-family: "futura-pt", sans-serif;
+  background-color: #fdfcf9 !important;
 }
 
 .button.ui.button {
@@ -40,9 +40,16 @@ h1, h2, h3, h2, h4, h5 {
   font-family: "futura-pt", sans-serif;
   line-height: 1.5em;
   z-index: 1;
-  size: "medium";
   margin: auto;
   text-align: center
+}
+
+.formButton  {
+  font-family: "futura-pt", sans-serif;
+  margin: auto !important;
+  text-align: center !important;  
+  width: 300px !important; 
+  margin-top: 2%
 }
 
 body .ui.cards>.card{
@@ -54,6 +61,8 @@ body .ui.cards>.card{
 .about h3 { 
   text-align: right !important;
 }
+
+---- Products ----
 
 .productContainer h1{
   margin-left: 4%;
@@ -75,37 +84,37 @@ body .ui.cards>.card{
   background-color: #FFFFFF !important;
   color: #000000 !important;
   width: 150px !important;
+  margin-bottom: 0%
 }
 
 .productCard h3 {
   text-align: left  !important;
   box-shadow: none !important;
- margin-top:2%;
+  margin-top:2%;
 }
 
-.cart .button.ui.button{
-  background-color: #26453e;
-  color:#FFFFF0;
-  width: 350px;
-  margin-top: 4%;
-  text-align: center !important;
-  margin-right: auto !important;
-  margin-left: auto !important;
-
-}
+---- Cart ----
 
 .cartContainer h2, h3, h4{
   text-align: center !important;
 }
 
+---- Checkout ----
+
 .checkoutButtons .button.ui.button{
-margin-top: 2%;
-margin-bottom: 2%;
-width: 200px;
-background-color: #26453e  !important;
-color:#FFFFF0 !important;
-line-height: 1.5em;
-z-index: 1;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  width: 200px;
+  background-color: #26453e  !important;
+  color:#FFFFF0 !important;
+  line-height: 1.5em;
+  z-index: 1;
+}
+
+.totals .ui.table {
+  font-size: 16px;
+  margin-top: -2%;
+  width: 390px ;
 }
 
 .shipping h1{
@@ -113,6 +122,8 @@ z-index: 1;
   margin-top:3%;
   margin-bottom:2%
 }
+
+---- Profile ----
 
 .profile h2, h5 {
   text-align: center;
@@ -133,57 +144,59 @@ z-index: 1;
   color: #26453e
 }
 
-.formButtons .button.ui.button{
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .profileProducts h3 {
-  text-align: left  !important;;
+  text-align: left  !important;
+  margin-top:1%
 }
 
+.orderSummary h2{
+  margin-left: 2% !important;
+  margin-top: 2% !important;
+  text-align: left
+}
 
+.orderSummary p{
+   text-align: right
+}
 
+.orderSummary .ui.card{
+  width: 500px
+}
 
+.orderSummary .ui.card > .header{
+  height: 47px
+}
 
-.editProduct h2, .button.ui.button  {
+.orderSummary .ui.card > .content{
+  margin-left: 7%
+}
+
+.orderTable .ui.table{
+  margin-top: 2%;
+   width:390px
+}
+
+.profileNav .link-styles {
+  text-align: left;
+  height:590px;
+  background: #ffffff;
+}
+
+---- Product Forms ----
+
+.editProduct h2  {
   text-align: center !important;
-  font-weight: normal !important;
-  margin: auto;
 }
 
-.ui.form > .input > label{
-  font-weight: normal !important;
+.createProduct h1{
+  margin-top: 2%;
+  margin-left: 29%
 }
 
-
-.ui.form > button {
-  margin: auto !important;
-
+.createProduct .ui.segment{
+  text-align: center;
+  margin-bottom: 5%  !important;
+  width: 700px;
+  margin-left: 5.5%;
+  margin-top: -25.5%
 }
-
-
-
-
-
-
-
-
-
-  .ui.modal > .content.form >.button{
-    box-shadow: none;
-    font-family: "futura-pt", sans-serif;
-    background-color: black !important;   }
-  
-  .ui.form > .button {
-    box-shadow: none;
-    font-family: "futura-pt", sans-serif;
-    text-align: center !important;  
-  }
-
-
-
-
-
-

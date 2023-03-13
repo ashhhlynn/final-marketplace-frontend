@@ -67,7 +67,7 @@ super(props)
               value={this.state.image_url} 
               onChange={this.handleChange}
             />
-          <div className = "formButtons"><Form.Button content='Submit'/></div>
+          <Form.Button className="formButton" content='Submit'/>
         </Form>
     </div>
     )

@@ -37,7 +37,7 @@ class CheckoutContainer extends Component {
                             <div className="checkoutButtons">
                                 <Button circular content="Place Order" onClick={(event) => {this.handleSendOrder(event, orderTotal)}}>
                                 </Button> 
-                                <Button as={Link} to ="/products" circular content="Back to  Shop">
+                                <Button as={Link} to ="/products" circular content="Back to Shop">
                                 </Button> 
                             </div>
                         </List>

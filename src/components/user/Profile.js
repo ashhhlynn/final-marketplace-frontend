@@ -32,7 +32,7 @@ function Profile(props) {
     <div className="profileNav">    
       <Grid columns={2} stackable textAlign='left'>
         <Grid.Column style= {{width: "370px" }} >
-          <Menu className="link-styles" style={{textAlign:"left", height:"590px", background: "#ffffff"}} vertical size="large"> 
+          <Menu className="link-styles" vertical size="large"> 
               <h1 >Hi, {props.user.name}!</h1>
               <Link onClick={showA}><h4>User Information</h4></Link>
               <Link onClick={showB}><h4>Order History</h4></Link>

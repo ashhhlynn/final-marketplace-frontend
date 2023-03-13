@@ -79,7 +79,7 @@ class EditUser extends Component {
                         onChange={this.handleChange}
                     />  
                     </Form.Group>
-                    <Form.Button inverted style={{color:"#ffffff", backgroundColor:"#000000", width:"300px", marginTop:"2%"}} content="Update"/>
+                    <Form.Button className="formButton" color="black" content="Update"/>
             </Form>
         )
     }  

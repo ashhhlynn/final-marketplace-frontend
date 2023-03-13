@@ -5,8 +5,8 @@ class Totals extends Component {
 
     render() {
         return (
-            <>
-            <Table compact basic='very' style={{fontSize:"16px", marginTop:"-2%", width:"390px"}}>
+            <div className="totals">
+            <Table compact basic='very'>
                 <Table.Body>    
                     <Table.Row>
                         <Table.Cell>Subtotal</Table.Cell>
@@ -26,7 +26,7 @@ class Totals extends Component {
                     </Table.Row>
                 </Table.Body>   
             </Table>             
-            </>
+            </div>
         )
     }   
 }

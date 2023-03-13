@@ -31,7 +31,7 @@ class UserProduct extends Component {
         return (      
             <div className="profileProducts">
                 <Item style={{width:"570px", verticalAlign:"middle", marginLeft:"3%", display: "inline-block"}}>
-                    <Header as="h3" style={{ marginTop:"1%"}}>{prod.title}</Header>
+                    <Header as="h3">{prod.title}</Header>
                     {prod.buyer ?
                         <p style={{marginTop:"-1.5%"}}>Sold to user {prod.buyer} on {prod.updated_at.substring(0, 10)}</p>
                     : 
