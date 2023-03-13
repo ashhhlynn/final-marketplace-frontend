@@ -75,7 +75,6 @@ body .ui.cards>.card{
   font-family: "futura-pt", sans-serif;
   font-weight: 400;
   background-color: #fdfcf9
-
 }
 
 .home .ui.item{
@@ -136,12 +135,9 @@ text-align: left;
   margin-top: 3%  !important;
 }
 
-
-
 .cartContainer h2, h3, h4{
   text-align: center !important;
 }
-
 
 .checkoutContainer .ui.list {
   margin-top: 4%;
@@ -181,7 +177,8 @@ text-align: left;
 }
 
 .profile {
-  margin-bottom: 12%
+  margin-bottom: 12%;
+  min-height: 410px;
 }
 
 .profile h2, h5 {
@@ -240,8 +237,6 @@ text-align: left;
   height:100%;
   background: #ffffff;
 }
-
-
 
 .editProduct h2  {
   text-align: center !important;
