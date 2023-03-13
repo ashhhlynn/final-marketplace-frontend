@@ -9,7 +9,7 @@ const About = () => {
                 <h1>about us</h1>
                 <Divider></Divider>
                 <h3>
-                    Planterina is a buy and sell plant market with a mission to inspire green places by connecting people with plants. We believe a strong relationship with plants will lead to greener and more sustainable lifestyles. Enjoy healthy, happy plants for you and your loved ones delivered straight to your door.
+                    Planterina is a buy and sell plant market with a mission to inspire green places by connecting people with plants. We believe a strong relationship with plants will lead to greener and more sustainable lifestyles. Enjoy healthy, happy plants delivered straight to your door.
                 </h3>
             </Item><br></br><br></br><br></br><br></br>
         </div>
