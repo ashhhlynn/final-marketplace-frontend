@@ -24,7 +24,7 @@ class OrderSummary extends Component {
                     <Card.Header >
                         <h2> 
                             Order #{this.props.order.id}
-                            <p floated="right"  style={{ marginTop:"-7%"}}>{this.props.order.created_at.substring(0, 10)}<Icon name="checkmark"></Icon></p> 
+                            <p floated="right"  style={{ marginTop:"-6.5%"}}>{this.props.order.created_at.substring(0, 10)}<Icon name="checkmark"></Icon></p> 
                         </h2>
                     </Card.Header> 
                     <Card.Content>

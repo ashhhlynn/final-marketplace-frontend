@@ -171,6 +171,9 @@ text-align: right;
   margin-right:2%
 }
 
+.profile {
+  margin-bottom: 12%
+}
 
 .profile h2, h5 {
   text-align: center;
@@ -196,9 +199,10 @@ text-align: right;
 }
 
 .orderSummary h2{
-  margin-left: 2% !important;
+  margin-left: 2.5% !important;
   margin-top: 2% !important;
-  text-align: left
+  text-align: left;
+  font-size: 22px
 }
 
 .orderSummary p{
@@ -224,7 +228,7 @@ text-align: right;
 
 .profileNav .link-styles {
   text-align: left;
-  height:590px;
+  height:100%;
   background: #ffffff;
 }
 
