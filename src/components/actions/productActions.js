@@ -60,9 +60,14 @@ export const editProduct = (product) => {
                 })})
             .then(resp => resp.json())
             .then(data => {
+                if (data.message) {
+                    window.alert(data.message)
+                }
+                else {
                 console.log(data)
                 dispatch({type: "EDIT_PRODUCT", data, id})
                 window.alert("Your product was successfully updated")
+                }
         })
     }
 }

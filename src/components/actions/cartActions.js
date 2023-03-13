@@ -20,7 +20,7 @@ export const addToCart = (product, order) => {
        .then(data => {
             console.log(data)
             if (data.message) {
-                alert(data.message)
+                window.alert(data.message)
             }
            else {
                dispatch({type: "ADD_TO_CART", product})

@@ -1,5 +1,5 @@
 
-import {React, Component }from "react";
+import {React, Component }from "react"
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import ProductContainer from './components/products/ProductContainer'
 import Home from './components/Home'
@@ -26,16 +26,16 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-            <Navbar />
-            <Routes>
-              <Route exact path="/" element={<Home />} />
-              <Route exact path="/products" element={<ProductContainer/>} />
-              <Route exact path="/createproduct" element={<CreateProduct />} />
-              <Route exact path="/checkout" element={<CheckoutContainer />} />
-              <Route exact path="/profile" element={<Profile user={this.props.user}/>} />
-            </Routes>
-            <Footer />
-          </div>
+          <Navbar />
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/products" element={<ProductContainer />} />
+            <Route exact path="/createproduct" element={<CreateProduct />} />
+            <Route exact path="/checkout" element={<CheckoutContainer />} />
+            <Route exact path="/profile" element={<Profile user={this.props.user} />} />
+          </Routes>
+          <Footer />
+        </div>
       </Router>
     )
   }
@@ -43,7 +43,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-      user: state.currentUser,
+    user: state.currentUser
   }
 }
 

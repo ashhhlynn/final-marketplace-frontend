@@ -1,3 +1,4 @@
+
 export const createOrder = (userId) => {
     return (dispatch) => {
         const token = localStorage.token;
@@ -29,6 +30,8 @@ export const createOrder = (userId) => {
 
 export const sendOrder = (orderId, cart, user, t) => {
     return (dispatch) => {
+        dispatch({type: "SUBMIT_ORDER_REQUEST"})
+
         const token = localStorage.token;
         fetch(`http://localhost:3000/orders/${orderId}`, {    
             method: 'PATCH',
@@ -43,8 +46,13 @@ export const sendOrder = (orderId, cart, user, t) => {
             })})
         .then(resp => resp.json())
         .then(data => {
+            if (data.message) {
+                window.alert(data.message)
+            }
+            else {
             console.log(data)
             window.alert("Your order was successfully submitted!")           
+            }
         })
         for (let i = 0; i < (cart.length + 1); i++) {
             fetch(`http://localhost:3000/products/${cart[i].id}`, {  
@@ -60,9 +68,13 @@ export const sendOrder = (orderId, cart, user, t) => {
             })})
             .then(resp => resp.json())
             .then(data => {
-            console.log(data)
+                if (data.message) {
+                    window.alert(data.message)
+                }
+                else {
             window.alert("Your product was successfully patched")
             dispatch({type: "SUBMIT_ORDER"}) 
+                }
         })
         }
     }

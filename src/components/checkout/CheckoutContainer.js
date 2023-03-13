@@ -16,8 +16,9 @@ class CheckoutContainer extends Component {
             window.alert('Must have items in cart')
         }
         else {
+            let cart = this.props.cart
             let t = (orderTotal*1.1+10).toFixed(2)
-            this.props.sendOrder(this.props.currentOrder,this.props.cart, this.props.user, t)
+            this.props.sendOrder(this.props.currentOrder, cart, this.props.user, t)
         }
     }
        
