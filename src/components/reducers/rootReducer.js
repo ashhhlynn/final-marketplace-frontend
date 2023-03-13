@@ -59,6 +59,7 @@ const rootReducer = (state = initialState, action) => {
                 cart: [...state.cart, action.product],
                 cartTotal: state.cartTotal + action.product.price,
                 loading: false,
+                products: [...state.products.filter(item=> item.id !== action.product.id)]
             };
 
         case "REMOVE_FROM_CART":
@@ -67,6 +68,7 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 cart: newCartProducts, 
+                products: [...state.products, removeProduct],
                 cartTotal: state.cartTotal - removeProduct.price,
                 loading: false,
             };

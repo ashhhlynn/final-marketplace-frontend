@@ -29,7 +29,6 @@ export const createOrder = (userId) => {
 
 export const sendOrder = (orderId, cart, user, total) => {
     return (dispatch) => {
-        dispatch({type: "SUBMIT_ORDER_REQUEST"})
         const token = localStorage.token;
         fetch(`http://localhost:3000/orders/${orderId}`, {    
             method: 'PATCH',
@@ -48,28 +47,25 @@ export const sendOrder = (orderId, cart, user, total) => {
                 window.alert(data.message)
             }
             else {
-            window.alert("Your order was successfully submitted!")           
+                window.alert("Your order was submitted!")
+                let oi = data.order_items.map(o => o.product_id)
+                for (let i = 0; i < (oi.length + 1); i++) {
+                    fetch(`http://localhost:3000/products/${cart[i].id}`, {  
+                        method: 'PATCH',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            Accept: 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: JSON.stringify({
+                        sold: 1,
+                        buyer: user.id,
+                    })})
+                .then(resp => resp.json())
+                    dispatch({ type: "SUBMIT_ORDER" }) 
+                }
+ 
             }
         })
-        for (let i = 0; i < (cart.length + 1); i++) {
-            fetch(`http://localhost:3000/products/${cart[i].id}`, {  
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json',
-                 Accept: 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify({
-               sold: 1,
-               buyer: user.id,
-            })})
-            .then(resp => resp.json())
-            .then(data => {
-                window.alert("Your product was successfully patched")
-                dispatch({ type: "SUBMIT_ORDER" }) 
-            })
-        }
-    }
-}    
-
-
+    }    
+}

@@ -24,7 +24,7 @@ class Product extends Component {
                         <Reveal.Content style={{textAlign: "center", backgroundColor:"#F0f0f0", height:"200px"}} hidden>
                             <div className="productCardTwo">  
                                 <br/>
-                                <i>{i.description}</i><br/>
+                                <i>{i.description}</i><br/><br />
                                 <Button circular inverted onClick={(event) => {this.handleClick(event, i)}}>Add to Cart</Button>
                             </div>
                         </Reveal.Content>
