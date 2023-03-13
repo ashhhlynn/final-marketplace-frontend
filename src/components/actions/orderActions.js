@@ -48,7 +48,6 @@ export const sendOrder = (orderId, cart, user, total) => {
                 window.alert(data.message)
             }
             else {
-            console.log(data)
             window.alert("Your order was successfully submitted!")           
             }
         })
@@ -66,13 +65,8 @@ export const sendOrder = (orderId, cart, user, total) => {
             })})
             .then(resp => resp.json())
             .then(data => {
-                if (data.message) {
-                    window.alert(data.message)
-                }
-                else {
-            window.alert("Your product was successfully patched")
-            dispatch({ type: "SUBMIT_ORDER" }) 
-                }
+                window.alert("Your product was successfully patched")
+                dispatch({ type: "SUBMIT_ORDER" }) 
             })
         }
     }

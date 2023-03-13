@@ -7,6 +7,7 @@ import { checkUser } from '../actions/userActions'
 import Totals from './Totals'
 import EditUser from '../user/EditUser'
 import { Link } from 'react-router-dom'
+import { fetchProducts } from '../actions/productActions'
 
 class CheckoutContainer extends Component {
 
@@ -66,7 +67,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         sendOrder: (orderId, cart, user, total) => { dispatch(sendOrder(orderId, cart, user, total)) },
-        checkUser: () =>  { dispatch(checkUser()) }
+        checkUser: () =>  { dispatch(checkUser()) },
+        fetchProducts: () =>  { dispatch(fetchProducts()) }
     }
 }
 
