@@ -1,26 +1,27 @@
-<h1>Planterina Marketplace Frontend: </h1>
+<h1>Seedlink Marketplace Frontend: </h1>
 
   
-  Planterina is a buy and sell plants ecommerce app for Flatiron's capstone project. The frontend is a Redux/React App; the backend is a Rails API. Users can create plant products to sell and buy products by other users by adding them to a shopping cart. 
+  Seedlink is a buy and sell plants ecommerce app for Flatiron's capstone project. The frontend is a Redux/React App; the backend is a Rails API. Users can create plant products to sell and buy products by other users by adding them to a shopping cart. 
   
 <h2> Functionality: </h2>
 
-Users can edit their Account information.
+Users creat accounts and sign in.
 
-
-Users can edit and delete Product information for the products they created. 
-
+Users can view products and sort by price & alphabetical order.
 
 Users can add and remove items from a shopping cart. 
 
+Users can add and remove items at checkout.
+
+Users can edit their Account information from their user profile and checkout.
+
+Users can edit and delete Product information for the products they created. 
 
 Users can view both order and product histories.
 
 
 
 <h2> Tech Stack:</h2>  
-
-This web app employs the following technologies(not inclusive):
 
 
 
