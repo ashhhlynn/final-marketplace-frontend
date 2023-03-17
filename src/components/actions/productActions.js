@@ -7,6 +7,29 @@ export const fetchProducts = () => {
     }
 }
 
+export const sortHighPrice = () => {
+    return (dispatch) => {
+        dispatch({ type: "SORT_HIGH_PRICE" })
+    }
+}
+
+export const sortLowPrice = () => {
+    return (dispatch) => {
+        dispatch({ type: "SORT_LOW_PRICE" })
+    }
+}
+
+export const sortAZ = () => {
+    return (dispatch) => {
+        dispatch({ type: "SORT_AZ" })
+    }
+}
+export const sortZA = () => {
+    return (dispatch) => {
+        dispatch({ type: "SORT_ZA" })
+    }
+}
+
 export const createProduct = (product) => {
     return (dispatch) => {
         const token = localStorage.token;

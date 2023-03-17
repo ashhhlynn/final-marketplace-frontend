@@ -1,36 +1,37 @@
 import React, { Component } from 'react'
-import { Card, Image, Button, Header, Reveal } from 'semantic-ui-react'
+import { Card, Image, Button, Header, Reveal, Icon } from 'semantic-ui-react'
 import { connect } from "react-redux"
 import { addToCart } from '../actions/cartActions'
+import { Link } from 'react-router-dom'
 
 class Product extends Component {
 
     render() {
         const i = this.props.product
-        return (
+        return (    
             <Card key={i.id}>
                 <Card.Content>
-                    <Reveal animated='move'>  
-                        <Reveal.Content visible>
-                            <div className="productCard">     
-                                <Image position="center" src={i.image_url}/>
-                                <Header floated="right" >
-                                    <h4>${i.price.toFixed(2)}</h4>
-                                </Header>
-                                <Card.Header as="h3">{i.title}</Card.Header>
-                                <Card.Meta style={{marginTop:"-3%"}}><i>by user {i.user_id}</i></Card.Meta> 
-                            </div>
-                        </Reveal.Content>
-                        <Reveal.Content style={{textAlign: "center", backgroundColor:"#F0f0f0", height:"200px"}} hidden>
-                            <div className="productCardTwo">  
-                                <br/>
-                                <i>{i.description}</i><br/><br />
-                                <Button circular inverted onClick={(event) => {this.handleClick(event, i)}}>Add to Cart</Button>
-                            </div>
-                        </Reveal.Content>
-                    </Reveal>
+                    <div className="productCard"> 
+                        <Reveal animated='move'>  
+                            <Reveal.Content visible>
+                                <Image position="center" src={i.image_url}/> 
+                            </Reveal.Content>
+                            <Reveal.Content style={{textAlign: "center", backgroundColor:"#F0f0f0", height:"200px"}} hidden>
+                                <div className="productCardTwo">  
+                                    <h5><i> {i.description}</i></h5>
+                                </div>
+                            </Reveal.Content>   
+                        </Reveal>
+                        <Header floated="right" >
+                            <h4>
+                                ${i.price.toFixed(2)} <Link><Icon onClick={(event) => {this.handleClick(event, i)}} color="grey" name="plus"></Icon></Link>
+                            </h4>
+                        </Header>
+                        <Card.Header as="h3">{i.title}</Card.Header>
+                        <Card.Meta style={{marginTop:"-3%"}}><i>by user {i.user_id}</i></Card.Meta>      
+                    </div>
                 </Card.Content>
-            </Card>
+            </Card>  
         )      
     }
 

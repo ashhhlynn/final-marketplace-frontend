@@ -30,9 +30,8 @@ class CheckoutContainer extends Component {
             <div className="checkoutContainer">
                 <Grid columns={2} stackable divided>
                     <Grid.Column style={{ backgroundColor:"#ffffff"}} >
-                        <List><h1>your order<Button floated="right" as={Link} to ="/products" circular content="Back to Shop"></Button> 
-</h1><br/>
-
+                        <List>
+                            <h1>your order<Button floated="right" as={Link} to ="/products" circular content="Back to Shop"></Button></h1><br/>
                             {items}
                             <Totals total={this.props.total}/>
                             <div className="checkoutButtons">

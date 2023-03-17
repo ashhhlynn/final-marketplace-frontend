@@ -78,7 +78,7 @@ body .ui.cards>.card{
 }
 
 
-.home h4{
+.home h4, h2{
   letter-spacing: .25px
 }
 
@@ -123,6 +123,12 @@ text-align: left;
   margin-bottom: 0%
 }
 
+.productCardTwo h5{
+  margin-top: 4%  !important;
+  margin-left: 2%  !important;
+  margin-right: 2%  !important;
+}
+
 .productCard h3 {
   text-align: left  !important;
   box-shadow: none !important;
@@ -131,6 +137,7 @@ text-align: left;
 
 .productCard .ui.header {
   margin-top: 3%  !important;
+  margin-right: -3.5% !important;
 }
 
 .cartContainer h2, h3, h4{
@@ -249,8 +256,8 @@ text-align: left;
 
 .createProduct h4{
   margin-left: -34%;
-  margin-top: -.75%;
-  letter-spacing: .25px;
+  margin-top: -.5%;
+  letter-spacing: .2px;
  
 }
 

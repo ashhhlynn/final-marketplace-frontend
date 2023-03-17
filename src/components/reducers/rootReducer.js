@@ -24,6 +24,30 @@ const rootReducer = (state = initialState, action) => {
                 loading: false,
             };
 
+        case "SORT_HIGH_PRICE":
+            return {
+                ...state,
+                products: [...state.products.slice().sort((item1, item2) => item2.price - item1.price)]
+            };    
+
+        case "SORT_LOW_PRICE":
+            return {
+                ...state,
+                products: [...state.products.slice().sort((item1, item2) => item1.price - item2.price)]
+            };    
+
+        case "SORT_AZ":
+            return {
+                ...state,
+                products: [...state.products.slice().sort((item1, item2) => item2.title < item1.title ? 1 : -1)]
+            }; 
+
+        case "SORT_ZA":
+            return {
+                ...state,
+                products: [...state.products.slice().sort((item1, item2) => item2.title < item1.title ? -1 : 1)]
+            }; 
+            
         case "ADD_PRODUCT_REQUEST":
             return {
                 ...state,
