@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
-import { Form, Divider } from 'semantic-ui-react'
+import { Form } from 'semantic-ui-react'
 import { createProduct } from '../actions/productActions'
 import { checkUser } from '../actions/userActions'
 
