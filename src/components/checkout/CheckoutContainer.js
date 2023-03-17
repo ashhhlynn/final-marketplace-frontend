@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { connect } from "react-redux"
 import { List, Button, Divider, Grid } from 'semantic-ui-react'
 import CartItem from '../cart/CartItem'
@@ -64,7 +64,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         sendOrder: (orderId, total) => { dispatch(sendOrder(orderId, total)) },
-        checkUser: () =>  { dispatch(checkUser()) },
+        checkUser: () =>  { dispatch(checkUser()) }
     }
 }
 

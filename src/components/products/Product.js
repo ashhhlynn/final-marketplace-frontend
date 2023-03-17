@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Image, Button, Header, Reveal, Icon } from 'semantic-ui-react'
+import { Card, Image, Header, Reveal, Icon } from 'semantic-ui-react'
 import { connect } from "react-redux"
 import { addToCart } from '../actions/cartActions'
 import { Link } from 'react-router-dom'
@@ -18,7 +18,7 @@ class Product extends Component {
                             </Reveal.Content>
                             <Reveal.Content style={{textAlign: "center", backgroundColor:"#F0f0f0", height:"200px"}} hidden>
                                 <div className="productCardTwo">  
-                                    <h5><i> {i.description}</i></h5>
+                                    <h5><i>{i.description}</i></h5>
                                 </div>
                             </Reveal.Content>   
                         </Reveal>
@@ -37,12 +37,7 @@ class Product extends Component {
 
     handleClick = (event, product) => {
         event.preventDefault()
-        if (this.props.cart.find((p) => p.id === product.id)) {
-            alert("You have already added this item.")
-        }
-        else {
-            this.props.addToCart(product, this.props.currentOrder)
-        }
+        this.props.addToCart(product, this.props.currentOrder)
     }    
 
 }
@@ -50,7 +45,7 @@ class Product extends Component {
 const mapStateToProps = (state) => {
     return { 
         currentOrder: state.currentOrder,
-        cart: state.cart,
+        cart: state.cart
     }
 }
 

@@ -27,7 +27,7 @@ class UserProduct extends Component {
     }
   
     render () {
-        let prod= this.props.prod
+        let prod = this.props.prod
         return (      
             <div className="profileProducts">
                 <Item style={{width:"570px", verticalAlign:"middle", marginLeft:"3%", display: "inline-block"}}>
@@ -36,7 +36,7 @@ class UserProduct extends Component {
                         <p style={{marginTop:"-1.5%"}}><b>Sold</b> | user {prod.buyer} on {prod.updated_at.substring(0, 10)}</p>
                     : 
                         <p style={{marginTop:"-1.2%"}}>  
-                            <Button size="tiny" basic color="black" circular floated="right" onClick= { (event) => { this.handleDelete(event, prod.id)}}>Delete</Button>
+                            <Button size="tiny" basic color="black" circular floated="right" onClick={(event) => { this.handleDelete(event, prod.id)}}>Delete</Button>
                             <Button size="tiny" floated="right"  basic color="black" circular onClick={this.handleOpen}>Update</Button>
                             <b>Active</b>
                         </p> 
@@ -53,7 +53,7 @@ class UserProduct extends Component {
                     closeIcon
                 >
                     <Modal.Content >
-                        <EditProduct product={prod} key={prod.id} handleClose={this.handleClose}/>
+                        <EditProduct product={prod} key={prod.id} handleClose={this.handleClose} />
                     </Modal.Content>
                 </Modal>
             </div>

@@ -14,15 +14,14 @@ function ToggleLogin({ onLogin }) {
                         <Link onClick={() => setShowLogin(false)}> Register</Link>
                     </p>
                 </>
-                ) : (
+            ) : (
                 <>
                 <Signup onLogin={onLogin}/><br></br>
                     <p>Already have an account? 
                         <Link onClick={() => setShowLogin(true)}> Login</Link>
                     </p>
                 </>
-                )
-            }    
+            )}    
         </div>
     )
 }

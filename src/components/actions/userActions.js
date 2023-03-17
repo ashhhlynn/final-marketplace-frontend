@@ -51,7 +51,7 @@ export const getExistingUser = (userData) => {
 
 export const logOut = () => {
     return (dispatch) => {
-        dispatch({type: "LOGOUT"})
+        dispatch({ type: "LOGOUT" })
     }
 }
 
@@ -73,7 +73,7 @@ export const checkUser = () => {
                 localStorage.removeItem("token")
             }
             else {
-                dispatch({type: "SET_CURRENT_USER", user: data.user})
+                dispatch({ type: "SET_CURRENT_USER", user: data.user })
                 console.log(data)
             }            
         })

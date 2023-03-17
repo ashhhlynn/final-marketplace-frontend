@@ -1,10 +1,10 @@
 import React, { Component } from "react"
-import { Item, Divider, Button, } from 'semantic-ui-react'
-import {connect} from 'react-redux'
+import { Item, Divider, Button } from 'semantic-ui-react'
+import { connect } from 'react-redux'
 import Background from './Background'
 import AboutCard from './AboutCard'
 import { Link } from 'react-router-dom'
-import {createOrder} from './actions/orderActions'
+import { createOrder } from './actions/orderActions'
 
 class Home extends Component{
 
@@ -39,9 +39,9 @@ class Home extends Component{
                 </Item>
                 <Divider></Divider>
                 <Item className="aboutTwo">
-                    <br></br><h1>spring is here</h1>
+                    <br></br><h1>welcome spring</h1>
                     <Divider></Divider>
-                    <h3>It's officially Peony season! Kick off the new season by shopping everyone’s favorite fluffy flower.</h3>
+                    <h3>Peonies are in full bloom! Kick off the new season by shopping everyone’s favorite fluffy flower.</h3>
                     <Button as={Link} to ="/products" style={{ width:"180px"}} onClick={this.handleCreateOrder} size="huge">Shop Now</Button>
                     <img style={{marginTop: "-55%", marginLeft:"130%", objectFit: "cover", objectPosition: "0% 0%"}}floated="left" width="480px" height="350px" 
                     src="https://media.urbanstems.com/image/upload/f_auto/w_850,q_80/Catalogs/urbanstems-master/Spring23/Peony%20Palette/Peony_Palette_Middle.jpg" alt="abttwo"/>

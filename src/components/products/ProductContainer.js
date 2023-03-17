@@ -35,11 +35,8 @@ class ProductContainer extends Component {
             <>
             <div className="productContainer">
                 <img src="https://cdn.shopify.com/s/files/1/0019/8361/0978/collections/plants1_2000x.jpg?v=1673559695" alt="succulent"/>
-                <Header  floated="right" style={{marginRight:"5%", marginTop:"1.7%"}}>
-                    <Button id="1" circular basic onClick={(event)=>{this.sortItems(event)}}>Price High to Low</Button> 
-                    <Button id="2" circular basic onClick={(event)=>{this.sortItems(event)}}>Price Low to High</Button>
-                    <Button id="3"circular basic onClick={(event)=>{this.sortItems(event)}}>A to Z</Button>
-                    <Button id="4"circular basic onClick={(event)=>{this.sortItems(event)}}>Z to A</Button>
+                <Header floated="right" style={{marginRight:"5%", marginTop:"1.7%"}}>
+                    <Button id="1" circular basic onClick={(event)=>{this.sortItems(event)}}>Price High to Low</Button> <Button id="2" circular basic onClick={(event)=>{this.sortItems(event)}}>Price Low to High</Button> <Button id="3"circular basic onClick={(event)=>{this.sortItems(event)}}>A to Z</Button> <Button id="4"circular basic onClick={(event)=>{this.sortItems(event)}}>Z to A</Button>
                 </Header>
                 <h1>shop plants </h1> 
             </div>

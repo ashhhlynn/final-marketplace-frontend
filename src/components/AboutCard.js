@@ -2,11 +2,11 @@ import { Icon, Card, Segment } from 'semantic-ui-react'
 
 const AboutCard = () => {
     return (
-        <Segment className="aboutCard">    
+        <Segment className="aboutCard">       
             <Card.Group centered >
-                <Card >
+                <Card>
                     <center>
-                        <Icon name="recycle" size="huge"></Icon>
+                        <Icon centered name="recycle" size="huge"></Icon>
                         <h2>Responsibly Sourced</h2>
                         <h4 >Sustainably grown by people who care.</h4>
                     </center>
@@ -24,8 +24,8 @@ const AboutCard = () => {
                         <h2>Flat Delivery Fee</h2>
                         <h4 >Enjoy flat rate delivery fee of $10.00.</h4>
                     </center>
-                </Card>     
-            </Card.Group>  
+                </Card> 
+            </Card.Group>     
         </Segment>             
     )
 }
