@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import { connect } from "react-redux"
 import { Form } from 'semantic-ui-react'
 import { editProduct } from '../actions/productActions'
-import { Divider } from 'semantic-ui-react'
 import { checkUser } from '../actions/userActions'
 
 class EditProduct extends Component {
