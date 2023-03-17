@@ -5,7 +5,7 @@
   
 <h2> Functionality: </h2>
 
-Users creat accounts and sign in.
+Users can create an account and sign in.
 
 Users can view products and sort by price & alphabetical order.
 
