@@ -12,7 +12,7 @@ class UserOrders extends Component {
 
     render () {
         const orders = this.props.user.orders.map((order) => (
-              <OrderSummary order={order} key={order.id}/>
+              <OrderSummary order={order} key={order.id} />
         ))       
         return (
             <div className="profile">

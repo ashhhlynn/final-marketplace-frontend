@@ -17,7 +17,6 @@ class EditUser extends Component {
     handleSubmit = (event, users) => {
         event.preventDefault()
         this.props.editUser(users)
-        this.props.handleClose();
     }
 
     handleChange = (event) => {

@@ -6,7 +6,7 @@ const AboutCard = () => {
             <Card.Group centered >
                 <Card>
                     <center>
-                        <Icon centered name="recycle" size="huge"></Icon>
+                        <Icon name="recycle" size="huge"></Icon>
                         <h2>Responsibly Sourced</h2>
                         <h4 >Sustainably grown by people who care.</h4>
                     </center>
