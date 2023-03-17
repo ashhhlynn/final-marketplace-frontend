@@ -43,9 +43,9 @@ super(props)
               value={this.state.title} 
               onChange={this.handleChange}
             />
-            <Form.Input
+            <Form.TextArea
               required
-              type="text"
+              type="textarea"
               id="description"
               label="Description"
               value={this.state.description} 

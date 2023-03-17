@@ -40,7 +40,7 @@ h1, h2, h3, h2, h4, h5 {
 
 .ui.modal {
   box-shadow: none;
-  width: 460px !important;
+  width: 480px !important;
   background-color: #fdfcf9 !important;
 }
 
@@ -235,7 +235,15 @@ text-align: left;
   min-height: 410px;
 }
 
-.profile h2, h5 {
+.profile h2 {
+  text-align: center;
+  letter-spacing: .7px;
+  font-size: 26px;
+  margin-bottom: -1%
+
+}
+
+.profile h5 {
   text-align: center;
 }
 
@@ -252,7 +260,9 @@ text-align: left;
 .profileNav h1{
   text-align: center !important;
   margin-top:15% !important;
-  color: #26453e
+  color: #26453e;
+  font-size: 36px;
+  font-weight: bold !important;
 }
 
 .profileProducts h3 {
@@ -262,18 +272,21 @@ text-align: left;
 }
 
 .orderSummary h2{
-  margin-left: 2.5% !important;
-  margin-top: 2% !important;
-  text-align: left;
-  font-size: 22px
+  margin-top: 2.5% !important;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
 }
 
-.orderSummary p{
-   text-align: right
+.orderSummary .ui.icon{
+  margin-left: 20% !important;
+  margin-right: 20% !important;
+
 }
+
 
 .orderSummary .ui.card{
-  width: 500px
+  width: 570px
 }
 
 .orderSummary .ui.card > .header{
@@ -281,7 +294,8 @@ text-align: left;
 }
 
 .orderSummary .ui.card > .content{
-  margin-left: 7%
+  margin-left: 13%;
+  margin-right: 15.5%
 }
 
 .orderTable .ui.table{

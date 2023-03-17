@@ -7,8 +7,8 @@ class Account extends Component {
     render() {               
         return (
            <div className="profile">   
-                <h2>User Settings<Divider></Divider></h2>
-                <EditUser />
+                <h2>user settings</h2><Divider></Divider>
+                <div style={{marginLeft:"3%", marginRight:"3%"}}><EditUser /></div>
             </div>
         )
     }

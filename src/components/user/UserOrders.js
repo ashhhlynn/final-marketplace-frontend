@@ -16,7 +16,7 @@ class UserOrders extends Component {
         ))       
         return (
             <div className="profile">
-                <h2>Order History<Divider></Divider></h2><br/>
+                <h2>order history</h2><Divider></Divider><br/>
                 {this.props.user.orders.length !== 0 ?
                     <Card.Group centered>
                         {orders} 
