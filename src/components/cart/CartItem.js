@@ -7,7 +7,7 @@ class CartItem extends Component {
 
     handleRemove = (id) => {
         this.props.removeFromCart(id);
-        alert("Removed from Cart")
+        alert("Item removed from basket.")
     }
 
     render() {

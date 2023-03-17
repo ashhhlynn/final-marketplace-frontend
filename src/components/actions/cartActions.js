@@ -24,7 +24,7 @@ export const addToCart = (product, order) => {
             }
            else {
                dispatch({ type: "ADD_TO_CART", product })
-               window.alert("This item was added to your cart!")
+               window.alert("Item added to basket.")
            }               
        })
     }

@@ -27,7 +27,7 @@ export const createOrder = (userId) => {
     }
 }
 
-export const sendOrder = (orderId, cart, user, total) => {
+export const sendOrder = (orderId, total) => {
     return (dispatch) => {
         const token = localStorage.token;
         fetch(`http://localhost:3000/orders/${orderId}`, {    
@@ -47,24 +47,8 @@ export const sendOrder = (orderId, cart, user, total) => {
                 window.alert(data.message)
             }
             else {
-                window.alert("Your order was submitted!")
-                let oi = data.order_items.map(o => o.product_id)
-                for (let i = 0; i < (oi.length + 1); i++) {
-                    fetch(`http://localhost:3000/products/${cart[i].id}`, {  
-                        method: 'PATCH',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            Accept: 'application/json',
-                            'Authorization': `Bearer ${token}`
-                        },
-                        body: JSON.stringify({
-                        sold: 1,
-                        buyer: user.id,
-                    })})
-                .then(resp => resp.json())
-                    dispatch({ type: "SUBMIT_ORDER" }) 
-                }
- 
+                window.alert("Thank you! Your order was submitted.")
+                dispatch({ type: "SUBMIT_ORDER" }) 
             }
         })
     }    

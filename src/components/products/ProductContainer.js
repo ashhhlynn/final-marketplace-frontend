@@ -14,10 +14,10 @@ class ProductContainer extends Component {
         return (
             <>
             <div className="productContainer">
-                <img src="https://cdn.shopify.com/s/files/1/1124/9666/collections/succulents-homepage-image_67aed5c3-86b9-4af3-955f-2c02dd129166.jpg?v=1655490570&width=1920" alt="succulent"/>
-                <h1>shop all</h1> 
+                <img src="https://cdn.shopify.com/s/files/1/0019/8361/0978/collections/plants1_2000x.jpg?v=1673559695" alt="succulent"/>
+                <h1>shop plants</h1> 
             </div>
-            <Card.Group itemsPerRow={4}  style={{marginLeft:"2%", marginRight:"2%"}}>
+            <Card.Group itemsPerRow={4}  style={{marginTop: "1%", marginLeft:"2%", marginRight:"2%"}}>
                 {products}
             </Card.Group>
             </>

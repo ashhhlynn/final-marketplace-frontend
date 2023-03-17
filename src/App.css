@@ -10,18 +10,9 @@
 }
 
 .nav .link-styles{
-  margin-top: -4% !important;
+  margin-top: -4.5% !important;
 }
 
-.nav img{
-  width:200px;
-  height:45px;
-  margin-top:2%;
-  margin-bottom:1.5%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
 
 .nav{
   text-align: center;
@@ -78,12 +69,17 @@ body .ui.cards>.card{
 }
 
 .home .ui.item{
-  margin-top:-25% !important;
+  margin-top:-24% !important;
   width:600px  !important;
 }
 
 .home h1{
-  font-size: 44px
+  font-size: 54px
+}
+
+
+.home h4{
+  letter-spacing: .25px
 }
 
 .about h3 { 
@@ -109,6 +105,8 @@ text-align: left;
 .productContainer h1{
   margin-left: 4% !important;
   margin-top: 2%;
+  font-size: 32px;
+  margin-bottom: 2%;
 }
 
 .productContainer img {
@@ -153,8 +151,9 @@ text-align: left;
 .checkoutButtons .button.ui.button{
   margin-top: 2%;
   margin-bottom: 2%;
-  width: 200px;
-  background-color: #26453e  !important;
+  margin-left:9%;
+  width:320px;
+  background-color: black  !important;
   color:#FFFFF0 !important;
   line-height: 1.5em;
   z-index: 1;
@@ -244,7 +243,15 @@ text-align: left;
 
 .createProduct h1{
   margin-top: 2%;
-  margin-left: 29%
+  margin-left: 27%;
+  font-size: 32px
+}
+
+.createProduct h4{
+  margin-left: -34%;
+  margin-top: -.75%;
+  letter-spacing: .25px;
+ 
 }
 
 .createProduct .ui.segment{

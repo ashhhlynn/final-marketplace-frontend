@@ -44,10 +44,13 @@ class Navbar extends Component {
   }
   
   render() {
-    return (
+    return (                
+
       <div className="nav">
-        <img src="https://cdn.shopify.com/s/files/1/0253/6701/9565/files/planterina-logo_432e9c62-d54e-4302-8761-6e169c222543_600x300.png?v=1628654999" alt="headimg"></img>
+                <h1 style={{color:"#26453e", marginTop:"1.25%", marginBottom:"1.75%",fontFamily:"gadugi", fontSize:"34px", letterSpacing:'1.5px'}}>seedlink</h1>
+
         <Menu className="link-styles" pointing secondary size="large">
+
           <Menu.Item as={Link} to='/'><h3> home </h3></Menu.Item>
           <Menu.Item as={Link} to ="/createproduct" ><h3> sell </h3></Menu.Item>
           <Menu.Item as={Link} to ="/products" onClick={()=>{this.handleCreateOrder()}}><h3>shop</h3></Menu.Item>

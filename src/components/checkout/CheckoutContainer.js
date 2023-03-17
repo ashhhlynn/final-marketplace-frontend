@@ -16,9 +16,8 @@ class CheckoutContainer extends Component {
             window.alert('Must have items in cart')
         }
         else {
-            let cart = this.props.cart
             let total = (orderTotal*1.1+10).toFixed(2)
-            this.props.sendOrder(this.props.currentOrder, cart, this.props.user, total)
+            this.props.sendOrder(this.props.currentOrder, total)
         }
     }
        
@@ -31,13 +30,13 @@ class CheckoutContainer extends Component {
             <div className="checkoutContainer">
                 <Grid columns={2} stackable divided>
                     <Grid.Column style={{ backgroundColor:"#ffffff"}} >
-                        <List>
-                            <h2>order summary</h2><br/>
+                        <List><h1>your order<Button floated="right" as={Link} to ="/products" circular content="Back to Shop"></Button> 
+</h1><br/>
+
                             {items}
                             <Totals total={this.props.total}/>
                             <div className="checkoutButtons">
                                 <Button circular content="Place Order" onClick={(event) => {this.handleSendOrder(event, orderTotal)}}></Button> 
-                                <Button as={Link} to ="/products" circular content="Back to Shop"></Button> 
                             </div>
                         </List>
                     </Grid.Column>
@@ -65,7 +64,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        sendOrder: (orderId, cart, user, total) => { dispatch(sendOrder(orderId, cart, user, total)) },
+        sendOrder: (orderId, total) => { dispatch(sendOrder(orderId, total)) },
         checkUser: () =>  { dispatch(checkUser()) },
     }
 }

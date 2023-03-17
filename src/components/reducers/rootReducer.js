@@ -97,12 +97,6 @@ const rootReducer = (state = initialState, action) => {
                 loading: false 
             };
 
-        case "SUBMIT_ORDER_REQUEST":
-            return {
-                ...state,
-                loading: true
-            };
-
         case "SUBMIT_ORDER":
             return {
                 ...state, 

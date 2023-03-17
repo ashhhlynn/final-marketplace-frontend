@@ -12,11 +12,11 @@ class ShoppingCartContainer extends Component {
         )
         return (
             <div className="cartContainer">   
-                <h2>your cart ({items.length})</h2>
+                <h2>your basket ({items.length})</h2>
                 <Divider></Divider>
                 {this.props.cart.length === 0 ? 
                     <>
-                    <h3>Your cart is empty.</h3>
+                    <h3>Your basket is empty.</h3>
                     </>
                 :
                     <>

@@ -34,7 +34,7 @@ export const createProduct = (product) => {
         }
            else {
                dispatch({ type: 'ADD_PRODUCT', data })
-               window.alert('Your product was successfully created!')
+               window.alert('Thank you! Your product was created!')
            }           
        })
    }
@@ -66,7 +66,7 @@ export const editProduct = (product) => {
                 else {
                 console.log(data)
                 dispatch({ type: "EDIT_PRODUCT", data, id })
-                window.alert("Your product was successfully updated")
+                window.alert("Thank you! Your product was updated.")
                 }
         })
     }
@@ -85,7 +85,7 @@ export const deleteProduct = (id) => {
                 },
         })   
         .then(
-            window.alert("Your product was successfully deleted!")
+            window.alert("Thank you! Your product was deleted.")
         )
     }           
 }
