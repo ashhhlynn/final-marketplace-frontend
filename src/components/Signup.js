@@ -31,7 +31,6 @@ class Signup extends Component {
         return (
             <>
             <h2 >Register</h2>
-            <Divider></Divider>
             <Form onSubmit={ (event) => {this.handleSubmit(event, this.state)} }>              
                 <Form.Input
                     required

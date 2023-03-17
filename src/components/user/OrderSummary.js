@@ -23,9 +23,7 @@ class OrderSummary extends Component {
             <div className="orderSummary">
                 <Card>
                     <Card.Header >
-                        <h2>
-                           Order #{this.props.order.id}  <Icon name="asterisk" size="small"> </Icon>  {this.props.order.created_at.substring(0, 10)} 
-                        </h2>
+                        <h2><Icon name="asterisk" size="small"/> Order #{this.props.order.id} <Icon name="asterisk" size="small"/> {this.props.order.created_at.substring(0, 10)} <Icon name="asterisk" size="small"/> </h2>
                     </Card.Header> 
                     <Card.Content>
                         {items}

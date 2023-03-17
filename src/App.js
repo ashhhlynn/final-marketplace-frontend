@@ -1,10 +1,8 @@
-
 import { React, Component }from "react"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import ProductContainer from './components/products/ProductContainer'
 import Home from './components/Home'
 import { checkUser } from './components/actions/userActions'
-import CreateProduct from './components/products/CreateProduct'
 import CheckoutContainer from './components/checkout/CheckoutContainer'
 import Navbar from './components/Navbar'
 import Profile from './components/user/Profile'
@@ -30,7 +28,6 @@ class App extends Component {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/products" element={<ProductContainer />} />
-            <Route exact path="/createproduct" element={<CreateProduct />} />
             <Route exact path="/checkout" element={<CheckoutContainer />} />
             <Route exact path="/profile" element={<Profile user={this.props.user} />} />
           </Routes>

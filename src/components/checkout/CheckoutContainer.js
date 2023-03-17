@@ -41,7 +41,7 @@ class CheckoutContainer extends Component {
                     </Grid.Column>
                     <Grid.Column >
                         <div className="shipping">
-                            <h2>shipping information</h2>
+                            <h2>shipping address</h2>
                             <Divider></Divider><br/>
                             <EditUser />
                         </div>    

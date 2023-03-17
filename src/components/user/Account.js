@@ -8,7 +8,7 @@ class Account extends Component {
         return (
            <div className="profile">   
                 <h2>user settings</h2><Divider></Divider>
-                <div style={{marginLeft:"3%", marginRight:"3%"}}><EditUser /></div>
+                <div className="account"><EditUser /></div>
             </div>
         )
     }

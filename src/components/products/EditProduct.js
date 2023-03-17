@@ -33,7 +33,7 @@ super(props)
 
   render() {
     return (
-      <div className="editProduct"><h2>Edit Product</h2><Divider></Divider>
+      <div className="editProduct"><h2>Edit Plant</h2>
         <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
             <Form.Input
               required
