@@ -1,8 +1,7 @@
 import React, { Component } from "react"
-import { Item, Segment, Divider, Button, Icon, Header } from 'semantic-ui-react'
+import { Item, Divider, Button, } from 'semantic-ui-react'
 import {connect} from 'react-redux'
 import Background from './Background'
-import About from './About'
 import AboutCard from './AboutCard'
 import { Link } from 'react-router-dom'
 import {createOrder} from './actions/orderActions'
@@ -22,27 +21,31 @@ class Home extends Component{
     render() {   
         return (
            <div className="home">
-                <Background />
-             
-                    <center>
-                    <Item style={{marginTop:"-35%", textAlign: "right", marginRight: "12%"}}> 
-                        <h1 style={{color:"#26453e", letterSpacing:'.5px'}}><b>A Plant Marketplace</b></h1>
-                        <h2 style={{fontSize:"30px", letterSpacing:'1px', marginRight: "4%", marginTop:"-.3%"}}><i>for the true plant lovers</i></h2>
-                        <Button circular as={Link} to ="/products" inverted style={{color:"#26453e", background:"#DBE6E0", marginRight: "4.5%" , width:"260px"}} onClick={this.handleCreateOrder} size="huge">GET STARTED</Button>
+                <Background />  
+                <center>
+                    <Item className="homeHeader"> 
+                        <h1><b>A Plant Marketplace</b></h1>
+                        <h2><i>for the true plant lovers</i></h2>
+                        <Button inverted circular as={Link} to ="/products" style={{ color:"#686868", background: "#DBE6E0"}} onClick={this.handleCreateOrder} size="huge">GET STARTED</Button>
                     </Item>    
-                   
                 </center>
-                <About />
-                <div className="aboutTwo"><br></br><br></br><br></br><br></br><Divider></Divider><br></br><br></br>
-                    <Item style={{height:"370px", marginLeft:"7%", marginTop:"0%", marginBottom: "7%", width:"450px"}}>
-                        <br></br><h1>in full bloom</h1>
-                        <Divider></Divider>
-                        <h3>It's officially spring and Peony season! Kick off the new season and shop everyone’s favorite fluffy flower.</h3>
-                        <Button as={Link} to ="/products" style={{ width:"180px"}} onClick={this.handleCreateOrder} size="huge">Shop Now</Button>
-                        <img style={{marginTop: "-55%", marginLeft:"130%", objectFit: "cover", objectPosition: "0% 0%"}}floated="left" width="480px" height="350px" 
-                        src="https://media.urbanstems.com/image/upload/f_auto/w_850,q_80/Catalogs/urbanstems-master/Spring23/Peony%20Palette/Peony_Palette_Middle.jpg" alt="abttwo"/>
-                    </Item>
-                </div>
+                <img style={{marginTop: "26%", marginLeft:"7%", objectFit: "cover", objectPosition: "0% 25%"}}floated="left" width="550px" height="350px" src="https://i0.wp.com/www.redwinedragons.com/wp-content/uploads/2022/04/easy-care-best-beautiful-indoor-house-plants-decor.png?w=800&ssl=1" alt="about"/>
+                <Item className="about">
+                    <h1>about</h1>
+                    <Divider></Divider>
+                    <h3>
+                        Seedlink is a buy and sell plant market with a mission to inspire green places by connecting people with plants. Sell your creations or enjoy healthy, happy plants delivered straight to your door.
+                    </h3>
+                </Item>
+                <Divider></Divider>
+                <Item className="aboutTwo">
+                    <br></br><h1>spring is here</h1>
+                    <Divider></Divider>
+                    <h3>It's officially Peony season! Kick off the new season by shopping everyone’s favorite fluffy flower.</h3>
+                    <Button as={Link} to ="/products" style={{ width:"180px"}} onClick={this.handleCreateOrder} size="huge">Shop Now</Button>
+                    <img style={{marginTop: "-55%", marginLeft:"130%", objectFit: "cover", objectPosition: "0% 0%"}}floated="left" width="480px" height="350px" 
+                    src="https://media.urbanstems.com/image/upload/f_auto/w_850,q_80/Catalogs/urbanstems-master/Spring23/Peony%20Palette/Peony_Palette_Middle.jpg" alt="abttwo"/>
+                </Item>
                 <AboutCard/>   
             </div>
         )

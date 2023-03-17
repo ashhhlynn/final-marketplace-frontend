@@ -45,17 +45,15 @@ class Navbar extends Component {
   
   render() {
     return (                
-
       <div className="nav">
-                <h1 style={{color:"#26453e", marginTop:"1.25%", marginBottom:"1.75%",fontFamily:"gadugi", fontSize:"34px", letterSpacing:'1.5px'}}>seedlink</h1>
-
         <Menu className="link-styles" pointing secondary size="large">
-
-          <Menu.Item as={Link} to='/'><h3> home </h3></Menu.Item>
-          <Menu.Item as={Link} to ="/createproduct" ><h3> sell </h3></Menu.Item>
+          <Menu.Item as={Link} to='/'><h3>home</h3></Menu.Item>
+          <Menu.Item as={Link} to ="/createproduct"><h3>sell</h3></Menu.Item>
           <Menu.Item as={Link} to ="/products" onClick={()=>{this.handleCreateOrder()}}><h3>shop</h3></Menu.Item>
+          <Menu.Item as={Link} to='/' style={{marginLeft:"26%"}}><h3 style={{color:"#26453e", fontFamily:"gadugi", fontSize:"36px", letterSpacing:'1.5px'}}>seedlink.</h3>
+          </Menu.Item>
           <Menu.Menu position='right'>
-            <Modal style={{height:"550px", marginLeft:"60%" }}
+          <Modal style={{height:"550px", marginLeft:"60%" }}
               open={this.state.modalOpenCart}
               onClose={this.handleCloseCart}
               closeIcon>
@@ -66,7 +64,7 @@ class Navbar extends Component {
             <Menu.Item onClick={this.handleOpenCart}><h3><Icon name='shopping basket' size="large"/></h3></Menu.Item>
             {this.props.user.length === 0 ? 
               <>
-                <Menu.Item onClick={this.handleOpenLogin}><h3><Icon name='user circle' size="large"/></h3></Menu.Item>
+                <Menu.Item onClick={this.handleOpenLogin}><h3 ><Icon name='user circle outline' size="large"/></h3></Menu.Item>
                 <Modal centered 
                   open={this.state.modalOpenLogin}
                   onClose={this.handleCloseLogin}
@@ -79,7 +77,7 @@ class Navbar extends Component {
             : 
               <>
                 <Menu.Item >
-                  <Link><h3><Icon name='user circle' size="large"/></h3></Link>
+                  <Link><h3><Icon name='user circle outline' size="large"/></h3></Link>
                   <Dropdown size="tiny">
                     <Dropdown.Menu>
                       <Dropdown.Item><Link to="/profile"><h3>Account</h3></Link></Dropdown.Item>

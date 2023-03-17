@@ -17,7 +17,7 @@ class UserProducts extends Component {
         })
         return (
             <div className="profile">   
-                <h2>plant history<Divider></Divider></h2>
+                <h2>Plant History<Divider></Divider></h2>
                 {this.props.user.products.length !== 0 ?
                     <>
                     <Item.Group>

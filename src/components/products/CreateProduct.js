@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
-import { Form } from 'semantic-ui-react'
+import { Form, Divider } from 'semantic-ui-react'
 import { createProduct } from '../actions/productActions'
 import { Segment } from 'semantic-ui-react'
 import { checkUser } from '../actions/userActions'
@@ -31,10 +31,10 @@ class CreateProduct extends Component {
     return (
       <div className="createProduct">
         <img style={{objectFit: "cover", objectPosition: "50% 12%"}}  src="//cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=352 352w, //cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=832 832w, //cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=1200 1200w, //cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=1920 1920w" alt="cp" width="1263" height="270" loading="eager"/>          
-        <h1>sell a plant</h1>
-        <h4>Fill out the form with your plant details.</h4>
-        <img style={{marginTop: "-4%", marginLeft:"65%", objectFit: "cover", objectPosition: "0% 0%"}} width="370" height="370" src="https://hips.hearstapps.com/hmg-prod/images/pretty-pink-plants-1554757430.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*" alt="cpmain"/>
+        <br/><br/>
+        <img style={{marginTop: "2.5%", marginLeft:"65%", objectFit: "cover", objectPosition: "0% 0%"}} width="370" height="370" src="https://hips.hearstapps.com/hmg-prod/images/pretty-pink-plants-1554757430.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*" alt="cpmain"/>
         <Segment>         
+          <h1>sell a plant</h1><Divider></Divider>
           <Form onSubmit= { (event) => {this.handleSubmit(event, this.state)}}>
             <Form.Input
               required
@@ -68,7 +68,7 @@ class CreateProduct extends Component {
               value={this.state.image_url} 
               onChange={this.handleChange}
             />
-            <Form.Button className="formButtons" color="black" content='Submit'/>          
+            <Form.Button circular style={{marginLeft:"-2%"}}className="checkoutButtons" content='Submit Product'/>          
           </Form>
         </Segment>
       </div>

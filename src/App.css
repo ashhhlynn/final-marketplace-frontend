@@ -10,16 +10,24 @@
 }
 
 .nav .link-styles{
-  margin-top: -4.5% !important;
-}
+  text-align: center;
+  margin-top: 3%;
 
+}
 
 .nav{
   text-align: center;
 }
 
-.link-styles h3, .ui.icon{
+.link-styles .ui.icon{
   color:  #26453e;
+
+}
+
+.link-styles h3 {
+  margin-bottom: 4.5% !important;
+  color:  #26453e;
+
 }
 
 .toggleLogin  {
@@ -68,18 +76,38 @@ body .ui.cards>.card{
   background-color: #fdfcf9
 }
 
-.home .ui.item{
-  margin-top:-24% !important;
-  width:600px  !important;
+.home h4, h2{
+  letter-spacing: .25px
 }
 
-.home h1{
+.homeHeader {
+  margin-top:-37% !important;
+  text-align: right !important;
+  margin-right: 12% !important;
+}
+
+.homeHeader h1 {
+  color: #26453e;
+  letter-spacing: .5px;
   font-size: 54px
 }
 
+.homeHeader h2 {
+  color: #26453e;
+  letter-spacing: 1px;
+  margin-right: 4%;
+  margin-top: -.3%;
+  font-size: 30px;
+}
 
-.home h4, h2{
-  letter-spacing: .25px
+.homeHeader .ui.button {
+   margin-right: 4.5%;
+   width:260px
+}
+
+.about h1{
+  text-align: right;
+  font-size: 32px;
 }
 
 .about h3 { 
@@ -87,19 +115,46 @@ body .ui.cards>.card{
   line-height:1.8
 }
 
-.about h1{
-text-align: right;
- font-size: 32px
+.about { 
+  text-align: right !important;
+  line-height:1.8;
+  margin-left: 55%;
+  margin-top: -26%;
+  width: 450px;
+  margin-bottom: 13.5%;
 }
 
-.aboutTwo h3 { 
+.aboutTwo { 
+  height: 370px;
+  line-height:1.8 !important;
+  margin-top: 3%;
+  margin-left: 7%;
+  margin-bottom: 7%;
+  width: 450px;
   text-align: left !important;
-  line-height:1.8
+  margin-bottom: 5.5%;;
 }
 
 .aboutTwo h1{
 text-align: left;
  font-size: 32px
+}
+
+.aboutTwo h3 { 
+  text-align: left!important;
+  line-height:1.8
+}
+
+.aboutCard{
+  background:#fdfcf9  !important;
+
+}
+
+.aboutCard .ui.card {
+  color:#26453e;
+  margin-top: 5% !important;
+  margin-bottom: 5% !important;
+
 }
 
 .productContainer h1{
@@ -116,15 +171,8 @@ text-align: left;
   height: 270px;
 }
 
-.productCardTwo .button.ui.button{
-  background-color: #FFFFFF !important;
-  color: #000000 !important;
-  width: 150px !important;
-  margin-bottom: 0%
-}
-
 .productCardTwo h5{
-  margin-top: 4%  !important;
+  margin-top: 5%  !important;
   margin-left: 2%  !important;
   margin-right: 2%  !important;
 }
@@ -192,11 +240,13 @@ text-align: left;
 }
 
 .profileNav h4{
-  text-align: left !important;
-  margin-left: 15%;
+  text-align: right !important;
+  margin-right: 17%;
   margin-top:20% !important;
   margin-bottom: 20%;
-  color: #26453e
+  color: #26453e;
+  letter-spacing: 1px;
+  font-size: 18px;
 }
 
 .profileNav h1{
@@ -207,7 +257,8 @@ text-align: left;
 
 .profileProducts h3 {
   text-align: left  !important;
-  margin-top:1%
+  margin-top:1%;
+
 }
 
 .orderSummary h2{
@@ -250,21 +301,14 @@ text-align: left;
 
 .createProduct h1{
   margin-top: 2%;
-  margin-left: 27%;
-  font-size: 32px
-}
-
-.createProduct h4{
-  margin-left: -34%;
-  margin-top: -.5%;
-  letter-spacing: .2px;
- 
+  text-align: center !important;
+  font-size: 28px;
 }
 
 .createProduct .ui.segment{
   text-align: center;
-  margin-bottom: 5%  !important;
+  margin-bottom: 6.5% !important;
   width: 700px;
   margin-left: 5.5%;
-  margin-top: -25.5%
+  margin-top: -29.5%
 }

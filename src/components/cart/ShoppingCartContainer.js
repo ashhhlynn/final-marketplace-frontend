@@ -12,7 +12,7 @@ class ShoppingCartContainer extends Component {
         )
         return (
             <div className="cartContainer">   
-                <h2>your basket ({items.length})</h2>
+                <h2>shopping basket ({items.length})</h2>
                 <Divider></Divider>
                 {this.props.cart.length === 0 ? 
                     <>
