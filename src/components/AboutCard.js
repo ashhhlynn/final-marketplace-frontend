@@ -2,7 +2,7 @@ import { Icon, Card, Segment } from 'semantic-ui-react'
 
 const AboutCard = () => {
     return (
-        <Segment className="aboutCard">       
+        <Segment className="aboutCard" style={{backgroundColor:"#fdfcf9"}}>       
             <Card.Group centered >
                 <Card>
                     <center>

@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Item, Divider, Button } from 'semantic-ui-react'
+import { Item, Segment, Divider, Button } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import Background from './Background'
 import AboutCard from './AboutCard'
@@ -28,24 +28,39 @@ class Home extends Component{
                         <h2><i>for the true plant lovers</i></h2>
                         <Button inverted circular as={Link} to ="/products" style={{ color:"#686868", background: "#DBE6E0"}} onClick={this.handleCreateOrder} size="huge">GET STARTED</Button>
                     </Item>    
+               
                 </center>
-                <img style={{marginTop: "26%", marginLeft:"7%", objectFit: "cover", objectPosition: "0% 25%"}}floated="left" width="550px" height="350px" src="https://i0.wp.com/www.redwinedragons.com/wp-content/uploads/2022/04/easy-care-best-beautiful-indoor-house-plants-decor.png?w=800&ssl=1" alt="about"/>
-                <Item className="about">
+                
+           
+<Segment style={{backgroundColor:"inherit",border:"none",marginTop:"21%"}}>
+
+
+                <img style={{marginTop: "3%", marginLeft:"3%",marginBottom: "0%",  objectFit: "cover", objectPosition: "0% 25%"}}floated="left" width="710px" height="450px" src="https://i0.wp.com/www.redwinedragons.com/wp-content/uploads/2022/04/easy-care-best-beautiful-indoor-house-plants-decor.png?w=800&ssl=1" alt="about"/>
+                
+                <Item className="about" style={{marginRight:"-13%"}}>
                     <h1>about</h1>
                     <Divider></Divider>
                     <h3>
                         Seedlink is a buy and sell plant market with a mission to inspire green places by connecting people with plants. Sell your creations or enjoy healthy, happy plants delivered straight to your door.
                     </h3>
                 </Item>
-                <Divider></Divider>
-                <Item className="aboutTwo">
+                </Segment>
+                <Segment style={{letterSpacing:"1px", lineHeight:"2",height:"317px", marginTop:"-3%", color:"white", backgroundColor:"#42594c"}}>
+<center><br></br>
+<p style={{ borderStyle: "dashed", padding:"26px", width:"fit-content"}}>
+<h1 style={{fontSize:"38px", letterSpacing:".5px"}}><b>14-DAY GUARANTEE</b></h1><h3><i>We guarantee healthy plants on arrival. If plants arrive significantly<br></br> damaged*, we'll replace them up to 14 days after delivery.</i></h3>
+</p></center>
+                </Segment>
+                <Segment  style={{height:"504px",backgroundColor:"#fff0d8",marginTop: "-5%", marginBottom:"-1%"}}>
+                <div className="aboutTwo">
                     <br></br><h1>welcome spring</h1>
                     <Divider></Divider>
                     <h3>Peonies are in full bloom! Kick off the new season by shopping everyone’s favorite fluffy flower.</h3>
-                    <Button as={Link} to ="/products" style={{ width:"180px"}} onClick={this.handleCreateOrder} size="huge">Shop Now</Button>
-                    <img style={{marginTop: "-55%", marginLeft:"130%", objectFit: "cover", objectPosition: "0% 0%"}}floated="left" width="480px" height="350px" 
+                    <Button as={Link} to ="/products" style={{ color:"white",backgroundColor:"black", width:"180px"}} onClick={this.handleCreateOrder} size="huge">Shop Now</Button>
+                    <img style={{marginTop: "-63%", marginBottom:"-2px",marginLeft:"107%", objectFit: "cover", objectPosition: "0% 0%"}}floated="left" width="740px" height="500px" 
                     src="https://media.urbanstems.com/image/upload/f_auto/w_850,q_80/Catalogs/urbanstems-master/Spring23/Peony%20Palette/Peony_Palette_Middle.jpg" alt="abttwo"/>
-                </Item>
+                </div> </Segment>
+               
                 <AboutCard/>   
             </div>
         )

@@ -62,7 +62,7 @@ body .ui.cards>.card {
   box-shadow: none;
   font-family: "futura-pt", sans-serif;
   font-weight: 400;
-  background-color: #fdfcf9
+  background-color: #fdfcf9 
 }
 
 .home h4, h2{
@@ -107,7 +107,7 @@ body .ui.cards>.card {
 .about { 
   text-align: right !important;
   line-height: 1.8;
-  margin-left: 55%;
+  margin-left: 61%;
   margin-top: -26%;
   width: 450px;
   margin-bottom: 13.5%;
@@ -116,8 +116,8 @@ body .ui.cards>.card {
 .aboutTwo { 
   height: 370px;
   line-height:1.8 !important;
-  margin-top: 3%;
-  margin-left: 7%;
+  margin-top: 0%;
+  margin-left: 2%;
   margin-bottom: 7%;
   width: 450px;
   text-align: left !important;
@@ -135,13 +135,14 @@ text-align: left;
 }
 
 .aboutCard {
-  background:#fdfcf9 !important;
+  background: #fdfcf9 !important;
 }
 
 .aboutCard .ui.card {
   color:#26453e;
   margin-top: 5% !important;
   margin-bottom: 5% !important;
+  background: #fdfcf9 !important;
 }
 
 .productContainer h1 {
