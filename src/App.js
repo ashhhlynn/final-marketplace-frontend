@@ -18,7 +18,7 @@ class App extends Component {
       this.props.checkUser()
     }
     this.props.fetchProducts()
-    alert("This site is currently under construction, but should be up and running soon!")
+    alert("This web app is currently under construction, but it should be up and running soon!")
   }
 
   render() {
