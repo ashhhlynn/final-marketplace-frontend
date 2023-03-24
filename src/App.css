@@ -31,7 +31,7 @@ h1, h2, h3, h2, h4, h5 {
   display:block;
   box-shadow: none;
   width: 500px !important;
-  background-color: #fdfcf9;
+  background-color: #fdfcf9 !important;
 }
 
 .ui.modal > .content {
@@ -59,10 +59,10 @@ h1, h2, h3, h2, h4, h5 {
 }
 
 body .ui.cards>.card {
-  box-shadow: none;
   font-family: "futura-pt", sans-serif;
   font-weight: 400;
-  background-color: #fdfcf9 
+  background-color: #fdfcf9;
+  box-shadow: none;
 }
 
 .home h4, h2{
@@ -72,7 +72,7 @@ body .ui.cards>.card {
 .homeHeader {
   margin-top:-37% !important;
   text-align: right !important;
-  margin-right: 12% !important;
+  margin-right: 7% !important;
 }
 
 .homeHeader h1 {
@@ -90,38 +90,19 @@ body .ui.cards>.card {
 }
 
 .homeHeader .ui.button {
-   margin-right: 4.5%;
+   margin-right: 9%;
    width: 260px;
-}
-
-.about h1{
-  text-align: right;
-  font-size: 32px;
-}
-
-.about h3 { 
-  text-align: right !important;
-  line-height: 1.8;
-}
-
-.about { 
-  text-align: right !important;
-  line-height: 1.8;
-  margin-left: 61%;
-  margin-top: -26%;
-  width: 450px;
-  margin-bottom: 13.5%;
 }
 
 .aboutTwo { 
   height: 370px;
   line-height:1.8 !important;
-  margin-top: 0%;
-  margin-left: 2%;
-  margin-bottom: 7%;
+  margin-left: 4%;
   width: 450px;
   text-align: left !important;
-  margin-bottom: 5.5%;;
+  margin-bottom: 5.5%;
+  margin-top: 5%;
+  margin-right: 4%;
 }
 
 .aboutTwo h1{
@@ -134,15 +115,16 @@ body .ui.cards>.card {
   line-height: 1.8
 }
 
-.aboutCard {
-  background: #838F8D
-}
 
 .aboutCard .ui.card {
   color:#ffffff;
   margin-top: 5% !important;
   margin-bottom: 5% !important;
+  margin-right: 2% !important;
+  margin-left: 2% !important;
   background: #838F8D!important;
+  height: 250px;
+  box-shadow: 0 0px 4px 0 rgba(247, 246, 246, 0.95), 0 2px 8px 0 rgba(0, 0, 0, 0.19) !important;
 }
 
 .productContainer h1 {
@@ -160,9 +142,9 @@ body .ui.cards>.card {
 }
 
 .productCardTwo h5 {
-  margin-top: 5%  !important;
-  margin-left: 2%  !important;
-  margin-right: 2%  !important;
+  margin-top: 7%  !important;
+  margin-left: 5%  !important;
+  margin-right: 5%  !important;
 }
 
 .productCard h3 {
@@ -224,15 +206,8 @@ body .ui.cards>.card {
 }
 
 .profile {
-  margin-bottom: 12%;
+  margin-bottom: 9%;
   min-height: 410px;
-}
-
-.profile h2 {
-  text-align: center;
-  letter-spacing: .7px;
-  font-size: 26px;
-  margin-bottom: -1%
 }
 
 .profile h5 {
@@ -265,6 +240,7 @@ body .ui.cards>.card {
 .account {
   margin-left:3%;
   margin-right:3%;
+  margin-top: 4%;
 }
 
 .orderSummary h2 {
@@ -276,6 +252,10 @@ body .ui.cards>.card {
 
 .orderSummary .ui.card {
   width: 570px
+}
+
+.orderSummary .ui.card.group {
+  margin-top: 5% !important;
 }
 
 .orderSummary .ui.card > .header {

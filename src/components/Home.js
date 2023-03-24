@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Item, Segment, Divider, Button } from 'semantic-ui-react'
+import { Item, Divider, Button } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import Background from './Background'
 import AboutCard from './AboutCard'
@@ -25,38 +25,17 @@ class Home extends Component{
                 <center>
                     <Item className="homeHeader" style={{marginBottom: "23.5%"}}> 
                         <h1><b>A Plant Marketplace</b></h1>
-                        <h2><i>find your plant a new home</i></h2>
+                        <h2><i>give your perfect plant a home</i></h2>
                         <Button inverted circular as={Link} to ="/products" style={{ color:"#686868", background: "#DBE6E0"}} onClick={this.handleCreateOrder} size="huge">GET STARTED</Button>
                     </Item>   
                 </center>  
-                <Segment style={{height:"504px", backgroundColor:"#fff0d8", marginTop: "0%"}}>
                     <div className="aboutTwo">
-                        <br></br><h1>springtime</h1>
+                        <br></br><h1>seedlink</h1>
                         <Divider></Divider>
-                        <h3>Peonies are in full bloom! Kick off the new season by shopping everyone’s favorite fluffy flower.</h3>
+                        <h3> Welcome to Seedlink, a buy and sell online marketplace for plants. Our mission is to connect plant lovers and build community in order to inspire sustainable lifestyles. Sell your own creations, or enjoy healthy, happy plants delivered straight to your door!</h3>
                         <Button as={Link} to ="/products" style={{ color:"white", backgroundColor:"black", width:"180px"}} onClick={this.handleCreateOrder} size="huge">Shop Now</Button>
-                        <img style={{marginTop: "-63%", marginBottom:"-2px", marginLeft:"107%", objectFit: "cover", objectPosition: "0% 0%"}} floated="left" width="740px" height="500px" 
-                        src="https://media.urbanstems.com/image/upload/f_auto/w_850,q_80/Catalogs/urbanstems-master/Spring23/Peony%20Palette/Peony_Palette_Middle.jpg" alt="abttwo" />
+                        <img style={{marginTop: "-75%", marginLeft:"107%", marginBottom: "-1%",  objectFit: "cover", objectPosition: "30% 90%"}} floated="left" width="680px" height="445px" src="https://i0.wp.com/www.redwinedragons.com/wp-content/uploads/2022/04/easy-care-best-beautiful-indoor-house-plants-decor.png?w=800&ssl=1" alt="about" />
                     </div>
-                </Segment>
-                <Segment style={{letterSpacing:"1px", lineHeight:"2", height:"275px", color:"white", backgroundColor:"#585858", marginTop: "2%"}}>
-                    <center><br></br>
-                        <p style={{ borderStyle: "dashed", padding:"26px", width:"fit-content"}}>
-                            <h1 style={{fontSize:"38px", letterSpacing:".5px"}}><b>10-DAY GUARANTEE</b></h1>
-                            <h3><i>We guarantee healthy plants on arrival. If plants arrive significantly<br></br> damaged, we'll replace them up to 10 days after delivery.</i></h3>
-                        </p>
-                    </center>
-                </Segment> 
-                <Segment style={{backgroundColor:"inherit", border:"none", marginBottom: "0%", marginTop:"4%"}}>
-                    <img style={{marginTop: "0%", marginLeft:"3%", marginBottom: "-1%",  objectFit: "cover", objectPosition: "0% 25%"}} floated="left" width="710px" height="450px" src="https://i0.wp.com/www.redwinedragons.com/wp-content/uploads/2022/04/easy-care-best-beautiful-indoor-house-plants-decor.png?w=800&ssl=1" alt="about" />
-                    <Item className="about" style={{marginRight:"-13%",}}>
-                        <h1>about</h1>
-                        <Divider></Divider>
-                        <h3>
-                            Seedlink is an online buy and sell marketplace for plants with a mission to connect plant enthusiasts and build community. Sell your own creations, or enjoy healthy, happy plants delivered straight to your door.
-                        </h3>
-                    </Item>
-                </Segment> 
                 <AboutCard/>  
             </div>
         )
