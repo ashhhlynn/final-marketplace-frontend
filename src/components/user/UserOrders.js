@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Divider, Card } from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
 import OrderSummary from './OrderSummary'
 import { connect } from 'react-redux'
 import { checkUser } from '../actions/userActions'

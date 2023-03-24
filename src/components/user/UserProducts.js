@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux"
-import { Item, Divider } from 'semantic-ui-react'
+import { Item } from 'semantic-ui-react'
 import { checkUser } from '../actions/userActions'
 import UserProduct from './UserProduct'
 

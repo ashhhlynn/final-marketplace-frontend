@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Divider, Card, Icon, Table } from 'semantic-ui-react'
+import { Divider, Card, Table } from 'semantic-ui-react'
 import Totals from '../checkout/Totals'
 
 class OrderSummary extends Component {
