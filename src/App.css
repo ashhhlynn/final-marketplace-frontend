@@ -115,7 +115,6 @@ body .ui.cards>.card {
   line-height: 1.8
 }
 
-
 .aboutCard .ui.card {
   color:#ffffff;
   margin-top: 5% !important;
@@ -245,9 +244,10 @@ body .ui.cards>.card {
 
 .orderSummary h2 {
   margin-top: 2.5% !important;
-  text-align: center;
+  text-align: left;
   font-size: 18px;
-  letter-spacing: 1px;
+  letter-spacing: .3px;
+  margin-left: 4%;
 }
 
 .orderSummary .ui.card {
