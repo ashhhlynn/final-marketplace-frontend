@@ -21,28 +21,40 @@ A buy and sell ecommerce application for plants created with a Redux & React Jav
 - Users can view history of their orders and created products marked as active and sold.
 
 ## Media 
-<img width="800" height="400" src="https://user-images.githubusercontent.com/84604278/227552979-16d40a1f-74d0-41f3-9294-ce3575387b8a.png">
+<img width="850" height="400" src="https://user-images.githubusercontent.com/84604278/227552979-16d40a1f-74d0-41f3-9294-ce3575387b8a.png">
 
 
-<img width="800" height="400" src="https://user-images.githubusercontent.com/84604278/227553284-be6ff1c6-ae9b-49d3-a1b5-39caa2ed833f.png)">
+
+<img width="850" height="400" src="https://user-images.githubusercontent.com/84604278/227556993-20e14276-9c5d-469d-813f-408a262ba2e3.png">
+
 
 
 <img width="850" height="400" src="https://user-images.githubusercontent.com/84604278/227553772-03604489-1ec3-4fe1-b4db-fce11467b7e9.png">
 
 
-<img width="800" height="400" src="https://user-images.githubusercontent.com/84604278/227554099-b2af0ab2-7b0e-4875-8f5f-0a5a1abc0c67.png">
+
+<img width="850" height="400" src="https://user-images.githubusercontent.com/84604278/227558722-3edc2fda-634e-4cb4-aa73-0ebae7a81d50.png">
 
 
-<img width="800" height="400" src="https://user-images.githubusercontent.com/84604278/227554121-c5a28a9a-49ea-42ed-8e3b-dfa44e5e26a7.png">
+
+<img width="850" height="360" src="https://user-images.githubusercontent.com/84604278/227554099-b2af0ab2-7b0e-4875-8f5f-0a5a1abc0c67.png">
 
 
-<img width="800" height="400" src="https://user-images.githubusercontent.com/84604278/227554152-cb98350b-3cd4-42b0-8e37-778e6eb1b895.png">
+
+<img width="850" height="395" src="https://user-images.githubusercontent.com/84604278/227554121-c5a28a9a-49ea-42ed-8e3b-dfa44e5e26a7.png">
 
 
-<img width="800" height="400" src="https://user-images.githubusercontent.com/84604278/227554266-4ec36dc4-1702-46a3-835c-af1901bb9564.png">
+
+<img width="850" height="395" src="https://user-images.githubusercontent.com/84604278/227554152-cb98350b-3cd4-42b0-8e37-778e6eb1b895.png">
 
 
-<img width="800" height="400" src="https://user-images.githubusercontent.com/84604278/227554530-7ee3ecb7-4c73-4f7b-b88e-cd86994f3228.png">
+
+<img width="850" height="400" src="https://user-images.githubusercontent.com/84604278/227554266-4ec36dc4-1702-46a3-835c-af1901bb9564.png">
+
+
+
+<img width="850" height="400" src="https://user-images.githubusercontent.com/84604278/227554530-7ee3ecb7-4c73-4f7b-b88e-cd86994f3228.png">
+
 
 
 
