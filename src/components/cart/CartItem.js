@@ -5,8 +5,9 @@ import { Item, Button, Divider, Icon,  Image } from 'semantic-ui-react'
 
 class CartItem extends Component {
 
-    handleRemove = (id) => {
-        this.props.removeFromCart(id);
+    handleRemove = (pid) => {
+        let cartItem = this.props.orderCart.find(oi => parseInt(oi.product_id) === pid)
+        this.props.removeFromCart(pid, cartItem.id)
         alert("Item removed from basket.")
     }
 
@@ -30,10 +31,16 @@ class CartItem extends Component {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return { 
-        removeFromCart: (id) => { dispatch(removeFromCart(id)) } 
+const mapStateToProps = (state) => {
+    return {
+        orderCart: state.orderCart
     }
 }
 
-export default connect(null, mapDispatchToProps)(CartItem)
+const mapDispatchToProps = (dispatch) => {
+    return { 
+        removeFromCart: (pid, id) => { dispatch(removeFromCart(pid, id)) } 
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartItem)

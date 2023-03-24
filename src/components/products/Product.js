@@ -45,7 +45,6 @@ class Product extends Component {
 const mapStateToProps = (state) => {
     return { 
         currentOrder: state.currentOrder,
-        cart: state.cart
     }
 }
 

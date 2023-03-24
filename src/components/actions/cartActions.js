@@ -23,16 +23,16 @@ export const addToCart = (product, order) => {
                 window.alert(data.message)
             }
            else {
-               dispatch({ type: "ADD_TO_CART", product })
+               dispatch({ type: "ADD_TO_CART", product, data })
                window.alert("Item added to basket.")
            }               
        })
     }
 }
 
-export const removeFromCart = (id) => {
+export const removeFromCart = (pid, id) => {
     return (dispatch) => {
-        dispatch({type: "REMOVE_FROM_CART", id})
+        dispatch({type: "REMOVE_FROM_CART", pid, id})
         const token = localStorage.token;
         return fetch(`http://localhost:3000/order_items/${id}`, {
             method: 'DELETE',

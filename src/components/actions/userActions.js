@@ -59,7 +59,7 @@ export const checkUser = () => {
     return (dispatch) => {
         const token = localStorage.token;
         console.log(token)
-        return fetch('http://localhost:3000/profile', {
+        return fetch('http://[::1]:3000/profile', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
