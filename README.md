@@ -22,15 +22,32 @@ A buy and sell ecommerce application for plants created with a Redux & React Jav
 
 ## Media 
 <img width="850" height="400" src="https://user-images.githubusercontent.com/84604278/227552979-16d40a1f-74d0-41f3-9294-ce3575387b8a.png">
+![Copy4](https://user-images.githubusercontent.com/84604278/227591548-cdc955df-d7ca-43fa-a093-6475f3822954.png)
+![YumeCopy4](https://user-images.githubusercontent.com/84604278/227592922-df3a0357-c7be-432f-9f80-d968449e18fb.png)
+
+
+![YumeCopy2](https://user-images.githubusercontent.com/84604278/227589542-5b5ceaed-c1fd-46a8-b832-83fb438ea84f.png)
+
+
+![YumeCopy1](https://user-images.githubusercontent.com/84604278/227589799-7d32467f-187d-48b6-9715-56098bd6fd62.png)
+
+![YumeCopy3](https://user-images.githubusercontent.com/84604278/227589814-d414fdbe-6971-403a-8e8c-f2f7518b5a31.png)
+![Copy4](https://user-images.githubusercontent.com/84604278/227590217-7b6eaec8-febe-4586-bcea-a473626874ff.png)
+![Copy5](https://user-images.githubusercontent.com/84604278/227590227-ac042950-5186-4a30-a73e-b23e6afc1aca.png)
+
+![Screenshot (104)](https://user-images.githubusercontent.com/84604278/227591358-1bbdd053-ad9c-4ca3-96f8-ffba8aff30d8.png)
 
 
 
 <img width="850" height="400" src="https://user-images.githubusercontent.com/84604278/227556993-20e14276-9c5d-469d-813f-408a262ba2e3.png">
 
+![Slcopy4](https://user-images.githubusercontent.com/84604278/227587296-1b5871f0-92c5-4792-9dce-05451fc0a441.png)
 
+![Screenshot (66)](https://user-images.githubusercontent.com/84604278/227588163-8506c97b-7f7a-44e8-8dcf-5fdc4dbf482e.png)
 
 <img width="850" height="400" src="https://user-images.githubusercontent.com/84604278/227553772-03604489-1ec3-4fe1-b4db-fce11467b7e9.png">
 
+![Slcopy16](https://user-images.githubusercontent.com/84604278/227588119-b350aded-1532-4dba-b680-306d5051dc38.png)
 
 
 <img width="850" height="400" src="https://user-images.githubusercontent.com/84604278/227558722-3edc2fda-634e-4cb4-aa73-0ebae7a81d50.png">
