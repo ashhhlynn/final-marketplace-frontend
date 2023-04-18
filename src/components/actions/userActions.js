@@ -25,7 +25,7 @@ export const createUser = (userData) => {
 
 export const getExistingUser = (userData) => {
     return (dispatch) => {
-        return fetch('https://final-marketplace-api.onrender.com/login', {
+        return fetch('https://final-marketplace-api.onrender.com/auth#create', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
