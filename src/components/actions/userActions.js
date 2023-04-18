@@ -1,6 +1,6 @@
 export const createUser = (userData) => {
     return (dispatch) => {
-        return fetch(`${process.env.REACT_APP_API_URL}/users`, {
+        return fetch("http://localhost:3000/users", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ export const createUser = (userData) => {
 
 export const getExistingUser = (userData) => {
     return (dispatch) => {
-        return fetch(`${process.env.REACT_APP_API_URL}/auth#create`, {
+        return fetch("http://localhost:3000/login", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ export const checkUser = () => {
     return (dispatch) => {
         const token = localStorage.token;
         console.log(token)
-        return fetch(`${process.env.REACT_APP_API_URL}/users#profile`, {
+        return fetch("http://localhost:3000/profile", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
