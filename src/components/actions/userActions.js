@@ -1,6 +1,6 @@
 export const createUser = (userData) => {
     return (dispatch) => {
-        return fetch('http://localhost:3000/users', {
+        return fetch('https://final-marketplace-api.onrender.com/users', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ export const createUser = (userData) => {
 
 export const getExistingUser = (userData) => {
     return (dispatch) => {
-        return fetch('http://localhost:3000/login', {
+        return fetch('https://final-marketplace-api.onrender.com/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ export const checkUser = () => {
     return (dispatch) => {
         const token = localStorage.token;
         console.log(token)
-        return fetch('http://[::1]:3000/profile', {
+        return fetch('https://final-marketplace-api.onrender.com/users', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
