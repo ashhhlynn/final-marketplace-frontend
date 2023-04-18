@@ -7,6 +7,7 @@ import { checkUser } from '../actions/userActions'
 import Totals from './Totals'
 import EditUser from '../user/EditUser'
 import { Link } from 'react-router-dom'
+import StripeCheckout from 'react-stripe-checkout';
 
 class CheckoutContainer extends Component {
 
@@ -41,7 +42,16 @@ class CheckoutContainer extends Component {
                     </Grid.Column>
                     <Grid.Column >
                         <div className="shipping">
-                            <h2>shipping address</h2>
+                            <h2 style={{marginLeft:"31%"}}>shipping address                    
+                                <StripeCheckout
+                                floated="right"
+                                color="black"
+                                style={{backgroundColor: "black", floated:"right", marginLeft:"13%"}}
+                                token={onToken}
+                                stripeKey={process.env.STRIPE_PUBLISHABLE_KEY}
+                                className="checkout"
+                                />
+                            </h2>
                             <Divider></Divider><br/>
                             <EditUser />
                         </div>    
@@ -51,6 +61,32 @@ class CheckoutContainer extends Component {
         )
     }   
 }
+
+const onToken = (token) => {
+        const charge = {
+            token: token.id,
+            };
+            const config = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ charge: charge, price: this.props.total * 100 }),
+            };
+            fetch("/api/charges", config)
+            .then((res) => res.json())
+            .then((response) => {
+                console.log(response)
+                if (response.status === "succeeded") {
+                console.log("Token retrieved successfully.");
+                } else {
+                console.log("Token retrieval failed.");
+                }
+            })
+            .catch((error) => {
+                console.error("Error while retrieving token:", error);
+            });
+        };
 
 const mapStateToProps = (state) => {
     return {
