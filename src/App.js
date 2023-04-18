@@ -18,7 +18,7 @@ class App extends Component {
       this.props.checkUser()
     }
     this.props.fetchProducts()
-    alert("This web app is currently under construction, but it should be up and running soon!")
+    window.alert("Backend deployment still processing. Visit https://github.com/ashhhlynn/final-marketplace-backend for instructions on accessing database!")
   }
 
   render() {
