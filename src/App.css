@@ -140,6 +140,12 @@ body .ui.cards>.card {
   height: 270px;
 }
 
+
+.productCard img {
+  width: 255px;
+  height: 202px;
+}
+
 .productCardTwo h5 {
   margin-top: 7%  !important;
   margin-left: 5%  !important;
