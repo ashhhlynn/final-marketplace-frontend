@@ -35,7 +35,7 @@ export const createProduct = (product) => {
     return (dispatch) => {
         const token = localStorage.token;
         dispatch({type: 'ADD_PRODUCT_REQUEST'})
-        return fetch('https://final-marketplace-api.onrender.com/products', {
+        return fetch(`${process.env.REACT_APP_API_URL}/products`, {
         method: 'POST',
         headers: {
            'Content-Type': 'application/json',

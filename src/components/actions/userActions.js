@@ -1,6 +1,6 @@
 export const createUser = (userData) => {
     return (dispatch) => {
-        return fetch('https://final-marketplace-api.onrender.com/users', {
+        return fetch(`${process.env.REACT_APP_API_URL}/users`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ export const createUser = (userData) => {
 
 export const getExistingUser = (userData) => {
     return (dispatch) => {
-        return fetch('https://final-marketplace-api.onrender.com/auth#create', {
+        return fetch(`${process.env.REACT_APP_API_URL}/auth#create`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ export const checkUser = () => {
     return (dispatch) => {
         const token = localStorage.token;
         console.log(token)
-        return fetch('https://final-marketplace-api.onrender.com/users#profile', {
+        return fetch(`${process.env.REACT_APP_API_URL}/users#profile`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
