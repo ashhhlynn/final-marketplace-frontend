@@ -59,7 +59,7 @@ export const checkUser = () => {
     return (dispatch) => {
         const token = localStorage.token;
         console.log(token)
-        return fetch('https://final-marketplace-api.onrender.com/profile', {
+        return fetch('https://final-marketplace-api.onrender.com/users#profile', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
