@@ -63,30 +63,31 @@ class CheckoutContainer extends Component {
 }
 
 const onToken = (token) => {
-        const charge = {
-            token: token.id,
-            };
-            const config = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ charge: charge, price: this.props.total * 100 }),
-            };
-            fetch("/api/charges", config)
-            .then((res) => res.json())
-            .then((response) => {
-                console.log(response)
-                if (response.status === "succeeded") {
-                console.log("Token retrieved successfully.");
-                } else {
-                console.log("Token retrieval failed.");
-                }
-            })
-            .catch((error) => {
-                console.error("Error while retrieving token:", error);
-            });
+    const charge = {
+        token: token.id,
+    };
+    const config = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ charge: charge, price: (this.props.total*1.1+10).toFixed(2) }),
         };
+        fetch("'http://localhost:3000/charges", config)
+        .then((res) => res.json())
+        .then((response) => {
+            console.log(response)
+            if (response.status === "succeeded") {
+                console.log("Token retrieved successfully.");
+            } 
+            else {
+                console.log("Token retrieval failed.");
+            }
+        })
+        .catch((error) => {
+            console.error("Error while retrieving token:", error);
+        });
+    };
 
 const mapStateToProps = (state) => {
     return {
