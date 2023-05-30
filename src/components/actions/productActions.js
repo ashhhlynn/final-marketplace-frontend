@@ -1,7 +1,7 @@
 export const fetchProducts = () => {
     return (dispatch) => {
         dispatch({ type: "FETCH_PRODUCTS_REQUEST" })
-        fetch("http://localhost:3000/products")
+        fetch("https://final-marketplace-api.onrender.com/products")
             .then(response => response.json())
             .then(products => {dispatch({ type: "FETCH_PRODUCTS", products })
         })
