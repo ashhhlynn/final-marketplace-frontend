@@ -13,8 +13,7 @@ class CheckoutContainer extends Component {
 
     componentDidMount = () => {
         console.log(process.env.STRIPE_PUBLISHABLE_KEY)
-        console.log(ENV['STRIPE_PUBLISHABLE_KEY'])
-        console.log(env.STRIPE_PUBLISHABLE_KEY)
+
 
     }
 
