@@ -11,6 +11,10 @@ import StripeCheckout from 'react-stripe-checkout';
 
 class CheckoutContainer extends Component {
 
+    componentDidMount = () => {
+        console.log(process.env.STRIPE_PUBLISHABLE_KEY)
+    }
+
     handleSendOrder = (event, orderTotal) => {
         event.preventDefault()
         if (this.props.cart.length === 0) {
