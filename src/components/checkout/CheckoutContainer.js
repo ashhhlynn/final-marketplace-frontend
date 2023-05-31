@@ -73,7 +73,7 @@ const onToken = (token) => {
         },
         body: JSON.stringify({ charge: charge, price: (this.props.total*1.1+10).toFixed(2) }),
         };
-        fetch("'http://localhost:3000/charges", config)
+        fetch("https://final-marketplace-api.onrender.com/charges", config)
         .then((res) => res.json())
         .then((response) => {
             console.log(response)
