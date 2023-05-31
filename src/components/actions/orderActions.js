@@ -31,7 +31,7 @@ export const createOrder = (userId) => {
 export const sendOrder = (orderId, total) => {
     return (dispatch) => {
         const token = localStorage.token;
-        fetch(`http://localhost:3000/orders/${orderId}`, {    
+        fetch(`https://final-marketplace-api.onrender.com/orders/` + orderId, {    
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',

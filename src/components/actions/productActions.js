@@ -69,7 +69,7 @@ export const editProduct = (product) => {
         const token = localStorage.token;
         console.log(token)
         let id = product.id
-        fetch(`http://localhost:3000/products/${id}`, {  
+        fetch(`https://final-marketplace-api.onrender.com/products` + id, {  
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -101,7 +101,7 @@ export const deleteProduct = (id) => {
     return (dispatch) => {
         dispatch({type: "DELETE_PRODUCT", id})
         const token = localStorage.token;
-        return fetch(`http://localhost:3000/products/${id}`, {
+        return fetch(`https://final-marketplace-api.onrender.com/products` + id, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

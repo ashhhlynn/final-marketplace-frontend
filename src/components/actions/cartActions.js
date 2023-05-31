@@ -34,7 +34,7 @@ export const removeFromCart = (pid, id) => {
     return (dispatch) => {
         dispatch({type: "REMOVE_FROM_CART", pid, id})
         const token = localStorage.token;
-        return fetch(`https://final-marketplace-api.onrender.com/order_items/${id}`, {
+        return fetch('https://final-marketplace-api.onrender.com/order_items/' + id, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
