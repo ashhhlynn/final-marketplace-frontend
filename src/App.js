@@ -18,7 +18,6 @@ class App extends Component {
       this.props.checkUser()
     }
     this.props.fetchProducts()
-    window.alert("Backend deployment still processing. Visit https://github.com/ashhhlynn/final-marketplace-backend for instructions on accessing database!")
   }
 
   render() {
