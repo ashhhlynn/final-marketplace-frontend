@@ -85,7 +85,7 @@ export const editUser = (users) => {
         const token = localStorage.token;
         console.log(token)
         let id = users.id
-        fetch(`https://final-marketplace-api.onrender.com/users` + id, {  
+        fetch(`https://final-marketplace-api.onrender.com/users/` + id, {  
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
