@@ -66,13 +66,14 @@ A buy and sell ecommerce application for plants created with a Redux & React Jav
 
 ## Instructions
 
-- clone the backend repo:  https://github.com/ashhhlynn/final-marketplace-api to your local environment -- git clone < git repository >
-- run $bundle install - installs gems and dependencies
-- run $rails db:create - creates the database for the first time, or try $rails db:reset
-- run $rails db:migrate - creates the tables for the database
-- run rails s to start the server
-- clone this repo to your local environment -- git clone < git repository >
-- cd(change directory) into the repo
-- run $'npm install' into your command line
-- run $'npm start' into your command line
+- clone the backend repo:  https://github.com/ashhhlynn/final-marketplace-api 
+- cd into the repo
+- run bundle install 
+- run rails db:create (or try rails db:reset)
+- run rails db:migrate 
+- run rails s 
+- clone this repo
+- cd into the repo
+- run npm install 
+- run npm start
 
