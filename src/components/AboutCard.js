@@ -20,7 +20,7 @@ const AboutCard = () => {
                 </Card>        
                 <Card>
                     <center><br></br><br></br>
-                        <Icon name="credit card " size="huge"></Icon>
+                        <Icon name="credit card" size="huge"></Icon>
                         <h2>Flat Delivery Fee</h2>
                         <h4 >Enjoy flat rate delivery fee of $10.00.</h4>
                     </center>

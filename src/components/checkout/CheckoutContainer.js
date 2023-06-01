@@ -25,7 +25,35 @@ class CheckoutContainer extends Component {
             this.props.sendOrder(this.props.currentOrder, total)
         }
     }
-       
+
+    onToken = (token) => {
+        const charge = {
+            token: token.id,
+        };
+        const config = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ charge: charge, price: (this.props.total*1.1).toFixed(2) }),
+            };
+            fetch("https://final-marketplace-api.onrender.com/charges", config)
+            .then((res) => res.json())
+            .then((response) => {
+                console.log(response)
+                if (response.status === "succeeded") {
+                    console.log("Token retrieved successfully.");
+                } 
+                else {
+                    console.log("Token retrieval failed.");
+                }
+            })
+            .catch((error) => {
+                console.error("Error while retrieving token:", error);
+            });
+        };
+    
+
     render() {
         const items = this.props.cart.map ( 
             item => <CartItem item={item} key={item.id}/>
@@ -51,7 +79,7 @@ class CheckoutContainer extends Component {
                                 floated="right"
                                 color="black"
                                 style={{backgroundColor: "black", floated:"right", marginLeft:"13%"}}
-                                token={onToken}
+                                token={this.onToken}
                                 stripeKey="pk_test_51MxwZpLMhdX9PVRj9jc1MEjDj8uT21Wd5Qve63Q84iXXc27LUH4KrBL0mNfw4HTYAj4rPUVwMMKSy8oIq7fBYAB100EqL62dlD"
                                 className="checkout"
                                 />
@@ -66,32 +94,6 @@ class CheckoutContainer extends Component {
     }   
 }
 
-const onToken = (token) => {
-    const charge = {
-        token: token.id,
-    };
-    const config = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ charge: charge, price: (this.props.total*1.1).toFixed(2) }),
-        };
-        fetch("https://final-marketplace-api.onrender.com/charges", config)
-        .then((res) => res.json())
-        .then((response) => {
-            console.log(response)
-            if (response.status === "succeeded") {
-                console.log("Token retrieved successfully.");
-            } 
-            else {
-                console.log("Token retrieval failed.");
-            }
-        })
-        .catch((error) => {
-            console.error("Error while retrieving token:", error);
-        });
-    };
 
 const mapStateToProps = (state) => {
     return {
