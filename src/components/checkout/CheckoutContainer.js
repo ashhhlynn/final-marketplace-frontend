@@ -75,7 +75,7 @@ const onToken = (token) => {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({ charge: charge, price: (this.props.total*1.1+10).toFixed(2) }),
+        body: JSON.stringify({ charge: charge, price: (this.props.total*1.1).toFixed(2) }),
         };
         fetch("https://final-marketplace-api.onrender.com/charges", config)
         .then((res) => res.json())
