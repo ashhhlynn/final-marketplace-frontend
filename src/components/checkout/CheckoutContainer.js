@@ -79,7 +79,7 @@ class CheckoutContainer extends Component {
                                 color="black"
                                 style={{backgroundColor: "black", floated:"right", marginLeft:"13%"}}
                                 token={this.onToken}
-                                stripeKey="pk_live_51MxwZpLMhdX9PVRjJRh9doU6tS7oXnozPlYIfdJS3PeqIiqKdPgIKOd3JsepVrp7zYBLtHCnUzYZiZscfduAVF1S00vjZPqb8g"
+                                stripeKey={process.env.REACT_APP_STRIPE_API_KEY}
                                 className="checkout"
                                 />
                             </h2>
