@@ -38,8 +38,8 @@ class CheckoutContainer extends Component {
             body: JSON.stringify({ charge: charge, price: (this.props.total*1.1).toFixed(2) }),
             };
             fetch("https://final-marketplace-api.onrender.com/charges", config)
-            .then((res) => res.json())
-            .then((response) => {
+            .then(res => res.json())
+            .then(response => {
                 console.log(response)
                 if (response.status === "succeeded") {
                     console.log("Token retrieved successfully.");
@@ -52,7 +52,6 @@ class CheckoutContainer extends Component {
                 console.error("Error while retrieving token:", error);
             });
         };
-    
 
     render() {
         const items = this.props.cart.map ( 
