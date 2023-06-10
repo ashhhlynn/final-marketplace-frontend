@@ -12,7 +12,7 @@ import StripeCheckout from 'react-stripe-checkout';
 class CheckoutContainer extends Component {
 
     componentDidMount = () => {
-        console.log(process.env.STRIPE_PUBLISHABLE_KEY)
+        console.log(process.env['STRIPE_PUBLISHABLE_KEY'])
     }
 
     handleSendOrder = (event, orderTotal) => {
