@@ -81,7 +81,7 @@ class CheckoutContainer extends Component {
                                 color="blue"
                                 style={{backgroundColor: "black", floated:"right", marginLeft:"13%"}}
                                 token={this.onToken}
-                                stripeKey={key}
+                                stripeKey="pk_test_51MxwZpLMhdX9PVRj9jc1MEjDj8uT21Wd5Qve63Q84iXXc27LUH4KrBL0mNfw4HTYAj4rPUVwMMKSy8oIq7fBYAB100EqL62dlD"
                                 className="checkout"
                                 />
                             </h2>
