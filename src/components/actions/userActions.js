@@ -43,7 +43,6 @@ export const getExistingUser = (userData) => {
             else {
                 localStorage.token = data.jwt;
                 dispatch({ type: "SET_CURRENT_USER", user: data.user })
-                console.log(data)
             }
         })
     }
@@ -74,7 +73,6 @@ export const checkUser = () => {
             }
             else {
                 dispatch({ type: "SET_CURRENT_USER", user: data.user })
-                console.log(data)
             }            
         })
     }
@@ -102,7 +100,6 @@ export const editUser = (users) => {
             })
         .then(resp => resp.json())
         .then(data => {
-            console.log(data)
             window.alert("Thank you! Your account was updated.")
             dispatch({ type: "SET_CURRENT_USER", user: data.user })
         })

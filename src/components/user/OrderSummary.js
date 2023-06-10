@@ -7,7 +7,7 @@ class OrderSummary extends Component {
     render () {
         let ot = (this.props.order.total- 10)/1.1
         const items = this.props.order.order_items.map((item => 
-           <div className= "orderTable">
+           <div className= "orderTable" key={item.id}>
                 <Table compact basic='very' fixed>
                     <Table.Body>
                         <Table.Row>
@@ -21,7 +21,7 @@ class OrderSummary extends Component {
         ))        
         return (
             <div className="orderSummary">
-                <Card>
+                <Card key={this.props.order.id}>
                     <Card.Header >
                         <h2>Order #{this.props.order.id} | {this.props.order.created_at.substring(0, 10)}</h2>
                     </Card.Header> 

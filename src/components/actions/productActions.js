@@ -67,7 +67,6 @@ export const createProduct = (product) => {
 export const editProduct = (product) => {
     return (dispatch) => {
         const token = localStorage.token;
-        console.log(token)
         let id = product.id
         fetch(`https://final-marketplace-api.onrender.com/products/` + id, {  
             method: 'PATCH',
@@ -89,7 +88,6 @@ export const editProduct = (product) => {
                 window.alert(data.message)
             }
             else {
-                console.log(data)
                 dispatch({ type: "EDIT_PRODUCT", data, id })
                 window.alert("Thank you! Your product was updated.")
             }

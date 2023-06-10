@@ -10,7 +10,6 @@ import { sortZA } from '../actions/productActions'
 class ProductContainer extends Component {
 
     sortItems = (event) => {
-        console.log(event.target.id)
         if (event.target.id === "1" ) { 
             this.props.sortHighPrice()
         }

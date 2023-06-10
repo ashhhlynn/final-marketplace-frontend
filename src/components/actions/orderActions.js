@@ -1,5 +1,4 @@
 export const createOrder = (userId) => {
-    console.log(userId)
     return (dispatch) => {
         const token = localStorage.token;
         return fetch('https://final-marketplace-api.onrender.com/orders', {

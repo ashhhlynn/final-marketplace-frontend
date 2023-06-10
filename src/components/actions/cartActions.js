@@ -18,7 +18,6 @@ export const addToCart = (product, order) => {
        })
        .then(resp => resp.json())
        .then(data => {
-            console.log(data)
             if (data.message) {
                 window.alert(data.message)
             }
