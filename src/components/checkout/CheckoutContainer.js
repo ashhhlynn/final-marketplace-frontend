@@ -12,7 +12,7 @@ import StripeCheckout from 'react-stripe-checkout';
 class CheckoutContainer extends Component {
 
     componentDidMount = () => {
-        console.log(process.env.STRIPE_PUBLISHABLE_KEY)
+        console.log(process.ENV.STRIPE_PUBLISHABLE_KEY)
     }
 
     handleSendOrder = (event, orderTotal) => {
@@ -37,7 +37,7 @@ class CheckoutContainer extends Component {
             },
             body: JSON.stringify({ charge: charge, price: (this.props.total*1.1).toFixed(2) }),
             };
-            fetch("https://final-marketplace-api.onrender.com/charges", config)
+            fetch("https://final-marketplace-api.onrender.com/charges", config
             .then(res => res.json())
             .then(response => {
                 console.log(response)
@@ -49,7 +49,7 @@ class CheckoutContainer extends Component {
                 }
             })
          
-        };
+        )};
 
     render() {
         const items = this.props.cart.map ( 
