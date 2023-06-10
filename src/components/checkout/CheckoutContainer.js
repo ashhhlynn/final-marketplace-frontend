@@ -48,9 +48,7 @@ class CheckoutContainer extends Component {
                     console.log("Token retrieval failed.");
                 }
             })
-            .catch((error) => {
-                console.error("Error while retrieving token:", error);
-            });
+         
         };
 
     render() {
