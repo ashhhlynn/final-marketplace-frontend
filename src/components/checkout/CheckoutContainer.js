@@ -11,10 +11,6 @@ import StripeCheckout from 'react-stripe-checkout';
 
 class CheckoutContainer extends Component {
 
-    componentDidMount = () => {
-        console.log(process.env.STRIPE_PUBLISHABLE_KEY)
-    }
-
     handleSendOrder = (event, orderTotal) => {
         event.preventDefault()
         if (this.props.cart.length === 0) {
@@ -27,36 +23,22 @@ class CheckoutContainer extends Component {
     }
 
     onToken = (token) => {
-        const charge = {
-            token: token.id,
-        };
-        const config = {
+        fetch("https://final-marketplace-api.onrender.com/charges", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ charge: charge, price: (this.props.total*1.1).toFixed(2) }),
-            };
-            fetch("https://final-marketplace-api.onrender.com/charges", config
-            .then(res => res.json())
-            .then(response => {
-                console.log(response)
-                if (response.status === "succeeded") {
-                    console.log("Token retrieved successfully.");
-                } 
-                else {
-                    console.log("Token retrieval failed.");
-                }
+            body: JSON.stringify({ charge: { token: token.id,}, price: (this.props.total*1.1).toFixed(2) 
             })
-         
-        )};
+        })
+        .then(res => res.json())
+    }
 
     render() {
         const items = this.props.cart.map ( 
             item => <CartItem item={item} key={item.id}/>
         )
-        let orderTotal = (this.props.total)
-
+        let orderTotal = (this.props.total*1.1).toFixed(2) 
         return (
             <div className="checkoutContainer">
                 <Grid columns={2} stackable divided>
@@ -75,10 +57,10 @@ class CheckoutContainer extends Component {
                             <h2 style={{marginLeft:"31%"}}>shipping address                    
                                 <StripeCheckout
                                 floated="right"
-                                color="blue"
-                                style={{backgroundColor: "black", floated:"right", marginLeft:"13%"}}
+                                backgroundColor="black"
+                                style={{floated:"right", marginLeft:"13%"}}
                                 token={this.onToken}
-                                stripeKey="pk_test_51MxwZpLMhdX9PVRj9jc1MEjDj8uT21Wd5Qve63Q84iXXc27LUH4KrBL0mNfw4HTYAj4rPUVwMMKSy8oIq7fBYAB100EqL62dlD"
+                                stripeKey={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}
                                 className="checkout"
                                 />
                             </h2>
@@ -91,7 +73,6 @@ class CheckoutContainer extends Component {
         )
     }   
 }
-
 
 const mapStateToProps = (state) => {
     return {
