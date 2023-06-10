@@ -58,6 +58,8 @@ class CheckoutContainer extends Component {
             item => <CartItem item={item} key={item.id}/>
         )
         let orderTotal = (this.props.total)
+        const key = process.env.key
+
         return (
             <div className="checkoutContainer">
                 <Grid columns={2} stackable divided>
@@ -79,7 +81,7 @@ class CheckoutContainer extends Component {
                                 color="blue"
                                 style={{backgroundColor: "black", floated:"right", marginLeft:"13%"}}
                                 token={this.onToken}
-                                stripeKey={process.env['KEY']}
+                                stripeKey={key}
                                 className="checkout"
                                 />
                             </h2>
