@@ -76,7 +76,7 @@ class CheckoutContainer extends Component {
                             <h2 style={{marginLeft:"31%"}}>shipping address                    
                                 <StripeCheckout
                                 floated="right"
-                                color="black"
+                                color="blue"
                                 style={{backgroundColor: "black", floated:"right", marginLeft:"13%"}}
                                 token={this.onToken}
                                 stripeKey={process.env['KEY']}
