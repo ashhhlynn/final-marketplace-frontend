@@ -58,7 +58,6 @@ class CheckoutContainer extends Component {
             item => <CartItem item={item} key={item.id}/>
         )
         let orderTotal = (this.props.total)
-        const key = process.env.key
 
         return (
             <div className="checkoutContainer">
