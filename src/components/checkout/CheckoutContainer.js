@@ -79,7 +79,7 @@ class CheckoutContainer extends Component {
                                 color="black"
                                 style={{backgroundColor: "black", floated:"right", marginLeft:"13%"}}
                                 token={this.onToken}
-                                key={process.env.STRIPE_PUBLISHABLE_KEY}
+                                stripeKey={process.env.STRIPE_PUBLISHABLE_KEY}
                                 className="checkout"
                                 />
                             </h2>
