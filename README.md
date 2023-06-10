@@ -6,7 +6,7 @@ A buy and sell ecommerce application for plants created with a Redux & React Jav
   
 ## Functionality
 
-- Users can create accounts and sign in, authenticated and authorized through BCrpyt, stored through JWT.
+- Users can create accounts and sign in, authenticated and authorized through BCrpyt and JWT.
 
 - Users can view products and sort by price & alphabetical order.
 
@@ -53,6 +53,7 @@ A buy and sell ecommerce application for plants created with a Redux & React Jav
 
 - Ruby 
 - Rails
+- JavaScript
 - React
 - Redux
 - Semantic UI React
