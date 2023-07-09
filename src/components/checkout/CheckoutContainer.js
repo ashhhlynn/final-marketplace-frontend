@@ -28,7 +28,7 @@ class CheckoutContainer extends Component {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ charge: { token: token.id,}, price: (this.props.total*1.1).toFixed(2) 
+            body: JSON.stringify({ charge: { token: token.id,}, price: (this.props.total*1.1+10).toFixed(2) 
             })
         })
         .then(res => res.json())
