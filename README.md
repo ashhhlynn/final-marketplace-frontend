@@ -1,18 +1,13 @@
 # Seedlink 
-
-## Description
+> A buy and sell ecommerce application for plants created with a Redux & React JavaScript frontend and a Rails API backend. Users can sell or purchase plants from other users by adding items to a shopping cart and submitting orders at checkout. Styled with Semantic UI React and CSS. 
   
-A buy and sell ecommerce application for plants created with a Redux & React JavaScript frontend and a Rails API backend. Users can sell or purchase plants from other users by adding items to a shopping cart and submitting orders at checkout. Styled with Semantic UI React and CSS. 
-  
-## Functionality
-
+## Features
 - Users can create accounts & sign in, authenticated and authorized through BCrypt and JWT
 - View product index and sort by price & alphabetical order
 - Add & remove items from a shopping cart
 - Ability to add & remove items at checkout, and place orders powered through Stripe API
 - Edit account information from both user profile and checkout
 - View history of their orders and created products marked as active and sold, ability to edit & delete
-
 
 ## Media 
 <img width="800" height="400" src="https://user-images.githubusercontent.com/84604278/227614097-af76bb6b-c356-41e9-af10-7b5d6bd35670.png">
@@ -43,8 +38,7 @@ A buy and sell ecommerce application for plants created with a Redux & React Jav
 
 
 
-## Tech Stack
-
+## Technology Used
 - Ruby 
 - Rails
 - JavaScript
@@ -59,16 +53,17 @@ A buy and sell ecommerce application for plants created with a Redux & React Jav
 - active_model_serializers
 - React Router
 
-## Instructions
+## Setup
+- ` clone < https://github.com/ashhhlynn/final-marketplace-api > `
+- ` cd final-marketplace-api `
+- ` bundle install `
+- ` rake db:create `
+- ` rake db:migrate `
+- ` rails s `
+- ` clone < this repo > `
+- ` cd < this repo > `
+- ` npm install `
+- ` npm start `
 
-- clone the backend repo:  https://github.com/ashhhlynn/final-marketplace-api 
-- cd into the repo
-- run bundle install 
-- run rails db:create (or try rails db:reset)
-- run rails db:migrate 
-- run rails s 
-- clone this repo
-- cd into the repo
-- run npm install 
-- run npm start
-
+## Acknowledgements
+- This project was created by Ashley
