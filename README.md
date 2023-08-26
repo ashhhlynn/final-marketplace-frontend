@@ -58,8 +58,8 @@ A buy and sell ecommerce application for plants created with a Redux & React Jav
 - Redux
 - Semantic UI React
 - HTML & CSS
-- PostgresQL - Database
-- Bcrypt and JWT for authentication and authorization
+- PostgreSQL - Database
+- BCrypt and JWT for authentication and authorization
 - Stripe API
 - rack-cors - provides support for Cross-Origin Resource Sharing for Rack compatible web applications(allows the front-end portion of this project to perform fetch requests)
 - active_model_serializers - allows customization and rendering of data in JSON format as responses to requests
