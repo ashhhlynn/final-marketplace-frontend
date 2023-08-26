@@ -6,19 +6,13 @@ A buy and sell ecommerce application for plants created with a Redux & React Jav
   
 ## Functionality
 
-- Users can create accounts and sign in, authenticated and authorized through BCrypt and JWT.
+- Users can create accounts & sign in, authenticated and authorized through BCrypt and JWT
+- View product index and sort by price & alphabetical order
+- Add & remove items from a shopping cart
+- Ability to add & remove items at checkout, and place orders powered through Stripe API
+- Edit account information from both user profile and checkout
+- View history of their orders and created products marked as active and sold, ability to edit & delete
 
-- Users can view products and sort by price & alphabetical order.
-
-- Users can add and remove items from a shopping cart. 
-
-- Users can add and remove items at checkout, and place orders powered through Stripe API.
-
-- Users can edit their Account information from both their user profile and checkout.
-
-- Users can edit and delete Product information for the products they created. 
-
-- Users can view history of their orders and created products marked as active and sold.
 
 ## Media 
 <img width="800" height="400" src="https://user-images.githubusercontent.com/84604278/227614097-af76bb6b-c356-41e9-af10-7b5d6bd35670.png">
@@ -58,11 +52,11 @@ A buy and sell ecommerce application for plants created with a Redux & React Jav
 - Redux
 - Semantic UI React
 - HTML & CSS
-- PostgreSQL - Database
-- BCrypt and JWT for authentication and authorization
+- PostgreSQL
+- BCrypt and JWT 
 - Stripe API
-- rack-cors - provides support for Cross-Origin Resource Sharing for Rack compatible web applications(allows the front-end portion of this project to perform fetch requests)
-- active_model_serializers - allows customization and rendering of data in JSON format as responses to requests
+- rack-cors 
+- active_model_serializers
 - React Router
 
 ## Instructions
