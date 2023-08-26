@@ -54,7 +54,7 @@
 - React Router
 
 ## Setup
-- ` clone < this repo > `
+- ` git clone < this repo > `
 - ` cd < this repo > `
 - ` npm install `
 - ` npm start `
