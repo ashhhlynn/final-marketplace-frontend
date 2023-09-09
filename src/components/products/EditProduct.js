@@ -27,7 +27,7 @@ super(props)
     event.preventDefault()
     this.props.editProduct(product)
     this.props.checkUser()
-    this.props.handleClose();
+    this.props.handleClose()
   }
 
   render() {

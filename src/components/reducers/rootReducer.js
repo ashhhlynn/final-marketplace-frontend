@@ -18,7 +18,6 @@ const rootReducer = (state = initialState, action) => {
             };
 
         case "FETCH_PRODUCTS":
-            console.log(action.products)
             return {
                 ...state,
                 products: action.products,
@@ -79,7 +78,6 @@ const rootReducer = (state = initialState, action) => {
             };
 
         case "ADD_TO_CART":  
-        console.log(action.data)
             return {
                 ...state,
                 cart: [...state.cart, action.product],
