@@ -17,8 +17,7 @@ class CheckoutContainer extends Component {
             window.alert('Must have items in cart')
         }
         else {
-            let total = (orderTotal*1.1+10).toFixed(2)
-            this.props.sendOrder(this.props.currentOrder, total)
+            this.props.sendOrder(this.props.currentOrder, orderTotal)
         }
     }
 
@@ -38,7 +37,7 @@ class CheckoutContainer extends Component {
         const items = this.props.cart.map ( 
             item => <CartItem item={item} key={item.id}/>
         )
-        let orderTotal = (this.props.total*1.1).toFixed(2) 
+        let orderTotal = (this.props.total*1.1+10).toFixed(2) 
         return (
             <div className="checkoutContainer">
                 <Grid columns={2} stackable divided>
