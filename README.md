@@ -53,4 +53,7 @@
 - ` npm start `
 
 ## Acknowledgements
-- This project was created by Ashley
+This project was created by Ashley.
+
+## License
+This project is MIT licensed. 
