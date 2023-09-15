@@ -37,6 +37,7 @@
 - JavaScript
 - React
 - Redux
+- React Router
 - Semantic UI React
 - HTML & CSS
 - PostgreSQL
@@ -44,7 +45,6 @@
 - Stripe API
 - Dotenv Gem 
 - Active Model Serializers
-- React Router
 
 ## Setup
 - ` git clone < this repo > `
