@@ -1,5 +1,5 @@
 # Seedlink 
-> A buy and sell e-commerce application for plants built with a JavaScript React & Redux front end and a Ruby on Rails back end. Users can sell or purchase plants from other users by adding to a shopping cart and submitting orders at checkout. Styled with Semantic UI React and CSS. 
+> A buy and sell e-commerce application for plants built with a JavaScript and React front end and a Ruby on Rails with PostgreSQL database back end. Users can sell or purchase plants from other users by adding to a shopping cart and submitting orders at checkout. Deployed to Render.
 
 > Check out the <a href="https://seedlink.netlify.app/">live</a> and <a href="https://vimeo.com/863265175/f85d25b2e3">video</a> demos or the <a href="https://github.com/ashhhlynn/final-marketplace-api">back end</a> repo.
 
