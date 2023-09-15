@@ -4,7 +4,7 @@
 > Check out the <a href="https://seedlink.netlify.app/">live</a> and <a href="https://vimeo.com/863265175/f85d25b2e3">video</a> demos or the <a href="https://github.com/ashhhlynn/final-marketplace-api">back end</a> repo.
 
 ## Features
-- Register and sign in via BCrypt, JWT, and localStorage
+- Register and sign in via BCrypt and JWT
 - View product index and sort by price and alphabetical order
 - Add and remove items from a shopping cart
 - Ability to add and remove items at checkout, and place orders secured through Stripe API
