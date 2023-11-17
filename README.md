@@ -4,13 +4,13 @@
 > Check out the <a href="https://seedlink.netlify.app/">live</a> and <a href="https://vimeo.com/864693054">video</a> demos or the <a href="https://github.com/ashhhlynn/final-marketplace-api">back end</a> repo.
 
 ## Features
-- Register and sign in via BCrypt and JWT
+- Register and log in authenticated through BCrypt, JWT, and localStorage
+- Create plant products to sell, and view, update, or remove inventory
 - View product index and sort by price and alphabetical order
-- Add and remove items from a shopping cart
-- Ability to add and remove items at checkout, and place orders secured through Stripe API
-- Edit account information from both user profile and checkout
-- View history of order invoices
-- View, edit, and delete created products marked as active and sold
+- Add (and remove) items from product index to shopping cart
+- Place orders at checkout authorized with Stripe API 
+- Update account and shipping information at checkout or profile page
+- View history of order invoices at profile page 
 
 ## Media 
 ### Home
