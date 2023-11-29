@@ -1,9 +1,9 @@
 import React, { Component } from "react"
 import { connect } from 'react-redux'
 import { Form } from "semantic-ui-react"
-import { getExistingUser } from './actions/userActions'
+import { getExistingUser } from '../actions/userActions'
 
-class Login extends Component {
+class LoginN extends Component {
 
     state = {
         email: '',
@@ -18,32 +18,31 @@ class Login extends Component {
 
     handleSubmit = (event, userData)  => {
         event.preventDefault()
-        this.props.handleRoute()
         this.props.getExistingUser(userData)
     }
 
     render() {
         return (
             <>          
-            <h2>Sign In</h2>
-            <Form style={{width:"400px"}} onSubmit={(event) => {this.handleSubmit(event, this.state)}}>
-                <Form.Input
+                <h2>Sign In</h2>
+                <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
+                    <Form.Input
                     required
                     id="email"
                     placeholder="Email"
                     value={this.state.email} 
                     onChange={this.handleChange}
-                />               
-                <Form.Input
+                    />               
+                    <Form.Input
                     required
                     id="password"
                     placeholder="Password"
                     type="password"
                     value={this.state.password} 
                     onChange={this.handleChange}
-                /> 
-                <Form.Button content='Submit' />
-            </Form>
+                    /> 
+                    <Form.Button content='Submit' />
+                </Form>
             </>
         )
     }
@@ -55,4 +54,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(Login)
+export default connect(null, mapDispatchToProps)(LoginN)

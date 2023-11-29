@@ -30,11 +30,11 @@ class Home extends Component{
                     </Item>   
                 </center>  
                     <div className="aboutTwo">
-                        <br></br><h1>seedlink</h1>
+                        <br></br><br></br><h1>seedlink</h1>
                         <Divider></Divider>
-                        <h3> Welcome to Seedlink, a buy and sell online marketplace for plants. Our mission is to connect plant lovers and build community in order to inspire sustainable lifestyles. Sell your own creations, or enjoy healthy, happy plants delivered straight to your door!</h3>
+                        <h3> Seedlink is a buy and sell marketplace for plants with a mission to connect plant lovers and inspire sustainable lifestyles. Sell your own creations, or enjoy plants delivered straight to your door!</h3>
                         <Button as={Link} to ="/products" style={{ color:"white", backgroundColor:"black", width:"180px"}} onClick={this.handleCreateOrder} size="huge">Shop Now</Button>
-                        <img style={{marginTop: "-75%", marginLeft:"107%", marginBottom: "-1%",  objectFit: "cover", objectPosition: "30% 90%"}} floated="left" width="680px" height="445px" src="https://i0.wp.com/www.redwinedragons.com/wp-content/uploads/2022/04/easy-care-best-beautiful-indoor-house-plants-decor.png?w=800&ssl=1" alt="about" />
+                        <img style={{marginTop: "-78.3%", marginLeft:"107%", marginBottom: "-1%",  objectFit: "cover", objectPosition: "30% 90%"}} floated="left" width="680px" height="445px" src="https://i0.wp.com/www.redwinedragons.com/wp-content/uploads/2022/04/easy-care-best-beautiful-indoor-house-plants-decor.png?w=800&ssl=1" alt="about" />
                     </div>
                 <AboutCard/>  
             </div>

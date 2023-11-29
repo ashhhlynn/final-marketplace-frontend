@@ -5,23 +5,11 @@ import { logOut } from './actions/userActions'
 import { connect } from "react-redux"
 import { createOrder } from './actions/orderActions'
 import ShoppingCartContainer from './cart/ShoppingCartContainer'
-import ToggleLogin from './ToggleLogin'
-import CreateProductForm from './products/CreateProductForm'
 
 class Navbar extends Component {
 
   state = {
     modalOpenCart: false,
-    modalOpenLogin: false,
-    modalOpenCp: false
-  }
-
-  handleOpenCp = () => {
-    this.setState({ modalOpenCp: true });
-  }
-
-  handleCloseCp = () => {
-    this.setState({ modalOpenCp: false })
   }
 
   handleOpenCart = () => {
@@ -32,18 +20,9 @@ class Navbar extends Component {
     this.setState({ modalOpenCart: false })
   }
 
-  handleOpenLogin = () => {
-    this.setState({ modalOpenLogin: true });
-  }
-
-  handleCloseLogin = () => {
-    this.setState({ modalOpenLogin: false });
-  }
-
   handleLogout = () => {
     localStorage.clear()
     this.props.logOut()
-    this.setState({ modalOpenLogin: false })
   }
 
   handleCreateOrder = () => {
@@ -58,18 +37,9 @@ class Navbar extends Component {
       <div className="nav">
         <Menu className="link-styles" pointing secondary size="large">
           <Menu.Item as={Link} to='/'><h3>home</h3></Menu.Item>
-          <Menu.Item as={Link} onClick={this.handleOpenCp}><h3>sell</h3></Menu.Item>
+          <Menu.Item as={Link} to='/createproduct'><h3>sell</h3></Menu.Item>
           <Menu.Item as={Link} to ="/products" onClick={()=>{this.handleCreateOrder()}}><h3>shop</h3></Menu.Item>
-          <Menu.Item as={Link} to='/' style={{marginLeft:"26%"}}><h3 style={{color:"#26453e", fontFamily:"gadugi", fontSize:"36px", letterSpacing:'1.5px'}}>seedlink.</h3>
-          </Menu.Item>
-          <Modal 
-            open={this.state.modalOpenCp}
-            onClose={this.handleCloseCp}
-            closeIcon>
-            <Modal.Content>
-              <CreateProductForm handleClose={this.handleCloseCp} />
-            </Modal.Content>
-          </Modal>
+          <Menu.Item as={Link} to='/' style={{marginLeft:"25.5%"}}><h3 style={{color:"#26453e", fontFamily:"gadugi", fontSize:"36px", letterSpacing:'1.5px'}}>seedlink.</h3></Menu.Item>
           <Menu.Menu position='right'>
             <Modal style={{ position: "fixed", top: "18px", right: "32px",  height:"550px"}}
               open={this.state.modalOpenCart}
@@ -82,15 +52,7 @@ class Navbar extends Component {
             <Menu.Item onClick={this.handleOpenCart}><h3><Icon name='shopping basket' size="large"/></h3></Menu.Item>
             {this.props.user.length === 0 ? 
               <>
-              <Menu.Item onClick={this.handleOpenLogin}><h3 ><Icon name='user circle outline' size="large"/></h3></Menu.Item>
-              <Modal centered 
-                open={this.state.modalOpenLogin}
-                onClose={this.handleCloseLogin}
-                closeIcon>
-                <Modal.Content>
-                  <ToggleLogin handleClose={this.handleCloseLogin}/>
-                </Modal.Content>
-              </Modal>
+              <Menu.Item as={Link} to="signuplogin"><h3 ><Icon name='user circle ' size="large"/></h3></Menu.Item>
               </>
             : 
               <>

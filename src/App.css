@@ -70,7 +70,7 @@ body .ui.cards>.card {
 }
 
 .homeHeader {
-  margin-top:-37% !important;
+  margin-top:-34% !important;
   text-align: right !important;
   margin-right: 7% !important;
 }
@@ -95,12 +95,12 @@ body .ui.cards>.card {
 }
 
 .aboutTwo { 
-  height: 370px;
+  height: 362px;
   line-height:1.8 !important;
   margin-left: 4%;
   width: 450px;
   text-align: left !important;
-  margin-bottom: 5.5%;
+  margin-bottom: 5%;
   margin-top: 5%;
   margin-right: 4%;
 }

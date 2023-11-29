@@ -10,6 +10,8 @@ import Footer from './components/Footer'
 import './App.css'
 import { connect } from "react-redux"
 import { fetchProducts } from './components/actions/productActions'
+import CreateProductContainer from './components/products/CreateProductContainer'
+import SignupLogin from './components/SignupLogin'
 
 class App extends Component {
 
@@ -30,6 +32,8 @@ class App extends Component {
             <Route exact path="/products" element={<ProductContainer />} />
             <Route exact path="/checkout" element={<CheckoutContainer />} />
             <Route exact path="/profile" element={<Profile user={this.props.user} />} />
+            <Route exact path="/createproduct" element={<CreateProductContainer />} />
+            <Route exact path="/signuplogin" element={<SignupLogin />} />
           </Routes>
           <Footer />
         </div>

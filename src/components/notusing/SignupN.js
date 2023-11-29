@@ -1,9 +1,9 @@
 import React, { Component } from "react"
 import { connect } from 'react-redux'
 import { Form } from 'semantic-ui-react'
-import { createUser } from './actions/userActions'
+import { createUser } from '../actions/userActions'
 
-class Signup extends Component {
+class SignupN extends Component {
 
     state = {
         name: '',
@@ -18,7 +18,6 @@ class Signup extends Component {
 
     handleSubmit = (event, userData) => {
         event.preventDefault()
-        this.props.handleRoute()
         this.props.createUser(userData)
     }
 
@@ -32,7 +31,7 @@ class Signup extends Component {
         return (
             <>
             <h2 >Register</h2>
-            <Form style={{ width:"400px"}}onSubmit={ (event) => {this.handleSubmit(event, this.state)} }>              
+            <Form onSubmit={ (event) => {this.handleSubmit(event, this.state)} }>              
                 <Form.Input
                     required
                     type="text"
@@ -59,7 +58,7 @@ class Signup extends Component {
                 />       
                 <Form.Group>
                     <Form.Input
-                        width={6}
+                        width={8}
                         required
                         type="text"
                         id="city"
@@ -77,7 +76,7 @@ class Signup extends Component {
                         onChange={this.handleChange}
                     />  
                     <Form.Input
-                        width={4}
+                        width={3}
                         required
                         type="text"
                         id="zip"
@@ -115,4 +114,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(Signup)
+export default connect(null, mapDispatchToProps)(SignupN)
