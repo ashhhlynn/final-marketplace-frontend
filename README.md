@@ -14,22 +14,26 @@
 
 ## Media 
 ### Home
-<img width="650" height="320" src="https://user-images.githubusercontent.com/84604278/227614097-af76bb6b-c356-41e9-af10-7b5d6bd35670.png">
+![Screenshot (153)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/e663762b-1ebb-42e6-9e35-ca0b26bb6146)
 
-### Product Index
-<img width="650" height="320" src="https://user-images.githubusercontent.com/84604278/227587296-1b5871f0-92c5-4792-9dce-05451fc0a441.png">
-
-### Shopping Cart
-<img width="650" height="320" src="https://user-images.githubusercontent.com/84604278/227553772-03604489-1ec3-4fe1-b4db-fce11467b7e9.png">
-
-### Checkout
-<img width="650" height="320" src="https://user-images.githubusercontent.com/84604278/227588119-b350aded-1532-4dba-b680-306d5051dc38.png">
-
-### Inventory
-<img width="650" height="320" src="https://user-images.githubusercontent.com/84604278/227588163-8506c97b-7f7a-44e8-8dcf-5fdc4dbf482e.png">
+### Register & Login
+![Screenshot (159)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/f78d9b03-a89f-4b58-8e35-2e10bae08fee)
 
 ### Create Plant
-<img width="650" height="320" src="https://user-images.githubusercontent.com/84604278/227554530-7ee3ecb7-4c73-4f7b-b88e-cd86994f3228.png">
+![Screenshot (158)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/aac0b316-8767-4959-97f3-9f754266a969)
+
+### Product Index
+![Screenshot (154)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/2bb955fe-8166-4223-8beb-3c370fb890a9)
+
+### Shopping Cart
+![Screenshot (155)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/3b28bdfa-68c4-4fc9-b720-c4ac64b09730)
+
+### Checkout
+![Screenshot (156)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/b07a916d-24fa-4d23-a6ce-f74a38dd905f)
+
+### Inventory
+![Screenshot (157)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/c2bb3950-ca7d-4c30-8e44-749aab4bc52f)
+
 
 ## Technology Used
 - Ruby 
