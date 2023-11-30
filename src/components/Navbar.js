@@ -57,7 +57,7 @@ class Navbar extends Component {
             : 
               <>
               <Menu.Item>
-                <Link><h3><Icon name='user circle outline' size="large"/></h3></Link>
+                <Link><h3><Icon name='user circle' size="large"/></h3></Link>
                 <Dropdown size="tiny">
                   <Dropdown.Menu>
                     <Dropdown.Item><Link to="/profile"><h3>Account</h3></Link></Dropdown.Item>
