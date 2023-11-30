@@ -23,7 +23,7 @@ function SignupLogin() {
                         <center><Signup handleRoute={handleRoute}/></center>
                     </Grid.Column>   
                 </Grid>
-                <Divider vertical>Or</Divider>
+                <Divider style={{fontWeight:"normal"}}vertical>Or</Divider>
             </Segment>
         </div>
     )
