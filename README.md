@@ -16,9 +16,6 @@
 ### Home
 ![Screenshot (153)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/e663762b-1ebb-42e6-9e35-ca0b26bb6146)
 
-### Register & Login
-![Screenshot (159)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/f78d9b03-a89f-4b58-8e35-2e10bae08fee)
-
 ### Create Plant
 ![Screenshot (158)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/aac0b316-8767-4959-97f3-9f754266a969)
 
