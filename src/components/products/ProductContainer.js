@@ -33,7 +33,8 @@ class ProductContainer extends Component {
         return (
             <>
             <div className="productContainer">
-                <img src="https://cdn.shopify.com/s/files/1/0019/8361/0978/collections/plants1_2000x.jpg?v=1673559695" alt="succulent"/>
+                <img style={{marginBottom:"1.5%"}} src="https://cdn.shopify.com/s/files/1/0019/8361/0978/collections/plants1_2000x.jpg?v=1673559695" alt="succulent"/>
+                <br></br>
                 <Header floated="right" style={{marginRight:"5%", marginTop:"1.7%"}}>
                     <Button id="1" circular basic onClick={(event)=>{this.sortItems(event)}}>Price High to Low</Button> <Button id="2" circular basic onClick={(event)=>{this.sortItems(event)}}>Price Low to High</Button> <Button id="3"circular basic onClick={(event)=>{this.sortItems(event)}}>A to Z</Button> <Button id="4"circular basic onClick={(event)=>{this.sortItems(event)}}>Z to A</Button>
                 </Header>
@@ -42,6 +43,7 @@ class ProductContainer extends Component {
             <Card.Group itemsPerRow={4}  style={{marginTop: "1%", marginLeft:"2%", marginRight:"2%"}}>
                 {productGroup}
             </Card.Group>
+            <br></br><br></br>
             </>
         )
     }

@@ -1,6 +1,6 @@
 import { useState } from "react"
-import Login from "./Login"
-import Signup from "./Signup"
+import Login from "./LoginN"
+import Signup from "./SignupN"
 import { Link } from 'react-router-dom'
 
 function ToggleLogin({ onLogin }) {

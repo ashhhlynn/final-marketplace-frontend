@@ -41,7 +41,7 @@ class CheckoutContainer extends Component {
         return (
             <div className="checkoutContainer">
                 <Grid columns={2} stackable divided>
-                    <Grid.Column style={{ backgroundColor:"#ffffff"}} >
+                    <Grid.Column style={{backgroundColor:"#ffffff"}}>
                         <List>
                             <h1>your order<Button floated="right" as={Link} to ="/products" circular content="Back to Shop"></Button></h1><br/>
                             {items}
@@ -49,6 +49,7 @@ class CheckoutContainer extends Component {
                             <div className="checkoutButtons">
                                 <Button circular content="Place Order" onClick={(event) => {this.handleSendOrder(event, orderTotal)}}></Button> 
                             </div>
+                            <br></br>
                         </List>
                     </Grid.Column>
                     <Grid.Column >
