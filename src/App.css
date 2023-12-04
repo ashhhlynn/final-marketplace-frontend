@@ -117,11 +117,11 @@ body .ui.cards>.card {
 
 .aboutCard .ui.card {
   color:#ffffff;
-  margin-top: 5% !important;
+  margin-top: 4% !important;
   margin-bottom: 5% !important;
   margin-right: 2% !important;
   margin-left: 2% !important;
-  background: #838F8D!important;
+  background: #426357 !important;
   height: 250px;
   box-shadow: 0 0px 4px 0 rgba(247, 246, 246, 0.95), 0 2px 8px 0 rgba(0, 0, 0, 0.19) !important;
 }
@@ -139,7 +139,6 @@ body .ui.cards>.card {
   width: 1263px;
   height: 270px;
 }
-
 
 .productCard img {
   width: 255px;
@@ -169,13 +168,13 @@ body .ui.cards>.card {
 
 .checkoutContainer .ui.list {
   margin-top: 4%;
-  margin-left: 15% !important;
+  margin-left: 18% !important;
   width: 410px
 }
 
 .checkoutContainer .ui.grid {
   margin-top: 0%;
-  margin-bottom: 2% 
+  margin-bottom: 0% 
 }
 
 .checkoutButtons .button.ui.button{
@@ -280,8 +279,9 @@ body .ui.cards>.card {
 
 .profileNav .link-styles {
   text-align: left;
-  height:100%;
+  height:101%;
   background: #ffffff;
+  margin-top: -1.5% !important;
 }
 
 .editProduct h2  {
@@ -296,4 +296,13 @@ body .ui.cards>.card {
 
 .createProductForm {
   text-align: center !important;
+}
+
+.checkout button {
+  background:"black" !important;
+}
+
+.shipping button > span {
+  background-color:"black" !important;
+  display: "none"
 }

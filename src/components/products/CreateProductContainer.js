@@ -18,7 +18,7 @@ function CreateProductContainer() {
             <br/><br/><br></br>
             <Grid columns={2}>
                 <Grid.Column style={{}}> 
-                    <Segment style={{background:"inherit", marginLeft:"16%", boxShadow:"none", border:"none"}}>         
+                    <Segment style={{background:"inherit", marginLeft:"14%", boxShadow:"none", border:"none"}}>         
                         <CreateProduct handleRoute={handleRoute}/>
                     </Segment>
                 </Grid.Column> 

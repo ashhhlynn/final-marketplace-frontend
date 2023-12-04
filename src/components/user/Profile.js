@@ -30,7 +30,7 @@ function Profile(props) {
   
   return (
     <div className="profileNav">    
-      <img style={{objectFit: "cover", objectPosition: "50% 12%"}}  src="//cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=352 352w, //cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=832 832w, //cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=1200 1200w, //cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=1920 1920w" alt="cp" width="1263" height="270" loading="eager"/>          
+      <img style={{objectFit: "cover", objectPosition: "50% 32%"}}  src="https://leafandclay.co/cdn/shop/collections/succulents-homepage-image_67aed5c3-86b9-4af3-955f-2c02dd129166.jpg?v=1655490570&width=1920" alt="cp" width="1263" height="270" loading="eager"/>          
       <Grid columns={2} stackable textAlign='left'>
         <Grid.Column style={{width: "370px"}} >
           <Menu className="link-styles" vertical size="large"> 
@@ -40,7 +40,7 @@ function Profile(props) {
               <Link onClick={showC}><h4>plant creations</h4></Link>
           </Menu>         
         </Grid.Column>
-        <Grid.Column style={{marginLeft:"8%", marginTop:"2%"}}> 
+        <Grid.Column style={{marginLeft:"6.5%", marginTop:"2%"}}> 
           {displayA && <div><Account/></div>}
           {displayB && <div><UserOrders user={props.user}/></div>}
           {displayC && <div><UserProducts user={props.user}/></div>}
