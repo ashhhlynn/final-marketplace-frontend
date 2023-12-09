@@ -41,7 +41,7 @@ class CheckoutContainer extends Component {
         return (
             <div className="checkoutContainer">
                 <Grid columns={2} stackable divided>
-                    <Grid.Column style={{backgroundColor:"#ffffff"}}>
+                    <Grid.Column >
                         <List>
                             <h1>your order<Button floated="right" as={Link} to ="/products" circular content="Back to Shop"></Button></h1><br/>
                             {items}

@@ -26,7 +26,7 @@ function CreateProductContainer() {
                     <img style={{marginTop: "0%", marginLeft:"23%", objectFit: "cover", objectPosition: "0% 0%"}} width="370" height="370" src="https://hips.hearstapps.com/hmg-prod/images/pretty-pink-plants-1554757430.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*" alt="cpmain"/>
                 </Grid.Column> 
             </Grid>
-            <br></br><br></br>
+            <br></br><br></br><br></br>
         </div>
     )
 }

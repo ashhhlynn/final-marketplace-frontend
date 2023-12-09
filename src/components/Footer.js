@@ -3,9 +3,9 @@ import { Segment } from 'semantic-ui-react'
 
 const Footer= () => {
     return (
-        <Segment size="tiny" style={{marginTop: "0%", border:"0", opacity:"86%", background:"#426357", height:"60px"}}>
+        <Segment size="tiny" style={{marginTop: "0%", borderBox:"1", borderColor:"black",  background:"#fdfcf9", height:"60px"}}>
             <center> 
-                <h5 style={{marginTop:"1%", color:"#FFFFFF"}}> © 2023 Seedlink</h5>
+                <h5 style={{marginTop:"1%", color:"#26453e"}}> © 2023 Seedlink</h5>
             </center>
         </Segment>
     )
