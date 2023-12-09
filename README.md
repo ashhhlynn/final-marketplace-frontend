@@ -1,7 +1,7 @@
 # Seedlink 
 > A buy and sell e-commerce application for plants built with a JavaScript and React front end and a Ruby on Rails with PostgreSQL database back end. Users can sell or purchase plants from other users by adding to a shopping cart and submitting orders at checkout. Front end deployed to Netlify and back end deployed to Render.
 
-> Check out the <a href="https://seedlink.netlify.app/">live</a> and <a href="https://vimeo.com/889757148">video</a> demos or the <a href="https://github.com/ashhhlynn/final-marketplace-api">back end</a> repo.
+> Check out the <a href="https://seedlink.netlify.app/">live</a> and <a href="https://vimeo.com/891041601">video</a> demos or the <a href="https://github.com/ashhhlynn/final-marketplace-api">back end</a> repo.
 
 ## Features
 - Register and log in authenticated through BCrypt, JWT, and localStorage
@@ -15,9 +15,6 @@
 ## Media 
 ### Home
 ![Screenshot (153)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/e663762b-1ebb-42e6-9e35-ca0b26bb6146)
-
-### Register & Login
-![Screenshot (159)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/f78d9b03-a89f-4b58-8e35-2e10bae08fee)
 
 ### Create Plant
 ![Screenshot (158)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/aac0b316-8767-4959-97f3-9f754266a969)
