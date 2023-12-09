@@ -1,7 +1,12 @@
 # Seedlink 
-> A buy and sell e-commerce application for plants built with a JavaScript and React front end and a Ruby on Rails with PostgreSQL database back end. Users can sell or purchase plants from other users by adding to a shopping cart and submitting orders at checkout. Front end deployed to Netlify and back end deployed to Render.
-
-> Check out the <a href="https://seedlink.netlify.app/">live</a> and <a href="https://vimeo.com/891041601">video</a> demos or the <a href="https://github.com/ashhhlynn/final-marketplace-api">back end</a> repo.
+<table>
+<tr>
+<td>
+A buy and sell e-commerce application for plants built with a JavaScript and React front end and a Ruby on Rails with PostgreSQL database back end. Users can sell or purchase plants from other users by adding to a shopping cart and submitting orders at checkout. Front end deployed to Netlify and back end deployed to Render.
+</td>
+</tr>
+</table>
+Check out the <a href="https://seedlink.netlify.app/">live</a> and <a href="https://vimeo.com/891041601">video</a> demos or the <a href="https://github.com/ashhhlynn/final-marketplace-api">back end</a> repo.
 
 ## Features
 - Register and log in authenticated through BCrypt, JWT, and localStorage
@@ -31,7 +36,6 @@
 ### Inventory
 ![Screenshot (157)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/c2bb3950-ca7d-4c30-8e44-749aab4bc52f)
 
-
 ## Technology Used
 - Ruby 
 - Rails
@@ -45,16 +49,12 @@
 - BCrypt Gem, JWT, localStorage 
 - Stripe API
 - Dotenv Gem 
-- Active Model Serializers
 
 ## Setup
 - ` git clone < this repo > `
 - ` cd < this repo > `
 - ` npm install `
 - ` npm start `
-
-## Acknowledgements
-This project was created by Ashley.
 
 ## License
 This project is MIT licensed. 
