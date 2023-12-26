@@ -64,7 +64,7 @@ class CreateProduct extends Component {
             value={this.state.image_url} 
             onChange={this.handleChange}
           />
-          <Form.Button className="formButtons" content='Submit'/>          
+          <Form.Button circular className="formButtons" content='Submit'/>          
         </Form>
       </div>
     )

@@ -30,7 +30,7 @@ function Profile(props) {
   
   return (
     <div className="profileNav">    
-      <img style={{objectFit: "cover", objectPosition: "50% 32%"}}  src="https://leafandclay.co/cdn/shop/collections/succulents-homepage-image_67aed5c3-86b9-4af3-955f-2c02dd129166.jpg?v=1655490570&width=1920" alt="cp" width="1263" height="270" loading="eager"/>          
+      <img style={{objectFit: "cover"}}  src="https://cdn.shopify.com/s/files/1/0019/8361/0978/collections/plants1_2000x.jpg?v=1673559695" alt="cp" width="1263" height="270" loading="eager"/>          
       <Grid columns={2} stackable textAlign='left'>
         <Grid.Column style={{width: "370px"}} >
           <Menu className="link-styles" vertical size="large"> 

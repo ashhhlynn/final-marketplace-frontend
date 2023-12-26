@@ -46,15 +46,15 @@ h1, h2, h3, h2, h4, h5 {
   font-weight: 400;
   font-family: "futura-pt", sans-serif;
   line-height: 1.5em;
-  z-index: 1;
   margin: auto;
+  z-index: 1;
   text-align: center
 }
 
 .formButton  {
   margin: auto !important;
   text-align: center !important;  
-  width: 300px !important; 
+  width: 360px !important; 
   margin-top: 2%
 }
 
@@ -91,7 +91,6 @@ body .ui.cards>.card {
 
 .homeHeader .ui.button {
    margin-right: 9%;
-   width: 260px;
 }
 
 .aboutTwo { 

@@ -25,7 +25,7 @@ class Home extends Component{
                     <Item className="homeHeader" style={{marginBottom: "18%"}}> 
                         <h1><b>A Plant Marketplace</b></h1>
                         <h2><i>give your perfect plant a home</i></h2>
-                        <Button inverted circular as={Link} to ="/products" style={{ color:"#686868", background: "#DBE6E0"}} onClick={this.handleCreateOrder} size="huge">GET STARTED</Button>
+                        <Button inverted circular as={Link} to ="/products" style={{ color:"#545454", background: "#DBE6E0"}} onClick={this.handleCreateOrder} size="huge">GET STARTED</Button>
                     </Item>   
                 </center>  
             </div>
