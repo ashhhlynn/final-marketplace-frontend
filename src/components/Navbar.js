@@ -30,6 +30,15 @@ class Navbar extends Component {
       let userId = this.props.user.id
       this.props.createOrder(userId)
     }
+    else if (this.props.user.length === 0){
+      alert("Register or login to begin order.")
+    }
+  }
+
+  handleAlert = () => {
+    if (this.props.user.length === 0){
+      alert("Register or login to sell product.")
+    }
   }
   
   render() {
@@ -37,7 +46,7 @@ class Navbar extends Component {
       <div className="nav">
         <Menu className="link-styles" pointing secondary size="large">
           <Menu.Item as={Link} to='/'><h3>home</h3></Menu.Item>
-          <Menu.Item as={Link} to='/createproduct'><h3>sell</h3></Menu.Item>
+          <Menu.Item as={Link} to='/createproduct' onClick={()=>{this.handleAlert()}}><h3>sell</h3></Menu.Item>
           <Menu.Item as={Link} to ="/products" onClick={()=>{this.handleCreateOrder()}}><h3>shop</h3></Menu.Item>
           <Menu.Item as={Link} to='/' style={{marginLeft:"25.5%"}}><h3 style={{color:"#26453e", fontFamily:"gadugi", fontSize:"36px", letterSpacing:'1.5px'}}>seedlink.</h3></Menu.Item>
           <Menu.Menu position='right'>
