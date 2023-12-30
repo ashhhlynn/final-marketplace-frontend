@@ -18,8 +18,6 @@ Check out the <a href="https://seedlink.netlify.app/">live</a> and <a href="http
 - View history of order invoices at profile page 
 
 ## Media 
-### Home
-![Screenshot (153)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/e663762b-1ebb-42e6-9e35-ca0b26bb6146)
 
 ### Create Plant
 ![Screenshot (158)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/aac0b316-8767-4959-97f3-9f754266a969)
