@@ -66,7 +66,7 @@ super(props)
               value={this.state.image_url} 
               onChange={this.handleChange}
             />
-          <Form.Button className="formButton" content='Submit'/>
+          <Form.Button circular className="formButton" content='Submit'/>
         </Form>
       </div>
     )
