@@ -20,7 +20,7 @@ Check out the <a href="https://seedlink.netlify.app/">live</a> and <a href="http
 ## Media 
 
 ### Create Plant
-![Screenshot (158)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/aac0b316-8767-4959-97f3-9f754266a969)
+![Screenshot (188)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/16f69412-1cc7-4a34-ba65-7c57f120cc55)
 
 ### Product Index
 ![Screenshot (154)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/2bb955fe-8166-4223-8beb-3c370fb890a9)
@@ -32,7 +32,7 @@ Check out the <a href="https://seedlink.netlify.app/">live</a> and <a href="http
 ![Screenshot (156)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/b07a916d-24fa-4d23-a6ce-f74a38dd905f)
 
 ### Inventory
-![Screenshot (157)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/c2bb3950-ca7d-4c30-8e44-749aab4bc52f)
+![Screenshot (189)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/989edeb1-72a5-4828-962a-d5ba5b7351a2)
 
 ## Technology Used
 - Ruby 
