@@ -6,7 +6,7 @@ A buy and sell e-commerce application for plants built with a JavaScript and Rea
 </td>
 </tr>
 </table>
-Check out the <a href="https://seedlink.netlify.app/">live</a> and <a href="https://vimeo.com/898013058">video</a> demos or the <a href="https://github.com/ashhhlynn/final-marketplace-api">back end</a> repo.
+Check out the <a href="https://seedlink.netlify.app/">live</a> and <a href="https://vimeo.com/923620570/fe65a6381c">video</a> demos or the <a href="https://github.com/ashhhlynn/final-marketplace-api">back end</a> repo.
 
 ## Features
 - Register and log in authenticated through BCrypt, JWT, and localStorage
