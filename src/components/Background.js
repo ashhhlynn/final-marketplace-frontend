@@ -3,7 +3,7 @@ import React from 'react'
 const Background = () => {
     return (
         <div>
-           <img style={{objectFit: "cover", objectPosition: "0% 90%"}} width="1262" height="576" src="https://cutewallpaper.org/23/aesthetic-monstera-wallpaper/1195512649.jpg" alt="bkgd"/>
+           <img style={{objectFit: "cover", objectPosition: "0% 69%"}} width="1262" height="576" src="https://images.unsplash.com/photo-1619423089884-bc5b70bc4e2c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="bkgd"/>
         </div>
     )
 }

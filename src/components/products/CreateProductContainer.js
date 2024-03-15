@@ -14,8 +14,8 @@ function CreateProductContainer() {
     
     return (
         <div >
-            <img style={{objectFit: "cover", objectPosition: "50% 12%"}}  src="//cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=352 352w, //cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=832 832w, //cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=1200 1200w, //cdn.shopify.com/s/files/1/1124/9666/collections/houseplant-hero_fe53daa1-822a-4988-945c-01415c17d114.jpg?v=1644596726&amp;width=1920 1920w" alt="cp" width="1263" height="270" loading="eager"/>          
-            <br/><br/><br></br>
+            <img style={{marginBottom:"1.5%", objectFit: "cover", objectPosition: "0% 50%", width: "1263px", height: "270px"}} src="https://cdn.shopify.com/s/files/1/0019/8361/0978/collections/plants1_2000x.jpg?v=1673559695" alt="succulent"/>
+            <br/><br/>
             <Grid columns={2}>
                 <Grid.Column style={{}}> 
                     <Segment style={{background:"inherit", marginLeft:"14%", boxShadow:"none", border:"none"}}>         
