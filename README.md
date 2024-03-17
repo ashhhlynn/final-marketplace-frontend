@@ -35,18 +35,16 @@ Check out the <a href="https://seedlink.netlify.app/">live</a> and <a href="http
 ![Screenshot (189)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/989edeb1-72a5-4828-962a-d5ba5b7351a2)
 
 ## Technology Used
-- Ruby 
-- Rails
-- JavaScript
-- React
+- Ruby on Rails
+- PostgreSQL
+- React.js
 - Redux
 - React Router
-- Semantic UI React
-- HTML & CSS
-- PostgreSQL
 - BCrypt Gem, JWT, localStorage 
 - Stripe API
 - Dotenv Gem 
+- HTML & CSS
+- Semantic UI React
 
 ## Setup
 - ` git clone < this repo > `
