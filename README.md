@@ -2,7 +2,7 @@
 <table>
 <tr>
 <td>
-A buy and sell e-commerce application for plants built with a JavaScript and React front end and a Ruby on Rails with PostgreSQL database back end. Users can sell or purchase plants from other users by adding to a shopping cart and submitting orders at checkout. Front end deployed to Netlify and back end deployed to Render.
+A buy and sell e-commerce application for plants built with a JavaScript and React front end and a Ruby on Rails with PostgreSQL database back end. Users can sell or purchase plants from other users by adding to a shopping cart and submitting orders at checkout. 
 </td>
 </tr>
 </table>
@@ -19,6 +19,7 @@ Check out the <a href="https://seedlink.netlify.app/">live</a> and <a href="http
 - Dotenv Gem 
 - HTML & CSS
 - Semantic UI React
+- Netlify & Render
   
 ## Features
 - Register and log in authenticated through BCrypt, JWT, and localStorage
