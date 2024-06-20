@@ -70,9 +70,9 @@ body .ui.cards>.card {
 }
 
 .homeHeader {
-  margin-top:-32.5% !important;
+  margin-top:-35% !important;
   text-align: right !important;
-  margin-right: 7% !important;
+  margin-right: 15% !important;
 }
 
 .homeHeader h1 {
@@ -84,7 +84,7 @@ body .ui.cards>.card {
 .homeHeader h2 {
   color: #26453e;
   letter-spacing: 1px;
-  margin-right: 4%;
+  margin-right: 0%;
   margin-top: -.3%;
   font-size: 30px;
 }

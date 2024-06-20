@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { connect } from "react-redux"
-import { List, Button, Divider } from 'semantic-ui-react'
-import CartItem from './CartItem'
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
+import { List, Button, Divider } from 'semantic-ui-react';
+import CartItem from './CartItem';
 
 class ShoppingCartContainer extends Component {
        
@@ -29,14 +29,14 @@ class ShoppingCartContainer extends Component {
                 }
             </div>
         )
-    }
-}
+    };
+};
 
 const mapStateToProps = (state) => {
     return {
         cart: state.cart,
         total: state.cartTotal
     }
-}
+};
 
-export default connect(mapStateToProps)(ShoppingCartContainer)
+export default connect(mapStateToProps)(ShoppingCartContainer);

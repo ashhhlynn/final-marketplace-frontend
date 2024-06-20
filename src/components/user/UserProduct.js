@@ -1,30 +1,30 @@
-import EditProduct from '../products/EditProduct'
-import React, { Component } from 'react'
-import { connect } from "react-redux"
-import { Button, Header, Item, Modal, Divider } from 'semantic-ui-react'
-import { checkUser } from '../actions/userActions'
-import { deleteProduct } from '../actions/productActions'
+import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { Button, Header, Item, Modal, Divider } from 'semantic-ui-react';
+import EditProduct from '../products/EditProduct';
+import { checkUser } from '../actions/userActions';
+import { deleteProduct } from '../actions/productActions';
 
 class UserProduct extends Component {
 
     state = {
         modalOpen: false
-    }
+    };
 
     handleOpen = () => {
         this.setState({ modalOpen: true });
-    }
+    };
 
     handleClose = () => {
         this.setState({ modalOpen: false });
         this.props.checkUser()
-    }
+    };
 
     handleDelete = (event, id) => {
         event.preventDefault()
         this.props.deleteProduct(id)
         this.props.checkUser()
-    }
+    };
   
     render () {
         let prod = this.props.prod
@@ -58,14 +58,14 @@ class UserProduct extends Component {
                 </Modal>
             </div>
         )
-    }
-}
+    };
+};
 
 const mapDispatchToProps = (dispatch) => {
     return { 
         checkUser: () =>  { dispatch(checkUser()) },
         deleteProduct: (product) =>  { dispatch(deleteProduct(product)) }
     }
-}
+};
 
-export default connect(null, mapDispatchToProps)(UserProduct)
+export default connect(null, mapDispatchToProps)(UserProduct);

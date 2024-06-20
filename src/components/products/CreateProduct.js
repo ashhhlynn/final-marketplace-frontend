@@ -1,8 +1,8 @@
-import React, { Component } from "react"
-import { connect } from "react-redux"
-import { Form } from 'semantic-ui-react'
-import { createProduct } from '../actions/productActions'
-import { checkUser } from '../actions/userActions'
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Form } from 'semantic-ui-react';
+import { createProduct } from '../actions/productActions';
+import { checkUser } from '../actions/userActions';
 
 class CreateProduct extends Component {
 
@@ -12,20 +12,20 @@ class CreateProduct extends Component {
     description: '',
     image_url: '',
     user_id: this.props.currentUser.id,
-  }
+  };
 
   handleChange = (event) => {
     this.setState ({
       [event.target.id]: event.target.value
     })
-  }
+  };
 
   handleSubmit = (event, product) => {
     event.preventDefault()
     this.props.handleRoute()
     this.props.createProduct(product)
     this.props.checkUser()
-  }
+  };
 
   render() {
     return (
@@ -68,20 +68,20 @@ class CreateProduct extends Component {
         </Form>
       </div>
     )
-  }
-}
+  };
+};
 
 const mapStateToProps = (state) => {
   return {
     currentUser: state.currentUser
   }
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
   return { 
     createProduct: (product) =>  { dispatch(createProduct(product)) }, 
     checkUser: () =>  { dispatch(checkUser()) }
   }
-}
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateProduct)
+export default connect(mapStateToProps, mapDispatchToProps)(CreateProduct);

@@ -1,32 +1,32 @@
-import { useState } from "react"
-import UserProducts from './UserProducts'
-import UserOrders from './UserOrders'
-import Account from './Account'
-import { Grid, Menu } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
+import { useState } from "react";
+import { Grid, Menu } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import UserProducts from './UserProducts';
+import UserOrders from './UserOrders';
+import Account from './Account';
 
 function Profile(props) {
-  const [displayA, setDisplayA] = useState(true)
-  const [displayB, setDisplayB] = useState(false)
-  const [displayC, setDisplayC] = useState(false)
+  const [displayA, setDisplayA] = useState(true);
+  const [displayB, setDisplayB] = useState(false);
+  const [displayC, setDisplayC] = useState(false);
 
   const showA = () => {
     setDisplayA(true)
     setDisplayB(false)
     setDisplayC(false)
-  }
+  };
 
   const showB = () => {
     setDisplayA(false)
     setDisplayB(true)
     setDisplayC(false)
-  }
+  };
 
   const showC = () => {
     setDisplayA(false)
     setDisplayB(false)
     setDisplayC(true)
-  }
+  };
   
   return (
     <div className="profileNav">    
@@ -48,6 +48,6 @@ function Profile(props) {
       </Grid>
     </div>
   )
-}
+};
 
-export default Profile
+export default Profile;

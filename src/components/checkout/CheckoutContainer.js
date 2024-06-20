@@ -1,25 +1,21 @@
-import React, { Component } from 'react'
-import { connect } from "react-redux"
-import { List, Button, Divider, Grid } from 'semantic-ui-react'
-import CartItem from '../cart/CartItem'
-import { sendOrder } from '../actions/orderActions'
-import { checkUser } from '../actions/userActions'
-import Totals from './Totals'
-import EditUser from '../user/EditUser'
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
+import { List, Button, Divider, Grid } from 'semantic-ui-react';
+import CartItem from '../cart/CartItem';
+import Totals from './Totals';
+import EditUser from '../user/EditUser';
 import StripeCheckout from 'react-stripe-checkout';
+import { sendOrder } from '../actions/orderActions';
+import { checkUser } from '../actions/userActions';
 
 class CheckoutContainer extends Component {
 
     handleSendOrder = (event, orderTotal) => {
         event.preventDefault()
-        if (this.props.cart.length === 0) {
-            window.alert('Must have items in cart')
-        }
-        else {
-            this.props.sendOrder(this.props.currentOrder, orderTotal)
-        }
-    }
+        if (this.props.cart.length === 0) {window.alert('Must have items in cart')}
+        else {this.props.sendOrder(this.props.currentOrder, orderTotal)}
+    };
 
     onToken = (token) => {
         fetch("https://final-marketplace-api.onrender.com/charges", {
@@ -31,7 +27,7 @@ class CheckoutContainer extends Component {
             })
         })
         .then(res => res.json())
-    }
+    };
 
     render() {
         const items = this.props.cart.map ( 
@@ -71,8 +67,8 @@ class CheckoutContainer extends Component {
                 </Grid>
             </div>
         )
-    }   
-}
+    };   
+};
 
 const mapStateToProps = (state) => {
     return {
@@ -81,13 +77,13 @@ const mapStateToProps = (state) => {
         currentOrder: state.currentOrder,
         user: state.currentUser
     }
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
     return {
         sendOrder: (orderId, total) => { dispatch(sendOrder(orderId, total)) },
         checkUser: () =>  { dispatch(checkUser()) }
     }
-}
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(CheckoutContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(CheckoutContainer);

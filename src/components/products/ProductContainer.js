@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
-import { Card, Button, Header } from 'semantic-ui-react'
-import Product from './Product'
-import { connect } from "react-redux"
-import { sortHighPrice } from '../actions/productActions'
-import { sortLowPrice } from '../actions/productActions'
-import { sortAZ } from '../actions/productActions'
-import { sortZA } from '../actions/productActions'
+import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { Card, Button, Header } from 'semantic-ui-react';
+import Product from './Product';
+import { sortHighPrice } from '../actions/productActions';
+import { sortLowPrice } from '../actions/productActions';
+import { sortAZ } from '../actions/productActions';
+import { sortZA } from '../actions/productActions';
 
 class ProductContainer extends Component {
 
@@ -22,7 +22,7 @@ class ProductContainer extends Component {
         else if (event.target.id === "4" ) { 
             this.props.sortZA()
         }
-    }
+    };
 
     render () {
         const productGroup = this.props.products.map( i => {
@@ -46,14 +46,14 @@ class ProductContainer extends Component {
             <br></br><br></br>
             </>
         )
-    }
-}
+    };
+};
 
 const mapStateToProps = (state) => {
     return {
         products: state.products
     }
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -62,6 +62,6 @@ const mapDispatchToProps = (dispatch) => {
         sortAZ: () => { dispatch(sortAZ()) },
         sortZA: () => { dispatch(sortZA()) }
     }
-}
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(ProductContainer);

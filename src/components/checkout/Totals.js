@@ -1,5 +1,5 @@
-import React, { Component } from 'react' 
-import { Table } from 'semantic-ui-react'
+import React, { Component } from 'react'; 
+import { Table } from 'semantic-ui-react';
 
 class Totals extends Component {
 
@@ -28,7 +28,7 @@ class Totals extends Component {
                 </Table>             
             </div>
         )
-    }   
-}
+    };   
+};
 
-export default Totals
+export default Totals;

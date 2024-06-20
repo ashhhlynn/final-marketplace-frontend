@@ -1,45 +1,45 @@
-import React, { Component } from "react"
-import { Link } from 'react-router-dom'
-import { Menu, Icon, Modal, Dropdown } from 'semantic-ui-react'
-import { logOut } from './actions/userActions'
-import { connect } from "react-redux"
-import { createOrder } from './actions/orderActions'
-import ShoppingCartContainer from './cart/ShoppingCartContainer'
+import React, { Component } from "react";
+import { Link } from 'react-router-dom';
+import { connect } from "react-redux";
+import { Menu, Icon, Modal, Dropdown } from 'semantic-ui-react';
+import ShoppingCartContainer from './cart/ShoppingCartContainer';
+import { logOut } from './actions/userActions';
+import { createOrder } from './actions/orderActions';
 
 class Navbar extends Component {
 
   state = {
     modalOpenCart: false,
-  }
+  };
 
   handleOpenCart = () => {
     this.setState({ modalOpenCart: true });
-  }
+  };
 
   handleCloseCart = () => {
     this.setState({ modalOpenCart: false })
-  }
+  };
 
   handleLogout = () => {
     localStorage.clear()
     this.props.logOut()
-  }
+  };
 
   handleCreateOrder = () => {
     if (this.props.user.length !== 0 && this.props.currentOrder.length === 0) {
       let userId = this.props.user.id
       this.props.createOrder(userId)
     }
-    else if (this.props.user.length === 0){
+    else if (this.props.user.length === 0) {
       alert("Register or login to begin order.")
     }
-  }
+  };
 
   handleAlert = () => {
     if (this.props.user.length === 0){
       alert("Register or login to sell product.")
     }
-  }
+  };
   
   render() {
     return (                
@@ -80,21 +80,22 @@ class Navbar extends Component {
         </Menu>
       </div>
     )
-  }
-}
+  };
+
+};
 
 const mapStateToProps = (state) => {
   return {
       user: state.currentUser,
       currentOrder: state.currentOrder
   }
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
   return { 
     logOut: () => { dispatch(logOut()) },
     createOrder: (userId) => { dispatch(createOrder(userId)) }
   }
-}
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar)
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

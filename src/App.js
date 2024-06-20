@@ -1,26 +1,24 @@
-import { React, Component }from "react"
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import ProductContainer from './components/products/ProductContainer'
-import Home from './components/Home'
-import { checkUser } from './components/actions/userActions'
-import CheckoutContainer from './components/checkout/CheckoutContainer'
-import Navbar from './components/Navbar'
-import Profile from './components/user/Profile'
-import Footer from './components/Footer'
-import './App.css'
-import { connect } from "react-redux"
-import { fetchProducts } from './components/actions/productActions'
-import CreateProductContainer from './components/products/CreateProductContainer'
-import SignupLogin from './components/SignupLogin'
+import './App.css';
+import { React, Component }from "react";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { connect } from "react-redux";
+import ProductContainer from './components/products/ProductContainer';
+import Home from './components/Home';
+import CheckoutContainer from './components/checkout/CheckoutContainer';
+import Navbar from './components/Navbar';
+import Profile from './components/user/Profile';
+import Footer from './components/Footer';
+import CreateProductContainer from './components/products/CreateProductContainer';
+import SignupLogin from './components/SignupLogin';
+import { checkUser } from './components/actions/userActions';
+import { fetchProducts } from './components/actions/productActions';
 
 class App extends Component {
 
   componentDidMount () {
-    if (localStorage.token) {
-      this.props.checkUser()
-    }
+    if (localStorage.token) {this.props.checkUser()}
     this.props.fetchProducts()
-  }
+  };
 
   render() {
     return (
@@ -39,21 +37,22 @@ class App extends Component {
         </div>
       </Router>
     )
-  }
-}
+  };
+
+};
 
 const mapStateToProps = (state) => {
   return {
     user: state.currentUser,
     products: state.products
   }
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     checkUser: () =>  { dispatch(checkUser()) },
     fetchProducts: () =>  { dispatch(fetchProducts()) }
   }
-}
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App);

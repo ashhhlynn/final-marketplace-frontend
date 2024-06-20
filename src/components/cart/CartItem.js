@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { removeFromCart } from '../actions/cartActions'
-import { Item, Button, Divider, Icon,  Image } from 'semantic-ui-react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Item, Button, Divider, Icon,  Image } from 'semantic-ui-react';
+import { removeFromCart } from '../actions/cartActions';
 
 class CartItem extends Component {
 
@@ -16,7 +16,7 @@ class CartItem extends Component {
         return (        
             <>
             <Item>
-                <Button size="tiny" style={{ marginTop:"-2%"}}inverted floated="right" onClick={()=>{this.handleRemove(i.id)}}>
+                <Button size="tiny" style={{ marginTop:"-2%"}} inverted floated="right" onClick={()=>{this.handleRemove(i.id)}}>
                     <Icon color="grey" name="close"></Icon>
                 </Button>
                 <Image size='tiny' src={i.image_url} /> 
@@ -28,19 +28,19 @@ class CartItem extends Component {
             <Divider></Divider>
             </>
         )
-    }
-}
+    };
+};
 
 const mapStateToProps = (state) => {
     return {
         orderCart: state.orderCart
     }
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
     return { 
         removeFromCart: (pid, id) => { dispatch(removeFromCart(pid, id)) } 
     }
-}
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(CartItem)
+export default connect(mapStateToProps, mapDispatchToProps)(CartItem);

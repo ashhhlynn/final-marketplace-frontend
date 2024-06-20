@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import EditUser from './EditUser'
+import React, { Component } from 'react';
+import EditUser from './EditUser';
 
 class Account extends Component {
 
@@ -11,7 +11,7 @@ class Account extends Component {
                 </div>
             </div>
         )
-    }
-}
+    };
+};
 
-export default Account
+export default Account;

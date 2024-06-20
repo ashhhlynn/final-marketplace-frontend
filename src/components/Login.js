@@ -1,26 +1,26 @@
-import React, { Component } from "react"
-import { connect } from 'react-redux'
-import { Form } from "semantic-ui-react"
-import { getExistingUser } from './actions/userActions'
+import React, { Component } from "react";
+import { connect } from 'react-redux';
+import { Form } from "semantic-ui-react";
+import { getExistingUser } from './actions/userActions';
 
 class Login extends Component {
 
     state = {
         email: '',
         password: '',
-    }
+    };
 
     handleChange = (event) => {
         this.setState ({
             [event.target.id]: event.target.value
         })
-    }
+    };
 
     handleSubmit = (event, userData)  => {
         event.preventDefault()
         this.props.handleRoute()
         this.props.getExistingUser(userData)
-    }
+    };
 
     render() {
         return (
@@ -46,13 +46,13 @@ class Login extends Component {
             </Form>
             </>
         )
-    }
-}
+    };
+};
 
 const mapDispatchToProps = dispatch => {
     return {
        getExistingUser: (userData) => { dispatch(getExistingUser(userData)) }
     }
-}
+};
 
-export default connect(null, mapDispatchToProps)(Login)
+export default connect(null, mapDispatchToProps)(Login);

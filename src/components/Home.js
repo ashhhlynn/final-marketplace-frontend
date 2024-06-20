@@ -1,8 +1,8 @@
-import React, { Component } from "react"
-import { Item } from 'semantic-ui-react'
-import Background from './Background'
+import React, { Component } from "react";
+import { Item } from 'semantic-ui-react';
+import Background from './Background';
 
-class Home extends Component{
+class Home extends Component {
 
     render() {  
         return (
@@ -10,13 +10,13 @@ class Home extends Component{
                 <Background />  
                 <center>
                     <Item className="homeHeader" style={{marginBottom: "22%"}}> 
-                        <h1><b>A Plant Marketplace</b></h1>
-                        <h2><i>give your perfect plant a home</i></h2>
+                        <h1><b>Seedlink</b></h1>
+                        <h2><i>A Plant Marketplace</i></h2>
                     </Item>   
                 </center>  
             </div>
         )
-    }
-}
+    };
+};
 
-export default Home
+export default Home;

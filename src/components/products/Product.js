@@ -1,10 +1,15 @@
-import React, { Component } from 'react'
-import { Card, Image, Header, Reveal, Icon } from 'semantic-ui-react'
-import { connect } from "react-redux"
-import { addToCart } from '../actions/cartActions'
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
+import { Card, Image, Header, Reveal, Icon } from 'semantic-ui-react';
+import { addToCart } from '../actions/cartActions';
 
 class Product extends Component {
+
+    handleClick = (event, product) => {
+        event.preventDefault()
+        this.props.addToCart(product, this.props.currentOrder)
+    };    
 
     render() {
         const i = this.props.product
@@ -33,25 +38,20 @@ class Product extends Component {
                 </Card.Content>
             </Card>  
         )      
-    }
+    };
 
-    handleClick = (event, product) => {
-        event.preventDefault()
-        this.props.addToCart(product, this.props.currentOrder)
-    }    
-
-}
+};
   
 const mapStateToProps = (state) => {
     return { 
         currentOrder: state.currentOrder,
     }
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
     return {
         addToCart: (product, order) => { dispatch(addToCart(product, order)) }
     }
-}
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Product)
+export default connect(mapStateToProps, mapDispatchToProps)(Product);

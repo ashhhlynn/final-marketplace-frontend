@@ -1,34 +1,34 @@
-import React, { Component } from "react"
-import { connect } from "react-redux"
-import { Form } from 'semantic-ui-react'
-import { editProduct } from '../actions/productActions'
-import { checkUser } from '../actions/userActions'
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Form } from 'semantic-ui-react';
+import { editProduct } from '../actions/productActions';
+import { checkUser } from '../actions/userActions';
 
 class EditProduct extends Component {
 
-constructor(props){
-super(props)
-  this.state = {
-    title: this.props.product.title,
-    price: this.props.product.price,
-    description: this.props.product.description,
-    image_url: this.props.product.image_url,
-    id: this.props.product.id
-  }
-}
+  constructor(props){
+  super(props)
+    this.state = {
+      title: this.props.product.title,
+      price: this.props.product.price,
+      description: this.props.product.description,
+      image_url: this.props.product.image_url,
+      id: this.props.product.id
+    }
+  };
 
   handleChange = (event) => {
     this.setState ({
       [event.target.id]: event.target.value
     })
-  }
+  };
 
   handleSubmit = (event, product) => {
     event.preventDefault()
     this.props.editProduct(product)
     this.props.checkUser()
     this.props.handleClose()
-  }
+  };
 
   render() {
     return (
@@ -70,14 +70,14 @@ super(props)
         </Form>
       </div>
     )
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return { 
     editProduct: (product) =>  { dispatch(editProduct(product)) } ,
     checkUser: () =>  { dispatch(checkUser()) }
   }
-}
+};
 
-export default connect(null, mapDispatchToProps)(EditProduct)
+export default connect(null, mapDispatchToProps)(EditProduct);

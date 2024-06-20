@@ -1,18 +1,19 @@
-import React, { Component } from 'react'
-import { connect } from "react-redux"
-import { Item } from 'semantic-ui-react'
-import { checkUser } from '../actions/userActions'
-import UserProduct from './UserProduct'
+import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { Item } from 'semantic-ui-react';
+import UserProduct from './UserProduct';
+import { checkUser } from '../actions/userActions';
 
 class UserProducts extends Component {
 
     componentDidMount () {
         this.props.checkUser()
-    }
+    };
 
     render () {
         const products = this.props.user.products.map( prod => {
-            return ( <UserProduct prod={prod} key={prod.id} />
+            return ( 
+                <UserProduct prod={prod} key={prod.id} />
             )
         })
         return (
@@ -31,12 +32,12 @@ class UserProducts extends Component {
             </div>
         )
     }
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
     return { 
       checkUser: () =>  { dispatch(checkUser()) }
     }
-}
+};
 
-export default connect(null, mapDispatchToProps)(UserProducts)
+export default connect(null, mapDispatchToProps)(UserProducts);

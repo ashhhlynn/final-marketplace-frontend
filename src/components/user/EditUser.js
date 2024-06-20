@@ -1,7 +1,7 @@
-import React, { Component } from "react"
-import { connect } from 'react-redux'
-import { Form } from 'semantic-ui-react'
-import { editUser } from '../actions/userActions'
+import React, { Component } from "react";
+import { connect } from 'react-redux';
+import { Form } from 'semantic-ui-react';
+import { editUser } from '../actions/userActions';
 
 class EditUser extends Component {
 
@@ -12,18 +12,18 @@ class EditUser extends Component {
         city: this.props.user.city,
         state: this.props.user.state,
         zip: this.props.user.zip
-    }
+    };
 
     handleSubmit = (event, users) => {
         event.preventDefault()
         this.props.editUser(users)
-    }
+    };
 
     handleChange = (event) => {
         this.setState ({
             [event.target.id]: event.target.value
         })
-    }
+    };
 
     render() {
         return (
@@ -81,19 +81,19 @@ class EditUser extends Component {
                 <Form.Button basic color="black" circular className="formButton" style={{width: "130px"}} content="Update"/>
             </Form>
         )
-    }  
-}
+    };  
+};
 
 const mapStateToProps = (state) => {
     return {
         user: state.currentUser
     }
-}
+};
 
 const mapDispatchToProps = dispatch => {
     return {
-     editUser: (user) =>  { dispatch(editUser(user)) } 
+        editUser: (user) =>  { dispatch(editUser(user)) } 
     }
-}
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditUser)
+export default connect(mapStateToProps, mapDispatchToProps)(EditUser);

@@ -1,7 +1,7 @@
-import React, { Component } from "react"
-import { connect } from 'react-redux'
-import { Form } from 'semantic-ui-react'
-import { createUser } from './actions/userActions'
+import React, { Component } from "react";
+import { connect } from 'react-redux';
+import { Form } from 'semantic-ui-react';
+import { createUser } from './actions/userActions';
 
 class Signup extends Component {
 
@@ -14,19 +14,19 @@ class Signup extends Component {
         zip: '',
         password: '',
         password_confirmation: ''
-    }
+    };
 
     handleSubmit = (event, userData) => {
         event.preventDefault()
         this.props.handleRoute()
         this.props.createUser(userData)
-    }
+    };
 
     handleChange = (event) => {
         this.setState ({
             [event.target.id]: event.target.value
         })
-    }
+    };
 
     render() {
         return (
@@ -106,13 +106,13 @@ class Signup extends Component {
             </Form>
             </>
         )
-    }
-}
+    };
+};
 
 const mapDispatchToProps = dispatch => {
     return {
         createUser: (userData) => { dispatch(createUser(userData)) }
     }
-}
+};
 
-export default connect(null, mapDispatchToProps)(Signup)
+export default connect(null, mapDispatchToProps)(Signup);
