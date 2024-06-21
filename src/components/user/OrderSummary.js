@@ -22,7 +22,7 @@ const OrderSummary = (props) => {
     })      
     return (
         <div className="orderSummary">
-            <Card key={this.props.order.id}>
+            <Card key={props.order.id}>
                 <Card.Header >
                     <h2>Order #{props.order.id} | {props.order.created_at.substring(0, 10)}</h2>
                 </Card.Header> 
