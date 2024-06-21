@@ -9,13 +9,35 @@
   width: 100%;
 }
 
+
+.homeHeader {
+  margin-top:-33%;
+  text-align: right;
+  margin-right: 15%;
+  margin-bottom: 22%
+}
+
+.homeHeader h1 {
+  color: #26453e;
+  letter-spacing: .5px;
+  font-size: 54px
+}
+
+.homeHeader h2 {
+  color: #26453e;
+  letter-spacing: 1px;
+  margin-right: 0%;
+  margin-top: -.3%;
+  font-size: 30px;
+}
+
 .nav .link-styles {
   text-align: center;
   margin-top: 3%;
 }
 
 .link-styles h3 {
-  margin-bottom: 4.5%;
+  margin-bottom: 4.5% !important;
   color:  #26453e;
 }
 
@@ -26,6 +48,49 @@
 h1, h2, h3, h2, h4, h5 {
   font-weight: normal !important;
 }
+
+.productContainer h1 {
+  margin-left: 4% !important;
+  margin-top: 2%;
+  font-size: 32px;
+  margin-bottom: 2%;
+}
+
+.productContainer img {
+  object-fit: cover;
+  object-position: 0% 50%;
+  width: 1263px;
+  height: 270px;
+  margin-bottom:1.5%
+}
+
+.productCard img {
+  width: 255px;
+  height: 202px;
+}
+
+.productCardTwo h5 {
+  margin-top: 7%  !important;
+  margin-left: 5%  !important;
+  margin-right: 5%  !important;
+}
+
+.productCard h3 {
+  text-align: left  !important;
+  box-shadow: none !important;
+  margin-top:2%;
+}
+
+.productCard .ui.header {
+  margin-top: 3%  !important;
+  margin-right: -3.5% !important;
+}
+
+.cartContainer h2, h3, h4 {
+  text-align: center !important;
+}
+
+
 
 .ui.modal {
   display:block;
@@ -63,107 +128,6 @@ body .ui.cards>.card {
   font-weight: 400;
   background-color: #fdfcf9;
   box-shadow: none;
-}
-
-.home h4, h2{
-  letter-spacing: .25px
-}
-
-.homeHeader {
-  margin-top:-35% !important;
-  text-align: right !important;
-  margin-right: 15% !important;
-}
-
-.homeHeader h1 {
-  color: #26453e;
-  letter-spacing: .5px;
-  font-size: 54px
-}
-
-.homeHeader h2 {
-  color: #26453e;
-  letter-spacing: 1px;
-  margin-right: 0%;
-  margin-top: -.3%;
-  font-size: 30px;
-}
-
-.homeHeader .ui.button {
-   margin-right: 9%;
-}
-
-.aboutTwo { 
-  height: 362px;
-  line-height:1.8 !important;
-  margin-left: 4%;
-  width: 450px;
-  text-align: left !important;
-  margin-bottom: 5%;
-  margin-top: 5%;
-  margin-right: 4%;
-  color: #26453e;
-}
-
-.aboutTwo h1{
-  text-align: left;
-  font-size: 32px
-}
-
-.aboutTwo h3 { 
-  text-align: left !important;
-  line-height: 1.8
-}
-
-.aboutCard .ui.card {
-  color:#ffffff;
-  margin-top: 4% !important;
-  margin-bottom: 5% !important;
-  margin-right: 2% !important;
-  margin-left: 2% !important;
-  background: #26453e!important;
-  height: 250px;
-  box-shadow: 0 0px 4px 0 rgba(247, 246, 246, 0.95), 0 2px 8px 0 rgba(0, 0, 0, 0.19) !important;
-}
-
-.productContainer h1 {
-  margin-left: 4% !important;
-  margin-top: 2%;
-  font-size: 32px;
-  margin-bottom: 2%;
-}
-
-.productContainer img {
-  object-fit: cover;
-  object-position: 0% 50%;
-  width: 1263px;
-  height: 270px;
-}
-
-.productCard img {
-  width: 255px;
-  height: 202px;
-}
-
-.productCardTwo h5 {
-  margin-top: 7%  !important;
-  margin-left: 5%  !important;
-  margin-right: 5%  !important;
-}
-
-.productCard h3 {
-  text-align: left  !important;
-  box-shadow: none !important;
-  margin-top:2%;
-}
-
-.productCard .ui.header {
-  margin-top: 3%  !important;
-  margin-right: -3.5% !important;
-}
-
-.cartContainer h2, h3, h4 {
-  text-align: center !important;
 }
 
 .checkoutContainer .ui.list {
@@ -283,7 +247,7 @@ body .ui.cards>.card {
   text-align: left;
   height:101%;
   background: #ffffff;
-  margin-top: -1.5% !important;
+  margin-top: 0% !important;
 }
 
 .editProduct h2  {

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Divider, Card, Table } from 'semantic-ui-react';
-import Totals from '../checkout/Totals';
+import React, { Component } from 'react'
+import { Divider, Card, Table } from 'semantic-ui-react'
+import Totals from '../checkout/Totals'
 
 class OrderSummary extends Component {
 
@@ -34,7 +34,7 @@ class OrderSummary extends Component {
                 <br />
             </div>
         )
-    };
-};
+    }
+}
 
-export default OrderSummary;
+export default OrderSummary

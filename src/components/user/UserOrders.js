@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Card } from 'semantic-ui-react';
-import OrderSummary from './OrderSummary';
-import { checkUser } from '../actions/userActions';
+import React, { Component } from 'react'
+import { Card } from 'semantic-ui-react'
+import OrderSummary from './OrderSummary'
+import { connect } from 'react-redux'
+import { checkUser } from '../actions/userActions'
 
 class UserOrders extends Component {
 
     componentDidMount () {
         this.props.checkUser()
-    };
+    }
 
     render () {
         const orders = this.props.user.orders.map((order) => (
@@ -25,13 +25,13 @@ class UserOrders extends Component {
                 }
             </div>
         )
-    };
-};
+    }
+}
 
 const mapDispatchToProps = (dispatch) => {
     return {
         checkUser: () =>  { dispatch(checkUser()) }
     }
-};
+}
 
-export default connect(null, mapDispatchToProps)(UserOrders);
+export default connect(null, mapDispatchToProps)(UserOrders)

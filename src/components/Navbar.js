@@ -36,9 +36,7 @@ class Navbar extends Component {
   };
 
   handleAlert = () => {
-    if (this.props.user.length === 0){
-      alert("Register or login to sell product.")
-    }
+    if (this.props.user.length === 0){alert("Register or login to sell product.")}
   };
   
   render() {
