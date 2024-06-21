@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { Grid, Segment } from 'semantic-ui-react';
 import CreateProduct from "./CreateProduct";
 
-function CreateProductContainer() {
+const CreateProductContainer = () => {
 
     const navigate = useNavigate();
 
-    function handleRoute() {
+    const handleRoute = () => {
         navigate('/')
     };
     

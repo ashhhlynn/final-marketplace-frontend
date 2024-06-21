@@ -3,11 +3,11 @@ import { Grid, Segment } from 'semantic-ui-react';
 import Login from "./Login";
 import Signup from "./Signup";
 
-function SignupLogin() {
+const SignupLogin = () => {
 
     const navigate = useNavigate();
 
-    function handleRoute() {
+    const handleRoute = () => {
         navigate('/')
     };
 

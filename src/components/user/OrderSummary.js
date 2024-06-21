@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Divider, Card, Table } from 'semantic-ui-react'
 import Totals from '../checkout/Totals'
 
-class OrderSummary extends Component {
+const OrderSummary = (props) => {
 
-    render () {
-        let ot = (this.props.order.total- 10)/1.1
-        const items = this.props.order.order_items.map((item => 
-           <div className= "orderTable" key={item.id}>
+    let ot = (props.order.total- 10)/1.1
+    const items = props.order.order_items.map(item => {
+        return ( 
+            <div className= "orderTable" key={item.id}>
                 <Table compact basic='very' fixed>
                     <Table.Body>
                         <Table.Row>
@@ -18,23 +18,23 @@ class OrderSummary extends Component {
                     </Table.Body>
                 </Table>
            </div>
-        ))        
-        return (
-            <div className="orderSummary">
-                <Card key={this.props.order.id}>
-                    <Card.Header >
-                        <h2>Order #{this.props.order.id} | {this.props.order.created_at.substring(0, 10)}</h2>
-                    </Card.Header> 
-                    <Card.Content>
-                        {items}
-                        <Divider></Divider>
-                        <Totals total={ot} />
-                    </Card.Content>
-                </Card>
-                <br />
-            </div>
         )
-    }
+    })      
+    return (
+        <div className="orderSummary">
+            <Card key={this.props.order.id}>
+                <Card.Header >
+                    <h2>Order #{props.order.id} | {props.order.created_at.substring(0, 10)}</h2>
+                </Card.Header> 
+                <Card.Content>
+                    {items}
+                    <Divider></Divider>
+                    <Totals total={ot} />
+                </Card.Content>
+            </Card>
+            <br />
+        </div>
+    )
 }
 
 export default OrderSummary

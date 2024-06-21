@@ -4,11 +4,8 @@
   font-weight: 400;
   line-height: 1.5em;
   color: #111111;
-  margin: 0;
-  padding: 0;
   width: 100%;
 }
-
 
 .homeHeader {
   margin-top:-33%;
@@ -29,6 +26,18 @@
   margin-right: 0%;
   margin-top: -.3%;
   font-size: 30px;
+}
+
+.footer {
+  background-color: #fdfcf9;
+  border-color: #f0f0f0;
+  height:60px !important;
+  margin-top: 0%;
+}
+
+.footer h5 {
+  color: #26453e;
+  margin-top: 1% !important;
 }
 
 .nav .link-styles {

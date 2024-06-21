@@ -5,7 +5,8 @@ import UserProducts from './UserProducts';
 import UserOrders from './UserOrders';
 import Account from './Account';
 
-function Profile(props) {
+const Profile = (props) => {
+  
   const [displayA, setDisplayA] = useState(true);
   const [displayB, setDisplayB] = useState(false);
   const [displayC, setDisplayC] = useState(false);
