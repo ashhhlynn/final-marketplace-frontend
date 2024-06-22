@@ -29,7 +29,7 @@
 }
 
 .footer {
-  background-color: #fdfcf9;
+  background-color: #fdfcf9 !important;
   border-color: #f0f0f0;
   height:60px !important;
   margin-top: 0%;
