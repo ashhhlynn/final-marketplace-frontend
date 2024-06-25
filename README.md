@@ -41,9 +41,6 @@ Check out the <a href="https://seedlink.netlify.app/">live</a> and <a href="http
 ### Checkout
 ![Screenshot (156)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/b07a916d-24fa-4d23-a6ce-f74a38dd905f)
 
-### Inventory
-![Screenshot (193)](https://github.com/ashhhlynn/final-marketplace-frontend/assets/84604278/f76f95b5-bb0b-4d96-97d3-ee3fe7bccaf8)
-
 ## Setup
 - ` git clone < this repo > `
 - ` cd < this repo > `
