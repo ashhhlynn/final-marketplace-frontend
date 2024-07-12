@@ -17,7 +17,7 @@ A buy and sell e-commerce application for plants built with a React.js and Redux
 - React.js
 - Redux
 - React Router
-- BCrypt Gem
+- BCrypt
 - JWT
 - localStorage 
 - Stripe API
